@@ -1,0 +1,70 @@
+/* eslint-disable @next/next/no-img-element */
+import React from "react";
+import Link from "next/link";
+import { GeistSans } from "geist/font/sans";
+import Icons from "@/data/icons";
+import { FaGithub } from "react-icons/fa6";
+import { CiLocationArrow1 } from "react-icons/ci";
+
+function ProjectCard({
+	title,
+	description,
+	techStack,
+	previewLink,
+	githubLink,
+}: {
+	title: string;
+	description: string;
+	techStack: string[];
+	previewLink: string;
+	githubLink: string;
+}) {
+	return (
+		<div className="flex flex-col gap-4 p-4 border rounded-lg">
+			<div className="flex gap-2 text-[22px] md:text-[28px]">
+				<h2 className={`${GeistSans.className} font-bold capitalize`}>
+					{title}
+				</h2>
+			</div>
+			<p className="text-[14px] md:text-[18px] text-zinc-600 dark:text-zinc-400">
+				{description}
+			</p>
+			<div className="flex gap-2 flex-wrap">
+				{techStack.map((tech) => (
+					<div
+						key={tech}
+						className="border rounded-md px-2 py-1 text-[10px] md:text-[14px] bg-zinc-200 dark:bg-zinc-800 flex justify-start items-center gap-2">
+						{tech in Icons ? (
+							<img
+								src={Icons[tech]}
+								alt={tech}
+								className="w-4 h-4 rounded-sm"
+							/>
+						) : null}
+						<p>{tech}</p>
+					</div>
+				))}
+			</div>
+			<div className="flex gap-2">
+				{previewLink && (
+					<Link href={previewLink} target="_blank">
+						<button className="px-2 py-[0.4rem] border bg-black text-white dark:bg-white dark:text-black rounded-lg text-[14px] md:text-[18px] flex gap-2 items-center dark:hover:bg-zinc-300 duration-300 transition-colors hover:bg-zinc-700">
+							<p>Preview</p>
+							<CiLocationArrow1 className="text-lg md:text-xl" />
+						</button>
+					</Link>
+				)}
+				{githubLink && (
+					<Link href={githubLink} target="_blank">
+						<button className="px-2 py-[0.4rem] border bg-black text-white dark:bg-white dark:text-black rounded-lg text-[14px] md:text-[18px] flex gap-2 items-center dark:hover:bg-zinc-300 duration-300 transition-colors hover:bg-zinc-700">
+							<FaGithub className="text-md md:text-xl" />
+							<p>Github</p>
+						</button>
+					</Link>
+				)}
+			</div>
+		</div>
+	);
+}
+
+export default ProjectCard;
