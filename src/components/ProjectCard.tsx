@@ -20,7 +20,7 @@ function ProjectCard({
 	githubLink: string;
 }) {
 	return (
-		<div className="flex flex-col gap-4 p-4 border rounded-lg">
+		<div className="flex flex-col gap-4 p-4 border  border-l-zinc-950 dark:border-l-zinc-100 border-l-2 rounded-r-lg">
 			<div className="flex gap-2 text-[22px] md:text-[28px]">
 				<h2 className={`${GeistSans.className} font-bold capitalize`}>
 					{title}
@@ -33,7 +33,7 @@ function ProjectCard({
 				{techStack.map((tech) => (
 					<div
 						key={tech}
-						className="border rounded-md px-2 py-1 text-[10px] md:text-[14px] bg-zinc-200 dark:bg-zinc-800 flex justify-start items-center gap-2">
+						className="border rounded-sm px-2 py-1 text-[10px] md:text-[14px] bg-zinc-50 dark:bg-zinc-900 flex justify-start items-center gap-2">
 						{tech in Icons ? (
 							<img
 								src={Icons[tech]}
@@ -48,7 +48,7 @@ function ProjectCard({
 			<div className="flex gap-2">
 				{previewLink && (
 					<Link href={previewLink} target="_blank">
-						<button className="px-2 py-[0.4rem] border bg-black text-white dark:bg-white dark:text-black rounded-lg text-[14px] md:text-[18px] flex gap-2 items-center dark:hover:bg-zinc-300 duration-300 transition-colors hover:bg-zinc-700">
+						<button className="px-2 py-1 border bg-black text-white dark:bg-white dark:text-black rounded-sm text-[14px] md:text-[18px] flex gap-2 items-center dark:hover:bg-zinc-300 duration-300 transition-colors hover:bg-zinc-700">
 							<p>Preview</p>
 							<CiLocationArrow1 className="text-lg md:text-xl" />
 						</button>
@@ -56,7 +56,7 @@ function ProjectCard({
 				)}
 				{githubLink && (
 					<Link href={githubLink} target="_blank">
-						<button className="px-2 py-[0.4rem] border bg-black text-white dark:bg-white dark:text-black rounded-lg text-[14px] md:text-[18px] flex gap-2 items-center dark:hover:bg-zinc-300 duration-300 transition-colors hover:bg-zinc-700">
+						<button className="px-2 py-1 border bg-black text-white dark:bg-white dark:text-black rounded-sm text-[14px] md:text-[18px] flex gap-2 items-center dark:hover:bg-zinc-300 duration-300 transition-colors hover:bg-zinc-700">
 							<FaGithub className="text-md md:text-xl" />
 							<p>Github</p>
 						</button>

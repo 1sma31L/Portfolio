@@ -1,39 +1,38 @@
 /* eslint-disable @next/next/no-img-element */
-import { GeistSans } from "geist/font/sans";
 import React from "react";
 import Link from "next/link";
 import SocialMedia from "@/data/social-media";
 function Home() {
 	return (
-		<main className="container pb-6 pt-10 min-h-[90vh] px-4 md:px-0">
-			<div className="flex flex-col gap-2">
-				<img
+		<main className="container py-10 md:py-0  min-h-[92vh] px-4 md:px-0 flex flex-col justify-center items-center">
+			<div className="flex flex-col gap-4">
+				{/* <img
 					src="me.jpg"
 					alt=""
 					className={`rounded-full w-[150px] md:w-[200px] `}
-				/>
+				/> */}
 
 				<div className="flex justify-start items-center gap-2 sm:gap-4 mb-4">
 					<h1
-						className={`${GeistSans.className} text-[27px] sm:text-[44px] font-bold inline-block`}>
-						Ismail M. BOUSSEKINE
+						className={`text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100`}>
+						Ismail M. Boussekine
 					</h1>
-					<Link
+					{/* <Link
 						href={"https://linkedin.com/in/ismail-boussekine"}
 						target="_blank">
 						<p className="font-bold dark:bg-white dark:text-black bg-black text-white px-2 py-1 rounded-full text-[8px] sm:text-[14px] hidden sm:inline-block hover:scale-105 transition-all duration-300 shadow-md">
 							Available
 						</p>
-					</Link>
+					</Link> */}
 				</div>
 
-				<div className="text-[14px] sm:text-[18px] flex flex-col gap-5 leading-[1.6]">
-					<blockquote className="border-l-4 border-gray-800 pl-4 italic text-gray-700 dark:text-gray-300">
+				<div className="text-sm sm:text-base flex flex-col gap-5 leading-[1.6]  dark:text-zinc-100">
+					<blockquote className="border-l-4 border-zinc-800 dark:border-zinc-100 pl-4 italic text-gray-700 dark:text-gray-300">
 						<p className="font-bold">
 							&quot;An idiot admires complexity, a genius admires
 							simplicity.&quot;
 						</p>
-						<footer className="mt-2 text-gray-600 dark:text-gray-400">
+						<footer className="mt-2 text-zinc-500 dark:text-gray-400">
 							— Albert Einstein
 						</footer>
 					</blockquote>
@@ -44,7 +43,7 @@ function Home() {
 						🇩🇿.
 					</p>
 
-					<p className="indent-5">
+					<p className="indent-5 ">
 						They say you can&apos;t steal a house if you don&apos;t own one.
 						That&apos;s why I began learning web development (Back-End) seeking
 						a deeper understanding of the web to get better at pentesting. Along
@@ -57,11 +56,9 @@ function Home() {
 								href={item.url}
 								key={item.name}
 								target="_blank"
-								className="border border-zinc-100 dark:border-zinc-800 flex flex-row justify-between items-center gap-2 px-2 py-2  dark:hover:bg-zinc-800 hover:bg-zinc-200 rounded-md shadow-md transition-all duration-300">
+								className="border border-zinc-200	rounded shadow-sm dark:border-zinc-700 flex flex-row justify-between items-center gap-2 px-2 py-1  dark:hover:bg-zinc-800 hover:bg-zinc-200  transition-colors duration-300">
 								<p className="text-lg ">{item.icon}</p>
-								<p className={`text-sm hidden sm:block ${GeistSans.className}`}>
-									{item.name}
-								</p>
+								<p className={`text-sm hidden sm:block`}>{item.name}</p>
 							</Link>
 						))}
 					</div>

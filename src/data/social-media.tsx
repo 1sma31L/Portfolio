@@ -22,10 +22,10 @@ const SocialMedia: {
 		url: "https://linkedin.com/in/ismail-boussekine",
 		icon: <FaLinkedin />,
 	},
-	{
-		name: "Email",
-		url: "mailto:im.boussekine@gmail.com",
-		icon: <FaEnvelope />,
-	},
+	// {
+	// 	name: "Email",
+	// 	url: "mailto:im.boussekine@gmail.com",
+	// 	icon: <FaEnvelope />,
+	// },
 ];
 export default SocialMedia;

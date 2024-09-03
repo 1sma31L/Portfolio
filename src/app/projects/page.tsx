@@ -1,5 +1,3 @@
-import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
 import React from "react";
 import { FaTerminal } from "react-icons/fa";
 import ProjectCard from "@/components/ProjectCard";
@@ -12,10 +10,7 @@ function Projects() {
 		<main className="container min-h-[85vh] py-6 px-4 md:px-0">
 			<div className="flex gap-3 justify-start items-center px-2">
 				<FaTerminal className="text-xl md:text-2xl" />
-				<h1
-					className={`text-[30px] md:text-[40px] font-bold ${GeistSans.className}`}>
-					Projects
-				</h1>
+				<h1 className={`text-[30px] md:text-[40px] font-bold`}>Projects</h1>
 			</div>
 			<div className="flex flex-col gap-2 py-4">
 				{projects.map((project) => (
@@ -29,11 +24,10 @@ function Projects() {
 					/>
 				))}
 			</div>
-			<hr className="my-5" />
+			<hr className="my-10" />
 			<div className="flex gap-3  items-center px-2">
 				<CgSandClock className="text-xl md:text-3xl" />
-				<h1
-					className={`text-[30px] md:text-[40px] font-bold ${GeistSans.className}`}>
+				<h1 className={`text-[30px] md:text-[40px] font-bold `}>
 					Upcoming Projects
 				</h1>
 			</div>

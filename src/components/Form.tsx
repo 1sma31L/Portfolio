@@ -24,7 +24,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2 } from "lucide-react";
 import { getFormSchema, type FormValues } from "../lib/validation";
-import { GeistSans } from "geist/font/sans";
 
 const messagesCollectionRef = collection(db, "inbox");
 
@@ -111,17 +110,14 @@ export function ContactForm() {
 		<div className="flex justify-center items-center">
 			<Card className="w-full max-w-4xl">
 				<CardHeader>
-					<CardDescription className="font-mono text-pretty">
+					<CardDescription className="text-pretty">
 						Please, fill out the form below and I&apos;ll get back to you as
 						soon as possible.
 					</CardDescription>
 				</CardHeader>
 				<CardContent>
 					<Form {...form}>
-						<form
-							noValidate
-							onSubmit={handleSubmit(onSubmit)}
-							className={`${GeistSans.className}`}>
+						<form noValidate onSubmit={handleSubmit(onSubmit)}>
 							<div className="space-y-4">
 								<div className="grid grid-cols-2 gap-4">
 									<div className="space-y-2">

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -29,10 +30,6 @@
 		--chart-4: 43 74% 66%;
 		--chart-5: 27 87% 67%;
 		--radius: 0.5rem;
-		--dot-bg: #f2f3f4;
-		--dot-color: rgb(203, 203, 203);
-		--dot-size: 1.5px;
-		--dot-space: 20px;
 	}
 	.dark {
 		--background: 240 10% 3.9%;
@@ -59,8 +56,6 @@
 		--chart-3: 30 80% 55%;
 		--chart-4: 280 65% 60%;
 		--chart-5: 340 75% 55%;
-		--dot-bg: rgba(9 9 11);
-		--dot-color: rgb(27, 27, 27);
 	}
 }
 @layer base {
@@ -68,20 +63,11 @@
 		@apply border-border;
 	}
 	body {
-		@apply text-foreground;
+		@apply bg-background text-foreground font-Josefin;
 	}
 }
-/* body {
-	background: linear-gradient(
-				90deg,
-				var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-				transparent 1%
-			)
-			center / var(--dot-space) var(--dot-space),
-		linear-gradient(
-				var(--dot-bg) calc(var(--dot-space) - var(--dot-size)),
-				transparent 1%
-			)
-			center / var(--dot-space) var(--dot-space),
-		var(--dot-color);
-} */
+
+::selection {
+	background-color: rgb(99 102 241);
+	color: white;
+}

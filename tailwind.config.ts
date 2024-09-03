@@ -9,6 +9,9 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				Josefin: ["Josefin Sans", "sans-serif"],
+			},
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
@@ -19,9 +22,9 @@ const config: Config = {
 				padding: "0.4rem",
 				screens: {
 					sm: "100%",
-					md: "720px",
-					lg: "850px",
-					xl: "980px",
+					md: "600px",
+					lg: "670px",
+					xl: "700px",
 				},
 			},
 			borderRadius: {
