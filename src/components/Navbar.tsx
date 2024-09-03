@@ -76,10 +76,10 @@ export default function NavBar() {
 						</Link>
 					);
 				})}
-				<div className="ml-2">
-					<ThemeToggler />
-				</div>
 			</nav>
+			<div className="ml-2">
+				<ThemeToggler />
+			</div>
 		</header>
 	);
 }
