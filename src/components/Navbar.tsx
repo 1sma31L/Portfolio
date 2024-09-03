@@ -37,7 +37,12 @@ export default function NavBar() {
 		<header
 			className={`w-full max-w-[1600px] mx-auto p-3  gap-2 rounded-lg text-[13px] md:text-[18px] flex justify-end items-center h-[8vh]`}>
 			<div>
-				<h1 className="italic font-serif text-lg">i.</h1>
+				<Link href="/">
+					<img src="vercel.png" className="w-6 dark:invert" alt="" />
+				</Link>
+				{/* <Link href="/" className="italic font-serif text-lg cursor-pointer">
+					i.
+				</Link> */}
 			</div>
 			<nav className=" gap-1 relative justify-end w-full z-[100]  rounded-lg flex md:gap-2">
 				{navItems.map((item: any, index) => {
@@ -77,7 +82,7 @@ export default function NavBar() {
 					);
 				})}
 			</nav>
-			<div className="ml-2">
+			<div className="ml-1">
 				<ThemeToggler />
 			</div>
 		</header>

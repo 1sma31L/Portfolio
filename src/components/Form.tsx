@@ -107,7 +107,7 @@ export function ContactForm() {
 		}
 	}, [messageStatus]);
 	return (
-		<div className="flex justify-center items-center">
+		<div className="flex justify-center items-center ">
 			<Card className="w-full max-w-4xl">
 				<CardHeader>
 					<CardDescription className="text-pretty">
@@ -119,7 +119,7 @@ export function ContactForm() {
 					<Form {...form}>
 						<form noValidate onSubmit={handleSubmit(onSubmit)}>
 							<div className="space-y-4">
-								<div className="grid grid-cols-2 gap-4">
+								<div className="grid grid-cols-2 gap-4 ">
 									<div className="space-y-2">
 										<FormField
 											control={control}
