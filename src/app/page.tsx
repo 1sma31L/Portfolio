@@ -7,7 +7,7 @@ function Home() {
 	return (
 		<main className="container pb-6 pt-10 min-h-[83vh] px-4 md:px-0">
 			<div className="flex flex-col gap-2">
-				<img src="me2.jpg" alt="" className={`rounded-full w-[150px] `} />
+				<img src="me.jpg" alt="" className={`rounded-full w-[150px] `} />
 
 				<div className="flex justify-start items-center gap-2 sm:gap-4 mb-4">
 					<h1
@@ -34,10 +34,10 @@ function Home() {
 						</footer>
 					</blockquote>
 					<p className="indent-5">
-						<span className="font-bold">Hey There! 👋🏻</span>, I am a stuedent at
+						<span className="font-bold">Hey There!</span>, I am a stuedent at
 						the National Higher School of Advance Technoloiges (ENSTA),
 						Full-Stack Developer and Cybersecurity Enthusiast. Based in Algeria
-						🇩🇿
+						🇩🇿.
 					</p>
 
 					<p className="indent-5">
