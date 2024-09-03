@@ -5,7 +5,7 @@ import { FaTerminal } from "react-icons/fa";
 import ProjectCard from "@/components/ProjectCard";
 import projects from "@/data/projects";
 import upcomingProjects from "@/data/upcoming-projects";
-import { ImSpinner9 } from "react-icons/im";
+import { CgSandClock } from "react-icons/cg";
 
 function Projects() {
 	return (
@@ -31,7 +31,7 @@ function Projects() {
 			</div>
 			<hr className="my-5" />
 			<div className="flex gap-3  items-center px-2">
-				<ImSpinner9 className="text-xl md:text-2xl animate-spin" />
+				<CgSandClock className="text-xl md:text-3xl" />
 				<h1
 					className={`text-[30px] md:text-[40px] font-bold ${GeistSans.className}`}>
 					Upcoming Projects

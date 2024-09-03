@@ -5,7 +5,7 @@ import React from "react";
 function Footer() {
 	return (
 		<footer
-			className={`container mx-auto py-3 rounded-lg bg-transparent text-[12px] md:text-[18px] flex justify-between items-center ${GeistSans.className}`}>
+			className={`container mx-auto py-3 h-[10vh] rounded-lg bg-transparent text-[12px] md:text-[18px] flex justify-between items-center ${GeistSans.className}`}>
 			<div className="flex flex-col lg:flex-row gap-2 relative justify-between items-center w-full ">
 				<div className="dark:border-white relative no-underline duration-300 ease-in ">
 					<p className=" text-center">
