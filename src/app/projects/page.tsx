@@ -31,7 +31,7 @@ function Projects() {
 			</div>
 			<hr className="my-5" />
 			<div className="flex gap-3  items-center px-2">
-				<ImSpinner9 className="text-xl md:text-2xl" />
+				<ImSpinner9 className="text-xl md:text-2xl animate-spin" />
 				<h1
 					className={`text-[30px] md:text-[40px] font-bold ${GeistSans.className}`}>
 					Upcoming Projects

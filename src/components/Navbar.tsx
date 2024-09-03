@@ -37,14 +37,14 @@ export default function NavBar() {
 	return (
 		<header
 			className={`container mx-auto p-3 md:px-0 rounded-lg  text-[13px] md:text-[18px] flex justify-between items-center`}>
-			<nav className=" gap-1 relative justify-start w-full z-[100]  rounded-lg flex">
+			<nav className=" gap-1 relative justify-start w-full z-[100]  rounded-lg flex md:gap-2">
 				{navItems.map((item, index) => {
 					const isActive = item.path === pathname;
 
 					return (
 						<Link
 							key={item.path}
-							className={`md:px-4 md:py-2 py-1 px-2  relative duration-150 ease-in rounded-sm ${
+							className={`md:px-3 md:py-1 py-1 px-2  relative duration-150 ease-in rounded-sm ${
 								GeistSans.className
 							} ${
 								isActive
