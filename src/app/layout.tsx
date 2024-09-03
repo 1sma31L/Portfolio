@@ -10,8 +10,12 @@ import NavBar from "@/components/Navbar";
 // For example, if you're using @next/font or a similar package:
 
 export const metadata: Metadata = {
-	title: "Ismail M. Boussekine",
-	description: "My Modern Portflio Made Using Next.js",
+	title: "Ismail M. Boussekine - Protfolio | Blog",
+	description:
+		"Ismail M. Boussekine's Portfolio And Blog, Showcasing expertise in web development, And writing helpfull articles.",
+	icons: {
+		icon: "/favicon.ico",
+	},
 };
 
 export default function RootLayout({
