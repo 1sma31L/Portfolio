@@ -7,7 +7,7 @@ function Home() {
 	return (
 		<main className="container pb-6 pt-10 min-h-[83vh] px-4 md:px-0">
 			<div className="flex flex-col gap-2">
-				<img src="me.png" alt="" className={`rounded-full w-[150px] `} />
+				<img src="me2.jpg" alt="" className={`rounded-full w-[150px] `} />
 
 				<div className="flex justify-start items-center gap-2 sm:gap-4 mb-4">
 					<h1
