@@ -30,7 +30,7 @@ const navItems = [
 	},
 ];
 
-function isActive(pathname, itemPath) {
+function isActive(pathname: string, itemPath: any) {
 	// Exact match or pathname starts with itemPath followed by a slash or end of the pathname
 	const regex = new RegExp(`^${itemPath}(?:/|$)`);
 	return regex.test(pathname);
