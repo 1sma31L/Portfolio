@@ -3,7 +3,6 @@
 // import { motion } from "framer-motion";
 // import SocialMediaAccs from "@/data/social-media";
 // import Link from "next/link";
-// import { GeistSans } from "geist/font/sans";
 
 // const SocialMediaLinks = () => {
 // 	const [hoveredItem, setHoveredItem] = useState<string | null>(null);
@@ -19,7 +18,7 @@
 // 					onMouseLeave={() => setHoveredItem(null)}
 // 				>
 // 					<p className="text-lg">{item.icon}</p>
-// 					<p className={`text-sm hidden sm:block ${GeistSans.className}`}>
+// 					<p className={`text-sm hidden sm:block`}>
 // 						{item.name}
 // 					</p>
 // 					{item.name === hoveredItem && (

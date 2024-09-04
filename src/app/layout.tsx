@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-// import { GeistSans } from "geist/font/sans"; // Your actual font import
-// import { GeistMono } from "geist/font/mono"; // Your actual font import
 import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer";
 import "./globals.css";

@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
-import { GeistSans } from "geist/font/sans";
 import Icons from "@/data/icons";
 import { FaGithub } from "react-icons/fa6";
 import { CiLocationArrow1 } from "react-icons/ci";
@@ -22,7 +21,7 @@ function ProjectCard({
 	return (
 		<div className="flex flex-col gap-4 p-4 border  border-l-zinc-950 dark:border-l-zinc-100 border-l-2 rounded-r-lg">
 			<div className="flex gap-2 text-[22px] md:text-[28px]">
-				<h2 className={`${GeistSans.className} font-bold capitalize`}>
+				<h2 className={`font-bold capitalize`}>
 					{title}
 				</h2>
 			</div>
