@@ -75,7 +75,7 @@ function getData(){
 
 getData()
 .then(function(data){
-	console.log(data); //will print {name: "Amr"} after 2 seconds
+	console.log(data); //will print {name: "Ismail"} after 2 seconds
 });
 ```
 
@@ -116,7 +116,7 @@ async function getData(){
 */
 getData()
 .then(function(data){
-	console.log(data); //will print {name: "Amr"} after 2 seconds
+	console.log(data); //will print {name: "Ismail"} after 2 seconds
 });
 ```
 
