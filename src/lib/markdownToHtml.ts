@@ -1,7 +1,7 @@
 import { unified } from "unified";
 import remarkParse from "remark-parse";
 import remarkMath from "remark-math";
-import remarkSlug from "remark-slug";
+// import remarkSlug from "remark-slug";
 import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import rehypeShiki from "@shikijs/rehype";
@@ -15,7 +15,7 @@ export default async function markdownToHtml(markdown: string) {
 			.use(remarkParse)
 			.use(remarkGfm)
 			.use(remarkMath)
-			.use(remarkSlug)
+			// .use(remarkSlug)
 			.use(remarkRehype)
 			.use(rehypeKatex)
 			.use(rehypeShiki, {
