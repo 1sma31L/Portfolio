@@ -30,8 +30,7 @@ const navItems = [
 	},
 ];
 
-function isActive(pathname: string, itemPath: any) {
-	// Exact match or pathname starts with itemPath followed by a slash or end of the pathname
+function isActive(pathname: string, itemPath: string) {
 	const regex = new RegExp(`^${itemPath}(?:/|$)`);
 	return regex.test(pathname);
 }
@@ -66,31 +65,29 @@ export default function NavBar() {
 					return (
 						<Link
 							key={item.path}
-							className={`md:px-3 md:py-1 py-1 px-2 relative duration-150 ease-in rounded font-bold ${
+							className={`md:px-3 md:py-1 py-1 px-2 relative duration-150 ease-in rounded-sm font-bold -z-100 ${
 								isActiveClass
-									? "dark:text-black text-white bg-black dark:bg-white"
-									: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white hover:text-black"
+									? "dark:text-black text-white"
+									: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black md:hover:bg-zinc-200 md:dark:hover:bg-zinc-800 "
 							}`}
 							data-active={isActiveClass}
 							href={item.path}
 							onMouseOver={() => setHoveredPath(item.path)}
 							onMouseLeave={() => setHoveredPath(pathname)}>
 							<span>{item.name}</span>
-							{item.path === hoveredPath && (
+							{isActive(pathname, item.path) && (
 								<motion.div
-									className="absolute bottom-0 left-0 h-full bg-zinc-200 dark:bg-zinc-800 -z-10 rounded hidden md:block"
-									layoutId="navbar"
-									aria-hidden="true"
-									style={{
-										width: "100%",
-									}}
+									layoutId="clickedbutton"
 									transition={{
-										type: "just",
-										bounce: 0.1,
-										stiffness: 130,
-										damping: 9,
+										type: "spring",
+										bounce: 0.9,
+										stiffness: 150,
+										damping: 12,
 										duration: 0.3,
 									}}
+									className={
+										"absolute inset-0 -z-10 bg-black dark:bg-white rounded-sm "
+									}
 								/>
 							)}
 						</Link>
