@@ -21,9 +21,7 @@ function ProjectCard({
 	return (
 		<div className="flex flex-col gap-4 p-4 border  border-l-zinc-950 dark:border-l-zinc-100 border-l-2 rounded-r-lg">
 			<div className="flex gap-2 text-[22px] md:text-[28px]">
-				<h2 className={`font-bold capitalize`}>
-					{title}
-				</h2>
+				<h2 className={`font-bold capitalize`}>{title}</h2>
 			</div>
 			<p className="text-[14px] md:text-[18px] text-zinc-600 dark:text-zinc-400">
 				{description}

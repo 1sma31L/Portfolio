@@ -86,13 +86,11 @@
 	}
 }
 
-* {
-	box-sizing: border-box;
-}
 
 [data-rehype-pretty-code-title] {
 	margin: 0 !important;
 }
+
 .katex {
 	overflow: auto;
 	word-break: break-word;

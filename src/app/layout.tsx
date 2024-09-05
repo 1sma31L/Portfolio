@@ -3,13 +3,9 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import NavBar from "@/components/Navbar";
-
-// Optionally, you can configure your fonts if needed, like specifying subsets or weights.
-// For example, if you're using @next/font or a similar package:
-
 export const metadata: Metadata = {
 	title: "Ismail M. Boussekine",
-	description: "I am a student who happend to fall in love with the web.",
+	description: "My personal website, Blog, and portfolio.",
 	icons: {
 		icon: "/favicon.ico",
 	},
@@ -27,7 +23,7 @@ export default function RootLayout({
 					attribute="class"
 					defaultTheme="system"
 					enableSystem
-					disableTransitionOnChange>
+				>
 					<NavBar />
 					<hr className="border" />
 					{children}

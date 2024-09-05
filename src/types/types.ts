@@ -12,6 +12,7 @@ export type TItem = {
 		| "Orange"
 		| "Cyan";
 };
+
 export type TTimeLine = {
 	year: number;
 	month: {
@@ -19,3 +20,9 @@ export type TTimeLine = {
 		achievements: string[];
 	}[];
 }[];
+
+export type PostProps = {
+	params: {
+		slug: string;
+	};
+};

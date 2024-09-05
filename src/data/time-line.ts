@@ -1,4 +1,4 @@
-import { TTimeLine } from "@/Types/types";
+import { TTimeLine } from "@/types/types";
 const timeLine: TTimeLine = [
 	{
 		year: 2024,

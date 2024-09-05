@@ -1,5 +1,5 @@
 import React from "react";
-import { TItem } from "@/Types/types";
+import { TItem } from "@/types/types";
 
 function TechStack({ item }: { item: TItem }) {
 	const colorVariants = {

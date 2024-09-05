@@ -5,6 +5,7 @@ import projects from "@/data/projects";
 import upcomingProjects from "@/data/upcoming-projects";
 import { CgSandClock } from "react-icons/cg";
 import AnimatedDiv from "@/components/AnimatedDiv";
+
 function Projects() {
 	return (
 		<AnimatedDiv id={1}>
@@ -26,7 +27,7 @@ function Projects() {
 					))}
 				</div>
 				<hr className="my-10" />
-				<div className="flex gap-3  items-center px-2">
+				<div className="flex gap-3 items-center px-2">
 					<CgSandClock className="text-xl md:text-3xl" />
 					<h1 className={`text-[30px] md:text-[40px] font-bold `}>
 						Upcoming Projects

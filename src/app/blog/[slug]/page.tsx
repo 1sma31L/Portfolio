@@ -1,22 +1,13 @@
+import React from "react";
+import { TbArrowBadgeLeftFilled, TbArrowBadgeLeft } from "react-icons/tb";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import markdownToHtml from "@/lib/markdownToHtml";
-import React from "react";
 import { notFound } from "next/navigation";
-import { BsBoxArrowInLeft } from "react-icons/bs";
-import { TbArrowBadgeLeftFilled } from "react-icons/tb";
-
-import { TbArrowBadgeLeft } from "react-icons/tb";
-
 import Link from "next/link";
+import markdownToHtml from "@/lib/markdownToHtml";
+import { PostProps } from "@/types/types";
 import AnimatedDiv from "@/components/AnimatedDiv";
-
-type PostProps = {
-	params: {
-		slug: string;
-	};
-};
 
 export async function generateStaticParams() {
 	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
@@ -53,41 +44,42 @@ export default async function BlogPost({ params }: PostProps) {
 	return (
 		<AnimatedDiv id={`${frontMatter.title}`}>
 			<main className="py-12 container mx-auto px-2 md:px-0" id="slug">
-				<div
-					className="container mx-auto 
-				prose md:prose-lg lg:prose-xl dark:prose-dark dark:prose-invert ">
-					<div className="inline-block ">
+				<div className="container mx-auto prose md:prose-lg lg:prose-xl dark:prose-dark dark:prose-invert">
+					<div className="inline-block">
 						<Link
 							href="/blog"
-							className="flex justify-start items-center gap-1 mb-5 text-zinc-400 hover:text-black transition-colors duration-150 dark:text-zinc-600 dark:hover:text-white group">
+							className="flex justify-start items-center mb-5 text-zinc-400 hover:text-black transition-colors duration-150 dark:text-zinc-600 dark:hover:text-white group">
 							<TbArrowBadgeLeft className="mb-1 group-hover:hidden block " />
 							<TbArrowBadgeLeftFilled className="mb-1 group-hover:block hidden " />
 							<button className="inline-block">Back</button>
 						</Link>
 					</div>
 					<h1 className="sm:!text-[80px] !text-[47px]">{frontMatter.title}</h1>
-					<div className="text-xs md:text-sm ">
-						{frontMatter.lastMod && (
-							<p className="my-1 p-0">
-								<span className="font-bold">Last edited: </span>
-								{frontMatter.lastMod}
-							</p>
-						)}
-						{frontMatter.author && (
-							<p className="m-0 p-0">
-								<span className="font-bold">Author: </span>
-								{frontMatter.author}
-							</p>
-						)}
-						{frontMatter.readTime && (
-							<p className="m-0 p-0">
-								<span className="font-bold">Read time: </span>
-								{frontMatter.readTime}
-							</p>
-						)}
+					<div className="text-xs md:text-sm">
+						{[
+							frontMatter.lastMod,
+							frontMatter.author,
+							frontMatter.readTime,
+						].map((item, index) => {
+							if (item) {
+								return (
+									<p key={index} className="m-0 p-0">
+										<span className="font-bold">
+											{index === 0
+												? "Last edited: "
+												: index === 1
+												? "Author: "
+												: "Read Time: "}
+										</span>
+										{item}
+									</p>
+								);
+							}
+							return null;
+						})}
 					</div>
-					<div className="h-1 w-full bg-black dark:bg-white my-10"></div>
-					<div dangerouslySetInnerHTML={{ __html: content }}></div>
+					<div className="h-1 w-full bg-black dark:bg-white my-10" />
+					<div dangerouslySetInnerHTML={{ __html: content }} />
 					<div className="dark:text-white text-black flex flex-wrap gap-2 mt-20">
 						{frontMatter.tags?.map((tag: string) => {
 							return (

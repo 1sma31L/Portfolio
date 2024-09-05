@@ -6,13 +6,13 @@ export const getFormSchema = () =>
 	z.object({
 		firstName: z
 			.string()
-			.min(2, "First name must be at least 2 characters.")
-			.max(50, "First name must be less than 50 characters.")
+			.min(4, "First name must be at least 2 characters.")
+			.max(15, "First name must be less than 50 characters.")
 			.regex(nameRegex, "First name must contain only letters."),
 		lastName: z
 			.string()
-			.min(2, "Last name must be at least 2 characters.")
-			.max(50, "Last name must be less than 50 characters.")
+			.min(4, "Last name must be at least 2 characters.")
+			.max(15, "Last name must be less than 50 characters.")
 			.regex(nameRegex, "Last name must contain only letters."),
 		email: z
 			.string()
@@ -21,7 +21,7 @@ export const getFormSchema = () =>
 			.max(100, "Email must be less than 100 characters."),
 		message: z
 			.string()
-			.min(10, "Message must be at least 10 characters.")
+			.min(15, "Message must be at least 10 characters.")
 			.max(500, "Message must be less than 500 characters.")
 			.refine((value) => !/http|www|href/.test(value), {
 				message: "Message must not contain URLs.",

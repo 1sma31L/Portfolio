@@ -1,10 +1,8 @@
-/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
-import { FaBlog } from "react-icons/fa6";
 import { LuPenLine } from "react-icons/lu";
 import AnimatedDiv from "@/components/AnimatedDiv";
 
@@ -25,14 +23,11 @@ async function getPosts() {
 				frontMatter,
 			};
 		});
-
-	// Sort posts by date in descending order
 	posts.sort((a, b) => {
 		const dateA = new Date(a.frontMatter.date).getTime();
 		const dateB = new Date(b.frontMatter.date).getTime();
 		return dateB - dateA;
 	});
-
 	return posts;
 }
 
@@ -53,16 +48,6 @@ export default async function Blog() {
 							<Link
 								href={`/blog/${slug}`}
 								className=" flex justify-start gap-3 p-2">
-								{frontMatter.socialImage && (
-									<img
-										src={`/${frontMatter.socialImage
-											?.split("/")
-											.slice(2)
-											.join("/")}`}
-										alt=""
-										className="rounded w-[200px]"
-									/>
-								)}
 								<div className="flex flex-col gap-3">
 									<h2 className="text-[22px] md:text-[32px]">
 										{frontMatter.title}

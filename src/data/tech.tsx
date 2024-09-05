@@ -1,4 +1,4 @@
-import { TItem } from "@/Types/types";
+import { TItem } from "@/types/types";
 import { FaHtml5, FaCss3, FaNode, FaGithub, FaLinux } from "react-icons/fa";
 import { FaC, FaReact } from "react-icons/fa6";
 import {
