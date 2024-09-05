@@ -194,7 +194,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 #slug a {
 	text-decoration: none !important;
 }
-#slug a:hover {
+#slug .container div a:not(:first-child):hover {
 	text-decoration: underline !important;
 }
 #slug ul li {
@@ -207,6 +207,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 	color: #333; /* Adjust color as needed */
 	text-decoration: none !important ;
 }
+
 html.dark .heading-anchor::before {
 	color: #fff;
 }

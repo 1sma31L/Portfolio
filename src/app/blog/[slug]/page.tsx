@@ -4,6 +4,13 @@ import matter from "gray-matter";
 import markdownToHtml from "@/lib/markdownToHtml";
 import React from "react";
 import { notFound } from "next/navigation";
+import { BsBoxArrowInLeft } from "react-icons/bs";
+import { TbArrowBadgeLeftFilled } from "react-icons/tb";
+
+import { TbArrowBadgeLeft } from "react-icons/tb";
+
+import Link from "next/link";
+
 type PostProps = {
 	params: {
 		slug: string;
@@ -46,7 +53,16 @@ export default async function BlogPost({ params }: PostProps) {
 		<main className="py-12 container mx-auto px-2 md:px-0" id="slug">
 			<div
 				className="container mx-auto 
-				prose dark:prose-dark dark:prose-invert ">
+				prose md:prose-lg lg:prose-xl dark:prose-dark dark:prose-invert ">
+				<div className="inline-block ">
+					<Link
+						href="/blog"
+						className="flex justify-start items-center gap-1 mb-5 text-zinc-400 hover:text-black transition-colors duration-150 dark:text-zinc-600 dark:hover:text-white group">
+						<TbArrowBadgeLeft className="mb-1 group-hover:hidden block " />
+						<TbArrowBadgeLeftFilled className="mb-1 group-hover:block hidden " />
+						<button className="inline-block">Back</button>
+					</Link>
+				</div>
 				<h1 className="sm:!text-[80px] !text-[47px]">{frontMatter.title}</h1>
 				<div className="text-xs md:text-sm ">
 					{frontMatter.lastMod && (
