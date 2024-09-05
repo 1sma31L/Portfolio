@@ -70,10 +70,10 @@
 		@apply bg-background text-foreground font-Josefin;
 	}
 	figure {
-		@apply border-zinc-300 border rounded-md !important;
+		@apply border-zinc-300 border rounded-md md:rounded-xl overflow-hidden !important;
 	}
 	html.dark figure {
-		@apply border border-zinc-700 rounded-md !important;
+		@apply border-zinc-700 !important;
 	}
 	pre {
 		@apply border-t-0 rounded-t-none !important;
@@ -85,6 +85,11 @@
 		@apply bg-gray-800; /* Example background color for dark mode */
 	}
 }
+
+* {
+	box-sizing: border-box;
+}
+
 [data-rehype-pretty-code-title] {
 	margin: 0 !important;
 }
@@ -194,9 +199,11 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 #slug a {
 	text-decoration: none !important;
 }
+
 #slug .container div a:not(:first-child):hover {
 	text-decoration: underline !important;
 }
+
 #slug ul li {
 	list-style: none !important;
 }

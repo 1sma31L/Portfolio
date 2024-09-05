@@ -4,7 +4,7 @@ import React from "react";
 function Footer() {
 	return (
 		<footer
-			className={`container mx-auto py-5 h-[15vh] rounded-lg text-xs md:text-sm flex justify-between items-center px-4 md:px-0`}>
+			className={`container mx-auto h-[15vh]  rounded-lg text-xs md:text-sm flex justify-center items-center p-4 md:px-0 flex-col`}>
 			<div className="flex flex-col sm:flex-row gap-2 justify-between items-center w-full ">
 				<div className="dark:border-white no-underline duration-300 ease-in ">
 					<p className=" text-center">

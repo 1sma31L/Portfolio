@@ -5,6 +5,7 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import { FaBlog } from "react-icons/fa6";
+import { LuPenLine } from "react-icons/lu";
 
 async function getPosts() {
 	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
@@ -39,7 +40,7 @@ export default async function Blog() {
 	return (
 		<main className="container mx-auto min-h-[76vh] font-bold text-[24px] sm:text-[32px]  py-6 px-4 sm:px-0">
 			<div className="flex gap-3 justify-start items-center px-2">
-				<FaBlog className="text-xl md:text-2xl" />
+				<LuPenLine className="text-xl md:text-2xl" />
 				<h1 className={`text-[30px] md:text-[40px] font-bold`}>Blog</h1>
 			</div>
 			<div className="flex flex-col justify-start items-start w-full h-full gap-4 py-4">
