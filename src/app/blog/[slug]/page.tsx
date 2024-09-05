@@ -51,7 +51,7 @@ export default async function BlogPost({ params }: PostProps) {
 				<div className="text-xs md:text-sm ">
 					<p className="my-1 p-0">
 						<span className="font-bold">Last edited: </span>
-						{new Date().toLocaleString()}
+						{frontMatter.lastMod}
 					</p>
 					{frontMatter.author && (
 						<p className="m-0 p-0">
