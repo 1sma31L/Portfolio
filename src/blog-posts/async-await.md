@@ -18,7 +18,7 @@ tags: ["javaScript", "Async-Await", "Promises","Evenet Loop"]
 - [5. try/catch:](#5-trycatch)
 - [6. Hint:](#6-hint)
 - [7. Summary:](#7-summary)
-
+---
 
 Async/Await is a way to handle asynchronous calls but in a way that will make our code look more synchronous and as a result more readable.
 
