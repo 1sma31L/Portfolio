@@ -19,7 +19,7 @@ import AnimatedDiv from "@/components/AnimatedDiv";
 function Home() {
 	return (
 		<AnimatedDiv id={0}>
-			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-32	">
+			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-32	py-6 md:py-0">
 				<section className="flex flex-col gap-5 min-h-[93vh] justify-center items-center">
 					<div className="text-xs w-full text-zinc-500 flex flex-col justify-center items-start gap-2 pt-2">
 						<p>
@@ -83,7 +83,7 @@ function Home() {
 							</a>
 						</h1>
 						<p className="text-zinc-500">
-							Thechnology i use in the process of developing web sites.
+							Thechnologies i use in the process of developing web sites.
 						</p>
 						<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 w-full py-10 gap-2">
 							{stack.map((item, index) => (
