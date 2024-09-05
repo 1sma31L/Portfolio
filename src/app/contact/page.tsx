@@ -5,7 +5,7 @@ function Contact() {
 	return (
 		<AnimatedDiv id={4}>
 			<main
-				className="container py-6 flex flex-col gap-3 px-4 md:px-0 min-h-[90vh]"
+				className="container py-6 flex flex-col gap-3 px-4 md:px-0 "
 				id="contact">
 				<div className="flex gap-3 justify-start items-center">
 					<MdEmail className="text-xl md:text-2xl" />

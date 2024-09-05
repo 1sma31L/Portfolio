@@ -24,7 +24,7 @@ function Footer() {
 					<Link href="/blog" className="hover:underline">
 						Blog
 					</Link>
-					<Link href="/contact" className="hover:underline">
+					<Link href="/contact/#header" className="hover:underline">
 						Contact
 					</Link>
 				</div>
