@@ -1,8 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "katex/dist/katex.min.css";
 
 @layer base {
 	:root {
@@ -69,30 +69,123 @@
 	body {
 		@apply bg-background text-foreground font-Josefin;
 	}
+	pre {
+		@apply border-zinc-300 border rounded-md !important;
+	}
+	html.dark pre {
+		@apply border border-zinc-700 rounded-md !important;
+	}
 }
+
 .katex {
 	overflow: auto;
 	word-break: break-word;
 }
-/* .prose {
-	overflow-wrap: break-word; 
-	word-wrap: break-word; 
-}
 
-.math-container {
-	overflow: auto; 
-	word-break: break-all; 
-} */
 ::selection {
 	background-color: rgb(99 102 241);
 	color: white;
 }
-html.dark .shiki,
-html.dark .shiki span {
-	color: var(--shiki-dark) !important;
-	background-color: var(--shiki-dark-bg) !important;
-	/* Optional, if you also want font styles */
+
+/* Preety Code */
+/* Theme Control */
+
+pre[data-theme*=" "],
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+	color: var(--shiki-light);
+	background-color: var(--shiki-light-bg);
 	font-style: var(--shiki-dark-font-style) !important;
 	font-weight: var(--shiki-dark-font-weight) !important;
 	text-decoration: var(--shiki-dark-text-decoration) !important;
 }
+
+html.dark pre[data-theme*=" "],
+html.dark code[data-theme*=" "],
+html.dark code[data-theme*=" "] span {
+	color: var(--shiki-dark);
+	background-color: var(--shiki-dark-bg);
+}
+
+/* Padding of the code conatiner */
+
+figure pre {
+	overflow-x: auto;
+	padding: 15px 0 !important;
+}
+
+html.dark pre {
+	border: 1px solid rgb(60, 60, 60);
+}
+pre [data-line] {
+	padding: 0 1rem;
+}
+
+/* Highlited Lines */
+
+[data-highlighted-line] {
+	background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-highlighted-line] > span {
+	background-color: transparent !important;
+}
+
+html.dark [data-highlighted-line] {
+	background-color: rgba(255, 255, 255, 0.05) !important;
+}
+html.dark [data-highlighted-line] > span {
+	background-color: transparent !important;
+}
+
+/* Highlight Chars */
+
+[data-highlighted-chars] {
+	margin: 5px;
+	border-radius: 0.25rem;
+	background-color: #7a7a7a35 !important;
+	box-shadow: 0 0 0 4px #7a7a7a35;
+}
+
+[data-highlighted-chars] span {
+	background-color: transparent !important;
+}
+
+/* Line Numbers */
+
+code[data-line-numbers] {
+	counter-reset: line;
+}
+
+code[data-line-numbers] > [data-line]::before {
+	counter-increment: line;
+	content: counter(line);
+	display: inline-block;
+	width: 0.75rem;
+	margin-right: 1.5rem;
+	text-align: right;
+	color: rgb(126, 126, 126);
+}
+
+code[data-line-numbers-max-digits="2"] > [data-line]::before {
+	width: 1.25rem;
+}
+
+code[data-line-numbers-max-digits="3"] > [data-line]::before {
+	width: 1.75rem;
+}
+
+code[data-line-numbers-max-digits="4"] > [data-line]::before {
+	width: 2.25rem;
+}
+
+/* rehypeshiki */
+
+/* html.dark .shiki,
+html.dark .shiki span {
+	color: var(--shiki-dark) !important;
+	background-color: var(--shiki-dark-bg) !important;
+	font-style: var(--shiki-dark-font-style) !important;
+	font-weight: var(--shiki-dark-font-weight) !important;
+	text-decoration: var(--shiki-dark-text-decoration) !important;
+} */

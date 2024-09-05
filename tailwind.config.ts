@@ -10,34 +10,34 @@ const config: Config = {
 
 	theme: {
 		extend: {
-			// typography: (theme: (arg0: string) => any) => ({
-			// 	DEFAULT: {
-			// 		css: {
-			// 			code: {
-			// 				backgroundColor: theme("colors.gray.200"),
-			// 				borderRadius: "4px",
-			// 				padding: "0.2rem 0.4rem",
-			// 				color: theme("colors.purple.600"),
-			// 				fontWeight: "600",
-			// 				fontSize: "0.875rem",
-			// 			},
-			// 			pre: {
-			// 				backgroundColor: theme("colors.gray.900"),
-			// 				color: theme("colors.gray.100"),
-			// 				padding: "1rem",
-			// 				borderRadius: "8px",
-			// 				overflowX: "auto",
-			// 				fontSize: "0.875rem",
-			// 			},
-			// 			"code::before": {
-			// 				content: '""', // Optional: Add extra styling before code content
-			// 			},
-			// 			"code::after": {
-			// 				content: '""', // Optional: Add extra styling after code content
-			// 			},
-			// 		},
-			// 	},
-			// }),
+			typography: (theme: (arg0: string) => any) => ({
+				DEFAULT: {
+					css: {
+						code: {
+							backgroundColor: theme("colors.gray.200"),
+							borderRadius: "4px",
+							padding: "0.2rem 0.4rem",
+							color: theme("colors.purple.600"),
+							fontWeight: "600",
+							fontSize: "0.875rem",
+						},
+						pre: {
+							backgroundColor: theme("colors.gray.900"),
+							color: theme("colors.gray.100"),
+							padding: "1rem",
+							borderRadius: "8px",
+							overflowX: "auto",
+							fontSize: "0.875rem",
+						},
+						"code::before": {
+							content: '""', // Optional: Add extra styling before code content
+						},
+						"code::after": {
+							content: '""', // Optional: Add extra styling after code content
+						},
+					},
+				},
+			}),
 			fontFamily: {
 				Josefin: ["Josefin Sans", "sans-serif"],
 			},

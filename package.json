@@ -35,6 +35,7 @@
 		"rehype-highlight": "^7.0.0",
 		"rehype-katex": "^7.0.1",
 		"rehype-mathjax": "^6.0.0",
+		"rehype-pretty-code": "^0.14.0",
 		"rehype-prism": "^2.3.2",
 		"rehype-prism-plus": "^2.0.0",
 		"rehype-shiki": "^0.0.9",
@@ -55,6 +56,7 @@
 	},
 	"devDependencies": {
 		"@shikijs/rehype": "^1.16.1",
+		"@shikijs/transformers": "^1.16.2",
 		"@tailwindcss/typography": "^0.5.15",
 		"@types/eslint": "~9.6.1",
 		"@types/katex": "~0.16.7",

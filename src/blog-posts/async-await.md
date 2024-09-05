@@ -20,9 +20,9 @@ Aync/Await is not a replacement for Promise, its actually using promise.
 
 ### Async:
 
-1. `async` is used while declaring a function `async function getData(){}`
+1. `async` is used while declaring a function `async function getData(){}{:js}`
 
-2. `async` will convert a function to a `Promise` that can be handled using `.then` or `.catch`
+2. `async` will convert a function to a `Promise` that can be handled using `.then()` or `.catch()`
 
 3. Since it converts the function to a Promise the resolved value is whatever get returned from the `async` function
 
@@ -48,13 +48,12 @@ Anything that can be done by async/await can be done using only Promises, to sho
 
 ---
 
+
 #### Example 1: 
 
-Promise solution
-
-```javascript
-// This function is just simulation to asynchronous call
-function getAsyncData(){
+here is what `getAsyncData(){:js}` does
+```js  showLineNumbers {1-9} title="Promise solution" caption="piece of code that uses Promises to handle async calls"
+function getAsyncData(){ 
 	return new Promise(function(resolve){
 		setTimeout(function(){
 			resolve({
@@ -64,7 +63,6 @@ function getAsyncData(){
 	});
 }
 
-//Handle asynchronous call using Promise only
 function getData(){
 	return new Promise(function(resolve){
 		getAsyncData().then(function(data){
@@ -75,7 +73,7 @@ function getData(){
 
 getData()
 .then(function(data){
-	console.log(data); //will print {name: "Ismail"} after 2 seconds
+	console.log(data); 
 });
 ```
 
@@ -85,8 +83,7 @@ getData()
 
 async/await solution
 
-```javascript
-// This function is just simulation to asynchronous call
+```javascript showLineNumbers
 function getAsyncData(){
 	return new Promise(function(resolve){
 		setTimeout(function(){
@@ -100,8 +97,8 @@ function getAsyncData(){
    Handle asynchronous call using async/await 
    As you can see using async while declaring a 
    function will convert it to promise
-   Also using await will pause the function execution until
-   the Promise getAsyncData is resolved 
+   Also using await will pause the function execution 
+	 until the Promise getAsyncData is resolved 
 */
 async function getData(){
 	var data = await getAsyncData();
@@ -116,7 +113,7 @@ async function getData(){
 */
 getData()
 .then(function(data){
-	console.log(data); //will print {name: "Ismail"} after 2 seconds
+	console.log(data); 
 });
 ```
 
@@ -130,10 +127,9 @@ Its very important to know the consequences of using `await` as it completely pa
 
 #### Example 3:
 
-In this example we will call our `getAsyncData` that simulates the async call 3 times
+In this example we will call our `getAsyncData()` that simulates the async call 3 times
 
-```javascript
-// This function is just simulation to asynchronous call
+```javascript showLineNumbers
 function getAsyncData(){
 	return new Promise(function(resolve){
 		setTimeout(function(){
@@ -153,8 +149,7 @@ async function getData(){
 
 getData()
 .then(function(data){
-	console.log(data); // 3 --> this will print 3 after 6 seconds
-	//  because getAsyncData is called sequentially
+	console.log(data); 
 });
 ```
 
@@ -168,10 +163,9 @@ To fix that we can use await only in return statement to indicate that the funct
 
 #### Example 4:
 
-In this example we will call our `getAsyncData` that simulates the async call 3 times
+In this example we will call our `getAsyncData()` that simulates the async call 3 times
 
-```javascript
-// This function is just simulation to asynchronous call
+```javascript showLineNumbers
 function getAsyncData(){
 	return new Promise(function(resolve){
 		setTimeout(function(){
@@ -191,8 +185,7 @@ async function getData(){
 
 getData()
 .then(function(data){
-	console.log(data); /* 3 --> this will print 3 after 2 seconds because all getAsyncData
-	 calls are executed without pausing execution */
+	console.log(data);
 });
 ```
 
