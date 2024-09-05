@@ -191,7 +191,7 @@ function Home() {
 					</h1>
 					<button className="py-2 px-3 border bg-zinc-950 dark:bg-zinc-50 shadow rounded dark:text-zinc-950 text-zinc-50 w-auto hover:bg-zinc-700 transition-colors duration-150 dark:hover:bg-zinc-200">
 						<Link
-							href={"/contact/#contact"}
+							href={"/contact/#header"}
 							className="flex gap-2 justify-center items-center">
 							<FaExternalLinkAlt className="mb-1" />
 							<span className="font-bold">Contact Me</span>

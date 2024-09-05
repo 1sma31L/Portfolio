@@ -45,7 +45,9 @@ export default function NavBar() {
 	}, [pathname]);
 
 	return (
-		<header className="w-full max-w-[1600px] mx-auto p-3 gap-2 rounded-lg text-[13px] md:text-[18px] flex justify-end items-center  px-4">
+		<header
+			className="w-full max-w-[1600px] mx-auto p-3 gap-2 rounded-lg text-[13px] md:text-[18px] flex justify-end items-center  px-4"
+			id="header">
 			<div>
 				<Link href="/">
 					<Image
