@@ -49,10 +49,12 @@ export default async function BlogPost({ params }: PostProps) {
 				prose dark:prose-dark dark:prose-invert ">
 				<h1 className="sm:!text-[80px] !text-[47px]">{frontMatter.title}</h1>
 				<div className="text-xs md:text-sm ">
-					<p className="my-1 p-0">
-						<span className="font-bold">Last edited: </span>
-						{frontMatter.lastMod}
-					</p>
+					{frontMatter.lastMod && (
+						<p className="my-1 p-0">
+							<span className="font-bold">Last edited: </span>
+							{frontMatter.lastMod}
+						</p>
+					)}
 					{frontMatter.author && (
 						<p className="m-0 p-0">
 							<span className="font-bold">Author: </span>

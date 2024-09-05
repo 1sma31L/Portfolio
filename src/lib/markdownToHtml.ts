@@ -8,6 +8,7 @@ import rehypeKatex from "rehype-katex";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import rehypeAutoLinkHeadings from "rehype-autolink-headings";
+import { transformerCopyButton } from "@rehype-pretty/transformers";
 
 export default async function markdownToHtml(markdown: string) {
 	const result = await unified()
@@ -29,6 +30,12 @@ export default async function markdownToHtml(markdown: string) {
 				light: "catppuccin-latte",
 			},
 			defaultLang: "javascript",
+			transformers: [
+				transformerCopyButton({
+					visibility: "always",
+					feedbackDuration: 3_000,
+				}),
+			],
 		})
 		.use(rehypeStringify)
 		.process(markdown);

@@ -53,7 +53,7 @@ export default async function Blog() {
 							{frontMatter.socialImage && (
 								<img
 									src={`/${frontMatter.socialImage
-										.split("/")
+										?.split("/")
 										.slice(2)
 										.join("/")}`}
 									alt=""
@@ -68,7 +68,7 @@ export default async function Blog() {
 									{frontMatter.metaDescription}
 								</p>
 								<p className="text-zinc-600 text-[12px] md:text-[14px]">
-									{frontMatter.date.split(" ")[0]}
+									{frontMatter.date?.split(" ")[0]}
 								</p>
 							</div>
 						</Link>
