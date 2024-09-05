@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import markdownToHtml from "@/lib/markdownToHtml";
 import React from "react";
-
+import { notFound } from "next/navigation";
 type PostProps = {
 	params: {
 		slug: string;
@@ -27,7 +27,7 @@ async function getPostData(slug: string): Promise<{
 	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
 	const filePath = path.join(postsDirectory, `${slug}.md`);
 	if (!fs.existsSync(filePath)) {
-		throw new Error("File not found");
+		notFound();
 	}
 	const fileContent = fs.readFileSync(filePath, "utf-8");
 	const { data: frontMatter, content } = matter(fileContent);
