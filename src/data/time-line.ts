@@ -71,7 +71,7 @@ const timeLine: TTimeLine = [
 				monthName: "August",
 				achievements: [
 					"Accepted in National Higher School of Advanced Technologies",
-					"Sarted tinkering with Linux",
+					"Started tinkering with Linux",
 				],
 			},
 			{
