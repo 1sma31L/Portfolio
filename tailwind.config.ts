@@ -51,9 +51,9 @@ const config: Config = {
 				padding: "0.4rem",
 				screens: {
 					sm: "100%",
-					md: "600px",
-					lg: "670px",
-					xl: "700px",
+					md: "650px",
+					lg: "730px",
+					xl: "800px",
 				},
 			},
 			borderRadius: {

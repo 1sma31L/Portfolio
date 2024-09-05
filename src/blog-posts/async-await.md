@@ -2,23 +2,35 @@
 title: "Async Await in JavaScript"
 metaDescription: "Understand how to use async/await in JavaScript to handle asynchronous calls more effectively and improve code readability."
 date: "2024-09-04 02:00"
-author: "Ismail Boussekine"
+readTime: "6 min"
 tags: ["javaScript", "Async-Await", "Promises","Evenet Loop"]
 ---
 
-## Aync/Await
+- [1. Async:](#1-async)
+- [2. Await:](#2-await)
+- [3. Hint:](#3-hint)
+	- [3.1. Example 1:](#31-example-1)
+	- [3.2. Example 2:](#32-example-2)
+- [4. Hint:](#4-hint)
+	- [4.1. Example 3:](#41-example-3)
+	- [4.2. Example 4:](#42-example-4)
+- [5. try/catch:](#5-trycatch)
+- [6. Hint:](#6-hint)
+- [7. Summary:](#7-summary)
+
+---
 
 Async/Await is a way to handle asynchronous calls but in a way that will make our code look more synchronous and as a result more readable.
 
 ---
 
-### Important to know that:
+**Important to know that:**
 
 Aync/Await is not a replacement for Promise, its actually using promise.
 
 ---
 
-### Async:
+### 1. Async:
 
 1. `async` is used while declaring a function `async function getData(){}{:js}`
 
@@ -30,7 +42,7 @@ Aync/Await is not a replacement for Promise, its actually using promise.
 
 ---
 
-### Await:
+### 2. Await:
 
 1. `await` is used to pause the execution of a function.
 
@@ -42,14 +54,14 @@ Aync/Await is not a replacement for Promise, its actually using promise.
 
 ---
 
-### Hint:
+### 3. Hint:
 
 Anything that can be done by async/await can be done using only Promises, to show how it works we will have 2 examples where we will see the same result first using Promises, and then using async/await
 
 ---
 
 
-#### Example 1: 
+#### 3.1. Example 1: 
 
 here is what `getAsyncData(){:js}` does
 ```js  showLineNumbers {1-9} title="Promise solution" caption="piece of code that uses Promises to handle async calls"
@@ -79,7 +91,7 @@ getData()
 
 ---
 
-#### Example 2: 
+#### 3.2. Example 2: 
 
 async/await solution
 
@@ -119,13 +131,13 @@ getData()
 
 ---
 
-### Hint:
+### 4. Hint:
 
 Its very important to know the consequences of using `await` as it completely pause the function execution, in the next example we will see how using `await` incorrectly can result in performance issues.
 
 ---
 
-#### Example 3:
+#### 4.1. Example 3:
 
 In this example we will call our `getAsyncData()` that simulates the async call 3 times
 
@@ -161,7 +173,7 @@ To fix that we can use await only in return statement to indicate that the funct
 
 ---
 
-#### Example 4:
+#### 4.2. Example 4:
 
 In this example we will call our `getAsyncData()` that simulates the async call 3 times
 
@@ -193,7 +205,7 @@ This is a more optimized code for example 11.2 as the result 3 will be printed a
 
 ---
 
-### try/catch:
+### 5. try/catch:
 
 All the above examples are not utilizing `try/catch` blocks which is very important while using `await` if a promise is called with `await` and the promise got rejected, an exception will be thrown.
 
@@ -201,12 +213,12 @@ Whenever `await` is used it's important to use `try/catch` to be able to catch e
 
 ---
 
-### Hint:
+### 6. Hint:
 
 The above unrelated async calls can be acheived easily with Promises using `Promise.all([getAsyncData , getAsyncData , getAsyncData])`
 
 
-### Summary:
+### 7. Summary:
 
 1. **`async`** is used to convert a function to a Promise that can be handled using `.then` or `.catch`, and the resolved value is whatever is returned from the `async` function.
 2. **`await`** pauses the execution of an `async` function until the Promise is resolved, making asynchronous code appear synchronous and easier to manage.

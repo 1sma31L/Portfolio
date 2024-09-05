@@ -42,11 +42,11 @@ export default async function Blog() {
 				<FaBlog className="text-xl md:text-2xl" />
 				<h1 className={`text-[30px] md:text-[40px] font-bold`}>Blog</h1>
 			</div>
-			<div className="flex flex-col justify-start items-start w-full h-full gap-2 py-4">
+			<div className="flex flex-col justify-start items-start w-full h-full gap-4 py-4">
 				{posts.map(({ slug, frontMatter }) => (
 					<article
 						key={slug}
-						className="flex flex-col gap-4 p-4 border  border-l-zinc-950 dark:border-l-zinc-100 border-l-2 rounded-r-lg w-full">
+						className="flex flex-col gap-4 p-4 border rounded sm:rounded-sm w-full">
 						<Link
 							href={`/blog/${slug}`}
 							className=" flex justify-start gap-3 p-2">
@@ -61,7 +61,7 @@ export default async function Blog() {
 								/>
 							)}
 							<div className="flex flex-col gap-3">
-								<h2 className="text-[22px] md:text-[28px]">
+								<h2 className="text-[22px] md:text-[32px]">
 									{frontMatter.title}
 								</h2>
 								<p className="text-[12px] md:text-[18px] text-zinc-600 dark:text-zinc-400">
