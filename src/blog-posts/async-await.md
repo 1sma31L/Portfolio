@@ -64,7 +64,7 @@ Anything that can be done by async/await can be done using only Promises, to sho
 #### 3.1. Example 1: 
 
 here is what `getAsyncData(){:js}` does
-```js  showLineNumbers {1-9} title="Promise solution" caption="piece of code that uses Promises to handle async calls"
+```js  showLineNumbers 	 title="index.js" 
 function getAsyncData(){ 
 	return new Promise(function(resolve){
 		setTimeout(function(){
