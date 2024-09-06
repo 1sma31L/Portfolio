@@ -23,8 +23,8 @@ function Home() {
 						<p>
 							This website is currently
 							<span className="font-bold"> under development</span>, If you find
-							any <span className="text-red-500 font-bold">bug</span> please
-							contact me and repport it. Thank you!{" "}
+							any <span className="font-bold">bug</span> please contact me and
+							repport it. Thank you!{" "}
 							<PiHandPeace className="inline-block mb-1" />
 						</p>
 						<p className="">Last edited: {new Date().toUTCString()} </p>

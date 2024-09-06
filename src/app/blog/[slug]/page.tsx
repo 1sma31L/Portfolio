@@ -38,13 +38,30 @@ async function getPostData(slug: string): Promise<{
 	};
 }
 
-export const metadata: Metadata = {};
+export async function generateMetadata({
+	params,
+}: PostProps): Promise<Metadata> {
+	const { slug } = params;
+	const { frontMatter } = await getPostData(slug);
+
+	return {
+		title: frontMatter.title,
+		description: frontMatter.metaDescription,
+		openGraph: {
+			title: frontMatter.title,
+			description: frontMatter.metaDescription,
+			url: `/blog/${slug}`,
+		},
+		twitter: {
+			title: frontMatter.title,
+			description: frontMatter.metaDescription,
+		},
+	};
+}
 
 export default async function BlogPost({ params }: PostProps) {
 	const { slug } = params;
 	const { frontMatter, content } = await getPostData(slug);
-	metadata.title = frontMatter.title;
-	metadata.description = frontMatter.metaDescription;
 	return (
 		<AnimatedDiv id={`${frontMatter.title}`}>
 			<main className="py-12 container mx-auto px-2 md:px-0" id="slug">
