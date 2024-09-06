@@ -16,7 +16,7 @@ import { CgProfile } from "react-icons/cg";
 function Home() {
 	return (
 		<AnimatedDiv id={0}>
-			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-32	py-6 md:py-0">
+			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-20 py-6 md:py-0">
 				<section className="flex flex-col gap-5 min-h-[93vh] justify-center items-center">
 					{/* <div className="text-xs w-full text-zinc-500 flex flex-col justify-center items-start gap-2 pt-2">
 						<p className="">Last edited: {new Date().toUTCString()} </p>
@@ -66,7 +66,7 @@ function Home() {
 				</section>
 				<section
 					id="techstack"
-					className="flex flex-col gap-20 justify-center w-full items-center">
+					className="flex flex-col gap-10 justify-center w-full items-center">
 					<div className="flex flex-col gap-1 justify-center  w-full items-start">
 						<h1 className="text-[35px] md:text-[40px] font-bold">
 							<a href={"#techstack"}>
@@ -171,7 +171,7 @@ function Home() {
 				</section>
 				<section
 					id="client"
-					className="flex flex-col w-full justify-center items-center gap-10 md:min-h-[60vh] min-h-[50vh] my-10">
+					className="flex flex-col w-full justify-center items-center gap-10 md:min-h-[40vh] my-24">
 					<h1 className="text-4xl md:text-6xl font-extrabold text-center">
 						Are You Interested in Hiring Me?
 					</h1>
