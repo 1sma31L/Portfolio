@@ -1,6 +1,7 @@
 ---
 title: 'Understanding Integrals in Calculus'
 metaDescription: 'Learn about integrals in calculus with detailed explanations and examples using LaTeX for mathematical notation.'
+readTime: '15 min read'
 tags:
   - Calculus
   - Integrals
