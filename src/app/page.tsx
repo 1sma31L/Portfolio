@@ -11,7 +11,6 @@ import { FaExternalLinkAlt, FaBookOpen } from "react-icons/fa";
 import { BsStack, BsCalendar3 } from "react-icons/bs";
 import { FaChessKnight } from "react-icons/fa6";
 import { SiArchlinux } from "react-icons/si";
-import { PiHandPeace } from "react-icons/pi";
 import { CgProfile } from "react-icons/cg";
 
 function Home() {
@@ -19,6 +18,9 @@ function Home() {
 		<AnimatedDiv id={0}>
 			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-32	py-6 md:py-0">
 				<section className="flex flex-col gap-5 min-h-[93vh] justify-center items-center">
+					{/* <div className="text-xs w-full text-zinc-500 flex flex-col justify-center items-start gap-2 pt-2">
+						<p className="">Last edited: {new Date().toUTCString()} </p>
+					</div> */}
 					<h1
 						className={`text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100 text-left w-full`}>
 						Ismail M. Boussekine
@@ -150,9 +152,9 @@ function Home() {
 					<div>
 						<div className="text-sm sm:text-base leading-[1.6] md:leading-[1.8]">
 							Beside web development, I Love to tinker with Linux (i use{" "}
-							<Tag text="Arch Linux" icon={<SiArchlinux />} />{" "}btw
-							), I also like watching movies and tv Shows, My favorite movies
-							are <Tag text="Interstellar (2014)" />,
+							<Tag text="Arch Linux" icon={<SiArchlinux />} /> btw ), I also
+							like watching movies and tv Shows, My favorite movies are{" "}
+							<Tag text="Interstellar (2014)" />,
 							<Tag text="Fallen Angels (1995)" /> and {""}
 							<Tag text="Naked (1993)" />, My fav TV Shows are{" "}
 							<Tag text="Mr. Robot" /> (you guessed it right 😅 ) and{" "}
