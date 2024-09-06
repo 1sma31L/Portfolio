@@ -150,7 +150,7 @@ function Home() {
 					<div>
 						<div className="text-sm sm:text-base leading-[1.6] md:leading-[1.8]">
 							Beside web development, I Love to tinker with Linux (i use{" "}
-							<Tag text="Arch Linux" icon={<SiArchlinux />} />
+							<Tag text="Arch Linux" icon={<SiArchlinux />} />{" "}btw
 							), I also like watching movies and tv Shows, My favorite movies
 							are <Tag text="Interstellar (2014)" />,
 							<Tag text="Fallen Angels (1995)" /> and {""}
