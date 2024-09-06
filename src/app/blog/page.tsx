@@ -65,7 +65,7 @@ export default async function Blog() {
 					{posts.map(({ slug, frontMatter }) => (
 						<article
 							key={slug}
-							className="flex flex-col gap-4 p-4 border rounded sm:rounded-sm w-full">
+							className="flex flex-col gap-4 p-4 border rounded-lg w-full">
 							<Link
 								href={`/blog/${slug}`}
 								className=" flex justify-start gap-3 p-2">

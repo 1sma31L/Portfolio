@@ -30,7 +30,7 @@ function ProjectCard({
 				{techStack.map((tech) => (
 					<div
 						key={tech}
-						className="border rounded-sm px-2 py-1 text-[10px] md:text-[14px] bg-zinc-50 dark:bg-zinc-900 flex justify-start items-center gap-2">
+						className="border rounded-sm px-2 py-1 text-[10px] sm:text-[12px] md:text-[14px] bg-zinc-50 dark:bg-zinc-900 flex justify-start items-center gap-2">
 						{tech in Icons ? (
 							<img
 								src={Icons[tech]}
