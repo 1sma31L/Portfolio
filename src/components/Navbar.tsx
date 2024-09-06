@@ -59,15 +59,16 @@ export default function NavBar() {
 						<p className="text-left md:text-center">
 							Note: This website is currently under development, If you find any
 							bug please{" "}
-							<a href="/contact" className="hover:underline font-bold">
+							<Link href="/contact" className="hover:underline font-bold">
 								contact me
-							</a>{" "}
+							</Link>{" "}
 							and report it or raise an issue on{" "}
-							<a
+							<Link
+								target="_blank"
 								href="https://github.com/1sma31L/Portfolio/issues"
 								className="hover:underline font-bold">
 								GitHub
-							</a>
+							</Link>
 							. Thank you!
 						</p>
 						<button onClick={handleClick} className="text-sm md:text-lg">
