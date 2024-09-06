@@ -27,7 +27,7 @@ const timeLine: TTimeLine = [
 			{
 				monthName: "July",
 				achievements: [
-					"Leaned JavaScript",
+					"Learned JavaScript",
 					"Started learning React and Redux",
 					"Learned some CSS frameworks like Bootstrap and Tailwind CSS, but I settled with Tailwind CSS",
 					"Started learning TypeScript",
