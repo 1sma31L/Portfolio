@@ -179,7 +179,7 @@ function Home() {
 				</section>
 				<section
 					id="client"
-					className="flex flex-col w-full justify-center items-center gap-10 md:min-h-[60vh] min-h-[50vh]">
+					className="flex flex-col w-full justify-center items-center gap-10 md:min-h-[60vh] min-h-[50vh] my-10">
 					<h1 className="text-4xl md:text-6xl font-extrabold text-center">
 						Are You Interested in Hiring Me?
 					</h1>
