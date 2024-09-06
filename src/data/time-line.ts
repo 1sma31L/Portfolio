@@ -6,8 +6,8 @@ const timeLine: TTimeLine = [
 			{
 				monthName: "September",
 				achievements: [
-					"Developed a link shortner website with NodeJS and ExpressJS",
-					"Developed an anonymous messge sender using Nextjs, Firebase",
+					"Developed a link shorter website with NodeJS and ExpressJS",
+					"Developed an anonymous message sender using Next.js, Firebase",
 					"Started developing this website",
 					"Started learning System Design and digging deeper in DSA",
 				],
@@ -15,10 +15,10 @@ const timeLine: TTimeLine = [
 			{
 				monthName: "August",
 				achievements: [
-					"Continud learnin Redux",
-					"Started learning Nextjs, Git/GitHub",
+					"Continued learning Redux",
+					"Started learning Next.js, Git/GitHub",
 					"Started solving coding challenges on CodeWars",
-					"Developed my first porfolio following a toturial on Youtube",
+					"Developed my first portfolio following a tutorial on Youtube",
 					"Developed a website to discover trending movies and TV shows",
 					"Started learning Node.js, MongoDB and Express.js",
 					"Learned firebase",
@@ -29,13 +29,13 @@ const timeLine: TTimeLine = [
 				achievements: [
 					"Leaned JavaScript",
 					"Started learning React and Redux",
-					"Learned some CSS framworks like Bootstrap and Tailwind CSS, but I settled with Tailwind CSS",
-					"Strted learning TypeScript",
+					"Learned some CSS frameworks like Bootstrap and Tailwind CSS, but I settled with Tailwind CSS",
+					"Started learning TypeScript",
 					"Developed a website to introduce my university to new students",
 				],
 			},
 			{
-				monthName: "Juin",
+				monthName: "June",
 				achievements: ["Learned Latex, HTML5 and CSS3"],
 			},
 			{
@@ -52,8 +52,8 @@ const timeLine: TTimeLine = [
 			{
 				monthName: "December",
 				achievements: [
-					"Became HoD of Cybersecurity departement at Google Developers Student Clubs - ENSTA",
-					"Attended an AI confrence at International Conference Center 'Abdelatif Rahal'",
+					"Became HoD of Cybersecurity department at Google Developers Student Clubs - ENSTA",
+					"Attended an AI conference at International Conference Center 'Abdelatif Rahal'",
 				],
 			},
 			{

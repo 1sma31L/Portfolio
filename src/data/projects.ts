@@ -78,7 +78,7 @@ const projects: {
 		id: 4,
 		title: "ENSTA Website",
 		description:
-			"A website I made using React and TialwindCSS to share informations and FAQs for newly graduated Bachelor’s.",
+			"A website I made using React and TailwindCSS to share information and FAQs for newly graduated Bachelor’s.",
 		techStack: ["HTML", "TypeScript", "TailwindCSS", "React", "Aceternity"],
 		previewLink: "https://1sma31l.github.io/ensta/",
 		githubLink: "https://github.com/1sma31L/ensta",
@@ -110,7 +110,7 @@ const projects: {
 	},
 	{
 		id: 7,
-		title: "What Is My IP Adress",
+		title: "What Is My IP Address",
 		description:
 			"Simple API to return your IP address as JSON,It was my first API :).",
 		techStack: ["JavaScript", "Node.js", "Express"],

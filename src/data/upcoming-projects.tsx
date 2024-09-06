@@ -10,7 +10,7 @@ const upcomingProjects: {
 		id: 0,
 		title: "GDSC ENSTA Website",
 		description:
-			"Website for Google Developer Student Clubs - ENSTA with the ability to login with Google OAuth, and the ability to create and join events and send messages between memebers.",
+			"Website for Google Developer Student Clubs - ENSTA with the ability to login with Google OAuth, and the ability to create and join events and send messages between members.",
 		techStack: [
 			"HTML",
 			"TypeScript",

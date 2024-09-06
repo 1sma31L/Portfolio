@@ -24,7 +24,7 @@ function Home() {
 							This website is currently
 							<span className="font-bold"> under development</span>, If you find
 							any <span className="font-bold">bug</span> please contact me and
-							repport it. Thank you!{" "}
+							report it. Thank you!{" "}
 							<PiHandPeace className="inline-block mb-1" />
 						</p>
 						<p className="">Last edited: {new Date().toUTCString()} </p>
@@ -44,8 +44,8 @@ function Home() {
 							</footer>
 						</blockquote>
 						<p className="indent-5">
-							<span className="font-bold">Hey There!</span>, I am a stuedent at
-							the National Higher School of Advance Technoloiges (ENSTA),
+							<span className="font-bold">Hey There!</span>, I am a student at
+							the National Higher School of Advanced Technologies (ENSTA),
 							Full-Stack Developer and Cybersecurity Enthusiast. Based in
 							Algeria.
 						</p>
@@ -54,9 +54,9 @@ function Home() {
 							They say you can&apos;t steal a house if you don&apos;t own one.
 							That&apos;s why I began learning web development (Back-End)
 							seeking a deeper understanding of the web to get better at
-							pentesting. Along the way, I discovered a passion for creating
-							beautiful and simple websites. And here I am, a Full-Stack
-							Developer.
+							penetration testing. Along the way, I discovered a passion for
+							creating beautiful and simple websites. And here I am, a
+							Full-Stack Developer.
 						</p>
 						<div className="flex flex-row gap-2 flex-wrap mt-8">
 							{SocialMedia.map((item, index) => (
