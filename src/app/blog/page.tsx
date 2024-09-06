@@ -14,8 +14,20 @@ export const metadata: Metadata = {
 		icon: "/favicon.ico",
 	},
 };
+
+const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
+
+async function getBirthDate(filePath: string): Promise<string> {
+	try {
+		const stats = fs.statSync(filePath);
+		return stats.birthtime.toDateString();
+	} catch (err) {
+		console.error(err);
+		return "";
+	}
+}
+
 async function getPosts() {
-	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
 	const files = fs.readdirSync(postsDirectory);
 	const posts = files
 		.filter((file) => !file.startsWith("_"))
@@ -41,6 +53,7 @@ async function getPosts() {
 
 export default async function Blog() {
 	const posts = await getPosts();
+	const birthDate = await getBirthDate(postsDirectory);
 	return (
 		<AnimatedDiv id={2}>
 			<main className="container mx-auto min-h-[76vh] font-bold text-[24px] sm:text-[32px]  py-6 px-4 sm:px-0">
@@ -64,7 +77,7 @@ export default async function Blog() {
 										{frontMatter.metaDescription}
 									</p>
 									<p className="text-zinc-600 text-[12px] md:text-[14px]">
-										{frontMatter.date?.split(" ")[0]}
+										{birthDate}
 									</p>
 								</div>
 							</Link>

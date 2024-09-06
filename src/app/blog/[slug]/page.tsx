@@ -10,33 +10,6 @@ import { PostProps } from "@/types/types";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
 import ProgressBar from "@/components/ProgressBar";
-export async function generateStaticParams() {
-	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
-	const files = fs.readdirSync(postsDirectory);
-	const paths = files.map((fileName) => ({
-		slug: fileName.replace(".md", ""),
-	}));
-
-	return paths.map((path) => ({ params: path }));
-}
-
-async function getPostData(slug: string): Promise<{
-	frontMatter: Record<string, any>;
-	content: string;
-}> {
-	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
-	const filePath = path.join(postsDirectory, `${slug}.md`);
-	if (!fs.existsSync(filePath)) {
-		notFound();
-	}
-	const fileContent = fs.readFileSync(filePath, "utf-8");
-	const { data: frontMatter, content } = matter(fileContent);
-	const { htmlContent } = await markdownToHtml(content);
-	return {
-		frontMatter,
-		content: htmlContent,
-	};
-}
 
 export async function generateMetadata({
 	params,
@@ -59,9 +32,50 @@ export async function generateMetadata({
 	};
 }
 
+export async function generateStaticParams() {
+	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
+	const files = fs.readdirSync(postsDirectory);
+	const paths = files.map((fileName) => ({
+		slug: fileName.replace(".md", ""),
+	}));
+
+	return paths.map((path) => ({ params: path }));
+}
+
+async function getLastModDate(filePath: string): Promise<string> {
+	try {
+		const stats = fs.statSync(filePath);
+		return stats.mtime.toDateString() + " " + stats.mtime.toLocaleTimeString();
+	} catch (err) {
+		console.error(err);
+		return "";
+	}
+}
+
+async function getPostData(slug: string): Promise<{
+	lastMod: string;
+	frontMatter: Record<string, any>;
+	content: string;
+}> {
+	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
+	const filePath = path.join(postsDirectory, `${slug}.md`);
+	if (!fs.existsSync(filePath)) {
+		notFound();
+	}
+	const lastMod = await getLastModDate(filePath);
+	const fileContent = fs.readFileSync(filePath, "utf-8");
+	const { data: frontMatter, content } = matter(fileContent);
+	const { htmlContent } = await markdownToHtml(content);
+	return {
+		lastMod,
+		frontMatter,
+		content: htmlContent,
+	};
+}
+
 export default async function BlogPost({ params }: PostProps) {
 	const { slug } = params;
-	const { frontMatter, content } = await getPostData(slug);
+	const { lastMod, frontMatter, content } = await getPostData(slug);
 	return (
 		<AnimatedDiv id={`${frontMatter.title}`}>
 			<main className="py-12 container mx-auto px-2 md:px-0" id="slug">
@@ -78,27 +92,25 @@ export default async function BlogPost({ params }: PostProps) {
 					</div>
 					<h1 className="sm:!text-[80px] !text-[47px]">{frontMatter.title}</h1>
 					<div className="text-xs md:text-sm">
-						{[
-							frontMatter.lastMod,
-							frontMatter.author,
-							frontMatter.readTime,
-						].map((item, index) => {
-							if (item) {
-								return (
-									<p key={index} className="m-0 p-0">
-										<span className="font-bold">
-											{index === 0
-												? "Last edited: "
-												: index === 1
-												? "Author: "
-												: "Read Time: "}
-										</span>
-										{item}
-									</p>
-								);
+						{[lastMod, frontMatter.author, frontMatter.readTime].map(
+							(item, index) => {
+								if (item) {
+									return (
+										<p key={index} className="m-0 p-0">
+											<span className="font-bold">
+												{index === 0
+													? "Last edited: "
+													: index === 1
+													? "Author: "
+													: "Read Time: "}
+											</span>
+											{item}
+										</p>
+									);
+								}
+								return null;
 							}
-							return null;
-						})}
+						)}
 					</div>
 					<div className="h-1 w-full bg-black dark:bg-white my-10" />
 					<div dangerouslySetInnerHTML={{ __html: content }} />

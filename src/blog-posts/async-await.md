@@ -1,8 +1,6 @@
 ---
 title: "Async Await in JavaScript"
 metaDescription: "Understand how to use async/await in JavaScript to handle asynchronous calls more effectively and improve code readability."
-date: "2024-09-04 02:00"
-lastMod: "2024-09-05 05:04"
 readTime: "6 min"
 tags: ["javaScript", "Async-Await", "Promises","Evenet Loop"]
 ---
