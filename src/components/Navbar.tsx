@@ -36,7 +36,6 @@ export default function NavBar() {
 	let pathname = usePathname() || "/";
 	const [hoveredPath, setHoveredPath] = useState(pathname);
 	const [clicked, setClicked] = useState(true);
-
 	useEffect(() => {
 		setHoveredPath(pathname);
 	}, [pathname]);
