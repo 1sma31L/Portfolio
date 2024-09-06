@@ -9,7 +9,7 @@ import markdownToHtml from "@/lib/markdownToHtml";
 import { PostProps } from "@/types/types";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
-
+import ProgressBar from "@/components/ProgressBar";
 export async function generateStaticParams() {
 	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
 	const files = fs.readdirSync(postsDirectory);
@@ -65,11 +65,12 @@ export default async function BlogPost({ params }: PostProps) {
 	return (
 		<AnimatedDiv id={`${frontMatter.title}`}>
 			<main className="py-12 container mx-auto px-2 md:px-0" id="slug">
+				<ProgressBar />
 				<div className="container mx-auto prose md:prose-lg  dark:prose-dark dark:prose-invert">
 					<div className="inline-block">
 						<Link
 							href="/blog"
-							className="flex justify-start items-center mb-5 text-zinc-400 hover:text-black transition-colors duration-150 dark:text-zinc-600 dark:hover:text-white group">
+							className="flex justify-start items-center mb-5 text-zinc-400 hover:text-black transition-colors duration-150 dark:text-zinc-500 dark:hover:text-white group">
 							<TbArrowBadgeLeft className="mb-1 group-hover:hidden block " />
 							<TbArrowBadgeLeftFilled className="mb-1 group-hover:block hidden " />
 							<button className="inline-block">Back</button>
