@@ -8,6 +8,7 @@ import Link from "next/link";
 import markdownToHtml from "@/lib/markdownToHtml";
 import { PostProps } from "@/types/types";
 import AnimatedDiv from "@/components/AnimatedDiv";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
 	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
@@ -31,20 +32,23 @@ async function getPostData(slug: string): Promise<{
 	const fileContent = fs.readFileSync(filePath, "utf-8");
 	const { data: frontMatter, content } = matter(fileContent);
 	const { htmlContent } = await markdownToHtml(content);
-
 	return {
 		frontMatter,
 		content: htmlContent,
 	};
 }
 
+export const metadata: Metadata = {};
+
 export default async function BlogPost({ params }: PostProps) {
 	const { slug } = params;
 	const { frontMatter, content } = await getPostData(slug);
+	metadata.title = frontMatter.title;
+	metadata.description = frontMatter.metaDescription;
 	return (
 		<AnimatedDiv id={`${frontMatter.title}`}>
 			<main className="py-12 container mx-auto px-2 md:px-0" id="slug">
-				<div className="container mx-auto prose md:prose-lg lg:prose-xl dark:prose-dark dark:prose-invert">
+				<div className="container mx-auto prose md:prose-lg  dark:prose-dark dark:prose-invert">
 					<div className="inline-block">
 						<Link
 							href="/blog"

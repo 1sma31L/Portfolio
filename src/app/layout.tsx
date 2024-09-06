@@ -3,6 +3,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import NavBar from "@/components/Navbar";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 export const metadata: Metadata = {
 	title: "Ismail M. Boussekine",
 	description: "My personal website, Blog, and portfolio.",
@@ -19,11 +21,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-				>
+				<SpeedInsights />
+				<Analytics />
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<NavBar />
 					<hr className="border" />
 					{children}

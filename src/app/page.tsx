@@ -64,7 +64,7 @@ function Home() {
 									href={item.url}
 									key={index}
 									target="_blank"
-									className="border border-zinc-200	rounded shadow-sm dark:border-zinc-700 flex flex-row justify-between items-center gap-2 px-2 py-1  dark:hover:bg-zinc-800 hover:bg-zinc-200  transition-colors duration-300">
+									className="rounded shadow-sm  flex flex-row justify-between items-center gap-2 px-2 py-1  dark:hover:bg-zinc-800 hover:bg-zinc-200 transition-colors duration-150 hover:shadow-none ">
 									<p className="text-lg ">{item.icon}</p>
 									<p className="text-sm hidden sm:block">{item.name}</p>
 								</Link>

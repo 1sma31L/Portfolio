@@ -5,7 +5,14 @@ import projects from "@/data/projects";
 import upcomingProjects from "@/data/upcoming-projects";
 import { CgSandClock } from "react-icons/cg";
 import AnimatedDiv from "@/components/AnimatedDiv";
-
+import { Metadata } from "next";
+export const metadata: Metadata = {
+	title: "My Projects",
+	description: "My projects and upcoming projects.",
+	icons: {
+		icon: "/favicon.ico",
+	},
+};
 function Projects() {
 	return (
 		<AnimatedDiv id={1}>
@@ -14,7 +21,7 @@ function Projects() {
 					<FaTerminal className="text-xl md:text-2xl" />
 					<h1 className={`text-[30px] md:text-[40px] font-bold`}>Projects</h1>
 				</div>
-				<div className="flex flex-col gap-2 py-4">
+				<div className="flex flex-col gap-4 py-4">
 					{projects.map((project) => (
 						<ProjectCard
 							key={project.id}

@@ -5,7 +5,15 @@ import matter from "gray-matter";
 import Link from "next/link";
 import { LuPenLine } from "react-icons/lu";
 import AnimatedDiv from "@/components/AnimatedDiv";
+import { Metadata } from "next";
 
+export const metadata: Metadata = {
+	title: "My Blog",
+	description: "My blog posts.",
+	icons: {
+		icon: "/favicon.ico",
+	},
+};
 async function getPosts() {
 	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
 	const files = fs.readdirSync(postsDirectory);
