@@ -97,6 +97,7 @@ export default function NavBar() {
 				})}
 			</nav>
 			<div className="ml-1">
+				
 				<ThemeToggler />
 			</div>
 		</header>
