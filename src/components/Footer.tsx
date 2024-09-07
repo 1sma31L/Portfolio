@@ -5,7 +5,7 @@ function Footer() {
 	const links = [
 		{ name: "About", href: "/" },
 		{ name: "Projects", href: "/projects" },
-		{ name: "Blog", href: "/blog" },
+		{ name: "Blog", href: "/blog/#header" },
 		{ name: "Contact", href: "/contact/#header" },
 	];
 	return (
