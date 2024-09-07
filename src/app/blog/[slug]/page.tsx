@@ -10,8 +10,7 @@ import { PostProps } from "@/types/types";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
 import ProgressBar from "@/components/ProgressBar";
-// import { execSync } from "child_process";
-// import formatDate from "@/lib/formatDate";
+import { postsDirectory } from "@/constants/index";
 export async function generateMetadata({
 	params,
 }: PostProps): Promise<Metadata> {
@@ -33,8 +32,6 @@ export async function generateMetadata({
 	};
 }
 
-const postsDirectory = path.join(process.cwd(), "src", "posts");
-
 export async function generateStaticParams() {
 	const files = fs.readdirSync(postsDirectory);
 	const paths = files.map((fileName) => ({
@@ -54,12 +51,6 @@ async function getPostData(slug: string): Promise<{
 	const fileContent = fs.readFileSync(filePath, "utf-8");
 	const { data: frontMatter, content } = matter(fileContent);
 	const { htmlContent } = await markdownToHtml(content);
-
-	// const lastModRaw = execSync(
-	// 	`git log -1 --pretty=format:%cI -- ${filePath}`
-	// ).toString();
-	// const lastMod = formatDate(lastModRaw);
-
 	return {
 		frontMatter,
 		content: htmlContent,

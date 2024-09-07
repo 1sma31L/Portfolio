@@ -6,7 +6,7 @@ import Link from "next/link";
 import { LuPenLine } from "react-icons/lu";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
-// import { execSync } from "child_process";
+import { postsDirectory } from "@/constants/index";
 
 export const metadata: Metadata = {
 	title: "My Blog",
@@ -15,8 +15,6 @@ export const metadata: Metadata = {
 		icon: "/favicon.ico",
 	},
 };
-
-const postsDirectory = path.join(process.cwd(), "src", "posts");
 
 async function getPosts() {
 	const files = fs.readdirSync(postsDirectory);
@@ -66,20 +64,6 @@ export default async function Blog() {
 									<p className="text-[12px] md:text-[18px] text-zinc-600 dark:text-zinc-400">
 										{frontMatter.metaDescription}
 									</p>
-									{/* <p className="text-zinc-600 text-[12px] md:text-[14px]">
-										{
-											new Date(
-												execSync(
-													`git log -1 --pretty=format:%aI -- ${path.join(
-														postsDirectory,
-														`${slug}.md`
-													)}`
-												).toString()
-											)
-												.toISOString()
-												.split("T")[0]
-										}
-									</p> */}
 								</div>
 							</Link>
 						</article>
