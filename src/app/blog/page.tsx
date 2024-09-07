@@ -6,7 +6,7 @@ import Link from "next/link";
 import { LuPenLine } from "react-icons/lu";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
-import { execSync } from "child_process";
+// import { execSync } from "child_process";
 
 export const metadata: Metadata = {
 	title: "My Blog",
@@ -66,7 +66,7 @@ export default async function Blog() {
 									<p className="text-[12px] md:text-[18px] text-zinc-600 dark:text-zinc-400">
 										{frontMatter.metaDescription}
 									</p>
-									<p className="text-zinc-600 text-[12px] md:text-[14px]">
+									{/* <p className="text-zinc-600 text-[12px] md:text-[14px]">
 										{
 											new Date(
 												execSync(
@@ -79,7 +79,7 @@ export default async function Blog() {
 												.toISOString()
 												.split("T")[0]
 										}
-									</p>
+									</p> */}
 								</div>
 							</Link>
 						</article>

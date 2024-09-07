@@ -10,8 +10,8 @@ import { PostProps } from "@/types/types";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
 import ProgressBar from "@/components/ProgressBar";
-import { execSync } from "child_process";
-import formatDate from "@/lib/formatDate";
+// import { execSync } from "child_process";
+// import formatDate from "@/lib/formatDate";
 export async function generateMetadata({
 	params,
 }: PostProps): Promise<Metadata> {
@@ -44,7 +44,6 @@ export async function generateStaticParams() {
 }
 
 async function getPostData(slug: string): Promise<{
-	lastMod: string;
 	frontMatter: Record<string, any>;
 	content: string;
 }> {
@@ -56,18 +55,12 @@ async function getPostData(slug: string): Promise<{
 	const { data: frontMatter, content } = matter(fileContent);
 	const { htmlContent } = await markdownToHtml(content);
 
-	const createdAtRaw = execSync(
-		`git log -1 --pretty=format:%aI -- ${filePath}`
-	).toString();
-	const lastModRaw = execSync(
-		`git log -1 --pretty=format:%cI -- ${filePath}`
-	).toString();
-
-	// Format the dates
-	const lastMod = formatDate(lastModRaw);
+	// const lastModRaw = execSync(
+	// 	`git log -1 --pretty=format:%cI -- ${filePath}`
+	// ).toString();
+	// const lastMod = formatDate(lastModRaw);
 
 	return {
-		lastMod,
 		frontMatter,
 		content: htmlContent,
 	};
@@ -75,7 +68,7 @@ async function getPostData(slug: string): Promise<{
 
 export default async function BlogPost({ params }: PostProps) {
 	const { slug } = params;
-	const { lastMod, frontMatter, content } = await getPostData(slug);
+	const { frontMatter, content } = await getPostData(slug);
 	return (
 		<AnimatedDiv id={`${frontMatter.title}`}>
 			<main className="py-12 container mx-auto px-2 md:px-0" id="slug">
@@ -92,34 +85,22 @@ export default async function BlogPost({ params }: PostProps) {
 					</div>
 					<h1 className="sm:!text-[80px] !text-[47px]">{frontMatter.title}</h1>
 					<div className="text-xs md:text-sm">
-						{[lastMod, frontMatter.author, frontMatter.readTime].map(
-							(item, index) => {
-								if (item) {
-									return (
-										<p key={index} className="m-0 p-0">
-											<span className="font-bold">
-												{index === 0
-													? "Last modification: "
-													: index === 1
-													? "Author :"
-													: "Read Time: "}
-											</span>
-											{item}
-										</p>
-									);
-								}
-								return null;
+						{[frontMatter.author, frontMatter.readTime].map((item, index) => {
+							if (item) {
+								return (
+									<p key={index} className="m-0 p-0">
+										<span className="font-bold">
+											{index === 0 ? "Author :" : "Read Time: "}
+										</span>
+										{item}
+									</p>
+								);
 							}
-						)}
+							return null;
+						})}
 					</div>
 					<div className="h-1 w-full bg-black dark:bg-white my-10" />
 					<div dangerouslySetInnerHTML={{ __html: content }} />
-					<div>
-						<p className="text-xs">
-							<span>Last modification: </span>
-							{lastMod}
-						</p>
-					</div>
 					<div className="dark:text-white text-black flex flex-wrap gap-2 mt-20">
 						{frontMatter.tags?.map((tag: string) => {
 							return (
