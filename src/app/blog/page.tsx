@@ -7,7 +7,6 @@ import { LuPenLine } from "react-icons/lu";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
 import { execSync } from "child_process";
-import { postsDirectory } from "@/constants/index";
 
 export const metadata: Metadata = {
 	title: "My Blog",
@@ -16,6 +15,8 @@ export const metadata: Metadata = {
 		icon: "/favicon.ico",
 	},
 };
+
+const postsDirectory = path.join(process.cwd(), "src", "posts");
 
 async function getPosts() {
 	const files = fs.readdirSync(postsDirectory);
