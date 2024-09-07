@@ -1,11 +1,12 @@
-import React from "react";
-import { FaTerminal } from "react-icons/fa";
-import ProjectCard from "@/components/ProjectCard";
-import projects from "@/data/projects";
-import upcomingProjects from "@/data/upcoming-projects";
-import { CgSandClock } from "react-icons/cg";
-import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
+import React from "react";
+import upcomingProjects from "@/data/upcoming-projects";
+import projects from "@/data/projects";
+import ProjectCard from "@/components/ProjectCard";
+import AnimatedDiv from "@/components/AnimatedDiv";
+import { FaTerminal } from "react-icons/fa";
+import { CgSandClock } from "react-icons/cg";
+
 export const metadata: Metadata = {
 	title: "My Projects",
 	description: "My projects and upcoming projects.",
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 		icon: "/favicon.ico",
 	},
 };
+
 function Projects() {
 	return (
 		<AnimatedDiv id={1}>
