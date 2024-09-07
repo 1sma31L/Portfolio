@@ -1,0 +1,16 @@
+{
+	"dirname": "posts",
+	"insertLastMod": true,
+	"insertReadTime": true,
+	"newFileIsInsertLastMod": true,
+	"newFileIsInsertReadTime": true,
+	"wordsPerMinute": 300,
+	"template": {
+		"data": {
+			"date": "{{now}}",
+			"author": "Ismail Boussekine",
+			"tags": ["", ""],
+			"title": "Your Title Here"
+		}
+	}
+}

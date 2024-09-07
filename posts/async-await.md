@@ -1,8 +1,16 @@
 ---
-title: "Async Await in JavaScript"
-metaDescription: "Understand how to use async/await in JavaScript to handle asynchronous calls more effectively and improve code readability."
-readTime: "6 min"
-tags: ["JavaScript", "Async-Await", "Promises","Event Loop"]
+date: 2024-09-05T00:00:00.000Z
+title: Async Await in JavaScript
+metaDescription: >-
+  Understand how to use async/await in JavaScript to handle asynchronous calls
+  more effectively and improve code readability.
+tags:
+  - JavaScript
+  - Async-Await
+  - Promises
+  - Event Loop
+lastmod: 2024-09-07T19:03:52.935Z
+duration: 3 min
 ---
 ### Table of Contents
 - [1. Async:](#1-async)

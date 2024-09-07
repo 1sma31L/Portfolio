@@ -64,6 +64,11 @@ export default async function Blog() {
 									<p className="text-[12px] md:text-[18px] text-zinc-600 dark:text-zinc-400">
 										{frontMatter.metaDescription}
 									</p>
+									<div>
+										<p className="text-xs sm:text-xs text-zinc-700 dark:text-zinc-400">
+											{new Date(frontMatter.date).toLocaleDateString("en-GB")}
+										</p>
+									</div>
 								</div>
 							</Link>
 						</article>

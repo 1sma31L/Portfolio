@@ -76,12 +76,26 @@ export default async function BlogPost({ params }: PostProps) {
 					</div>
 					<h1 className="sm:!text-[80px] !text-[47px]">{frontMatter.title}</h1>
 					<div className="text-xs md:text-sm">
-						{[frontMatter.author, frontMatter.readTime].map((item, index) => {
+						{[
+							`${new Date(frontMatter.lastmod).toDateString()} ${new Date(
+								frontMatter.lastmod
+							)
+								.toTimeString()
+								.split(" ")
+								.slice(0, 2)
+								.join(" ")}`,
+							frontMatter.author,
+							frontMatter.duration,
+						].map((item, index) => {
 							if (item) {
 								return (
 									<p key={index} className="m-0 p-0">
 										<span className="font-bold">
-											{index === 0 ? "Author :" : "Read Time: "}
+											{index === 0
+												? "Last modification: "
+												: index === 1
+												? "Author: "
+												: "Read Time: "}
 										</span>
 										{item}
 									</p>
