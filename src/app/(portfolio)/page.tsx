@@ -19,10 +19,10 @@ function Home() {
 	return (
 		<AnimatedDiv id={0}>
 			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-20 py-6 md:py-0">
-				<section className="flex flex-col gap-5 min-h-[93vh] justify-center items-center">
-					{/* <div className="text-xs w-full text-zinc-500 flex flex-col justify-center items-start gap-2 pt-2">
+				<section className="flex flex-col gap-5 min-h-[85vh] justify-center items-center">
+					<div className="text-xs w-full text-zinc-500 flex flex-col justify-center items-start gap-2 pt-2">
 						<p className="">Last edited: {new Date().toUTCString()} </p>
-					</div> */}
+					</div>
 					<h1
 						className={`text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100 text-left w-full`}>
 						Ismail M. Boussekine

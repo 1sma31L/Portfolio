@@ -44,7 +44,7 @@ export default async function Blog() {
 	const posts = await getPosts();
 	return (
 		<AnimatedDiv id={2}>
-			<main className="container mx-auto min-h-[90vh] font-bold text-[24px] sm:text-[32px]  py-6 px-4 sm:px-0">
+			<main className="container mx-auto min-h-[93vh] font-bold text-[24px] sm:text-[32px]  py-6 px-4 sm:px-0">
 				<div className="flex gap-3 justify-start items-center px-2">
 					<LuPenLine className="text-xl md:text-2xl" />
 					<h1 className={`text-[30px] md:text-[40px] font-bold`}>Blog</h1>
