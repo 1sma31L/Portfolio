@@ -1,12 +1,17 @@
 ---
-title: 'Understanding Integrals in Calculus'
-metaDescription: 'Learn about integrals in calculus with detailed explanations and examples using LaTeX for mathematical notation.'
-readTime: '15 min read'
+date: 2024-09-05T03:00:00.000Z
+title: Understanding Integrals in Calculus
+metaDescription: >-
+  Learn about integrals in calculus with detailed explanations and examples
+  using LaTeX for mathematical notation.
 tags:
   - Calculus
   - Integrals
   - Mathematics
+lastmod: 2024-09-07T19:03:58.007Z
+duration: 3 min
 ---
+
 ### Table of Contents
 + [1. Basic Integral Notation](#1-basic-integral-notation)
   + [1.1. Example: Area Under a Curve](#11-example-area-under-a-curve)
