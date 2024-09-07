@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Website, Portfolio, and Blog
 
-## Getting Started
+&nbsp;&nbsp;&nbsp;&nbsp;This repository contains the source code for my personal website, portfolio, and blog. That showcases my skills and the projects I've done. And my thoughts and experiences as blog posts.
 
-First, run the development server:
+## Description
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ &nbsp;&nbsp;&nbsp;&nbsp;I built this website using `Next.js` for its slick routing SSR and SSG for statically generating blogs at runtime, `React` framework, and `Tailwind CSS`, a utility-first CSS framework. I am also using `TypeScript` to write the code for this website to capture errors at development phase with its great LSP. 
+ 
+ &nbsp;&nbsp;&nbsp;&nbsp;I built this website from scratch, without using any templates or themes, so that I can learn more about web development and improve my skills and also wanted to make a place for my thoughts for the world to see.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project uses the following dependencies:
+- **Next.js** (14.2.7) (App Router)
+- **React** (18+)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion** (animations)
+- **Radix UI** (UI components)
+- **ShadCN UI** (UI library) (Buttons, Dropdowns, Card, etc.)
+- **React Icons** (Icons :) )
+- **Remark & Rehype plugins** (Markdown and HTML processing)
+- **Gray Matter** (front matter for Markdown files)
+- **React Hook Form** (form handling)
+- **Zod** (form validation)
+- **emailJS** (form sender as email)
+  
+## Installing And Running Locally
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To run this project locally, follow these steps:
 
-## Learn More
+1. **Clone the repository:**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/1sma31L/Portfolio.git
+   cd Portfolio
+2. **Install the dependencies:**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```bash
+   npm install #to install all the dependencies
+   ```
+3. **Run the development server:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+    npm run dev #to start the development server
+    ```
 
-## Deploy on Vercel
+4. **Open [http://localhost:3000](http://localhost:3000) with your browser to see the website.**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## TODOs
+- [ ] Projects tab takes so much cpu usage, need to fix that.
+- [ ] Added liking and commenting to blog posts by integrating Auth and database provided by FireBase.
+- [ ] Add CMDK button for better navigation in the website using shortcuts (btw you can change the theme using `Ctrl+I`).
+  
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You can contribute to this project by :
+
+1. Suggesting improvements  to the website or reporting bugs by creating an issue or a pull request.
+2. Adding blog posts and mentioning yourself as the author, However, You must stick to the "FrontMatter" template provided in /src/blog-posts/_template.md. 
+3. Helping me translate the website to any of this languages (Arabic, French, German).
+
+
+
+
+
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE.md file for details
