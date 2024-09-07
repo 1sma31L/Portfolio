@@ -10,7 +10,9 @@ import { PostProps } from "@/types/types";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
 import ProgressBar from "@/components/ProgressBar";
-
+import { execSync } from "child_process";
+import formatDate from "@/lib/formatDate";
+import { postsDirectory } from "../page";
 export async function generateMetadata({
 	params,
 }: PostProps): Promise<Metadata> {
@@ -33,7 +35,6 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
 	const files = fs.readdirSync(postsDirectory);
 	const paths = files.map((fileName) => ({
 		slug: fileName.replace(".md", ""),
@@ -42,30 +43,29 @@ export async function generateStaticParams() {
 	return paths.map((path) => ({ params: path }));
 }
 
-async function getLastModDate(filePath: string): Promise<string> {
-	try {
-		const stats = fs.statSync(filePath);
-		return stats.mtime.toDateString() + " " + stats.mtime.toLocaleTimeString();
-	} catch (err) {
-		console.error(err);
-		return "";
-	}
-}
-
 async function getPostData(slug: string): Promise<{
 	lastMod: string;
 	frontMatter: Record<string, any>;
 	content: string;
 }> {
-	const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
 	const filePath = path.join(postsDirectory, `${slug}.md`);
 	if (!fs.existsSync(filePath)) {
 		notFound();
 	}
-	const lastMod = await getLastModDate(filePath);
 	const fileContent = fs.readFileSync(filePath, "utf-8");
 	const { data: frontMatter, content } = matter(fileContent);
 	const { htmlContent } = await markdownToHtml(content);
+
+	const createdAtRaw = execSync(
+		`git log -1 --pretty=format:%aI -- ${filePath}`
+	).toString();
+	const lastModRaw = execSync(
+		`git log -1 --pretty=format:%cI -- ${filePath}`
+	).toString();
+
+	// Format the dates
+	const lastMod = formatDate(lastModRaw);
+
 	return {
 		lastMod,
 		frontMatter,
@@ -99,9 +99,9 @@ export default async function BlogPost({ params }: PostProps) {
 										<p key={index} className="m-0 p-0">
 											<span className="font-bold">
 												{index === 0
-													? "Last edited: "
+													? "Last modification: "
 													: index === 1
-													? "Author: "
+													? "Author :"
 													: "Read Time: "}
 											</span>
 											{item}
@@ -114,6 +114,12 @@ export default async function BlogPost({ params }: PostProps) {
 					</div>
 					<div className="h-1 w-full bg-black dark:bg-white my-10" />
 					<div dangerouslySetInnerHTML={{ __html: content }} />
+					<div>
+						<p className="text-xs">
+							<span>Last modification: </span>
+							{lastMod}
+						</p>
+					</div>
 					<div className="dark:text-white text-black flex flex-wrap gap-2 mt-20">
 						{frontMatter.tags?.map((tag: string) => {
 							return (

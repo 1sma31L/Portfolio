@@ -6,6 +6,7 @@ import Link from "next/link";
 import { LuPenLine } from "react-icons/lu";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
+import { execSync } from "child_process";
 
 export const metadata: Metadata = {
 	title: "My Blog",
@@ -15,17 +16,7 @@ export const metadata: Metadata = {
 	},
 };
 
-const postsDirectory = path.join(process.cwd(), "src", "blog-posts");
-
-async function getBirthDate(filePath: string): Promise<string> {
-	try {
-		const stats = fs.statSync(filePath);
-		return stats.birthtime.toDateString();
-	} catch (err) {
-		console.error(err);
-		return "";
-	}
-}
+export const postsDirectory = path.join(process.cwd(), "posts");
 
 async function getPosts() {
 	const files = fs.readdirSync(postsDirectory);
@@ -53,7 +44,6 @@ async function getPosts() {
 
 export default async function Blog() {
 	const posts = await getPosts();
-	const birthDate = await getBirthDate(postsDirectory);
 	return (
 		<AnimatedDiv id={2}>
 			<main className="container mx-auto min-h-[76vh] font-bold text-[24px] sm:text-[32px]  py-6 px-4 sm:px-0">
@@ -77,7 +67,18 @@ export default async function Blog() {
 										{frontMatter.metaDescription}
 									</p>
 									<p className="text-zinc-600 text-[12px] md:text-[14px]">
-										{birthDate}
+										{
+											new Date(
+												execSync(
+													`git log -1 --pretty=format:%aI -- ${path.join(
+														postsDirectory,
+														`${slug}.md`
+													)}`
+												).toString()
+											)
+												.toISOString()
+												.split("T")[0]
+										}
 									</p>
 								</div>
 							</Link>
