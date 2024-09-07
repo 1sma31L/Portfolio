@@ -86,7 +86,7 @@ export default function NavBar() {
 							height={100}
 							width={100}
 							priority
-							src="/icons/vercel.png"
+							src="/icons/vercel.webp"
 							className="w-6 dark:invert"
 							alt=""
 						/>
