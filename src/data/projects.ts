@@ -22,7 +22,7 @@ const projects: {
 			"Framer Motion",
 		],
 		previewLink: "https://1sma31l.vercel.app/",
-		githubLink: "https://github.com/1sma31L/portfolio-from-tutorial",
+		githubLink: "https://github.com/1sma31L/old-portfolio",
 	},
 	{
 		id: 1,
