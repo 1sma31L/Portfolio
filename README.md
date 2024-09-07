@@ -57,7 +57,7 @@ To run this project locally, follow these steps:
 You can contribute to this project by :
 
 1. Suggesting improvements  to the website or reporting bugs by creating an issue or a pull request.
-2. Adding blog posts and mentioning yourself as the author, However, You must stick to the "FrontMatter" template provided in /src/blog-posts/_template.md. 
+2. Adding blog posts and mentioning yourself as the author, However, You must stick to the "FrontMatter" template provided in /posts/_template.md. 
 3. Helping me translate the website to any of this languages (Arabic, French, German).
 
 
