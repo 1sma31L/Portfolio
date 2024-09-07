@@ -12,7 +12,7 @@ import { Metadata } from "next";
 import ProgressBar from "@/components/ProgressBar";
 import { execSync } from "child_process";
 import formatDate from "@/lib/formatDate";
-import { postsDirectory } from "../page";
+import { postsDirectory } from "@/constants/index";
 export async function generateMetadata({
 	params,
 }: PostProps): Promise<Metadata> {
