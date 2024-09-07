@@ -8,6 +8,7 @@ import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
 import { execSync } from "child_process";
 import { postsDirectory } from "@/constants/index";
+
 export const metadata: Metadata = {
 	title: "My Blog",
 	description: "My blog posts.",

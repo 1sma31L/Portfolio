@@ -1,0 +1,14 @@
+{
+	"builds": [
+		{
+			"src": "next.config.js",
+			"use": "@vercel/next"
+		}
+	],
+	"routes": [
+		{
+			"src": "/posts/(.*)",
+			"dest": "/public/posts/$1"
+		}
+	]
+}

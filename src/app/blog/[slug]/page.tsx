@@ -39,7 +39,6 @@ export async function generateStaticParams() {
 	const paths = files.map((fileName) => ({
 		slug: fileName.replace(".md", ""),
 	}));
-
 	return paths.map((path) => ({ params: path }));
 }
 
