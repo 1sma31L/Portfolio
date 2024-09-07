@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "next/link";
+// Components
 import AnimatedDiv from "@/components/AnimatedDiv";
 import TechStack from "@/components/TechStack";
+import Tag from "@/components/Tag";
+// Data
 import SocialMedia from "@/data/social-media";
 import { stack, other } from "@/data/tech";
 import timeLine from "@/data/time-line";
-import Tag from "@/components/Tag";
 // Icons
 import { FaExternalLinkAlt, FaBookOpen } from "react-icons/fa";
 import { BsStack, BsCalendar3 } from "react-icons/bs";
