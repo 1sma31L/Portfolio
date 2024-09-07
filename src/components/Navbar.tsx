@@ -11,23 +11,31 @@ import { TiDelete } from "react-icons/ti";
 const navItems = [
 	{
 		path: "/",
-		name: "About",
-	},
-	{
-		path: "/projects",
-		name: "Projects",
+		name: "Portfolio",
 	},
 	{
 		path: "/blog",
 		name: "Blog",
 	},
-	{
-		path: "/contact",
-		name: "Contact",
-	},
 ];
 
 function isActive(pathname: string, itemPath: string) {
+	// If itemPath is "/", Portfolio should be active on "/", "/contact", or "/projects"
+	if (itemPath === "/") {
+		return (
+			pathname === "/" ||
+			pathname.startsWith("/contact") ||
+			pathname.startsWith("/projects") ||
+			pathname.startsWith("/portfolio")
+		);
+	}
+
+	// If the itemPath is "/blog", Blog should be active for "/blog" and its subpaths
+	if (itemPath === "/blog") {
+		return pathname.startsWith("/blog");
+	}
+
+	// Default case: use regex to match other paths
 	const regex = new RegExp(`^${itemPath}(?:/|$)`);
 	return regex.test(pathname);
 }
@@ -35,10 +43,11 @@ function isActive(pathname: string, itemPath: string) {
 export default function NavBar() {
 	let pathname = usePathname() || "/";
 	const [hoveredPath, setHoveredPath] = useState(pathname);
-	const [clicked, setClicked] = useState(true);
 	useEffect(() => {
 		setHoveredPath(pathname);
 	}, [pathname]);
+
+	const [clicked, setClicked] = useState(true);
 	useEffect(() => {
 		const saved = localStorage.getItem("clicked");
 		if (!saved) {
@@ -78,7 +87,7 @@ export default function NavBar() {
 				</div>
 			)}
 			<header
-				className="flex justify-end items-center w-full max-w-[1600px] mx-auto py-3 px-4 gap-2 rounded-lg text-[13px] md:text-[18px]"
+				className="flex justify-end items-center w-full max-w-[1600px] mx-auto py-2 px-4 gap-2 rounded-lg text-[13px] md:text-[18px]"
 				id="header">
 				<div>
 					<Link href="/">
@@ -111,7 +120,7 @@ export default function NavBar() {
 								<span>{item.name}</span>
 								{isActive(pathname, item.path) && (
 									<motion.div
-										layoutId="clickedbutton"
+										layoutId="clickedbutton1"
 										transition={{
 											type: "spring",
 											bounce: 0.9,

@@ -6,6 +6,7 @@ import NavBar from "@/components/Navbar";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { KeyboardShortcutCtrlI } from "@/components/KeyShortcut";
+
 export const metadata: Metadata = {
 	title: "Ismail M. Boussekine",
 	description: "My personal website, Blog, and portfolio.",
