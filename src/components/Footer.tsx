@@ -3,8 +3,8 @@ import React from "react";
 
 function Footer() {
 	const links = [
-		{ name: "About", href: "/" },
-		{ name: "Projects", href: "/projects" },
+		{ name: "About", href: "/#header" },
+		{ name: "Projects", href: "/projects/#header" },
 		{ name: "Blog", href: "/blog/#header" },
 		{ name: "Contact", href: "/contact/#pheader" },
 	];
