@@ -32,8 +32,9 @@ export default function RootLayout({
 					disableTransitionOnChange>
 					<KeyboardShortcutCtrlI />
 					<NavBar />
-					<hr className="border" />
+					<hr className="" />
 					{children}
+					<hr className="w-full" />
 					<Footer />
 				</ThemeProvider>
 			</body>

@@ -1,4 +1,5 @@
 import PortfolioNavBar from "@/components/PortfolioNavBar";
+import AnimatedDiv from "@/components/AnimatedDiv";
 export default function PortfolioLayout({
 	children,
 }: Readonly<{
@@ -6,7 +7,9 @@ export default function PortfolioLayout({
 }>) {
 	return (
 		<div>
-			<PortfolioNavBar />
+			<AnimatedDiv id={4}>
+				<PortfolioNavBar />
+			</AnimatedDiv>
 			{children}
 		</div>
 	);

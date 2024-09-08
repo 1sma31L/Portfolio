@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 function Contact() {
 	return (
-		<AnimatedDiv id={4}>
+		<AnimatedDiv id={3}>
 			<main
 				className="container py-6 flex flex-col gap-3 px-4 md:px-0 min-h-[90vh] "
 				id="contact">

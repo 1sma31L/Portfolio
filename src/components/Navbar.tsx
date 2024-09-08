@@ -87,9 +87,9 @@ export default function NavBar() {
 				</div>
 			)}
 			<header
-				className="flex justify-end items-center w-full max-w-[1600px] mx-auto py-2 px-4 gap-2 rounded-lg text-[13px] md:text-[18px]"
+				className="flex justify-between items-center container mx-auto py-3 px-4 sm:px-0 gap-2 rounded-lg text-[14px] sm:text-[16px] md:text-[18px]"
 				id="header">
-				<div>
+				{/* <div>
 					<Link href="/">
 						<Image
 							height={100}
@@ -100,15 +100,15 @@ export default function NavBar() {
 							alt=""
 						/>
 					</Link>
-				</div>
-				<nav className="gap-1 relative justify-end w-full z-[100] rounded-lg flex md:gap-2">
+				</div> */}
+				<nav className="gap-1 relative justify-start w-full z-[100] flex md:gap-2">
 					{navItems.map((item) => {
 						const isActiveClass = isActive(pathname, item.path);
 
 						return (
 							<Link
 								key={item.path}
-								className={`md:px-3 md:py-1 py-1 px-2 relative duration-150 ease-in rounded-sm font-bold -z-100 ${
+								className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-150 ease-in rounded-sm font-bold -z-100 ${
 									isActiveClass
 										? "dark:text-black text-white"
 										: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black md:hover:bg-zinc-200 md:dark:hover:bg-zinc-800 "

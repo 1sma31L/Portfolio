@@ -53,9 +53,10 @@ const config: Config = {
 					sm: "100%",
 					md: "650px",
 					lg: "730px",
-					xl: "800px",
+					xl: "900px",
 				},
 			},
+
 			borderRadius: {
 				lg: "var(--radius)",
 				md: "calc(var(--radius) - 2px)",

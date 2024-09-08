@@ -32,7 +32,7 @@ function PortfolioNavBar() {
 
 	return (
 		<nav
-			className="gap-1 relative w-full z-[100] flex justify-center items-center mt-6 md:gap-2     
+			className="gap-2 relative w-full z-[100] flex justify-center items-center mt-6 md:gap-3     
 		
 		text-[13px] md:text-[18px]
 		
@@ -43,7 +43,7 @@ function PortfolioNavBar() {
 				return (
 					<Link
 						key={item.path}
-						className={`md:px-3 md:py-1 py-1 px-2 relative duration-150 ease-in rounded-sm font-bold -z-100 ${
+						className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-150 ease-in rounded-sm font-bold -z-100 ${
 							isActiveClass
 								? "dark:text-black text-white"
 								: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black md:hover:bg-zinc-200 md:dark:hover:bg-zinc-800 "
