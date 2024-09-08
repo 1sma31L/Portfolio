@@ -32,11 +32,8 @@ function PortfolioNavBar() {
 
 	return (
 		<nav
-			className="gap-2 relative w-full z-[100] flex justify-center items-center mt-6 md:gap-3     
-		
-		text-[13px] md:text-[18px]
-		
-		" id="pheader">
+			className="gap-2 relative w-full z-[100] flex justify-center items-center pt-6 md:gap-3 text-[13px] md:text-[18px]"
+			id="pheader">
 			{navItems.map((item) => {
 				const isActiveClass = isActive(pathname, item.path);
 
