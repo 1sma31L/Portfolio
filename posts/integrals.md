@@ -8,8 +8,8 @@ tags:
   - Calculus
   - Integrals
   - Mathematics
-lastmod: 2024-09-07T19:03:58.007Z
-duration: 3 min
+lastmod: 2024-09-08T00:24:21.682Z
+duration: 8 min
 ---
 
 ### Table of Contents

@@ -9,8 +9,8 @@ tags:
   - Async-Await
   - Promises
   - Event Loop
-lastmod: 2024-09-07T19:03:52.935Z
-duration: 3 min
+lastmod: 2024-09-08T00:24:15.826Z
+duration: 9 min
 ---
 ### Table of Contents
 - [1. Async:](#1-async)
