@@ -36,7 +36,7 @@ function PortfolioNavBar() {
 		
 		text-[13px] md:text-[18px]
 		
-		">
+		" id="pheader">
 			{navItems.map((item) => {
 				const isActiveClass = isActive(pathname, item.path);
 

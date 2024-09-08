@@ -6,7 +6,7 @@ function Footer() {
 		{ name: "About", href: "/" },
 		{ name: "Projects", href: "/projects" },
 		{ name: "Blog", href: "/blog/#header" },
-		{ name: "Contact", href: "/contact/#header" },
+		{ name: "Contact", href: "/contact/#pheader" },
 	];
 	return (
 		<footer
