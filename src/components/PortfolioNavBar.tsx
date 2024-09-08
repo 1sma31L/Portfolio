@@ -32,7 +32,7 @@ function PortfolioNavBar() {
 
 	return (
 		<nav
-			className="gap-1 relative w-full z-[100] flex justify-center items-center mt-5 md:gap-2     
+			className="gap-1 relative w-full z-[100] flex justify-center items-center mt-6 md:gap-2     
 		
 		text-[13px] md:text-[18px]
 		

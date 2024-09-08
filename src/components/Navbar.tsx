@@ -62,7 +62,7 @@ export default function NavBar() {
 		<>
 			{!clicked && (
 				<div className="bg-zinc-950">
-					<div className="w-full max-w-[1600px] mx-auto  flex justify-between md:justify-around items-center text-[9px] sm:text-[11px] md:text-sm text-white py-2 px-4 gap-4">
+					<div className="w-full max-w-[1600px] mx-auto  flex justify-between md:justify-around items-center text-[9px] sm:text-[11px] md:text-sm text-white py-3 px-4 gap-4">
 						<div className="hidden md:block"></div>
 						<p className="text-left md:text-center">
 							Note: This website is currently under development, If you find any

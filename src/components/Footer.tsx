@@ -10,8 +10,8 @@ function Footer() {
 	];
 	return (
 		<footer
-			className={`container mx-auto h-[10vh] mb-5  rounded-lg text-xs md:text-sm flex justify-center items-center p-4 md:px-0 flex-col `}>
-			<div className="flex flex-col sm:flex-row gap-2 justify-between items-center w-full border rounded sm:rounded-sm p-4">
+			className={`container mx-auto h-[10vh] mb-5 text-xs md:text-sm flex justify-center items-center p-4 md:px-0 flex-col`}>
+			<div className="flex flex-col sm:flex-row gap-2 justify-between items-center w-full">
 				<p className=" text-center">
 					Contact me at{" "}
 					<Link
