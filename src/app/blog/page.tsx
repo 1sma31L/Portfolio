@@ -1,6 +1,5 @@
 import React from "react";
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import { LuPenLine } from "react-icons/lu";
