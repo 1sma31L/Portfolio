@@ -8,7 +8,7 @@ tags:
   - Calculus
   - Integrals
   - Mathematics
-lastmod: 2024-09-08T00:24:21.682Z
+lastmod: 2024-09-09T20:00:43.340Z
 duration: 8 min
 ---
 
@@ -53,7 +53,7 @@ In this expression:
 
 ### 1.1. Example: Area Under a Curve
 
-Consider the function $f(x) = x^2$. The integral of $f(x)$ from 0 to 1 is calculated as:
+Consider the function $f(x) = x^2$. The integral of $f(x)$ from 0 to 1 is calculated as :
 
 $$
 \int_{0}^{1} x^2 \, dx = \left[ \frac{x^3}{3} \right]_{0}^{1} = \frac{1}{3} - 0 = \frac{1}{3}
