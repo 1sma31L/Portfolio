@@ -1,14 +1,15 @@
 import { unified } from "unified";
-import remarkParse from "remark-parse";
-import remarkGfm from "remark-gfm";
-import remarkMath from "remark-math";
-import remarkRehype from "remark-rehype";
-import rehypeStringify from "rehype-stringify";
-import rehypeKatex from "rehype-katex";
-import rehypePrettyCode from "rehype-pretty-code";
-import rehypeSlug from "rehype-slug";
-import rehypeAutoLinkHeadings from "rehype-autolink-headings";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
+import rehypeAutoLinkHeadings from "rehype-autolink-headings";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeStringify from "rehype-stringify";
+import remarkRehype from "remark-rehype";
+import remarkParse from "remark-parse";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
+import rehypeSlug from "rehype-slug";
+import remarkGfm from "remark-gfm";
+import "katex/dist/katex.min.css";
 
 export default async function markdownToHtml(markdown: string) {
 	const result = await unified()
@@ -19,9 +20,9 @@ export default async function markdownToHtml(markdown: string) {
 		.use(rehypeSlug)
 		.use(rehypeAutoLinkHeadings, {
 			properties: {
-				className: ["heading-anchor"], // Customize class names if needed
+				className: ["heading-anchor"],
 			},
-			behavior: "wrap", // 'append' or 'prepend' based on where you want the link
+			behavior: "wrap",
 		})
 		.use(rehypeKatex)
 		.use(rehypePrettyCode, {
