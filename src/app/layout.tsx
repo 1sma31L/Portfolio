@@ -8,8 +8,15 @@ import { Analytics } from "@vercel/analytics/react";
 import { KeyboardShortcutCtrlI } from "@/components/KeyShortcut";
 
 export const metadata: Metadata = {
-	title: "Ismail M. Boussekine",
-	description: "My personal website, Blog, and portfolio.",
+	title: {
+		default: "Ismail M. Boussekine",
+		template: "%s | Ismail M. Boussekine",
+	},
+	description:
+		"My personal website, Blog, and portfolio. Here you can find my projects, blog posts, and more.",
+	twitter: {
+		card: "summary_large_image",
+	},
 	icons: {
 		icon: "/favicon.ico",
 	},
