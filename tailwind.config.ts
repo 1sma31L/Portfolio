@@ -30,17 +30,14 @@ const config: Config = {
 							fontSize: "0.875rem",
 						},
 						"code::before": {
-							content: '""', // Optional: Add extra styling before code content
+							content: '""',
 						},
 						"code::after": {
-							content: '""', // Optional: Add extra styling after code content
+							content: '""', 
 						},
 					},
 				},
 			}),
-			fontFamily: {
-				Josefin: ["Josefin Sans", "sans-serif"],
-			},
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
