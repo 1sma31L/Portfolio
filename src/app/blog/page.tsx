@@ -9,7 +9,7 @@ import { Metadata } from "next";
 import { postsDirectory } from "@/constants/index";
 
 export const metadata: Metadata = {
-	title: "My Blog",
+	title: "Blog",
 	description: "My blog posts.",
 	icons: {
 		icon: "/favicon.ico",

@@ -3,7 +3,7 @@ import { MdEmail } from "react-icons/md";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-	title: "Contact Me",
+	title: "Contact",
 	description: "Contact me for questions, inquiries, or collaborations.",
 	icons: {
 		icon: "/favicon.ico",

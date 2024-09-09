@@ -8,7 +8,7 @@ import { FaTerminal } from "react-icons/fa";
 import { CgSandClock } from "react-icons/cg";
 
 export const metadata: Metadata = {
-	title: "My Projects",
+	title: "Projects",
 	description: "My projects and upcoming projects.",
 	icons: {
 		icon: "/favicon.ico",
