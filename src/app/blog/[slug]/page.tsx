@@ -39,7 +39,7 @@ export async function generateStaticParams() {
 		.map((fileName) => ({
 			slug: fileName.replace(".md", ""),
 		}));
-	return paths.map((path) => ({ params: path }));
+	return paths.map(({ slug }) => slug);
 }
 
 async function getPostData(slug: string): Promise<{
