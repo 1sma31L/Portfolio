@@ -21,7 +21,7 @@ const projects: {
 			"Shadcn-ui",
 			"Framer Motion",
 		],
-		previewLink: "https://1sma31l.vercel.app/",
+		previewLink: "https://old.ismailboussekine.me",
 		githubLink: "https://github.com/1sma31L/old-portfolio",
 	},
 	{

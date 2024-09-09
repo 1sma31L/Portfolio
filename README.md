@@ -48,15 +48,15 @@ To run this project locally, follow these steps:
 4. **Open [http://localhost:3000](http://localhost:3000) with your browser to see the website.**
 
 ## TODOs
-- [ ] Projects tab takes so much cpu usage, need to fix that.
-- [ ] Added liking and commenting to blog posts by integrating Auth and database provided by FireBase.
-- [ ] Add CMDK button for better navigation in the website using shortcuts (btw you can change the theme using `Ctrl+I`).
+- [ ] Projects lagging when navigating to it, need to fix that.
+- [ ] Add liking and commenting to blog posts by integrating Auth and database provided by FireBase.
+- [ ] Add `CMDK` button for better navigation in the website using shortcuts (btw you can change the theme using `Ctrl+I`).
   
 ## Contributing
 
 You can contribute to this project by :
 
-1. Suggesting improvements  to the website or reporting bugs by creating an issue or a pull request.
+1. Suggesting improvements to the website or reporting bugs by creating an issue or a pull request.
 2. Adding blog posts and mentioning yourself as the author, However, You must stick to the "FrontMatter" template provided in frontmatter.json, and put any images in "/public/images/" and referencing them just by "/images/..." when using them in the blog post, Don't forget to install [auto-front-matter](https://marketplace.visualstudio.com/items?itemName=condorhero.auto-front-matter) extension to get lastMod, date of creation and reading time (it's already configured in frontmatter.json just use it directly). 
 3. Helping me translate the website to any of this languages (Arabic, French, German).
 
