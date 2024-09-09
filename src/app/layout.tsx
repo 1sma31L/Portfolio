@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { Josefin_Sans } from "next/font/google";
 import Footer from "@/components/Footer";
 import "./globals.css";
 import NavBar from "@/components/Navbar";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { KeyboardShortcutCtrlI } from "@/components/KeyShortcut";
-
+const josefin = Josefin_Sans({ subsets: ["latin"] });
 export const metadata: Metadata = {
 	title: {
 		default: "Ismail M. Boussekine",
@@ -29,7 +30,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body>
+			<body className={josefin.className}>
 				<SpeedInsights />
 				<Analytics />
 				<ThemeProvider

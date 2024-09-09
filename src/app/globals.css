@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"); */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -67,7 +67,7 @@
 		@apply border-border;
 	}
 	body {
-		@apply bg-background text-foreground font-Josefin;
+		@apply bg-background text-foreground;
 	}
 	figure {
 		@apply border-zinc-300 border rounded-md md:rounded-xl overflow-hidden !important;
@@ -100,7 +100,7 @@
 	color: white;
 }
 
-/* Preety Code */
+/* Pretty Code */
 /* Theme Control */
 
 pre[data-theme*=" "],
