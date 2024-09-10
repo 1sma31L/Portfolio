@@ -32,8 +32,9 @@ function ProjectCard({
 						className="border rounded-sm px-2 py-1 text-[10px] sm:text-[12px] md:text-[14px] bg-zinc-50 dark:bg-zinc-900 flex justify-start items-center gap-2">
 						{tech in Icons ? (
 							<Image
-								width={100}
-								height={100}
+								width={50}
+								height={50}
+								priority
 								src={Icons[tech]}
 								alt={tech}
 								className="w-4 h-4 rounded-sm"
