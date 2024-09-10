@@ -10,8 +10,8 @@ import { KeyboardShortcutCtrlI } from "@/components/KeyShortcut";
 const josefin = Josefin_Sans({ subsets: ["latin"] });
 export const metadata: Metadata = {
 	metadataBase: new URL(
-		"https://localhost:3000",
-		"https://ismailboussekine.me"
+		"https://localhost:3000/",
+		"https://ismailboussekine.me/"
 	),
 	title: {
 		default: "Ismail M. Boussekine",
