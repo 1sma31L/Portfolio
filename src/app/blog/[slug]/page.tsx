@@ -76,7 +76,7 @@ export default async function BlogPost({ params }: PostProps) {
 							<button className="inline-block">Back</button>
 						</Link>
 					</div>
-					<h1 className="sm:!text-[80px] !text-[47px]">{frontMatter.title}</h1>
+					<h1 className="sm:!text-[80px] !text-[45px]">{frontMatter.title}</h1>
 					<div className="text-xs md:text-sm">
 						{[
 							`${new Date(frontMatter.lastmod).toDateString()} ${new Date(
