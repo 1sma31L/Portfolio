@@ -18,12 +18,20 @@ export const metadata: Metadata = {
 		"My personal website, Blog, and portfolio. Here you can find my projects, blog posts, and more.",
 	twitter: {
 		card: "summary_large_image",
+		title: "Ismail M. Boussekine",
+		description:
+			"My personal website, Blog, and portfolio. Here you can find my projects, blog posts, and more.",
+		images: "/opengraph-image.png",
 	},
 	openGraph: {
 		type: "website",
 		locale: "en_US",
 		siteName: "Ismail M. Boussekine",
-		images: "/opengraph-image.png",
+		images: {
+			url: `/opengraph-image.png/`,
+			width: 1200,
+			height: 630,
+		},
 	},
 	icons: {
 		icon: "/favicon.ico",
