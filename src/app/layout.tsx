@@ -9,10 +9,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { KeyboardShortcutCtrlI } from "@/components/KeyShortcut";
 const josefin = Josefin_Sans({ subsets: ["latin"] });
 export const metadata: Metadata = {
-	metadataBase: new URL(
-		"https://localhost:3000/",
-		"https://ismailboussekine.me/"
-	),
+	metadataBase: new URL("https://ismailboussekine.me"),
 	title: {
 		default: "Ismail M. Boussekine",
 		template: "%s | Ismail M. Boussekine",
@@ -21,6 +18,12 @@ export const metadata: Metadata = {
 		"My personal website, Blog, and portfolio. Here you can find my projects, blog posts, and more.",
 	twitter: {
 		card: "summary_large_image",
+	},
+	openGraph: {
+		type: "website",
+		locale: "en_US",
+		siteName: "Ismail M. Boussekine",
+		images: "/opengraph-image.png",
 	},
 	icons: {
 		icon: "/favicon.ico",
