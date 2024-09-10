@@ -9,7 +9,8 @@ import { postsDirectory } from "@/constants/index";
 
 export const metadata: Metadata = {
 	title: "Blog",
-	description: "My blog posts.",
+	description:
+		"Discover my blog posts where I share insights, tutorials, and updates on various topics in web development, technology, and more. Stay informed and inspired by exploring my latest articles and posts.",
 	icons: {
 		icon: "/favicon.ico",
 	},

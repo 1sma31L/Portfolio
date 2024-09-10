@@ -4,7 +4,8 @@ import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Contact",
-	description: "Contact me for questions, inquiries, or collaborations.",
+	description:
+		"Get in touch with me for any questions, inquiries, or collaboration opportunities. I'm open to discussing projects, providing support, or exploring new ventures together. Reach out to connect!",
 	icons: {
 		icon: "/favicon.ico",
 	},

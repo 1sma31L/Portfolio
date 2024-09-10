@@ -9,7 +9,8 @@ import { CgSandClock } from "react-icons/cg";
 
 export const metadata: Metadata = {
 	title: "Projects",
-	description: "My projects and upcoming projects.",
+	description:
+		"Explore my completed web development projects and stay updated on upcoming ones. Featuring React, Next.js, and full-stack applications.",
 	icons: {
 		icon: "/favicon.ico",
 	},

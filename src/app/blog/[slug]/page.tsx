@@ -23,7 +23,6 @@ export async function generateMetadata({
 		openGraph: {
 			title: frontMatter.title,
 			description: frontMatter.metaDescription,
-			url: `/blog/${slug}`,
 		},
 		twitter: {
 			title: frontMatter.title,

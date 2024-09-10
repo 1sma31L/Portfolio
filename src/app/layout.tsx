@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 		template: "%s | Ismail M. Boussekine",
 	},
 	description:
-		"My personal website, Blog, And portfolio. Here you can find my projects, Blog posts, And more.",
+		"Welcome to my personal website, Portfolio and blog, Where I showcase my web development projects,Share insightful blog posts, and provide resources on technology and coding",
 	twitter: {
 		images: "/opengraph-image.png",
 		card: "summary_large_image",
