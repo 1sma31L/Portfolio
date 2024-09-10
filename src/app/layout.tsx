@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 	description:
 		"My personal website, Blog, And portfolio. Here you can find my projects, Blog posts, And more.",
 	twitter: {
-		images: "/opengraph-image.png",
+		images: "/opengraph-image93.png",
 		card: "summary_large_image",
 		creator: "@11sma31l",
 	},
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		siteName: "Ismail M. Boussekine",
 		images: {
-			url: `/opengraph-image.png`,
+			url: `/opengraph-image93.png`,
 			width: 1200,
 			height: 630,
 		},
