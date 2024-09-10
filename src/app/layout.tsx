@@ -16,13 +16,11 @@ export const metadata: Metadata = {
 		template: "%s | Ismail M. Boussekine",
 	},
 	description:
-		"My personal website, Blog, and portfolio. Here you can find my projects, blog posts, and more.",
+		"My personal website, Blog, And portfolio. Here you can find my projects, Blog posts, And more.",
 	twitter: {
-		card: "summary_large_image",
-		title: "Ismail M. Boussekine",
-		description:
-			"My personal website, Blog, and portfolio. Here you can find my projects, blog posts, and more.",
 		images: "/opengraph-image.png",
+		card: "summary_large_image",
+		creator: "@11sma31l",
 	},
 	openGraph: {
 		type: "website",
