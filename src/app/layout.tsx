@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { KeyboardShortcutCtrlI } from "@/components/KeyShortcut";
 const josefin = Josefin_Sans({ subsets: ["latin"] });
+
 export const metadata: Metadata = {
 	metadataBase: new URL("https://ismailboussekine.me"),
 	title: {
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		siteName: "Ismail M. Boussekine",
 		images: {
-			url: `/opengraph-image.png/`,
+			url: `/opengraph-image.png`,
 			width: 1200,
 			height: 630,
 		},
