@@ -87,7 +87,7 @@ export default function NavBar() {
 				</div>
 			)}
 			<header
-				className="flex justify-between items-center container mx-auto py-3 px-4 sm:px-0 gap-2 rounded-lg text-[14px] sm:text-[16px] md:text-[18px]"
+				className="flex justify-between items-center container mx-auto py-3 px-4 lg:px-0 gap-2 rounded-lg text-[14px] sm:text-[16px] md:text-[18px]"
 				id="header">
 				{/* <div>
 					<Link href="/">
