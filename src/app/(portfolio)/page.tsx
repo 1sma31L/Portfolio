@@ -25,7 +25,7 @@ function Home() {
 					</div>
 					<h1
 						className={`text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100 text-left w-full`}>
-						Ismail M. Boussekine
+						Ismail M. Bossekine
 					</h1>
 					<div className="text-sm sm:text-base flex flex-col gap-5 leading-[1.6]  dark:text-zinc-100">
 						<blockquote className="border-l-4 border-zinc-800 dark:border-zinc-100 pl-4 italic text-gray-700 dark:text-gray-300">

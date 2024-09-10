@@ -60,7 +60,7 @@ export default function RootLayout({
 					<NavBar />
 					<hr className="" />
 					{children}
-					<hr className="w-full" />
+					<hr className="w -full" />
 					<Footer />
 				</ThemeProvider>
 			</body>

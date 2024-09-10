@@ -3,7 +3,6 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import dotenv from "dotenv";
 dotenv.config();
-
 const firebaseConfig = {
 	apiKey: "AIzaSyBbj8zyg5P35l5wt7buBizzmPvXuk19LM4",
 	authDomain: "portfolio-22612.firebaseapp.com",
@@ -13,8 +12,6 @@ const firebaseConfig = {
 	appId: "1:323222994948:web:8884ec2de6bfcd73107551",
 	measurementId: "G-QDY98356FF",
 };
-
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
 export { app, db };

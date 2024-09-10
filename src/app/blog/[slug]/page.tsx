@@ -46,6 +46,7 @@ async function getPostData(slug: string): Promise<{
 	frontMatter: Record<string, any>;
 	content: string;
 }> {
+
 	const filePath = path.join(postsDirectory, `${slug}.md`);
 	if (!fs.existsSync(filePath)) {
 		notFound();
