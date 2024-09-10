@@ -25,6 +25,7 @@ export async function generateMetadata({
 			description: frontMatter.metaDescription,
 		},
 		twitter: {
+			card: "summary_large_image",
 			title: frontMatter.title,
 			description: frontMatter.metaDescription,
 		},
