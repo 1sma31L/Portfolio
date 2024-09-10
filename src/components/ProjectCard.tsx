@@ -4,7 +4,7 @@ import Link from "next/link";
 import Icons from "@/data/icons";
 import { FaGithub } from "react-icons/fa6";
 import { CiLocationArrow1 } from "react-icons/ci";
-
+import Image from "next/image";
 function ProjectCard({
 	title,
 	description,
@@ -32,7 +32,11 @@ function ProjectCard({
 						key={tech}
 						className="border rounded-sm px-2 py-1 text-[10px] sm:text-[12px] md:text-[14px] bg-zinc-50 dark:bg-zinc-900 flex justify-start items-center gap-2">
 						{tech in Icons ? (
-							<img
+							<Image
+								width={4}
+								height={4}
+								quality={50}
+								priority
 								src={Icons[tech]}
 								alt={tech}
 								className="w-4 h-4 rounded-sm"
