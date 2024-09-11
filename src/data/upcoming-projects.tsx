@@ -30,7 +30,7 @@ const upcomingProjects: {
 		id: 1,
 		title: "Void",
 		description:
-			"Chat website that have a unique and simple B&W design that uses Socket.io, User Authentication, And protected routes.",
+			"Chat website that has a unique and simple B&W design which uses Socket.io, User authentication, And protected routes.",
 		techStack: [
 			"HTML",
 			"TypeScript",
