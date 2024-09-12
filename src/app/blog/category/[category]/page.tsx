@@ -29,7 +29,7 @@ const navItems = [
 	{ path: "/blog/category/life", name: "Life", icon: <MdNaturePeople /> },
 ];
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ category: string }[]> {
 	const files = fs.readdirSync(postsDirectory);
 	const categories = new Set<string>();
 
@@ -46,11 +46,11 @@ export async function generateStaticParams() {
 		}
 	});
 
-	return Array.from(categories)
-		.map((category) => ({
-			category,
-		}))
-		.push({ category: "life" }); // Temporary fix for missing category
+	const categoryArray = Array.from(categories).map((category) => ({
+		category,
+	}));
+	categoryArray.push({ category: "life" }); // Temporary fix for missing category
+	return categoryArray;
 }
 
 async function getPostsByCategory(category: string) {
