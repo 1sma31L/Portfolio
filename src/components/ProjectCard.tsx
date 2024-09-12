@@ -18,7 +18,7 @@ function ProjectCard({
 	githubLink: string;
 }) {
 	return (
-		<div className="flex flex-col gap-4 p-4 border  border-l-zinc-950 dark:border-l-zinc-100 border-l-2 rounded-r-lg">
+		<div className="flex flex-col gap-4 p-4 border  border-l-zinc-950 dark:border-l-zinc-100 border-l-2 rounded-r-lg bg-white dark:bg-black">
 			<div className="flex gap-2 text-[22px] md:text-[28px]">
 				<h2 className={`font-bold capitalize`}>{title}</h2>
 			</div>

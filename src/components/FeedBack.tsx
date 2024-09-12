@@ -76,7 +76,7 @@ export default function FeedBack({ slug }: { slug: string }) {
 		});
 	}, []);
 	return (
-		<div className="flex flex-col justify-center items-center gap-3 w-full sm:w-[500px] mx-auto my-20 border rounded-lg min-h-[200px]">
+		<div className="flex flex-col justify-center items-center gap-3 w-full sm:w-[500px] mx-auto my-20 border rounded-lg min-h-[200px] bg-white dark:bg-black">
 			{!(loading || submitted) && (
 				<>
 					<h2 className="font-bold text-sm sm:text-lg">

@@ -11,16 +11,15 @@ import { MdNaturePeople } from "react-icons/md";
 export const navItems = [
 	{ path: "/blog", name: "All" },
 	{
+		path: "/blog/category/tech",
+		name: "Tech",
+		icon: <RiCodeSSlashFill />,
+	},
+	{
 		path: "/blog/category/science",
 		name: "Science",
 		icon: <GiMaterialsScience />,
 	},
-	{
-		path: "/blog/category/computer-science",
-		name: "Computer Science",
-		icon: <RiCodeSSlashFill />,
-	},
-	// { path: "/blog/category/programming", name: "Programming" },
 	{ path: "/blog/category/reviews", name: "Reviews", icon: <MdRateReview /> },
 	{ path: "/blog/category/life", name: "Life", icon: <MdNaturePeople /> },
 ];
@@ -38,7 +37,7 @@ export default function BlogNavBar() {
 
 	return (
 		<nav
-			className="sm:gap-1 relative w-full z-[100] flex justify-center items-center pt-6 md:gap-3 text-[13px] md:text-[18px]"
+			className="gap-1 md:gap-4 relative w-full z-[100] flex justify-between sm:justify-center items-center pt-6 text-[13px] md:text-[18px] container px-5"
 			id="pheader">
 			{navItems.map((item) => {
 				const isActiveClass = isActive(pathname, item.path);
@@ -46,7 +45,7 @@ export default function BlogNavBar() {
 				return (
 					<Link
 						key={item.path}
-						className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-150 ease-in rounded-sm font-bold -z-100 ${
+						className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-75 rounded-sm font-bold -z-100 ${
 							isActiveClass
 								? "dark:text-black text-white"
 								: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black md:hover:bg-zinc-200 md:dark:hover:bg-zinc-800 "

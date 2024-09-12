@@ -4,7 +4,7 @@ import { GoArrowRight } from "react-icons/go";
 
 function BlogCard({ slug, frontMatter }: { slug: string; frontMatter: any }) {
 	return (
-		<article className="flex flex-col gap-4 p-4 border rounded-lg w-full transition-all duration-300 hover:-translate-y-[1px] hover:translate-x-[2px] hover:shadow-md hover:border-zinc-400 dark:hover:border-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 group">
+		<article className="flex flex-col gap-4 p-4 border rounded-lg w-full transition-all duration-300 hover:-translate-y-[1px] hover:translate-x-[2px] hover:shadow-md hover:border-zinc-400 dark:hover:border-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 group bg-white dark:bg-black">
 			<Link
 				href={`/blog/post/${slug}`}
 				className=" flex justify-start gap-3 p-2 ">

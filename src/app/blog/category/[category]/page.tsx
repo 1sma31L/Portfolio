@@ -20,8 +20,8 @@ const navItems = [
 		icon: <GiMaterialsScience />,
 	},
 	{
-		path: "/blog/category/computer-science",
-		name: "Computer Science",
+		path: "/blog/category/tech",
+		name: "Tech",
 		icon: <RiCodeSSlashFill />,
 	},
 	// { path: "/blog/category/programming", name: "Programming" },

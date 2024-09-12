@@ -9,9 +9,8 @@ function Footer() {
 		{ name: "Contact", href: "/contact" },
 	];
 	return (
-		<footer
-			className={`container mx-auto text-[12px] md:text-[14px] flex justify-center items-center py-6 px-4 md:px-0 flex-col`}>
-			<div className="flex flex-col sm:flex-row gap-2 justify-between items-center w-full">
+		<footer className="bg-white dark:bg-black">
+			<div className="sm:flex-row gap-2 justify-between items-center container mx-auto text-[12px] md:text-[14px] flex py-6 px-4 md:px-0 flex-col">
 				<p className=" text-center">
 					Contact me at{" "}
 					<Link

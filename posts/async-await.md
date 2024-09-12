@@ -10,8 +10,8 @@ tags:
   - Promises
   - Event Loop
 categories:
-  - Computer Science
-lastmod: 2024-09-12T01:10:28.350Z
+  - Tech
+lastmod: 2024-09-12T15:33:20.352Z
 duration: 9 min
 ---
 ### Table of Contents

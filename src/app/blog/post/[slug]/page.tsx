@@ -128,7 +128,7 @@ export default async function BlogPost({ params }: PostProps) {
 					</div>
 					<hr className="my-8" />
 				</div>
-				<div>
+				<div className="mx-1">
 					<FeedBack slug={slug} />
 				</div>
 				{suggestedPosts.length > 0 && (

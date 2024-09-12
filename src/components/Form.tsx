@@ -107,8 +107,8 @@ export function ContactForm() {
 		}
 	}, [messageStatus]);
 	return (
-		<div className="flex justify-center items-center ">
-			<Card className="w-full max-w-4xl">
+		<div className="flex justify-center items-center">
+			<Card className="w-full max-w-4xl dark:bg-black">
 				<CardHeader>
 					<CardDescription className="text-pretty">
 						Please, fill out the form below and I&apos;ll get back to you as
