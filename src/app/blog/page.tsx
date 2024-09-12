@@ -1,11 +1,11 @@
 import React from "react";
 import fs from "fs";
 import matter from "gray-matter";
-import Link from "next/link";
 import { LuPenLine } from "react-icons/lu";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
 import { postsDirectory } from "@/constants/index";
+import BlogCard from "@/components/BlogCard";
 
 export const metadata: Metadata = {
 	title: "Blog",
@@ -55,27 +55,7 @@ export default async function Blog() {
 				</div>
 				<div className="flex flex-col justify-start items-start w-full h-full gap-4 py-4">
 					{posts.map(({ slug, frontMatter }) => (
-						<article
-							key={slug}
-							className="flex flex-col gap-4 p-4 border rounded-lg w-full">
-							<Link
-								href={`/blog/${slug}`}
-								className=" flex justify-start gap-3 p-2">
-								<div className="flex flex-col gap-3">
-									<h2 className="text-[22px] md:text-[32px]">
-										{frontMatter.title}
-									</h2>
-									<p className="text-[12px] md:text-[18px] text-zinc-600 dark:text-zinc-400">
-										{frontMatter.metaDescription}
-									</p>
-									<div>
-										<p className="text-xs sm:text-xs text-zinc-700 dark:text-zinc-400">
-											{new Date(frontMatter.date).toLocaleDateString("en-GB")}
-										</p>
-									</div>
-								</div>
-							</Link>
-						</article>
+						<BlogCard key={slug} slug={slug} frontMatter={frontMatter} />
 					))}
 				</div>
 			</main>

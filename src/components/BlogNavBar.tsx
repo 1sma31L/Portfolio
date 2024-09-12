@@ -3,26 +3,33 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-const navItems = [
+import { GiMaterialsScience } from "react-icons/gi";
+import { RiCodeSSlashFill } from "react-icons/ri";
+import { MdRateReview } from "react-icons/md";
+import { MdNaturePeople } from "react-icons/md";
+
+export const navItems = [
+	{ path: "/blog", name: "All" },
 	{
-		path: "/",
-		name: "About",
+		path: "/blog/category/science",
+		name: "Science",
+		icon: <GiMaterialsScience />,
 	},
 	{
-		path: "/projects",
-		name: "Projects",
+		path: "/blog/category/computer-science",
+		name: "Computer Science",
+		icon: <RiCodeSSlashFill />,
 	},
-	{
-		path: "/contact",
-		name: "Contact",
-	},
+	// { path: "/blog/category/programming", name: "Programming" },
+	{ path: "/blog/category/reviews", name: "Reviews", icon: <MdRateReview /> },
+	{ path: "/blog/category/life", name: "Life", icon: <MdNaturePeople /> },
 ];
 
 function isActive(pathname: string, itemPath: string) {
 	return pathname === itemPath;
 }
 
-function PortfolioNavBar() {
+export default function BlogNavBar() {
 	let pathname = usePathname() || "/";
 	const [hoveredPath, setHoveredPath] = useState(pathname);
 	useEffect(() => {
@@ -31,7 +38,7 @@ function PortfolioNavBar() {
 
 	return (
 		<nav
-			className="gap-2 relative w-full z-[100] flex justify-center items-center pt-6 md:gap-3 text-[13px] md:text-[18px]"
+			className="sm:gap-1 relative w-full z-[100] flex justify-center items-center pt-6 md:gap-3 text-[13px] md:text-[18px]"
 			id="pheader">
 			{navItems.map((item) => {
 				const isActiveClass = isActive(pathname, item.path);
@@ -60,7 +67,7 @@ function PortfolioNavBar() {
 									duration: 0.3,
 								}}
 								className={
-									"absolute inset-0 -z-10 bg-black dark:bg-white rounded-sm "
+									"absolute inset-0 -z-10 bg-black dark:bg-white rounded-sm"
 								}
 							/>
 						)}
@@ -70,5 +77,3 @@ function PortfolioNavBar() {
 		</nav>
 	);
 }
-
-export default PortfolioNavBar;

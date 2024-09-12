@@ -8,7 +8,9 @@ tags:
   - Calculus
   - Integrals
   - Mathematics
-lastmod: 2024-09-09T20:00:43.340Z
+categories:
+  - Science
+lastmod: 2024-09-12T00:55:24.216Z
 duration: 8 min
 ---
 

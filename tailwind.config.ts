@@ -33,7 +33,7 @@ const config: Config = {
 							content: '""',
 						},
 						"code::after": {
-							content: '""', 
+							content: '""',
 						},
 					},
 				},

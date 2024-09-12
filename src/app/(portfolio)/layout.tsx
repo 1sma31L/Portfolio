@@ -6,7 +6,7 @@ export default function PortfolioLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<div>
+		<div className="w-full bg-zinc-50 dark:bg-zinc-950">
 			<AnimatedDiv id={4}>
 				<PortfolioNavBar />
 			</AnimatedDiv>

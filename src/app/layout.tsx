@@ -7,6 +7,8 @@ import NavBar from "@/components/Navbar";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import { KeyboardShortcutCtrlI } from "@/components/KeyShortcut";
+import ScrollToTop from "@/components/ScrollToTop";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 const josefin = Josefin_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -75,6 +77,8 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange>
 					<KeyboardShortcutCtrlI />
+					<ScrollToTop />
+					<ScrollToTopButton />
 					<NavBar />
 					<hr className="" />
 					{children}
