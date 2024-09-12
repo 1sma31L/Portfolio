@@ -11,7 +11,7 @@ tags:
   - Event Loop
 categories:
   - Tech
-lastmod: 2024-09-12T15:33:20.352Z
+lastmod: 2024-09-12T23:54:59.901Z
 duration: 9 min
 ---
 ### Table of Contents
@@ -72,7 +72,7 @@ Anything that can be done by async/await can be done using only Promises, to sho
 #### 3.1. Example 1: 
 
 here is what `getAsyncData(){:js}` does
-```js  showLineNumbers 	 title="index.js" 
+```js  showLineNumbers
 function getAsyncData(){ 
 	return new Promise(function(resolve){
 		setTimeout(function(){

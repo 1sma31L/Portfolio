@@ -68,26 +68,27 @@
 	body {
 		@apply bg-background text-foreground;
 	}
-	figure {
-		@apply border-zinc-300 border rounded-md md:rounded-xl overflow-hidden !important;
+	pre {
+		@apply border-zinc-300 border rounded-sm md:rounded-md overflow-hidden !important;
 	}
-	html.dark figure {
+	html.dark pre {
 		@apply border-zinc-700 !important;
 	}
-	pre {
+	/* Conatiner Title */
+	/* pre {
 		@apply border-t-0 rounded-t-none !important;
-	}
+	} */
 	[data-rehype-pretty-code-title] {
-		@apply px-3 py-2    bg-gray-100;
+		@apply !mb-1;
 	}
-	html.dark [data-rehype-pretty-code-title] {
-		@apply bg-gray-800; /* Example background color for dark mode */
-	}
+	/* html.dark [data-rehype-pretty-code-title] {
+		@apply bg-gray-800;
+	} */
 }
 
-[data-rehype-pretty-code-title] {
+/* [data-rehype-pretty-code-title] {
 	margin: 0 !important;
-}
+} */
 
 .katex {
 	overflow: auto;
