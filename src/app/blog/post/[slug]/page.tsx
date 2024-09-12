@@ -1,4 +1,3 @@
-import { formatDistanceToNow } from "date-fns";
 import { notFound } from "next/navigation";
 import matter from "gray-matter";
 import { Metadata } from "next";
@@ -16,6 +15,7 @@ import BackButton from "@/components/BackButton";
 import BlogCard from "@/components/BlogCard";
 import Views from "@/components/Views";
 import FeedBack from "@/components/FeedBack";
+import FormatDistanceToNow from "@/components/FormatDistanceToNow";
 
 export async function generateMetadata({
 	params,
@@ -100,13 +100,14 @@ export default async function BlogPost({ params }: PostProps) {
 						<BackButton />
 					</div>
 					<h1 className="sm:!text-[80px] !text-[45px]">{frontMatter.title}</h1>
-					<div className="text-xs md:text-sm">
+					{/* <div className="text-xs md:text-sm">
 						<p>
 							<span className="font-bold">Last modification: </span>
 							{new Date(frontMatter.lastmod).toString().split("GMT")[0]} ⟡{" "}
 							{formatDistanceToNow(new Date(frontMatter.lastmod))}
 						</p>
-					</div>
+					</div> */}
+					<FormatDistanceToNow frontMatter={frontMatter} />
 					<div className="text-xs md:text-sm">
 						<Views slug={slug} autoIncrement={true} />
 					</div>
