@@ -20,7 +20,6 @@ const navItems = [
 ];
 
 function isActive(pathname: string, itemPath: string) {
-	// If itemPath is "/", Portfolio should be active on "/", "/contact", or "/projects"
 	if (itemPath === "/") {
 		return (
 			pathname === "/" ||
@@ -30,14 +29,9 @@ function isActive(pathname: string, itemPath: string) {
 		);
 	}
 
-	// If the itemPath is "/blog", Blog should be active for "/blog" and its subpaths
 	if (itemPath === "/blog") {
 		return pathname.startsWith("/blog");
 	}
-
-	// Default case: use regex to match other paths
-	const regex = new RegExp(`^${itemPath}(?:/|$)`);
-	return regex.test(pathname);
 }
 
 export default function NavBar() {

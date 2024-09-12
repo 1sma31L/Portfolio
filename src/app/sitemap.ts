@@ -1,7 +1,7 @@
 import path from "path";
 import fs from "fs";
 import { MetadataRoute } from "next";
-import { generateStaticParams } from "./blog/[slug]/page";
+import { generateStaticParams } from "./blog/post/[slug]/page";
 import matter from "gray-matter";
 import { postsDirectory } from "@/constants";
 

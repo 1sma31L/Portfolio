@@ -3,14 +3,14 @@ import React from "react";
 
 function Footer() {
 	const links = [
-		{ name: "About", href: "/#header" },
-		{ name: "Projects", href: "/projects/#header" },
-		{ name: "Blog", href: "/blog/#header" },
-		{ name: "Contact", href: "/contact/#pheader" },
+		{ name: "About", href: "/" },
+		{ name: "Projects", href: "/projects" },
+		{ name: "Blog", href: "/blog" },
+		{ name: "Contact", href: "/contact" },
 	];
 	return (
 		<footer
-			className={`container mx-auto text-xs md:text-sm flex justify-center items-center py-6 px-4 md:px-0 flex-col`}>
+			className={`container mx-auto text-[12px] md:text-[14px] flex justify-center items-center py-6 px-4 md:px-0 flex-col`}>
 			<div className="flex flex-col sm:flex-row gap-2 justify-between items-center w-full">
 				<p className=" text-center">
 					Contact me at{" "}

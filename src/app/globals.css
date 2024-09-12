@@ -196,7 +196,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 	text-decoration: none !important;
 }
 
-#slug .container div a:not(:first-child):hover {
+#slug .container div a:hover {
 	text-decoration: underline !important;
 }
 
@@ -206,8 +206,8 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 
 .heading-anchor::before {
 	content: "#";
-	margin-right: 0.1rem; /* Adjust spacing as needed */
-	color: #333; /* Adjust color as needed */
+	margin-right: 0.1rem;
+	color: #333;
 	text-decoration: none !important ;
 }
 
