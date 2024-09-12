@@ -7,17 +7,13 @@ import AnimatedDiv from "@/components/AnimatedDiv";
 import { FaTerminal } from "react-icons/fa";
 import { CgSandClock } from "react-icons/cg";
 
-export const generateMetadata = async (): Promise<Metadata> => ({
+export const metadata: Metadata = {
 	title: "Projects",
 	description:
 		"Explore my completed web development projects and stay updated on upcoming ones. Featuring React, Next.js, and full-stack applications.",
 	icons: {
 		icon: "/favicon.ico",
 	},
-});
-
-export const generateStaticParams = async () => {
-	return [{}]; // Return an array with an empty object for static pages
 };
 
 function Projects() {

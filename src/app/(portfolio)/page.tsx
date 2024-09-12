@@ -15,10 +15,6 @@ import { FaChessKnight } from "react-icons/fa6";
 import { SiArchlinux } from "react-icons/si";
 import { CgProfile } from "react-icons/cg";
 
-export const generateStaticParams = async () => {
-	return [{}];
-};
-
 function Home() {
 	return (
 		<AnimatedDiv id={0}>
