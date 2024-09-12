@@ -181,7 +181,7 @@ function Home() {
 					<h1 className="text-4xl md:text-6xl font-extrabold text-center">
 						Are You Interested in Hiring Me?
 					</h1>
-					<button className="py-2 px-3 border bg-zinc-950 dark:bg-zinc-50 shadow rounded dark:text-zinc-950 text-zinc-50 w-auto hover:bg-zinc-700 transition-colors duration-500 dark:hover:bg-zinc-200 group">
+					<button className="text-sm md:text-base py-2 px-3 border bg-zinc-950 dark:bg-zinc-50 shadow rounded dark:text-zinc-950 text-zinc-50 w-auto hover:bg-zinc-700 transition-colors duration-500 dark:hover:bg-zinc-200 group">
 						<Link
 							href={"/contact"}
 							className="flex gap-2 justify-center items-center group-hover:translate-x-[2px] group-hover:-translate-y-[2px] transition-all duration-500">
