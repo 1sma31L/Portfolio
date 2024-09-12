@@ -10,7 +10,7 @@ import { GiMaterialsScience } from "react-icons/gi";
 import { RiCodeSSlashFill } from "react-icons/ri";
 import { MdNaturePeople, MdRateReview } from "react-icons/md";
 import Capitalize from "@/lib/Capitalize";
-export const navItems = [
+const navItems = [
 	{ path: "/blog", name: "All" },
 	{
 		path: "/blog/category/science",
