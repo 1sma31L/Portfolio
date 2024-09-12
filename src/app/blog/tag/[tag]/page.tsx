@@ -9,6 +9,29 @@ import { postsDirectory } from "@/constants/index";
 import BackButton from "@/components/BackButton";
 import BlogCard from "@/components/BlogCard";
 import Capitalize from "@/lib/Capitalize";
+import path from "path";
+
+export async function generateStaticParams() {
+	const files = fs.readdirSync(postsDirectory);
+	const tags = new Set<string>();
+
+	files.forEach((file) => {
+		if (!file.startsWith("_")) {
+			const readFile = fs.readFileSync(
+				path.join(postsDirectory, file),
+				"utf-8"
+			);
+			const { data: frontMatter } = matter(readFile);
+			frontMatter.tags?.forEach((tag: string) => {
+				tags.add(tag.toLowerCase().replace(/\s+/g, "-"));
+			});
+		}
+	});
+
+	return Array.from(tags).map((tag) => ({
+		tag,
+	}));
+}
 
 async function getPostsByTag(tag: string) {
 	const files = fs.readdirSync(postsDirectory);

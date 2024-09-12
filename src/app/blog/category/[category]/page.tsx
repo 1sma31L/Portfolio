@@ -10,6 +10,8 @@ import { GiMaterialsScience } from "react-icons/gi";
 import { RiCodeSSlashFill } from "react-icons/ri";
 import { MdNaturePeople, MdRateReview } from "react-icons/md";
 import Capitalize from "@/lib/Capitalize";
+import path from "path";
+
 const navItems = [
 	{ path: "/blog", name: "All" },
 	{
@@ -26,6 +28,31 @@ const navItems = [
 	{ path: "/blog/category/reviews", name: "Reviews", icon: <MdRateReview /> },
 	{ path: "/blog/category/life", name: "Life", icon: <MdNaturePeople /> },
 ];
+
+export async function generateStaticParams() {
+	const files = fs.readdirSync(postsDirectory);
+	const categories = new Set<string>();
+
+	files.forEach((file) => {
+		if (!file.startsWith("_")) {
+			const readFile = fs.readFileSync(
+				path.join(postsDirectory, file),
+				"utf-8"
+			);
+			const { data: frontMatter } = matter(readFile);
+			frontMatter.categories?.forEach((category: string) => {
+				categories.add(category.toLowerCase().replace(/\s+/g, "-"));
+			});
+		}
+	});
+
+	return Array.from(categories)
+		.map((category) => ({
+			category,
+		}))
+		.push({ category: "life" }); // Temporary fix for missing category
+}
+
 async function getPostsByCategory(category: string) {
 	const files = fs.readdirSync(postsDirectory);
 	const posts = files
