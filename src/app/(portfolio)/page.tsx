@@ -15,19 +15,23 @@ import { FaChessKnight } from "react-icons/fa6";
 import { SiArchlinux } from "react-icons/si";
 import { CgProfile } from "react-icons/cg";
 
+export const generateStaticParams = async () => {
+	return [{}];
+};
+
 function Home() {
 	return (
 		<AnimatedDiv id={0}>
 			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-20 py-6 md:py-0">
 				<section className="flex flex-col gap-5 min-h-[85vh] justify-center items-center">
-					<div className="text-xs w-full text-zinc-500 flex flex-col justify-center items-start gap-2 pt-2">
+					{/* <div className="text-xs w-full text-zinc-500 flex flex-col justify-center items-start gap-2 pt-2">
 						<p className="">Last edited: {new Date().toUTCString()} </p>
-					</div>
+					</div> */}
 					<h1
 						className={`text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100 text-left w-full`}>
 						Ismail M. Bossekine
 					</h1>
-					<div className="text-sm sm:text-base flex flex-col gap-5 leading-[1.6]  dark:text-zinc-100">
+					<div className="text-xs sm:text-base flex flex-col gap-5 leading-[1.6]  dark:text-zinc-100">
 						<blockquote className="border-l-4 border-zinc-800 dark:border-zinc-100 pl-4 italic text-gray-700 dark:text-gray-300">
 							<p className="font-bold">
 								&quot;An idiot admires complexity, a genius admires
@@ -152,7 +156,7 @@ function Home() {
 						Get to know what I like to do outside of software development.
 					</p>
 					<div>
-						<div className="text-sm sm:text-base leading-[1.6] md:leading-[1.8]">
+						<div className="text-xs sm:text-base leading-[1.6] md:leading-[1.8]">
 							Beside web development, I Love to tinker with Linux (i use{" "}
 							<Tag text="Arch Linux" icon={<SiArchlinux />} /> btw ), I also
 							like watching movies and tv Shows, My favorite movies are{" "}

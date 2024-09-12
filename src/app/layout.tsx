@@ -71,11 +71,7 @@ export default function RootLayout({
 			<body className={josefin.className}>
 				<SpeedInsights />
 				<Analytics />
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-					disableTransitionOnChange>
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<KeyboardShortcutCtrlI />
 					<ScrollToTop />
 					<ScrollToTopButton />

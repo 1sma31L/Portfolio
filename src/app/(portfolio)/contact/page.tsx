@@ -2,14 +2,19 @@ import { ContactForm } from "@/components/Form";
 import { MdEmail } from "react-icons/md";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
-export const metadata: Metadata = {
+export const generateMetadata = async (): Promise<Metadata> => ({
 	title: "Contact",
 	description:
 		"Get in touch with me for any questions, inquiries, or collaboration opportunities. I'm open to discussing projects, providing support, or exploring new ventures together. Reach out to connect!",
 	icons: {
 		icon: "/favicon.ico",
 	},
+});
+
+export const generateStaticParams = async () => {
+	return [{}];
 };
+
 function Contact() {
 	return (
 		<AnimatedDiv id={3}>
