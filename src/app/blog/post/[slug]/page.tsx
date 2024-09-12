@@ -143,9 +143,6 @@ export default async function BlogPost({ params }: PostProps) {
 						</div>
 					</div>
 				)}
-				<div className="inline-block mt-5">
-					<BackButton />
-				</div>
 			</main>
 		</AnimatedDiv>
 	);
