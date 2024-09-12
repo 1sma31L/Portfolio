@@ -49,7 +49,7 @@ export async function generateStaticParams(): Promise<{ category: string }[]> {
 	const categoryArray = Array.from(categories).map((category) => ({
 		category,
 	}));
-	categoryArray.push({ category: "life" }); // Temporary fix for missing category
+	categoryArray.push({ category: "life" }, { category: "reviews" }); // Temporary fix for missing category
 	return categoryArray;
 }
 
