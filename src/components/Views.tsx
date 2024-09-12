@@ -1,5 +1,6 @@
-"use client"; // Ensure this is the first line in the file
-
+"use client";
+import dotenv from "dotenv";
+dotenv.config();
 import React, { useEffect, useState } from "react";
 import { db } from "@/config/firebase";
 import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
@@ -44,7 +45,7 @@ const Views: React.FC<ViewsProps> = ({ slug, autoIncrement }) => {
 	useEffect(() => {
 		const fetchAndIncrementViews = async () => {
 			try {
-				if (autoIncrement) {
+				if (autoIncrement && process.env.NODE_ENV === "production") {
 					await incrementViews(slug);
 				}
 				const currentViews = await getViews(slug);
