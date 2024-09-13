@@ -8,8 +8,9 @@ const timeLine: TTimeLine = [
 				achievements: [
 					"Developed a link shorter website with NodeJS and ExpressJS",
 					"Developed an anonymous message sender using Next.js, Firebase",
-					"Started developing this website",
+					"Developed this website",
 					"Started learning System Design and digging deeper in DSA",
+					"Started learning about web security",
 				],
 			},
 			{
