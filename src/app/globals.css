@@ -69,7 +69,7 @@
 		@apply bg-background text-foreground;
 	}
 	pre {
-		@apply border-zinc-300 border rounded-sm md:rounded-md overflow-hidden !important;
+		@apply border rounded-sm md:rounded-md overflow-hidden !important;
 	}
 	html.dark pre {
 		@apply border-zinc-700 !important;
@@ -108,9 +108,9 @@ code[data-theme*=" "],
 code[data-theme*=" "] span {
 	color: var(--shiki-light);
 	background-color: var(--shiki-light-bg);
-	font-style: var(--shiki-dark-font-style) !important;
+	/* font-style: var(--shiki-dark-font-style) !important;
 	font-weight: var(--shiki-dark-font-weight) !important;
-	text-decoration: var(--shiki-dark-text-decoration) !important;
+	text-decoration: var(--shiki-dark-text-decoration) !important; */
 }
 
 html.dark pre[data-theme*=" "],
@@ -177,7 +177,7 @@ code[data-line-numbers] > [data-line]::before {
 	width: 0.75rem;
 	margin-right: 1.5rem;
 	text-align: right;
-	color: rgb(126, 126, 126);
+	color: rgba(126, 126, 126, 0.5);
 }
 
 code[data-line-numbers-max-digits="2"] > [data-line]::before {
