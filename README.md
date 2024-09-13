@@ -47,11 +47,7 @@ To run this project locally, follow these steps:
 
 4. **Open [http://localhost:3000](http://localhost:3000) with your browser to see the website.**
 
-## TODOs
-- [ ] Projects lagging when navigating to it, need to fix that.
-- [ ] Add liking and commenting to blog posts by integrating Auth and database provided by FireBase.
-- [ ] Add `CMDK` button for better navigation in the website using shortcuts (btw you can change the theme using `Ctrl+I`).
-  
+ 
 ## Contributing
 
 You can contribute to this project by :
