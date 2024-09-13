@@ -16,7 +16,6 @@ export default function PortfolioLayout({
 						<BlogNavBar />
 					</AnimatedDiv>
 				)}
-
 			{children}
 		</div>
 	);
