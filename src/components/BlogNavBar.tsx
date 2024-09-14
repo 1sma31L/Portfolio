@@ -3,26 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { GiMaterialsScience } from "react-icons/gi";
-import { RiCodeSSlashFill } from "react-icons/ri";
-import { MdRateReview } from "react-icons/md";
-import { MdNaturePeople } from "react-icons/md";
-
-export const navItems = [
-	{ path: "/blog", name: "All" },
-	{
-		path: "/blog/category/tech",
-		name: "Tech",
-		icon: <RiCodeSSlashFill />,
-	},
-	{
-		path: "/blog/category/science",
-		name: "Science",
-		icon: <GiMaterialsScience />,
-	},
-	{ path: "/blog/category/reviews", name: "Reviews", icon: <MdRateReview /> },
-	{ path: "/blog/category/life", name: "Life", icon: <MdNaturePeople /> },
-];
+import navItems from "@/data/navItems";
 
 function isActive(pathname: string, itemPath: string) {
 	return pathname === itemPath;

@@ -2,7 +2,7 @@ import { unified } from "unified";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import rehypeAutoLinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
-// import { getSingletonHighlighter } from "shiki"; //Having issues with this when using --turbo
+import { getSingletonHighlighter } from "shiki";
 import rehypeStringify from "rehype-stringify";
 import remarkRehype from "remark-rehype";
 import remarkParse from "remark-parse";
@@ -26,11 +26,11 @@ const processor = unified()
 	})
 	.use(rehypeKatex)
 	.use(rehypePrettyCode, {
-		// getHighlighter: () =>
-		// 	getSingletonHighlighter({
-		// 		themes: ["catppuccin-mocha", "catppuccin-latte"],
-		// 		langs: ["javascript"],
-		// 	}),
+		getHighlighter: () =>
+			getSingletonHighlighter({
+				themes: ["catppuccin-mocha", "catppuccin-latte"],
+				langs: ["javascript"],
+			}),
 		theme: {
 			dark: "catppuccin-mocha",
 			light: "catppuccin-latte",

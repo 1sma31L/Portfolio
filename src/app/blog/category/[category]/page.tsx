@@ -3,31 +3,36 @@ import fs from "fs";
 import matter from "gray-matter";
 import { BiCategory } from "react-icons/bi";
 import AnimatedDiv from "@/components/AnimatedDiv";
-// import { Metadata } from "next";
 import { postsDirectory } from "@/constants/index";
 import BlogCard from "@/components/BlogCard";
-import { GiMaterialsScience } from "react-icons/gi";
-import { RiCodeSSlashFill } from "react-icons/ri";
-import { MdNaturePeople, MdRateReview } from "react-icons/md";
 import Capitalize from "@/lib/Capitalize";
 import path from "path";
+import { Metadata } from "next";
+import navItems from "@/data/navItems";
+export async function generateMetadata({
+	params,
+}: {
+	params: { category: string };
+}): Promise<Metadata> {
+	const category = Capitalize(params.category.split("-").join(" "));
 
-const navItems = [
-	{ path: "/blog", name: "All" },
-	{
-		path: "/blog/category/science",
-		name: "Science",
-		icon: <GiMaterialsScience />,
-	},
-	{
-		path: "/blog/category/tech",
-		name: "Tech",
-		icon: <RiCodeSSlashFill />,
-	},
-	// { path: "/blog/category/programming", name: "Programming" },
-	{ path: "/blog/category/reviews", name: "Reviews", icon: <MdRateReview /> },
-	{ path: "/blog/category/life", name: "Life", icon: <MdNaturePeople /> },
-];
+	return {
+		title: `${category}${
+			category.lastIndexOf("s") === category.length - 1
+				? "' Category"
+				: "'s Category"
+		} | Blog`,
+		description: `${
+			navItems.filter((item) => item.name === category)[0].description
+		}`,
+		keywords: [
+			category,
+			"blog",
+			"articles",
+			...(navItems.filter((item) => item.name === category)[0].keywords || []),
+		],
+	};
+}
 
 export async function generateStaticParams(): Promise<{ category: string }[]> {
 	const files = fs.readdirSync(postsDirectory);
@@ -49,7 +54,7 @@ export async function generateStaticParams(): Promise<{ category: string }[]> {
 	const categoryArray = Array.from(categories).map((category) => ({
 		category,
 	}));
-	categoryArray.push({ category: "life" }, { category: "reviews" }); // Temporary fix for missing category
+	categoryArray.push({ category: "life" }, { category: "reviews" });
 	return categoryArray;
 }
 

@@ -19,5 +19,6 @@ const nextConfig = {
 	experimental: {
 		optimizePackageImports: ["react-icons/*", "lucide-react", "date-fns"],
 	},
+	transpilePackages: ["shiki"],
 };
 export default nextConfig;

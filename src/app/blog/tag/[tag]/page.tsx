@@ -4,12 +4,28 @@ import matter from "gray-matter";
 import Link from "next/link";
 import { FaHashtag } from "react-icons/fa";
 import AnimatedDiv from "@/components/AnimatedDiv";
-// import { Metadata } from "next";
 import { postsDirectory } from "@/constants/index";
 import BackButton from "@/components/BackButton";
 import BlogCard from "@/components/BlogCard";
 import Capitalize from "@/lib/Capitalize";
 import path from "path";
+import { Metadata } from "next";
+
+export async function generateMetadata({
+	params,
+}: {
+	params: { tag: string };
+}): Promise<Metadata> {
+	const tag = Capitalize(params.tag.split("-").join(" "));
+
+	return {
+		title: `${tag}${
+			tag.lastIndexOf("s") === tag.length - 1 ? "' Tag" : "'s Tag"
+		} | Blog`,
+		description: `${tag} tag articles`,
+		keywords: [tag, "blog", "articles"],
+	};
+}
 
 export async function generateStaticParams() {
 	const files = fs.readdirSync(postsDirectory);
