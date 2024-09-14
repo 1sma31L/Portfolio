@@ -4,13 +4,14 @@
 	"insertReadTime": true,
 	"newFileIsInsertLastMod": true,
 	"newFileIsInsertReadTime": true,
-	"wordsPerMinute": 100,
+	"wordsPerMinute": 200,
 	"template": {
 		"data": {
 			"date": "{{now}}",
 			"author": "Ismail Boussekine",
 			"tags": ["", ""],
-			"title": "Your Title Here"
+			"category": [""],
+			"title": "Your Title Goes Here"
 		}
 	}
 }

@@ -10,19 +10,19 @@ const timeLine: TTimeLine = [
 					"Developed an anonymous message sender using Next.js, Firebase",
 					"Developed this website",
 					"Started learning System Design and digging deeper in DSA",
-					"Started learning about web security",
+					"Started learning about Web Security",
 				],
 			},
 			{
 				monthName: "August",
 				achievements: [
-					"Continued learning Redux",
+					"Continued learning Redux & RTK",
 					"Started learning Next.js, Git/GitHub",
 					"Started solving coding challenges on CodeWars",
 					"Developed my first portfolio following a tutorial on Youtube",
 					"Developed a website to discover trending movies and TV shows",
 					"Started learning Node.js, MongoDB and Express.js",
-					"Learned firebase",
+					"Learned Firebase",
 				],
 			},
 			{
@@ -37,12 +37,12 @@ const timeLine: TTimeLine = [
 			},
 			{
 				monthName: "June",
-				achievements: ["Learned Latex, HTML5 and CSS3"],
+				achievements: ["Learned LaTex, HTML5 and CSS3"],
 			},
 			{
 				monthName: "March",
 				achievements: [
-					"Gave a speech about cybersecurity in the healthcare industry at Medicine University, Ziania, Algiers",
+					"Gave a presentation about cybersecurity in the healthcare industry at The Medicine University, Ziania, Algiers",
 				],
 			},
 		],
@@ -53,25 +53,25 @@ const timeLine: TTimeLine = [
 			{
 				monthName: "December",
 				achievements: [
-					"Became HoD of Cybersecurity department at Google Developers Student Clubs - ENSTA",
-					"Attended an AI conference at International Conference Center 'Abdelatif Rahal'",
+					"Became HoD of Cybersecurity department at Google Developers Student Clubs GDSC-ENSTA",
+					"Attended an AI conference at International Conference Center 'Abdelatif Rahal' CIC, Algiers",
 				],
 			},
 			{
 				monthName: "October",
-				achievements: ["Started learning C language"],
+				achievements: ["Started learning C programming language"],
 			},
 			{
 				monthName: "September",
 				achievements: [
-					"Started my first year in college",
+					"Started my first year at college",
 					"installed Arch Linux on my laptop, and started using it as my daily driver",
 				],
 			},
 			{
 				monthName: "August",
 				achievements: [
-					"Accepted in National Higher School of Advanced Technologies",
+					"Accepted at The National Higher School of Advanced Technologies (ENSTA)",
 					"Started tinkering with Linux",
 				],
 			},
