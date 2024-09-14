@@ -9,12 +9,26 @@ tags:
   - Linux
 category:
   - Tech
-lastmod: 2024-09-14T02:06:27.640Z
-duration: 7 min
+lastmod: 2024-09-14T02:15:05.143Z
+duration: 8 min
 ---
-+ [What is a Linux distribution ?](#what-is-a-linux-distribution-)
-+ [Most Popular Linux Distributions](#most-popular-linux-distributions)
-    + [Debian](#debian)
+### Table of Contents
++ [1. What is a Linux distribution ?](#1-what-is-a-linux-distribution-)
++ [2. Best Linux Distribution](#2-best-linux-distribution)
+  + [2.1. Arch Linux (i use Arch btw)](#21-arch-linux-i-use-arch-btw)
+    + [2.1.1. Cons:](#211-cons)
+    + [2.1.2. Pros:](#212-pros)
+  + [2.2. Void](#22-void)
+  + [2.3. NixOS](#23-nixos)
+  + [2.4. Debian](#24-debian)
+    + [2.4.1. Pros:](#241-pros)
+    + [2.4.2. Cons:](#242-cons)
+  + [2.5. Gentoo](#25-gentoo)
+  + [2.6. Fedora](#26-fedora)
+  + [2.7. Linux Mint](#27-linux-mint)
+  + [2.8. OpenSUSE](#28-opensuse)
+  + [2.9. Ubuntu](#29-ubuntu)
++ [3. What To Choose Depending On Your Use Case](#3-what-to-choose-depending-on-your-use-case)
 
 <!-- Content -->
 
@@ -41,7 +55,9 @@ A linux distribution is a set of pre-installed programs and settings on top of t
 # 2. Best Linux Distribution
 
 ## 2.1. Arch Linux (i use Arch btw)
-![image]("/images/i3-arch-rice.png")
+![Arch Linux With I3](/images/i3-arch-rice.png)
+
+
  Arch linux is the best linux distro I've tried, I'm running it now as my daily driver for a year and a half, It was first created in 2002 by Judd Vinet, It is a standalone distro meaning it is not forked from another linux distro, what is best good about this distro is its minimal approach and simplicity it follows DYI (do it yourself) and K.I.S.S. philosophy (Keep It Simple Stupid), By minimal we mean that it does'nt ship any unnecessary software which makes it less bloated,
  With its rolling release model it provides the latest and greatest of softwares, which also means that you can use any ISO image to install the distro and by the time of update you'll have the same version as me (who installed it long ago), so it does'nt follow a fixed release cycle like Debian or any other distros. 
 
