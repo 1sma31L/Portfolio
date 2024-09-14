@@ -26,3 +26,15 @@ export type PostProps = {
 		slug: string;
 	};
 };
+
+export type TFrontMatter = {
+	title: string;
+	metaDescription: string;
+	author: string;
+	date: string;
+	tags: string[];
+	categories: string[];
+	keywords: string[];
+	lastmod: string;
+	duration: string;
+};

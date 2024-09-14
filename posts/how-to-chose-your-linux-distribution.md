@@ -1,8 +1,9 @@
 ---
-title: How to chose your Linux distributution
+title: How To Chose Your Linux Distributution
 metaDescription: >-
-  This blog post will guide on how to choose your linux distribution from best
-  linux distros to the best one for use case.
+  This article will guide you on how to choose your linux distribution based on
+  your needs and use case, It will also provide a list of the best linux
+  distributions out there.
 author: Ismail Boussekine
 date: 2024-09-13T21:50:34.975Z
 tags:
@@ -19,51 +20,43 @@ keywords:
   - Gentoo
   - Fedora
   - Linux Mint
-lastmod: 2024-09-14T21:14:57.421Z
+lastmod: 2024-09-14T22:36:42.598Z
 duration: 15 min
 ---
+### Table of Contents
+- [1. What is a Linux distribution](#1-what-is-a-linux-distribution)
+- [2. Best Linux Distributions](#2-best-linux-distributions)
+- [3. What To Choose Depending On Your Use Case](#3-what-to-choose-depending-on-your-use-case)
+- [4. Conclusion](#4-conclusion)
 
-+ [What is a Linux distribution](#what-is-a-linux-distribution)
-+ [Best Linux Distributions](#best-linux-distributions)
-  + [1. Arch Linux](#1-arch-linux)
-  + [2. Void](#2-void)
-  + [3. NixOS](#3-nixos)
-  + [4. Debian](#4-debian)
-  + [5. Gentoo](#5-gentoo)
-  + [6. Fedora](#6-fedora)
-  + [7. Linux Mint](#7-linux-mint)
-+ [What To Choose Depending On Your Use Case](#what-to-choose-depending-on-your-use-case)
-  + [General Use and Ease of Use](#general-use-and-ease-of-use)
-  + [Performance and Customization](#performance-and-customization)
-  + [Stability and Reliability](#stability-and-reliability)
-  + [Development and Cutting-Edge Features](#development-and-cutting-edge-features)
-  + [Educational Purposes](#educational-purposes)
-+ [Conclusion](#conclusion)
+
+
 
 ---
 
-**GNU/Linux** is an open-source and free operating system that was developed in the 90's by both Linus Torvalds and Richard Stallman, Which become called "Linux" as an abbreviation.
+GNU/Linux is an open-source and free operating system that was developed in the 90's by both Linus Torvalds and Richard Stallman, Which become called "Linux" as an abbreviation.
 
 ---
 
 **Notes**:
 
-  - I tried to avoid any linux distribution forks like : PopOS!, Kubuntu, MX Linux ...because they are literally copy of their main distro with a DE and some predefined themes and wallpapers (not the case with Linux Mint and Ubuntu you'll see why).
+  - I tried to avoid any linux distribution forks like : PopOS!, Kubuntu, MX Linux ...etc, Because they are literally copy of their main distro with a DE and some predefined themes and wallpapers (not the case with Linux Mint and Ubuntu you'll see why).
    
   - This list is from my personal point of view and my experience with each one of this distributions.
+  - This is a long article so bring your tea :)
 
 ---
 
-## What is a Linux distribution
+## 1. What is a Linux distribution
 
 A linux distribution is a set of pre-installed programs and settings on top of the kernel, To satisfy certain needs and requirements for the user or the server (as linux is widely used in running servers), Linux distributions tends to focus more on simplicity, ease of use, security, reliability and more, They all share the same Kernel (Linux) and GNU programs, But they differ when it comes to to the package manager (Apt, Pacman, Nix...), Init system (systemD, runit, OpenRC..), And the handling of the system config files.
 
 ---
 
-## Best Linux Distributions
+## 2. Best Linux Distributions
 
 ### 1. Arch Linux
- Arch linux is the best linux distro I've tried, I'm running it now as my daily driver for almost a year and a half, It was first created in 2002 by Judd Vinet, It is an independent distro meaning it is not forked from another linux distro, What is good about this distro is its minimal approach and simplicity, As it follows DYI (do it yourself) and K.I.S.S. philosophy (Keep It Simple Stupid), By minimal, We mean that it does not include any unnecessary software, Which makes it less bloated,
+ Arch linux is the best linux distro I've tried, I'm running it now as my daily driver for almost a year and a half, It was first created in 2002 by Judd Vinet, It is an independent distro meaning it is not forked, What is good about Arch Linux is its minimal approach and simplicity, As it follows DYI (do it yourself) and K.I.S.S. philosophy (Keep It Simple Stupid), By minimal, We mean that it does not include any unnecessary software, Which makes it less bloated,
  With its rolling release model it provides the latest and greatest of softwares, So it does not follow a fixed-release cycle like Debian or any other distros. 
 
 
@@ -135,9 +128,9 @@ To install Void linux you should visit their [official website](https://voidlinu
   - **Stable**:  Despite its rolling-release model, Void is stable thanks to its minimal design, Efficient XBPS package manager, And lightweight Runit init system, Ensuring smooth updates and reliable performance.
   
 #### Cons:
-  - **Bad Documentation**:The documentation for Void Linux can be overwhelming and hard to navigate for new users.
+  - **Bad Documentation**: The documentation for Void Linux can be overwhelming and hard to navigate for new users.
   - **Small Community**: With a smaller user base, finding community support and resources can be challenging compared to more popular distributions. although they have pretty good IRC channel.
-  - **Overwhelming For New Users**:The rolling-release model and minimalistic approach might be intimidating for new users who are not familiar with Linux systems, Even the installing process is similar to Arch linux they both use CLI to install the distribution.
+  - **Overwhelming For New Users**: The rolling-release model and minimalistic approach might be intimidating for new users who are not familiar with Linux systems, Even the installing process is similar to Arch linux they both use CLI to install the distribution.
 
 
 ### 3. NixOS
@@ -299,7 +292,7 @@ You can download and install Linux Mint via the ISO provided on the [official we
   - **Less Cutting-Edge:** Compared to rolling-release distributions or those with faster release cycles, Linux Mint may not include the latest software versions and features immediately.
   - **Dependency on Ubuntu:** As a derivative of Ubuntu, Linux Mint inherits any potential issues or limitations of its parent distribution, Which may affect the availability of certain packages or updates.
 
-## What To Choose Depending On Your Use Case
+## 3. What To Choose Depending On Your Use Case
 Choosing the right Linux distribution can depend heavily on your specific needs and use case. Here’s a guide to help you select the best distribution based on various scenarios:
 
 ### General Use and Ease of Use
@@ -318,7 +311,7 @@ Choosing the right Linux distribution can depend heavily on your specific needs 
   - **Arch Linux**: Useful for those who want to deeply understand Linux internals and system management. The installation and configuration process provides a comprehensive learning experience.
   - **Gentoo**: Ideal for those interested in learning about system optimization and compiling software from source. It offers valuable insights into how software and system components interact.
 
-## Conclusion
+## 4. Conclusion
 Choosing the right distribution will depend on your specific needs and how much effort you’re willing to invest in configuration and maintenance. Each distribution has its strengths and weaknesses, So consider what aspects are most important for your use case before making a decision.
 
 <!-- END -->

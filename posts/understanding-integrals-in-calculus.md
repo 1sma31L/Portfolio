@@ -1,42 +1,40 @@
 ---
-date: 2024-09-05T03:00:00.000Z
 title: Understanding Integrals in Calculus
 metaDescription: >-
   Learn about integrals in calculus with detailed explanations and examples
   using LaTeX for mathematical notation.
+author: Ismail Boussekine
+date: 2024-09-05T03:00:00.000Z
 tags:
   - Calculus
   - Integrals
   - Mathematics
 categories:
   - Science
-lastmod: 2024-09-12T15:33:18.263Z
-duration: 8 min
+keywords:
+  - Calculus
+  - Integrals
+  - Definite Integral
+  - Indefinite Integral
+  - Antiderivative
+lastmod: 2024-09-14T22:30:08.827Z
+duration: 4 min
 ---
-
-### Table of Contents
-+ [1. Basic Integral Notation](#1-basic-integral-notation)
-  + [1.1. Example: Area Under a Curve](#11-example-area-under-a-curve)
-+ [2. Properties of Integrals](#2-properties-of-integrals)
-  + [2.1. Linearity](#21-linearity)
-  + [2.2. Additivity Over Intervals](#22-additivity-over-intervals)
-  + [2.3. Integral of a Constant](#23-integral-of-a-constant)
-+ [3. Definite vs. Indefinite Integrals](#3-definite-vs-indefinite-integrals)
-  + [3.1. Definite Integral](#31-definite-integral)
-  + [3.2. Indefinite Integral](#32-indefinite-integral)
-  + [3.3. Example: Finding an Antiderivative](#33-example-finding-an-antiderivative)
-+ [4. Applications of Integrals](#4-applications-of-integrals)
-  + [4.1. Calculating Areas](#41-calculating-areas)
-  + [4.2. Calculating Volumes](#42-calculating-volumes)
-  + [4.3. Solving Differential Equations](#43-solving-differential-equations)
-  + [4.4. Computing Total Accumulated Change](#44-computing-total-accumulated-change)
-+ [5. Conclusion](#5-conclusion)
+### Table of Contents 
+- [1. Basic Integral Notation](#1-basic-integral-notation)
+- [2. Properties of Integrals](#2-properties-of-integrals)
+- [3. Definite vs. Indefinite Integrals](#3-definite-vs-indefinite-integrals)
+- [4. Applications of Integrals](#4-applications-of-integrals)
+- [5. Conclusion](#5-conclusion)
 ---
-
-
-
 
 Integrals are a fundamental concept in calculus, representing the area under a curve or the accumulation of quantities. This guide will walk you through the basics of integrals, including their notation, properties, and applications.
+
+---
+
+**Note**: This article was AI-Generated to test the KaTeX rendering capabilities of the markdown parser (Rehype Katex). The content is not guaranteed to be accurate or error-free, And will probably be deleted in the future.
+
+---
 
 ## 1. Basic Integral Notation
 

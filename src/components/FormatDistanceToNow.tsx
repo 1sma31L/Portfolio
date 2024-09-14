@@ -17,7 +17,7 @@ function FormatDistanceToNow({ frontMatter }: { frontMatter: any }) {
 			) : (
 				<div className="text-xs md:text-sm">
 					<p>
-						<span className="font-bold">Last modification: </span>
+						<span className="font-bold">Last modified: </span>
 						{new Date(frontMatter.lastmod).toString().split("GMT")[0]} ⟡{" "}
 						{formatDistanceToNow(new Date(frontMatter.lastmod))}
 					</p>

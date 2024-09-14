@@ -1,9 +1,10 @@
 ---
-date: 2024-09-05T00:00:00.000Z
 title: Async Await in JavaScript
 metaDescription: >-
   Understand how to use async/await in JavaScript to handle asynchronous calls
   more effectively and improve code readability.
+author: Ismail Boussekine
+date: 2024-09-05T00:00:00.000Z
 tags:
   - Javascript
   - Async Await
@@ -11,21 +12,15 @@ tags:
   - Event Loop
 categories:
   - Tech
-lastmod: 2024-09-12T23:54:59.901Z
-duration: 9 min
----
-### Table of Contents
-- [1. Async:](#1-async)
-- [2. Await:](#2-await)
-- [3. Hint:](#3-hint)
-	- [3.1. Example 1:](#31-example-1)
-	- [3.2. Example 2:](#32-example-2)
-- [4. Hint:](#4-hint)
-	- [4.1. Example 3:](#41-example-3)
-	- [4.2. Example 4:](#42-example-4)
-- [5. try/catch:](#5-trycatch)
-- [6. Hint:](#6-hint)
-- [7. Summary:](#7-summary)
+keywords:
+  - Javascript
+  - Async Await
+  - Promises
+  - Asynchronous
+  - Event Loop
+
+lastmod: 2024-09-14T21:35:20.964Z
+duration: 4 min
 ---
 
 Async/Await is a way to handle asynchronous calls but in a way that will make our code look more synchronous and as a result more readable.

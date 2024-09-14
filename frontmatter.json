@@ -7,11 +7,13 @@
 	"wordsPerMinute": 238,
 	"template": {
 		"data": {
-			"date": "{{now}}",
+			"title": "Your Title Goes Here",
+			"metaDescription": "Your meta description goes here",
 			"author": "Ismail Boussekine",
+			"date": "{{now}}",
 			"tags": ["", ""],
 			"category": [""],
-			"title": "Your Title Goes Here"
+			"keywords": ["", ""]
 		}
 	}
 }

@@ -6,17 +6,17 @@ import React from "react";
 import path from "path";
 import fs from "fs";
 // Types And Components
-import { PostProps } from "@/types/types";
-import markdownToHtml from "@/lib/markdownToHtml";
-import AnimatedDiv from "@/components/AnimatedDiv";
-import ProgressBar from "@/components/ProgressBar";
-import { postsDirectory } from "@/constants/index";
-import BackButton from "@/components/BackButton";
-import BlogCard from "@/components/BlogCard";
-import Views from "@/components/Views";
-import FeedBack from "@/components/FeedBack";
 import FormatDistanceToNow from "@/components/FormatDistanceToNow";
-
+import AnimatedDiv from "@/components/AnimatedDiv";
+import { postsDirectory } from "@/constants/index";
+import ProgressBar from "@/components/ProgressBar";
+import markdownToHtml from "@/lib/markdownToHtml";
+import BackButton from "@/components/BackButton";
+import { TFrontMatter } from "@/types/types";
+import FeedBack from "@/components/FeedBack";
+import BlogCard from "@/components/BlogCard";
+import { PostProps } from "@/types/types";
+import Views from "@/components/Views";
 export async function generateMetadata({
 	params,
 }: PostProps): Promise<Metadata> {
@@ -48,7 +48,7 @@ export async function generateStaticParams() {
 }
 
 async function getPostData(slug: string): Promise<{
-	frontMatter: Record<string, any>;
+	frontMatter: TFrontMatter;
 	content: string;
 }> {
 	const filePath = path.join(postsDirectory, `${slug}.md`);
@@ -56,7 +56,8 @@ async function getPostData(slug: string): Promise<{
 		notFound();
 	}
 	const fileContent = fs.readFileSync(filePath, "utf-8");
-	const { data: frontMatter, content } = matter(fileContent);
+	const { data, content } = matter(fileContent);
+	const frontMatter: TFrontMatter = data as TFrontMatter;
 	const { htmlContent } = await markdownToHtml(content);
 	return {
 		frontMatter,
@@ -95,21 +96,20 @@ export default async function BlogPost({ params }: PostProps) {
 		<AnimatedDiv id={`${frontMatter.title}`}>
 			<main className="py-12 container mx-auto px-2 md:px-0 " id="slug">
 				<ProgressBar />
-				<div className="container mx-auto prose dark:prose-dark dark:prose-invert !max-w-none">
+				<div className="container mx-auto prose md:prose-md lg:prose-lg  dark:prose-invert !max-w-none">
 					<div className="inline-block mb-5">
 						<BackButton />
 					</div>
 					<h1 className="sm:!text-[80px] !text-[45px]">{frontMatter.title}</h1>
-					{/* <div className="text-xs md:text-sm">
-						<p>
-							<span className="font-bold">Last modification: </span>
-							{new Date(frontMatter.lastmod).toString().split("GMT")[0]} ⟡{" "}
-							{formatDistanceToNow(new Date(frontMatter.lastmod))}
-						</p>
-					</div> */}
-					<FormatDistanceToNow frontMatter={frontMatter} />
 					<div className="text-xs md:text-sm">
-						<Views slug={slug} autoIncrement={true} />
+						<FormatDistanceToNow frontMatter={frontMatter} />
+						<p>
+							<span className="font-bold">Read time: </span>
+							{frontMatter.duration}
+						</p>
+						<div>
+							<Views slug={slug} autoIncrement={true} />
+						</div>
 					</div>
 					<hr />
 					<div dangerouslySetInnerHTML={{ __html: content }} />

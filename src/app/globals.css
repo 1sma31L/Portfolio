@@ -205,14 +205,23 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 	list-style: none !important;
 }
 
-.heading-anchor::before {
-	content: "#";
-	margin-right: 0.1rem;
-	color: #333;
-	text-decoration: none !important ;
+.heading-anchor {
+	position: relative;
 }
 
-html.dark .heading-anchor::before {
+.heading-anchor::before {
+	content: "#";
+	position: absolute;
+	left: -1.1rem; /* Adjust this value to your preference */
+	color: transparent;
+	margin-right: 0.1rem;
+}
+
+.heading-anchor:hover::before {
+	color: #333;
+}
+
+html.dark .heading-anchor:hover::before {
 	color: #fff;
 }
 
