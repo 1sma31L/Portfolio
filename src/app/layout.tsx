@@ -73,7 +73,7 @@ export default function RootLayout({
 				<Analytics />
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<KeyboardShortcutCtrlI />
-					<ScrollToTop />
+					{/* <ScrollToTop /> */}
 					<ScrollToTopButton />
 					<NavBar />
 					<hr className="" />

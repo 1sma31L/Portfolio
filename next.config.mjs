@@ -16,5 +16,8 @@ const nextConfig = {
 		TEMPLATE_ID: process.env.TEMPLATE_ID,
 		PUBLIC_KEY: process.env.PUBLIC_KEY,
 	},
+	experimental: {
+		optimizePackageImports: ["react-icons/*", "lucide-react", "date-fns"],
+	},
 };
 export default nextConfig;

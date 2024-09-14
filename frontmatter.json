@@ -4,7 +4,7 @@
 	"insertReadTime": true,
 	"newFileIsInsertLastMod": true,
 	"newFileIsInsertReadTime": true,
-	"wordsPerMinute": 200,
+	"wordsPerMinute": 238,
 	"template": {
 		"data": {
 			"date": "{{now}}",
