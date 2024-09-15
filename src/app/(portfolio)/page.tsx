@@ -20,9 +20,6 @@ function Home() {
 		<AnimatedDiv id={0}>
 			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-20 py-6 md:py-0">
 				<section className="flex flex-col gap-5 min-h-[85vh] justify-center items-center">
-					{/* <div className="text-xs w-full text-zinc-500 flex flex-col justify-center items-start gap-2 pt-2">
-						<p className="">Last edited: {new Date().toUTCString()} </p>
-					</div> */}
 					<h1
 						className={`text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100 text-left w-full`}>
 						Ismail M. Bossekine
@@ -98,7 +95,6 @@ function Home() {
 						</div>
 					</div>
 				</section>
-				{/* My Time line */}
 				<section id="timeline" className="w-full flex flex-col">
 					<h1 className="text-3xl md:text-4xl font-bold">
 						<a href={"#timeline"}>
@@ -156,11 +152,11 @@ function Home() {
 							Beside web development, I love to tinker with Linux (I use Arch
 							Linux btw), I also like watching movies and TV shows. My favorite
 							movies are Interstellar (2014), Fallen Angels (1995), and Naked
-							(1993). My favorite TV shows are Mr. Robot (you guessed it right
-							😅) and DARK. I play chess from time to time, 1600 Rapid rated. I
-							read books in philosophy, psychology, and cybersecurity. I like
-							classical music. And last but not least,
-							<span className="font-bold">dark rainy</span> weather is the best
+							(1993). My favorite TV shows are Mr. Robot and DARK. I play chess
+							from time to time, 1600 Rapid rated. I read books in philosophy,
+							psychology, and cybersecurity. I like classical music. And last
+							but not least,
+							<span className="font-bold">Dark rainy</span> weather is the best
 							(change my mind).
 						</div>
 					</div>
