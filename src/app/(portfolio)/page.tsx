@@ -155,9 +155,8 @@ function Home() {
 							(1993). My favorite TV shows are Mr. Robot and DARK. I play chess
 							from time to time, 1600 Rapid rated. I read books in philosophy,
 							psychology, and cybersecurity. I like classical music. And last
-							but not least,
-							<span className="font-bold">Dark rainy</span> weather is the best
-							(change my mind).
+							but not least, <span className="font-bold">Dark rainy</span>{" "}
+							weather is the best (change my mind).
 						</div>
 					</div>
 				</section>
