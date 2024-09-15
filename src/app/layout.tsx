@@ -6,7 +6,6 @@ import "./globals.css";
 import NavBar from "@/components/Navbar";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { KeyboardShortcutCtrlI } from "@/components/KeyShortcut";
 import ScrollToTop from "@/components/ScrollToTop";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 const josefin = Josefin_Sans({ subsets: ["latin"] });
@@ -71,12 +70,7 @@ export default function RootLayout({
 			<body className={josefin.className}>
 				<SpeedInsights />
 				<Analytics />
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-					disableTransitionOnChange>
-					<KeyboardShortcutCtrlI />
+				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<ScrollToTop />
 					<ScrollToTopButton />
 					<NavBar />

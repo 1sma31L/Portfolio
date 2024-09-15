@@ -5,7 +5,8 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import ThemeToggler from "@/components/ThemeToggler";
-import Image from "next/image";
+import Command from "@/components/Command";
+
 import { TiDelete } from "react-icons/ti";
 
 const navItems = [
@@ -96,7 +97,7 @@ export default function NavBar() {
 						/>
 					</Link>
 				</div> */}
-					<nav className="gap-3 relative justify-start w-full z-[100] flex md:gap-4">
+					<nav className="gap-3 relative justify-start w-full z-10 flex md:gap-4">
 						{navItems.map((item) => {
 							const isActiveClass = isActive(pathname, item.path);
 
@@ -132,6 +133,9 @@ export default function NavBar() {
 							);
 						})}
 					</nav>
+					<div className="ml-1">
+						<Command />
+					</div>
 					<div className="ml-1">
 						<ThemeToggler />
 					</div>

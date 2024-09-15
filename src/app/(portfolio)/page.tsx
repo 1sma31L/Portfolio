@@ -3,7 +3,6 @@ import Link from "next/link";
 // Components
 import AnimatedDiv from "@/components/AnimatedDiv";
 import TechStack from "@/components/TechStack";
-import Tag from "@/components/Tag";
 // Data
 import SocialMedia from "@/data/social-media";
 import { stack, other } from "@/data/tech";

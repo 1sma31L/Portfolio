@@ -1,12 +1,9 @@
 import React from "react";
-import fs from "fs";
-import matter from "gray-matter";
 import { LuPenLine } from "react-icons/lu";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
-import { postsDirectory } from "@/constants/index";
 import BlogCard from "@/components/BlogCard";
-
+import getPosts from "@/lib/getPosts";
 export const metadata: Metadata = {
 	title: "Blog",
 	description:
@@ -19,30 +16,6 @@ export const metadata: Metadata = {
 		follow: true,
 	},
 };
-
-async function getPosts() {
-	const files = fs.readdirSync(postsDirectory);
-	const posts = files
-		.filter((file) => !file.startsWith("_"))
-		.map((fileName) => {
-			const slug = fileName.replace(".md", "");
-			const readFile = fs.readFileSync(
-				`${postsDirectory}/${fileName}`,
-				"utf-8"
-			);
-			const { data: frontMatter } = matter(readFile);
-			return {
-				slug,
-				frontMatter,
-			};
-		});
-	posts.sort((a, b) => {
-		const dateA = new Date(a.frontMatter.date).getTime();
-		const dateB = new Date(b.frontMatter.date).getTime();
-		return dateB - dateA;
-	});
-	return posts;
-}
 
 export default async function Blog() {
 	const posts = await getPosts();

@@ -13,7 +13,7 @@ const SocialMedia: {
 		icon: <FaGithub />,
 	},
 	{
-		name: "X (Twitter)",
+		name: "",
 		url: "https://x.com/11sma31l",
 		icon: <FaXTwitter />,
 	},
@@ -21,11 +21,6 @@ const SocialMedia: {
 		name: "LinkedIn",
 		url: "https://linkedin.com/in/ismail-boussekine",
 		icon: <FaLinkedin />,
-	},
-	{
-		name: "Email",
-		url: "mailto:im.boussekine@gmail.com",
-		icon: <FaEnvelope />,
 	},
 ];
 export default SocialMedia;
