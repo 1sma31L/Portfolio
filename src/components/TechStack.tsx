@@ -15,11 +15,11 @@ function TechStack({ item }: { item: TItem }) {
 	};
 	return (
 		<div
-			className={`flex flex-col p-4 rounded border hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors duration-200 justify-center items-center gap-3 cursor-default ${
+			className={`flex flex-col p-4  border hover:border-zinc-300 aspect-square dark:hover:border-zinc-600 transition-colors duration-200 justify-center items-center gap-4 cursor-default ${
 				colorVariants[item.color]
 			}`}>
-			<p className="text-3xl">{item.icon}</p>
-			<p className="text-[14px]">{item.name}</p>
+			<p className="text-3xl md:text-4xl">{item.icon}</p>
+			<p className="text-sm md:text-md">{item.name}</p>
 		</div>
 	);
 }

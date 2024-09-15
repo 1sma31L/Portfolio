@@ -53,7 +53,7 @@ const timeLine: TTimeLine = [
 			{
 				monthName: "December",
 				achievements: [
-					"Became HoD of Cybersecurity department at Google Developers Student Clubs GDSC-ENSTA",
+					"Became Cybersecurity HoD at Google Developers Student Clubs GDSC-ENSTA",
 					"Attended an AI conference at International Conference Center 'Abdelatif Rahal' CIC, Algiers",
 				],
 			},

@@ -52,7 +52,7 @@ function Home() {
 							creating beautiful and simple websites. And here I am, a
 							Full-Stack Developer.
 						</p>
-						<div className="flex flex-row gap-2 flex-wrap mt-8">
+						<div className="flex flex-row gap-2 flex-wrap mt-8 justify-center items-center">
 							{SocialMedia.map((item, index) => (
 								<Link
 									href={item.url}
@@ -70,7 +70,7 @@ function Home() {
 					id="techstack"
 					className="flex flex-col gap-10 justify-center w-full items-center">
 					<div className="flex flex-col gap-1 justify-center  w-full items-start">
-						<h1 className="text-[35px] md:text-[40px] font-bold">
+						<h1 className="text-3xl md:text-4xl font-bold">
 							<a href={"#techstack"}>
 								<BsStack className="inline-block" /> My Tech Stack
 							</a>
@@ -78,7 +78,7 @@ function Home() {
 						<p className="text-zinc-500">
 							Technologies I use in the process of developing websites.
 						</p>
-						<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 w-full py-10 gap-2">
+						<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 w-full py-10 gap-1">
 							{stack.map((item, index) => (
 								<TechStack item={item} key={index} />
 							))}
@@ -87,11 +87,11 @@ function Home() {
 					<div
 						className="flex flex-col gap-1 justify-center w-full items-start"
 						id="otherskills">
-						<h1 className="text-[30px] font-bold">
+						<h1 className="text-3xl md:text-4xl font-bold">
 							<a href="#otherskills">Other Skills</a>
 						</h1>
-						<p className="text-zinc-500">Other skills and languages.</p>
-						<div className="grid grid-cols-2 md:grid-cols-4 w-full py-10 gap-2">
+						<p className="text-zinc-500">Other skills, Tools and languages.</p>
+						<div className="grid grid-cols-2 md:grid-cols-4 w-full py-10 gap-1">
 							{other.map((item, index) => (
 								<TechStack item={item} key={index} />
 							))}
@@ -100,7 +100,7 @@ function Home() {
 				</section>
 				{/* My Time line */}
 				<section id="timeline" className="w-full flex flex-col">
-					<h1 className="text-[35px] md:text-[40px] font-bold">
+					<h1 className="text-3xl md:text-4xl font-bold">
 						<a href={"#timeline"}>
 							<BsCalendar3 className="inline-block text-3xl mb-2 mr-2" />
 							My Timeline
@@ -142,7 +142,7 @@ function Home() {
 					</div>
 				</section>
 				<section id="more-about-me" className="w-full flex flex-col">
-					<h1 className="text-[35px] md:text-[40px] font-bold">
+					<h1 className="text-3xl md:text-4xl font-bold">
 						<a href={"#more-about-me"}>
 							<CgProfile className="inline-block text-3xl mb-2 mr-2" />
 							More About Me
@@ -152,22 +152,16 @@ function Home() {
 						Get to know what I like to do outside of software development.
 					</p>
 					<div>
-						<div className="text-xs sm:text-base leading-[1.6] md:leading-[1.8]">
-							Beside web development, I Love to tinker with Linux (i use{" "}
-							<Tag text="Arch Linux" icon={<SiArchlinux />} /> btw ), I also
-							like watching movies and tv Shows, My favorite movies are{" "}
-							<Tag text="Interstellar (2014)" />,
-							<Tag text="Fallen Angels (1995)" /> and {""}
-							<Tag text="Naked (1993)" />, My fav TV Shows are{" "}
-							<Tag text="Mr. Robot" /> (you guessed it right 😅 ) and{" "}
-							<Tag text="DARK" />. I Play{" "}
-							<Tag text="Chess" icon={<FaChessKnight />} /> from time to time,{" "}
-							<Tag text="1600 Rapid" /> Rated. I read{" "}
-							<Tag text="Books" icon={<FaBookOpen />} /> in{" "}
-							<Tag text="Philosophy" />, <Tag text="Psychologie" /> and{" "}
-							<Tag text="Cybersecurity" />. I like classical Music, And last but
-							not least, <span className="font-bold">Dark rainy</span> weather
-							is the best (Change My Mind).
+						<div className="text-xs sm:text-base leading-[1.8] md:leading-[2]">
+							Beside web development, I love to tinker with Linux (I use Arch
+							Linux btw), I also like watching movies and TV shows. My favorite
+							movies are Interstellar (2014), Fallen Angels (1995), and Naked
+							(1993). My favorite TV shows are Mr. Robot (you guessed it right
+							😅) and DARK. I play chess from time to time, 1600 Rapid rated. I
+							read books in philosophy, psychology, and cybersecurity. I like
+							classical music. And last but not least,
+							<span className="font-bold">dark rainy</span> weather is the best
+							(change my mind).
 						</div>
 					</div>
 				</section>
