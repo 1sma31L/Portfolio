@@ -20,7 +20,7 @@ keywords:
   - Gentoo
   - Fedora
   - Linux Mint
-lastmod: 2024-09-15T11:50:38.083Z
+lastmod: 2024-09-15T11:51:37.080Z
 duration: 15 min
 ---
 ### Table of Contents
