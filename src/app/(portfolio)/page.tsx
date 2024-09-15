@@ -11,8 +11,6 @@ import timeLine from "@/data/time-line";
 // Icons
 import { FaExternalLinkAlt, FaBookOpen } from "react-icons/fa";
 import { BsStack, BsCalendar3 } from "react-icons/bs";
-import { FaChessKnight } from "react-icons/fa6";
-import { SiArchlinux } from "react-icons/si";
 import { CgProfile } from "react-icons/cg";
 
 function Home() {
