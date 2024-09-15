@@ -16,12 +16,26 @@ function Home() {
 	return (
 		<AnimatedDiv id={0}>
 			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-20 py-6 md:py-0">
-				<section className="flex flex-col gap-5 min-h-[85vh] justify-center items-center">
+				<section className="flex flex-col gap-5 min-h-[70vh] md:min-h-[80vh] justify-center items-center">
 					<h1
 						className={`text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100 text-left w-full`}>
 						Ismail M. Bossekine
 					</h1>
-					<div className="text-xs sm:text-base flex flex-col gap-5 leading-[1.6]  dark:text-zinc-100">
+					<div className="text-xs sm:text-base flex flex-col gap-5 leading-[1.6]  dark:text-zinc-100 ">
+						<div className="flex flex-row gap-1 flex-wrap justify-start items-center">
+							{SocialMedia.map((item, index) => (
+								<Link
+									href={item.url}
+									key={index}
+									target="_blank"
+									className="flex flex-row justify-between items-center gap-2 px-2 py-1 dark:hover:bg-zinc-800 hover:bg-zinc-200 rounded-sm">
+									<p className="text-lg mb-1 ">{item.icon}</p>
+									{item.name && (
+										<p className="text-sm hidden sm:block">{item.name}</p>
+									)}
+								</Link>
+							))}
+						</div>
 						<blockquote className="border-l-4 border-zinc-800 dark:border-zinc-100 pl-4 italic text-gray-700 dark:text-gray-300">
 							<p className="font-bold">
 								&quot;An idiot admires complexity, a genius admires
@@ -46,20 +60,6 @@ function Home() {
 							creating beautiful and simple websites. And here I am, a
 							Full-Stack Developer.
 						</p>
-						<div className="flex flex-row gap-2 flex-wrap mt-8 justify-center items-center">
-							{SocialMedia.map((item, index) => (
-								<Link
-									href={item.url}
-									key={index}
-									target="_blank"
-									className="flex flex-row justify-between items-center gap-2 px-2 py-1 dark:hover:bg-zinc-800 hover:bg-zinc-200 rounded-sm">
-									<p className="text-lg mb-1 ">{item.icon}</p>
-									{item.name && (
-										<p className="text-sm hidden sm:block">{item.name}</p>
-									)}
-								</Link>
-							))}
-						</div>
 					</div>
 				</section>
 				<section

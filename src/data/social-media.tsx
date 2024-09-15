@@ -8,7 +8,7 @@ const SocialMedia: {
 	icon: JSX.Element;
 }[] = [
 	{
-		name: "GitHub",
+		name: "",
 		url: "https://github.com/1sma31L",
 		icon: <FaGithub />,
 	},
@@ -18,7 +18,7 @@ const SocialMedia: {
 		icon: <FaXTwitter />,
 	},
 	{
-		name: "LinkedIn",
+		name: "",
 		url: "https://linkedin.com/in/ismail-boussekine",
 		icon: <FaLinkedin />,
 	},
