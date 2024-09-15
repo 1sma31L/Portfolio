@@ -52,9 +52,11 @@ function Home() {
 									href={item.url}
 									key={index}
 									target="_blank"
-									className="flex flex-row justify-between items-center gap-2 px-2 py-1 dark:hover:bg-zinc-800 hover:bg-zinc-200 transition-colors duration-300 rounded-sm">
+									className="flex flex-row justify-between items-center gap-2 px-2 py-1 dark:hover:bg-zinc-800 hover:bg-zinc-200 rounded-sm">
 									<p className="text-lg mb-1 ">{item.icon}</p>
-									<p className="text-sm hidden sm:block">{item.name}</p>
+									{item.name && (
+										<p className="text-sm hidden sm:block">{item.name}</p>
+									)}
 								</Link>
 							))}
 						</div>
