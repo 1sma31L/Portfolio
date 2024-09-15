@@ -20,7 +20,7 @@ keywords:
   - Gentoo
   - Fedora
   - Linux Mint
-lastmod: 2024-09-14T22:36:42.598Z
+lastmod: 2024-09-15T11:50:38.083Z
 duration: 15 min
 ---
 ### Table of Contents
@@ -60,7 +60,7 @@ A linux distribution is a set of pre-installed programs and settings on top of t
  With its rolling release model it provides the latest and greatest of softwares, So it does not follow a fixed-release cycle like Debian or any other distros. 
 
 
-Arch linux uses Pacman package manger which one of the best package managers if not the best, It contains a large number of built packages (binaries), And if you added the AUR (which is another Arch linux repository that is ran by community) the total packages become more than 80,000+ package. Here are some of its commands
+Arch linux uses Pacman package manger which is one of the best package managers if not the best, It contains a large number of built packages (binaries), And if you added the AUR (which is another Arch linux repository that is ran by community) the total packages become more than 80,000+ package. Here are some of its commands
 
 
 ```sh
