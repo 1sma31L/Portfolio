@@ -24,6 +24,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2 } from "lucide-react";
 import { getFormSchema, type FormValues } from "../lib/validation";
+import { toast } from "sonner";
 
 const messagesCollectionRef = collection(db, "inbox");
 
@@ -88,22 +89,28 @@ export function ContactForm() {
 				message: data.message,
 			});
 			setMessageStatus("sent");
+			toast(
+				"Your Message Has Been Sent Successfully, Thanks for you contact, I'll respond as soon as possible",
+				{
+					description: new Date().toLocaleString(),
+				}
+			);
 			form.reset();
-		} catch (error) {
-			console.error("Error adding document: ", error);
+		} catch (error: any) {
 			setMessageStatus("error");
+			toast("An Error Occured", {
+				description:
+					(error.message || "Unexpected error occured.") +
+					" | Please try again, Or report this issue on GitHub",
+			});
 		}
 	}
-	useEffect(() => {
-		if (isSubmitting) {
-			setMessageStatus("loading");
-		}
-	}, [isSubmitting]);
+
 	useEffect(() => {
 		if (messageStatus === "error" || messageStatus === "sent") {
 			setTimeout(() => {
 				setMessageStatus("idle");
-			}, 5000);
+			}, 4000);
 		}
 	}, [messageStatus]);
 	return (
@@ -217,17 +224,22 @@ export function ContactForm() {
 							</div>
 							<Button
 								type="submit"
-								disabled={isSubmitting || messageStatus === "sent"}
+								disabled={
+									isSubmitting ||
+									messageStatus === "sent" ||
+									messageStatus === "error"
+								}
 								className={`w-full mt-6 ${
-									(messageStatus === "sent" && "bg-green-600") ||
-									(messageStatus === "error" && "bg-red-500 hover:bg-red-800")
+									(messageStatus === "sent" && "bg-green-500") ||
+									(messageStatus === "error" && "bg-red-500")
 								}`}>
-								{isSubmitting && (
+								{messageStatus !== "idle" ? (
+									messageStatus + "!"
+								) : !isSubmitting ? (
+									"Send Message"
+								) : (
 									<Loader2 className="mr-2 h-4 w-4 animate-spin" />
 								)}
-								{messageStatus !== "idle"
-									? messageStatus + "!"
-									: "Send Message"}
 							</Button>
 						</form>
 					</Form>

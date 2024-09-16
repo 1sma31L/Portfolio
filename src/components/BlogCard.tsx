@@ -1,12 +1,20 @@
 import React from "react";
 import Link from "next/link";
 import { GoArrowRight } from "react-icons/go";
-
-function BlogCard({ slug, frontMatter }: { slug: string; frontMatter: any }) {
+import formatDate from "@/lib/formatDate";
+function BlogCard({
+	slug,
+	frontMatter,
+	from,
+}: {
+	slug: string;
+	frontMatter: any;
+	from?: string;
+}) {
 	return (
 		<article className="flex flex-col gap-4 p-4 border rounded-lg w-full transition-all duration-150 hover:-translate-y-[1px] hover:translate-x-[2px] hover:shadow-md hover:border-zinc-400 dark:hover:border-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 group bg-white dark:bg-black">
 			<Link
-				href={`/blog/post/${slug}`}
+				href={`/blog/post/${slug}${from ? `?${from}` : ""}`}
 				className=" flex justify-start gap-3 p-2 ">
 				<div className="flex flex-col gap-2 w-full">
 					<div className="flex justify-between items-center ">
@@ -18,7 +26,7 @@ function BlogCard({ slug, frontMatter }: { slug: string; frontMatter: any }) {
 					</p>
 					<div>
 						<p className="text-[10px] md:text-[14px] text-zinc-500 font-normal dark:text-zinc-400">
-							{new Date(frontMatter.date).toDateString()}
+							{formatDate(new Date(frontMatter.date).toISOString())}
 						</p>
 						{/* <div className="text-xs text-zinc-700 dark:text-zinc-400">
 							<Views slug={slug} autoIncrement={false} />

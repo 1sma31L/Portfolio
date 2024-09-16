@@ -15,6 +15,7 @@ const config: Config = {
 					css: {
 						code: {
 							backgroundColor: theme("colors.gray.200"),
+							overflow: "auto",
 							borderRadius: "4px",
 							padding: "0.2rem 0.4rem",
 							color: theme("colors.purple.600"),
@@ -26,8 +27,9 @@ const config: Config = {
 							color: theme("colors.gray.100"),
 							padding: "1rem",
 							borderRadius: "8px",
-							overflowX: "auto",
+							overflow: "auto",
 							fontSize: "0.875rem",
+							maxHeight: "500px",
 						},
 						"code::before": {
 							content: '""',

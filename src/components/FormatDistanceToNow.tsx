@@ -1,6 +1,7 @@
 "use client";
 import { formatDistanceToNow } from "date-fns";
 import React, { useEffect, useState } from "react";
+import formatDate from "@/lib/formatDate";
 
 function FormatDistanceToNow({ frontMatter }: { frontMatter: any }) {
 	const [loading, setLoading] = useState<boolean>(true);
@@ -16,10 +17,16 @@ function FormatDistanceToNow({ frontMatter }: { frontMatter: any }) {
 				</div>
 			) : (
 				<div className="text-xs md:text-sm">
-					<p>
+					<p className="!p-0 !m-0">
 						<span className="font-bold">Last modified: </span>
-						{new Date(frontMatter.lastmod).toString().split("GMT")[0]} ⟡{" "}
-						{formatDistanceToNow(new Date(frontMatter.lastmod))}
+						{`${formatDate(
+							new Date(frontMatter.lastmod).toISOString()
+						)} at ${new Date(frontMatter.lastmod)
+							.toTimeString()
+							.split(":")
+							.slice(0, 2)
+							.join(":")}`}{" "}
+						⋆ {formatDistanceToNow(new Date(frontMatter.lastmod))}
 					</p>
 				</div>
 			)}

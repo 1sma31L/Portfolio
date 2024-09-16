@@ -23,6 +23,7 @@
 		"clsx": "^2.1.1",
 		"cmdk": "^1.0.0",
 		"date-fns": "^3.6.0",
+		"dayjs": "^1.11.13",
 		"dotenv": "^16.4.5",
 		"firebase": "^10.13.1",
 		"framer-motion": "^11.3.31",
@@ -44,9 +45,11 @@
 		"remark-math": "^6.0.0",
 		"remark-parse": "^11.0.0",
 		"remark-rehype": "^11.1.0",
+		"sonner": "^1.5.0",
 		"tailwind-merge": "^2.5.2",
 		"tailwindcss-animate": "^1.0.7",
 		"unified": "^11.0.5",
+		"vaul": "^0.9.3",
 		"zod": "^3.23.8"
 	},
 	"devDependencies": {

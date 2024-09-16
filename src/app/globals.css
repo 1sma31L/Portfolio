@@ -69,7 +69,7 @@
 		@apply bg-background text-foreground;
 	}
 	pre {
-		@apply border rounded-sm md:rounded-md overflow-hidden !important;
+		@apply border rounded-sm md:rounded-md overflow-x-auto overflow-y-auto !important;
 	}
 	html.dark pre {
 		@apply border-zinc-700 !important;
@@ -123,8 +123,7 @@ html.dark code[data-theme*=" "] span {
 /* Padding of the code container */
 
 figure pre {
-	overflow-x: auto;
-	padding: 15px 0 !important;
+	padding: 15px 5px !important;
 }
 
 html.dark pre {
@@ -226,5 +225,5 @@ html.dark .heading-anchor:hover::before {
 }
 
 code {
-	overflow-x: auto !important;
+	overflow: auto !important;
 }

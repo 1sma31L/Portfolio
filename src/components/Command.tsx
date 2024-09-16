@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import { useEffect, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { LuPenLine } from "react-icons/lu";
@@ -37,61 +37,62 @@ export default function Command() {
 	const [open, setOpen] = useState(false);
 	const { resolvedTheme, setTheme } = useTheme();
 	const [posts, setPosts] = useState<Post[]>([]);
-
 	useEffect(() => {
 		const down = (e: KeyboardEvent) => {
 			// dont stop refresh
-			if ((e.metaKey || e.ctrlKey) && e.key !== "R") {
-				e.preventDefault();
-				switch (e.key) {
-					// Open
-					case "k":
-						setOpen((open) => !open);
-						break;
-					// Suggestions
-					case "i":
-						setTheme(resolvedTheme === "light" ? "dark" : "light");
-						break;
-					case "m":
-						window.open("mailto:im.boussekine@gmail.com", "_blank");
-						setOpen((open) => false);
-						break;
-					// Pages
-					case "a":
-						router.push("/");
-						setOpen((open) => false);
-						break;
-					case "p":
-						router.push("/projects");
-						setOpen((open) => false);
-						break;
-					case "c":
-						router.push("/contact");
-						setOpen((open) => false);
-						break;
-					case "b":
-						router.push("/blog");
-						setOpen((open) => false);
-						break;
-					// Blog Categories
-					case "t":
-						router.push("/blog/category/tech");
-						setOpen((open) => false);
-						break;
-					case "s":
-						router.push("/blog/category/science");
-						setOpen((open) => false);
-						break;
-					case "r":
-						router.push("/blog/category/reviews");
-						setOpen((open) => false);
-						break;
-					case "l":
-						router.push("/blog/category/life");
-						setOpen((open) => false);
-						break;
-					default:
-						break;
+			if (e.metaKey || e.ctrlKey) {
+				if (e.key !== "R") {
+					e.preventDefault();
+					switch (e.key) {
+						// Open
+						case "k":
+							setOpen((open) => !open);
+							break;
+						// Suggestions
+						case "i":
+							setTheme(resolvedTheme === "light" ? "dark" : "light");
+							break;
+						case "m":
+							window.open("mailto:im.boussekine@gmail.com", "_blank");
+							setOpen((open) => false);
+							break;
+						// Pages
+						case "a":
+							router.push("/");
+							setOpen((open) => false);
+							break;
+						case "p":
+							router.push("/projects");
+							setOpen((open) => false);
+							break;
+						case "c":
+							router.push("/contact");
+							setOpen((open) => false);
+							break;
+						case "b":
+							router.push("/blog");
+							setOpen((open) => false);
+							break;
+						// Blog Categories
+						case "t":
+							router.push("/blog/category/tech");
+							setOpen((open) => false);
+							break;
+						case "s":
+							router.push("/blog/category/science");
+							setOpen((open) => false);
+							break;
+						case "r":
+							router.push("/blog/category/reviews");
+							setOpen((open) => false);
+							break;
+						case "l":
+							router.push("/blog/category/life");
+							setOpen((open) => false);
+							break;
+						default:
+							break;
+					}
 				}
 			}
 		};

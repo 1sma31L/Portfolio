@@ -68,7 +68,7 @@ const Views: React.FC<ViewsProps> = ({ slug, autoIncrement }) => {
 					<div className="w-3 md:w-4 h-4 md:h-5 bg-zinc-300 dark:bg-zinc-800 animate-pulse rounded"></div>
 				</div>
 			) : (
-				<p className="">
+				<p className="!m-0 p-0!">
 					<span className="font-bold">Views: </span>
 					{viewCount !== null ? viewCount : "N/A"}
 				</p>

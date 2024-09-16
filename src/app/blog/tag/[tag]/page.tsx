@@ -76,6 +76,7 @@ async function getPostsByTag(tag: string) {
 }
 
 export default async function Tag({ params }: { params: { tag: string } }) {
+	const oldTag = params.tag;
 	const tag = Capitalize(params.tag.split("-").join(" "));
 	const posts = await getPostsByTag(tag);
 	return (
@@ -91,7 +92,12 @@ export default async function Tag({ params }: { params: { tag: string } }) {
 				<div className="flex flex-col justify-start items-start w-full h-full gap-4 py-4">
 					{posts.length > 0 ? (
 						posts.map(({ slug, frontMatter }) => (
-							<BlogCard key={slug} slug={slug} frontMatter={frontMatter} />
+							<BlogCard
+								key={slug}
+								slug={slug}
+								frontMatter={frontMatter}
+								from={`tag=${oldTag}`}
+							/>
 						))
 					) : (
 						<p className="text-sm sm:text-md font-bold text-left py-10 px-2">
