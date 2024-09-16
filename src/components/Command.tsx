@@ -52,33 +52,42 @@ export default function Command() {
 						setTheme(resolvedTheme === "light" ? "dark" : "light");
 						break;
 					case "m":
-						router.push("mailto:im.boussekine@gmail.com");
+						window.open("mailto:im.boussekine@gmail.com", "_blank");
+						setOpen((open) => false);
 						break;
 					// Pages
 					case "a":
 						router.push("/");
+						setOpen((open) => false);
 						break;
 					case "p":
 						router.push("/projects");
+						setOpen((open) => false);
 						break;
 					case "c":
 						router.push("/contact");
+						setOpen((open) => false);
 						break;
 					case "b":
 						router.push("/blog");
+						setOpen((open) => false);
 						break;
 					// Blog Categories
 					case "t":
 						router.push("/blog/category/tech");
+						setOpen((open) => false);
 						break;
 					case "s":
 						router.push("/blog/category/science");
+						setOpen((open) => false);
 						break;
 					case "r":
 						router.push("/blog/category/reviews");
+						setOpen((open) => false);
 						break;
 					case "l":
 						router.push("/blog/category/life");
+						setOpen((open) => false);
 						break;
 					default:
 						break;
