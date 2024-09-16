@@ -15,7 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		const { data: frontMatter } = matter(fileContent);
 		return {
 			url: `${BASE_URL}/blog/${slug}`,
-			priority: 0.7,
+			priority: 0.9,
 			lastModified: frontMatter.lastmod,
 		};
 	});
@@ -33,7 +33,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 		{
 			url: `${BASE_URL}/contact`,
 			changeFrequency: "never",
-			priority: 0.8,
+			priority: 1,
 		},
 		{
 			url: `${BASE_URL}/blog`,
