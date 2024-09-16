@@ -1,7 +1,7 @@
 "use client";
 import * as React from "react";
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useMediaQuery } from "@/hooks/use-media-query";
 import {
 	Breadcrumb,
@@ -30,17 +30,18 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Capitalize from "@/lib/Capitalize";
+import { Suspense } from "react";
 
 const ITEMS_TO_DISPLAY = 3;
 type TItem = {
 	href?: string;
 	label: string;
 };
-export default function BreadcrumbResponsive({ label }: { label: string }) {
-	const [open, setOpen] = React.useState(false);
-	const isDesktop = useMediaQuery("(min-width: 768px)");
-	const [isClient, setIsClient] = React.useState(false);
+
+function BreadcrumbContent({ label }: { label: string }) {
 	const searchParams = useSearchParams();
+	const isDesktop = useMediaQuery("(min-width: 768px)");
+
 	const items: TItem[] = [
 		{ href: "/", label: "Home" },
 		{ href: "/blog", label: "Blog" },
@@ -61,21 +62,19 @@ export default function BreadcrumbResponsive({ label }: { label: string }) {
 
 	items.push({ label });
 
-	React.useEffect(() => {
-		setIsClient(true);
-	}, []);
-	return isClient ? (
+	return (
 		<Breadcrumb>
 			<BreadcrumbList>
+				{/* Render breadcrumb logic here */}
 				<BreadcrumbItem>
 					<BreadcrumbLink href={items[0].href}>{items[0].label}</BreadcrumbLink>
 				</BreadcrumbItem>
 				<BreadcrumbSeparator />
-				{items.length > ITEMS_TO_DISPLAY ? (
+				{items.length > ITEMS_TO_DISPLAY && (
 					<>
 						<BreadcrumbItem>
 							{isDesktop ? (
-								<DropdownMenu open={open} onOpenChange={setOpen}>
+								<DropdownMenu>
 									<DropdownMenuTrigger
 										className="flex items-center gap-1"
 										aria-label="Toggle menu">
@@ -92,7 +91,7 @@ export default function BreadcrumbResponsive({ label }: { label: string }) {
 									</DropdownMenuContent>
 								</DropdownMenu>
 							) : (
-								<Drawer open={open} onOpenChange={setOpen}>
+								<Drawer>
 									<DrawerTrigger aria-label="Toggle Menu">
 										<BreadcrumbEllipsis className="h-4 w-4" />
 									</DrawerTrigger>
@@ -124,7 +123,7 @@ export default function BreadcrumbResponsive({ label }: { label: string }) {
 						</BreadcrumbItem>
 						<BreadcrumbSeparator />
 					</>
-				) : null}
+				)}
 				{items.slice(-ITEMS_TO_DISPLAY + 1).map((item, index) => (
 					<BreadcrumbItem key={index}>
 						{item.href ? (
@@ -145,5 +144,13 @@ export default function BreadcrumbResponsive({ label }: { label: string }) {
 				))}
 			</BreadcrumbList>
 		</Breadcrumb>
-	) : null;
+	);
+}
+
+export default function BreadcrumbResponsive({ label }: { label: string }) {
+	return (
+		<Suspense fallback={<div>Loading...</div>}>
+			<BreadcrumbContent label={label} />
+		</Suspense>
+	);
 }
