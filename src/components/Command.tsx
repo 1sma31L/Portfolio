@@ -40,9 +40,10 @@ export default function Command() {
 
 	useEffect(() => {
 		const down = (e: KeyboardEvent) => {
-			if (e.metaKey || e.ctrlKey) {
+			// dont stop refresh
+			if ((e.metaKey || e.ctrlKey) && e.key !== "R") {
 				e.preventDefault();
-				switch (e.key.toLowerCase()) {
+				switch (e.key) {
 					// Open
 					case "k":
 						setOpen((open) => !open);
