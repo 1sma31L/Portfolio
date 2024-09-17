@@ -230,7 +230,7 @@ export function ContactForm() {
 									messageStatus === "error"
 								}
 								className={`w-full mt-6 ${
-									(messageStatus === "sent" && "bg-green-500") ||
+									(messageStatus === "sent" && "!bg-green-500") ||
 									(messageStatus === "error" && "bg-red-500")
 								}`}>
 								{messageStatus !== "idle" ? (
