@@ -1,18 +1,19 @@
-import { other, stack } from "@/data/tech";
-
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import InfiniteScroll from "@/components/InfiniteScroll";
 import Link from "next/link";
 import React from "react";
 import SocialMedia from "@/data/social-media";
+import { TItem } from "@/types/types";
 import TechStack from "@/components/TechStack";
+import stack from "@/data/tech";
 import timeLine from "@/data/time-line";
 
 function Home() {
 	return (
 		<AnimatedDiv id={0}>
 			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-20 py-6 md:py-0">
-				<section className="flex flex-col gap-5 min-h-[70vh] md:min-h-[80vh] justify-center items-center">
+				<section className="flex flex-col gap-5 min-h-[70vh] md:min-h-[80vh] justify-center items-center w-full">
 					<h1
 						className={`text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100 text-left w-full`}>
 						Ismail M. Bossekine
@@ -51,44 +52,16 @@ function Home() {
 						</p>
 					</div>
 				</section>
-				<section
-					id="techstack"
-					className="flex flex-col gap-10 justify-center w-full items-center">
-					<div className="flex flex-col gap-1 justify-center  w-full items-start">
-						<h1 className="text-3xl md:text-4xl font-bold">
-							<a href={"#techstack"}>My Tech Stack</a>
-						</h1>
-						<p className="text-zinc-500">
-							Technologies I use in the process of developing websites.
-						</p>
-						<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 w-full py-10 gap-1">
-							{stack.map((item, index) => (
-								<TechStack item={item} key={index} />
-							))}
-						</div>
-					</div>
-					<div
-						className="flex flex-col gap-1 justify-center w-full items-start"
-						id="otherskills">
-						<h1 className="text-3xl md:text-4xl font-bold">
-							<a href="#otherskills">Other Skills</a>
-						</h1>
-						<p className="text-zinc-500">Other skills, Tools and languages.</p>
-						<div className="grid grid-cols-2 md:grid-cols-4 w-full py-10 gap-1">
-							{other.map((item, index) => (
-								<TechStack item={item} key={index} />
-							))}
-						</div>
-					</div>
-				</section>
+				<h2 className="text-center text-3xl md:text-4xl  font-bold">
+					My Tech Stack
+				</h2>
+				<div className="pb-10 w-full">
+					<InfiniteScroll icons={stack} />
+				</div>
 				<section id="timeline" className="w-full flex flex-col">
-					<h1 className="text-3xl md:text-4xl font-bold">
+					<h1 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
 						<a href={"#timeline"}>My Timeline</a>
 					</h1>
-					<p className="text-zinc-500 mb-10">
-						Here is a brief timeline of my journey in the field of web
-						development.
-					</p>
 					<div className="w-full py-2 px-0">
 						<div className="border-l-2 border-zinc-500 pl-3 md:pl-4">
 							{timeLine.map((item, index) => (
@@ -121,12 +94,10 @@ function Home() {
 					</div>
 				</section>
 				<section id="more-about-me" className="w-full flex flex-col">
-					<h1 className="text-3xl md:text-4xl font-bold">
+					<h1 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
 						<a href={"#more-about-me"}>More About Me</a>
 					</h1>
-					<p className="text-zinc-500 mb-10">
-						Get to know what I like to do outside of software development.
-					</p>
+
 					<div>
 						<div className="text-sm sm:text-base leading-[1.8] md:leading-[2] indent-5">
 							beside web development, i love to tinker with Linux (i use Arch

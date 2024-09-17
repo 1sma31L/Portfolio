@@ -10,6 +10,15 @@ const config: Config = {
 
 	theme: {
 		extend: {
+			keyframes: {
+				scroll: {
+					from: { transform: "translateX(0)" },
+					to: { transform: "translateX(-100%)" },
+				},
+			},
+			animation: {
+				scroll: "scroll 20s linear infinite",
+			},
 			typography: (theme: (arg0: string) => any) => ({
 				DEFAULT: {
 					css: {
@@ -111,4 +120,5 @@ const config: Config = {
 	},
 	plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
+
 export default config;

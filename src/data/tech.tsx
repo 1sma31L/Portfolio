@@ -38,16 +38,6 @@ const stack: TItem[] = [
 		icon: <SiTypescript />,
 		color: "Blue",
 	},
-	// {
-	// 	name: "C Language",
-	// 	icon: <FaC />,
-	// 	color: "Blue",
-	// },
-	// {
-	// 	name: "LaTeX",
-	// 	icon: <SiLatex />,
-	// 	color: "Gray",
-	// },
 	{
 		name: "Tailwind CSS",
 		icon: <RiTailwindCssFill />,
@@ -88,8 +78,6 @@ const stack: TItem[] = [
 		icon: <IoLogoFirebase />,
 		color: "Yellow",
 	},
-];
-const other: TItem[] = [
 	{
 		name: "VS Code",
 		icon: <VscVscode />,
@@ -132,4 +120,5 @@ const other: TItem[] = [
 		color: "Gray",
 	},
 ];
-export { stack, other };
+
+export default stack;
