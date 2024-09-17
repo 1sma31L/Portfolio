@@ -48,7 +48,7 @@ export default function Command() {
 							setOpen(false);
 							break;
 						// Pages
-						case "a":
+						case "h":
 							router.push("/");
 							setOpen(false);
 							break;
@@ -120,8 +120,8 @@ export default function Command() {
 					<CommandGroup heading="Pages">
 						<CommandItem>
 							<CgProfile className="mr-2 h-4 w-4" />
-							<span>Portfolio</span>
-							<CommandShortcut>⌘A</CommandShortcut>
+							<span>Home</span>
+							<CommandShortcut>⌘H</CommandShortcut>
 						</CommandItem>
 						<CommandItem>
 							<FaTerminal className="mr-2 h-4 w-4" />

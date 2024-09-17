@@ -29,10 +29,10 @@ function InfiniteScroll({ icons }: { icons: TItem[] }) {
   after:content-['']
     group    pt-1">
 			{["", ""].map((_, i) => (
-				<div className="animate-scroll flex group-hover:pause" key={i}>
+				<div className="animate-scroll group-hover:pause inline-block" key={i}>
 					{icons.map((icon, index) => (
 						<div
-							className={`text-4xl md:text-5xl mx-5 md:mx-7  
+							className={`text-4xl md:text-5xl mx-5 md:mx-7 inline-block 
                 ${colorVariants[icon.color]}
                 transition-all duration-75
                 `}

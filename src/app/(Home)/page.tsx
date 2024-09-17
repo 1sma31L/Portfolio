@@ -101,7 +101,7 @@ function Home() {
 
 					<div>
 						<div className="text-sm sm:text-base leading-[1.8] md:leading-[2] indent-5">
-							<p>
+							<div>
 								beside web development, i love to tinker with Linux (i use Arch
 								Linux btw), watch people building stuff on YouTube and seeing
 								trendy javascript frameworks,{" "}
@@ -112,7 +112,7 @@ function Home() {
 										</p>
 									</blockquote>
 								</div>
-							</p>
+							</div>
 
 							<p>
 								i simp for bergman and kubrick and my fav movies are

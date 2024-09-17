@@ -25,7 +25,7 @@ function isActive(pathname: string, itemPath: string) {
 	return pathname === itemPath;
 }
 
-function PortfolioNavBar() {
+function HomeNavBar() {
 	let pathname = usePathname() || "/";
 	const [hoveredPath, setHoveredPath] = useState(pathname);
 	useEffect(() => {
@@ -73,4 +73,4 @@ function PortfolioNavBar() {
 	);
 }
 
-export default PortfolioNavBar;
+export default HomeNavBar;
