@@ -24,13 +24,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Loader2 } from "lucide-react";
 import { getFormSchema, type FormValues } from "../lib/validation";
-import { toast } from "sonner";
+// import { toast } from "sonner";
+import { useToast } from "@/hooks/use-toast";
 
 const messagesCollectionRef = collection(db, "inbox");
 
 export function ContactForm() {
 	const formSchema = getFormSchema();
-
+	const { toast } = useToast();
 	const form = useForm<FormValues>({
 		resolver: zodResolver(formSchema),
 		mode: "onChange",
@@ -89,19 +90,24 @@ export function ContactForm() {
 				message: data.message,
 			});
 			setMessageStatus("sent");
-			toast(
-				"Your Message Has Been Sent Successfully, Thanks for you contact, I'll respond as soon as possible",
-				{
-					description: new Date().toLocaleString(),
-				}
-			);
+			toast({
+				variant: "default",
+				title: "Your Message Has Been Sent Successfully.",
+				description: new Date().toLocaleString(),
+			});
 			form.reset();
 		} catch (error: any) {
 			setMessageStatus("error");
-			toast("An Error Occured", {
-				description:
-					(error.message || "Unexpected error occured.") +
-					" | Please try again, Or report this issue on GitHub",
+			toast({
+				variant: "destructive",
+				title: "An Error Occured.",
+				description: (
+					<>
+						{error.message || "Unexpected error occurred,"}
+						<br />
+						Please try again, or report this issue on GitHub.
+					</>
+				),
 			});
 		}
 	}
@@ -231,7 +237,7 @@ export function ContactForm() {
 								}
 								className={`w-full mt-6 ${
 									(messageStatus === "sent" && "!bg-green-500") ||
-									(messageStatus === "error" && "bg-red-500")
+									(messageStatus === "error" && "!bg-red-500")
 								}`}>
 								{messageStatus !== "idle" ? (
 									messageStatus + "!"
