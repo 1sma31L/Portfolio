@@ -69,7 +69,7 @@
 		@apply bg-background text-foreground;
 	}
 	pre {
-		@apply border rounded-sm md:rounded-md overflow-x-auto overflow-y-auto !important;
+		@apply border rounded-sm md:rounded-md overflow-x-auto !important;
 	}
 	html.dark pre {
 		@apply border-zinc-700 !important;
@@ -108,9 +108,9 @@ code[data-theme*=" "],
 code[data-theme*=" "] span {
 	color: var(--shiki-light);
 	background-color: var(--shiki-light-bg);
-	/* font-style: var(--shiki-dark-font-style) !important;
+	font-style: var(--shiki-dark-font-style) !important;
 	font-weight: var(--shiki-dark-font-weight) !important;
-	text-decoration: var(--shiki-dark-text-decoration) !important; */
+	text-decoration: var(--shiki-dark-text-decoration) !important;
 }
 
 html.dark pre[data-theme*=" "],
@@ -123,7 +123,7 @@ html.dark code[data-theme*=" "] span {
 /* Padding of the code container */
 
 figure pre {
-	padding: 15px 5px !important;
+	padding: 15px 0 !important;
 }
 
 html.dark pre {
@@ -225,5 +225,12 @@ html.dark .heading-anchor:hover::before {
 }
 
 code {
-	overflow: auto !important;
+	scrollbar-width: none; /* Hides scrollbar in Firefox */
+	-webkit-overflow-scrolling: touch; /* Hides scrollbar in Safari */
+	/* Chrome */
+	&::-webkit-scrollbar {
+		display: none;
+	}
+	-ms-overflow-style: none; /* Hides scrollbar in Internet Explorer */
+	overflow-x: auto !important;
 }

@@ -29,7 +29,6 @@ const config: Config = {
 							borderRadius: "8px",
 							overflow: "auto",
 							fontSize: "0.875rem",
-							maxHeight: "500px",
 						},
 						"code::before": {
 							content: '""',
