@@ -7,9 +7,7 @@ export default function PortfolioLayout({
 }>) {
 	return (
 		<div className="w-full bg-zinc-50 dark:bg-zinc-950">
-			<AnimatedDiv id={4}>
-				<PortfolioNavBar />
-			</AnimatedDiv>
+			<PortfolioNavBar />
 			{children}
 		</div>
 	);

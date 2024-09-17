@@ -53,6 +53,6 @@ const nextConfig = {
 	// 		"zod",
 	// 	],
 	// },
-	transpilePackages: ["shiki"],
+	// transpilePackages: ["shiki"],
 };
 export default nextConfig;

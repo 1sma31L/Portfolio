@@ -12,11 +12,7 @@ export default function PortfolioLayout({
 	return (
 		<div className="w-full bg-zinc-50 dark:bg-zinc-950">
 			{pathName.split("/")[1] === "blog" &&
-				!["post", "tag"].includes(pathName.split("/")[2]) && (
-					<AnimatedDiv id={189}>
-						<BlogNavBar />
-					</AnimatedDiv>
-				)}
+				!["post", "tag"].includes(pathName.split("/")[2]) && <BlogNavBar />}
 			{children}
 		</div>
 	);

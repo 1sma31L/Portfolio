@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import Command from "@/components/Command";
 import Link from "next/link";
 import ThemeToggler from "@/components/ThemeToggler";
-import { TiDelete } from "react-icons/ti";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
@@ -55,7 +54,7 @@ export default function NavBar() {
 	};
 	return (
 		<>
-			{!clicked && (
+			{/* {!clicked && (
 				<div className="bg-black">
 					<div className="w-full max-w-[1600px] mx-auto  flex justify-between md:justify-around items-center text-[9px] sm:text-[11px] md:text-sm text-white py-3 px-4 gap-4">
 						<div className="hidden md:block"></div>
@@ -80,34 +79,19 @@ export default function NavBar() {
 					</div>
 					<div className="border-b-2"></div>
 				</div>
-			)}
-			<header className="bg-white dark:bg-black">
-				<div
-					className="flex justify-between items-center container mx-auto py-3 px-4 md:px-0 lg:px-0 gap-2 rounded-lg text-[14px] sm:text-[16px] md:text-[18px]"
-					id="header">
-					{/* <div>
-					<Link href="/">
-						<Image
-							height={100}
-							width={100}
-							priority
-							src="/icons/vercel.webp"
-							className="w-6 dark:invert"
-							alt=""
-						/>
-					</Link>
-				</div> */}
-					<nav className="gap-3 relative justify-start w-full z-10 flex md:gap-4">
+			)} */}
+			<header className="backdrop-blur-md sticky top-0 left-0 w-full z-10 shadow-sm">
+				<div className="flex justify-between items-center container mx-auto py-3 px-4 md:px-0 lg:px-0 gap-2 rounded-lg text-[14px] sm:text-[16px] md:text-[18px]">
+					<nav className="gap-3 justify-start w-full flex md:gap-4">
 						{navItems.map((item) => {
 							const isActiveClass = isActive(pathname, item.path);
-
 							return (
 								<Link
 									key={item.path}
-									className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-75 rounded-sm font-bold -z-100 ${
+									className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-300 rounded-sm transition-all font-bold -z-100 ${
 										isActiveClass
 											? "dark:text-black text-white"
-											: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black md:hover:bg-zinc-200 md:dark:hover:bg-zinc-800 "
+											: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black  "
 									}`}
 									data-active={isActiveClass}
 									href={item.path}
@@ -116,7 +100,7 @@ export default function NavBar() {
 									<span>{item.name}</span>
 									{isActive(pathname, item.path) && (
 										<motion.div
-											layoutId="clickedbutton1"
+											layoutId="nav-active"
 											transition={{
 												type: "spring",
 												bounce: 0.9,
@@ -124,6 +108,7 @@ export default function NavBar() {
 												damping: 12,
 												duration: 0.3,
 											}}
+											style={{ originY: "top" }}
 											className={
 												"absolute inset-0 -z-10 bg-black dark:bg-white rounded-sm "
 											}

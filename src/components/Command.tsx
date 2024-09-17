@@ -81,9 +81,10 @@ export default function Command() {
 		return () => document.removeEventListener("keydown", down);
 	}, [resolvedTheme]);
 	useEffect(() => {
-		// Fetch posts from the API
 		const fetchPosts = async () => {
-			const response = await fetch("/api/posts");
+			const response = await fetch("/api/posts", {
+				cache: "force-cache",
+			} as RequestInit);
 			const data = await response.json();
 			setPosts(data);
 		};
