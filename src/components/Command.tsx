@@ -77,7 +77,9 @@ export default function Command() {
 	useEffect(() => {
 		const fetchPosts = async () => {
 			const response = await fetch("/api/posts", {
-				cache: "force-cache",
+				next: {
+					revalidate: 60 * 60 * 5, // 5 hours
+				},
 			} as RequestInit);
 			const data = await response.json();
 			setPosts(data);
