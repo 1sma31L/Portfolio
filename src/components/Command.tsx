@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import { FormEvent, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 import { LuPenLine } from "react-icons/lu";
@@ -8,9 +8,6 @@ import { MdEmail } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { FaTerminal } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
-import { GiMaterialsScience } from "react-icons/gi";
-import { RiCodeSSlashFill } from "react-icons/ri";
-import { MdNaturePeople, MdRateReview } from "react-icons/md";
 import { RxMoon } from "react-icons/rx";
 import { PiSunLight } from "react-icons/pi";
 import { IoDocumentText } from "react-icons/io5";
@@ -39,56 +36,37 @@ export default function Command() {
 	const [posts, setPosts] = useState<Post[]>([]);
 	useEffect(() => {
 		const down = (e: KeyboardEvent) => {
-			// dont stop refresh
 			if (e.metaKey || e.ctrlKey) {
-				if (e.key !== "R") {
+				if (e.key.toLowerCase() !== "r") {
 					e.preventDefault();
 					switch (e.key) {
 						// Open
 						case "k":
 							setOpen((open) => !open);
 							break;
-						// Suggestions
 						case "i":
 							setTheme(resolvedTheme === "light" ? "dark" : "light");
 							break;
 						case "m":
 							window.open("mailto:im.boussekine@gmail.com", "_blank");
-							setOpen((open) => false);
+							setOpen(false);
 							break;
 						// Pages
 						case "a":
 							router.push("/");
-							setOpen((open) => false);
+							setOpen(false);
 							break;
 						case "p":
 							router.push("/projects");
-							setOpen((open) => false);
+							setOpen(false);
 							break;
 						case "c":
 							router.push("/contact");
-							setOpen((open) => false);
+							setOpen(false);
 							break;
 						case "b":
 							router.push("/blog");
-							setOpen((open) => false);
-							break;
-						// Blog Categories
-						case "t":
-							router.push("/blog/category/tech");
-							setOpen((open) => false);
-							break;
-						case "s":
-							router.push("/blog/category/science");
-							setOpen((open) => false);
-							break;
-						case "r":
-							router.push("/blog/category/reviews");
-							setOpen((open) => false);
-							break;
-						case "l":
-							router.push("/blog/category/life");
-							setOpen((open) => false);
+							setOpen(false);
 							break;
 						default:
 							break;
@@ -127,22 +105,21 @@ export default function Command() {
 				<CommandInput placeholder="Type a command or search..." />
 				<CommandList>
 					<CommandEmpty>No results found.</CommandEmpty>
-					<CommandGroup heading="Suggestions">
-						<CommandItem>
-							{resolvedTheme === "light" ? (
-								<RxMoon className="mr-2 h-4 w-4" />
-							) : (
-								<PiSunLight className="mr-2 h-4 w-4" />
-							)}
-							<span>Toggle Theme</span>
-							<CommandShortcut>⌘I</CommandShortcut>
-						</CommandItem>
-						<CommandItem>
-							<SiGmail className="mr-2 h-4 w-4" />
-							<span>Mail</span>
-							<CommandShortcut>⌘M</CommandShortcut>
-						</CommandItem>
-					</CommandGroup>
+
+					<CommandItem>
+						{resolvedTheme === "light" ? (
+							<RxMoon className="mr-2 h-4 w-4" />
+						) : (
+							<PiSunLight className="mr-2 h-4 w-4" />
+						)}
+						<span>Toggle Theme</span>
+						<CommandShortcut>⌘I</CommandShortcut>
+					</CommandItem>
+					<CommandItem>
+						<SiGmail className="mr-2 h-4 w-4" />
+						<span>Mail</span>
+						<CommandShortcut>⌘M</CommandShortcut>
+					</CommandItem>
 					<CommandSeparator />
 					<CommandGroup heading="Pages">
 						<CommandItem>
@@ -167,28 +144,6 @@ export default function Command() {
 						</CommandItem>
 					</CommandGroup>
 
-					<CommandGroup heading="Blog Categoires">
-						<CommandItem>
-							<RiCodeSSlashFill className="mr-2 h-4 w-4" />
-							<span>Tech</span>
-							<CommandShortcut>⌘T</CommandShortcut>
-						</CommandItem>
-						<CommandItem>
-							<GiMaterialsScience className="mr-2 h-4 w-4" />
-							<span>Science</span>
-							<CommandShortcut>⌘S</CommandShortcut>
-						</CommandItem>
-						<CommandItem>
-							<MdRateReview className="mr-2 h-4 w-4" />
-							<span>Reviews</span>
-							<CommandShortcut>⌘R</CommandShortcut>
-						</CommandItem>
-						<CommandItem>
-							<MdNaturePeople className="mr-2 h-4 w-4" />
-							<span>Life</span>
-							<CommandShortcut>⌘L</CommandShortcut>
-						</CommandItem>
-					</CommandGroup>
 					<CommandGroup heading="All Articles">
 						{posts.map(({ slug, frontMatter }) => (
 							<CommandItem
