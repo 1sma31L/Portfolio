@@ -59,6 +59,9 @@
 	}
 }
 @layer base {
+	::selection {
+		@apply bg-purple-500 text-white;
+	}
 	html {
 		scroll-behavior: smooth;
 	}
@@ -93,11 +96,6 @@
 .katex {
 	overflow: auto;
 	word-break: break-word;
-}
-
-::selection {
-	background-color: rgb(99 102 241);
-	color: white;
 }
 
 /* Pretty Code */
