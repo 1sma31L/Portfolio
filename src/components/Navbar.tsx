@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
 	{
 		path: "/",
-		name: "Portfolio",
+		name: "Home",
 	},
 	{
 		path: "/blog",
@@ -24,8 +24,7 @@ function isActive(pathname: string, itemPath: string) {
 		return (
 			pathname === "/" ||
 			pathname.startsWith("/contact") ||
-			pathname.startsWith("/projects") ||
-			pathname.startsWith("/portfolio")
+			pathname.startsWith("/projects")
 		);
 	}
 

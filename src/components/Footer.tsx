@@ -5,8 +5,8 @@ function Footer() {
 	const links = [
 		{ name: "About", href: "/" },
 		{ name: "Projects", href: "/projects" },
-		{ name: "Blog", href: "/blog" },
 		{ name: "Contact", href: "/contact" },
+		{ name: "Blog", href: "/blog" },
 	];
 	return (
 		<footer className="bg-white dark:bg-black">

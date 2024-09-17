@@ -27,7 +27,7 @@ function InfiniteScroll({ icons }: { icons: TItem[] }) {
   after:bg-[linear-gradient(to_right,theme(colors.zinc.50)_0%,rgba(255,255,255,0)_100%)] 
   dark:after:bg-[linear-gradient(to_right,theme(colors.zinc.950)_0%,rgba(0,0,0,0)_100%)] 
   after:content-['']
-    group    ">
+    group    pt-1">
 			{["", ""].map((_, i) => (
 				<div className="animate-scroll flex group-hover:pause" key={i}>
 					{icons.map((icon, index) => (

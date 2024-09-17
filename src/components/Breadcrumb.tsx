@@ -75,8 +75,8 @@ function BreadcrumbContent({ label }: { label: string }) {
 				<BreadcrumbList>
 					{/* Render breadcrumb logic here */}
 					<BreadcrumbItem>
-						<BreadcrumbLink href={items[0].href}>
-							{items[0].label}
+						<BreadcrumbLink asChild>
+							<Link href={items[0].href as string}>{items[0].label}</Link>
 						</BreadcrumbLink>
 					</BreadcrumbItem>
 					<BreadcrumbSeparator />

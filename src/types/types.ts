@@ -38,3 +38,9 @@ export type TFrontMatter = {
 	lastmod: string;
 	duration: string;
 };
+export type Post = {
+	slug: string;
+	frontMatter: {
+		title: string;
+	};
+};

@@ -59,9 +59,9 @@
 	}
 }
 @layer base {
-	::selection {
+	/* ::selection {
 		@apply bg-[#FFC799] text-black;
-	}
+	} */
 	html {
 		scroll-behavior: smooth;
 	}

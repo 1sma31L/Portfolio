@@ -1,18 +1,18 @@
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import InfiniteScroll from "@/components/InfiniteScroll";
+import LatestBlogs from "@/components/sections/LatestBlogs";
 import Link from "next/link";
 import React from "react";
 import SocialMedia from "@/data/social-media";
 import { TItem } from "@/types/types";
-import TechStack from "@/components/TechStack";
 import stack from "@/data/tech";
 import timeLine from "@/data/time-line";
 
 function Home() {
 	return (
 		<AnimatedDiv id={0}>
-			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-20 py-6 md:py-0">
+			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-28 py-6 md:py-0">
 				<section className="flex flex-col gap-5 min-h-[70vh] md:min-h-[80vh] justify-center items-center w-full">
 					<h1
 						className={`text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100 text-left w-full`}>
@@ -58,9 +58,9 @@ function Home() {
 				<div className="pb-10 w-full">
 					<InfiniteScroll icons={stack} />
 				</div>
-				<section id="timeline" className="w-full flex flex-col">
+				{/* <section className="w-full flex flex-col">
 					<h1 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
-						<a href={"#timeline"}>My Timeline</a>
+						My Timeline
 					</h1>
 					<div className="w-full py-2 px-0">
 						<div className="border-l-2 border-zinc-500 pl-3 md:pl-4">
@@ -92,21 +92,36 @@ function Home() {
 							))}
 						</div>
 					</div>
-				</section>
-				<section id="more-about-me" className="w-full flex flex-col">
+				</section> */}
+				<LatestBlogs />
+				<section className="w-full flex flex-col">
 					<h1 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
-						<a href={"#more-about-me"}>More About Me</a>
+						More About Me
 					</h1>
 
 					<div>
 						<div className="text-sm sm:text-base leading-[1.8] md:leading-[2] indent-5">
-							beside web development, i love to tinker with Linux (i use Arch
-							Linux btw), my favorite movies are Interstellar (2014), Fallen
-							Angels (1995), and Naked (1993). i simp for bergman and kubrick,
-							my favorite tv shows are Mr. Robot and DAЯK. i play chess from
-							time to time, 1600 Rapid rated. i read books in philosophy,
-							psychology, and cybersecurity. i like classical music. and last
-							but not least, dark rainy weather is the best.
+							<p>
+								beside web development, i love to tinker with Linux (i use Arch
+								Linux btw), watch people building stuff on YouTube and seeing
+								trendy javascript frameworks,{" "}
+								<div className=" flex justify-center items-center py-4">
+									<blockquote className="border-l-4 border-zinc-800 dark:border-zinc-100 italic text-gray-700 dark:text-gray-300">
+										<p className="">
+											&quot;New day, New javascript framework.&quot;
+										</p>
+									</blockquote>
+								</div>
+							</p>
+
+							<p>
+								i simp for bergman and kubrick and my fav movies are
+								Interstellar (2014), Fallen Angels (1995), and Naked (1993). my
+								fav tv shows are Mr. Robot and DAЯK. i play chess from time to
+								time, 1600 Rapid rated. i read books in philosophy, psychology,
+								and cybersecurity. i like classical music. and last but not
+								least, dark rainy weather is the best.
+							</p>
 						</div>
 					</div>
 				</section>
@@ -116,14 +131,24 @@ function Home() {
 					<h1 className="text-4xl md:text-6xl font-extrabold text-center">
 						Are You Interested in Hiring Me?
 					</h1>
-					<button className="text-sm md:text-base py-2 px-3 border bg-zinc-950 dark:bg-zinc-50 shadow rounded dark:text-zinc-950 text-zinc-50 w-auto hover:bg-zinc-700 transition-colors duration-500 dark:hover:bg-zinc-200 group">
-						<Link
-							href={"/contact"}
-							className="flex gap-2 justify-center items-center group-hover:translate-x-[2px] group-hover:-translate-y-[2px] transition-all duration-500">
-							<FaExternalLinkAlt className="mb-1" />
-							<span className="font-bold">Contact Me</span>
-						</Link>
-					</button>
+					<div className="flex flex-col sm:flex-row gap-5">
+						<button className="text-sm md:text-base py-2 px-3 border bg-zinc-950 dark:bg-zinc-50 shadow rounded dark:text-zinc-950 text-zinc-50 w-auto hover:bg-zinc-700 transition-colors duration-500 dark:hover:bg-zinc-300">
+							<Link
+								href={"/contact"}
+								className="flex gap-2 justify-center items-center ">
+								<FaExternalLinkAlt className="mb-1" />
+								<span className="font-bold">Contact Me</span>
+							</Link>
+						</button>
+						<button className="text-sm md:text-base py-2 px-3 border  shadow rounded  w-auto  transition-colors duration-500 hover:bg-zinc-200 dark:hover:bg-zinc-800">
+							<Link
+								href={"/contact"}
+								className="flex gap-2 justify-center items-center ">
+								<FaExternalLinkAlt className="mb-1" />
+								<span className="font-bold">See My Projects</span>
+							</Link>
+						</button>
+					</div>
 				</section>
 			</main>
 		</AnimatedDiv>
