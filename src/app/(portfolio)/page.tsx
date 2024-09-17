@@ -1,13 +1,11 @@
-import React from "react";
-import Link from "next/link";
-// Components
+import { other, stack } from "@/data/tech";
+
 import AnimatedDiv from "@/components/AnimatedDiv";
-import TechStack from "@/components/TechStack";
-// Data
-import SocialMedia from "@/data/social-media";
-import { stack, other } from "@/data/tech";
-// Icons
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Link from "next/link";
+import React from "react";
+import SocialMedia from "@/data/social-media";
+import TechStack from "@/components/TechStack";
 import timeLine from "@/data/time-line";
 
 function Home() {

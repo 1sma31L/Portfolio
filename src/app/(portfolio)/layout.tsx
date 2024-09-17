@@ -1,5 +1,5 @@
-import PortfolioNavBar from "@/components/PortfolioNavBar";
 import AnimatedDiv from "@/components/AnimatedDiv";
+import PortfolioNavBar from "@/components/PortfolioNavBar";
 export default function PortfolioLayout({
 	children,
 }: Readonly<{

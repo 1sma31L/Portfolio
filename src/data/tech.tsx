@@ -1,21 +1,21 @@
-import { TItem } from "@/types/types";
-import { FaHtml5, FaCss3, FaNode, FaGithub, FaLinux } from "react-icons/fa";
 import { FaC, FaReact } from "react-icons/fa6";
+import { FaCss3, FaGithub, FaHtml5, FaLinux, FaNode } from "react-icons/fa";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import {
-	SiJavascript,
-	SiTypescript,
-	SiLatex,
-	SiRedux,
+	SiArchlinux,
 	SiExpress,
-	SiMongodb,
 	SiGit,
 	SiGnubash,
-	SiArchlinux,
+	SiJavascript,
+	SiLatex,
+	SiMongodb,
+	SiRedux,
+	SiTypescript,
 } from "react-icons/si";
-import { VscVscode } from "react-icons/vsc";
 
-import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { IoLogoFirebase } from "react-icons/io5";
+import { TItem } from "@/types/types";
+import { VscVscode } from "react-icons/vsc";
 
 const stack: TItem[] = [
 	{

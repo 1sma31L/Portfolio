@@ -1,14 +1,14 @@
+import AnimatedDiv from "@/components/AnimatedDiv";
+import { BiCategory } from "react-icons/bi";
+import BlogCard from "@/components/BlogCard";
+import Capitalize from "@/lib/Capitalize";
+import { Metadata } from "next";
 import React from "react";
 import fs from "fs";
 import matter from "gray-matter";
-import { BiCategory } from "react-icons/bi";
-import AnimatedDiv from "@/components/AnimatedDiv";
-import { postsDirectory } from "@/constants/index";
-import BlogCard from "@/components/BlogCard";
-import Capitalize from "@/lib/Capitalize";
-import path from "path";
-import { Metadata } from "next";
 import navItems from "@/data/navItems";
+import path from "path";
+import { postsDirectory } from "@/constants/index";
 export async function generateMetadata({
 	params,
 }: {

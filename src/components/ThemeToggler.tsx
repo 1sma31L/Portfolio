@@ -1,17 +1,18 @@
 "use client";
 
 import * as React from "react";
-import { useTheme } from "next-themes";
-import { RxMoon } from "react-icons/rx";
-import { PiSunLight } from "react-icons/pi";
 
-import { Button } from "@/components/ui/button";
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+import { Button } from "@/components/ui/button";
+import { PiSunLight } from "react-icons/pi";
+import { RxMoon } from "react-icons/rx";
+import { useTheme } from "next-themes";
 
 export default function ModeToggle() {
 	const { setTheme } = useTheme();

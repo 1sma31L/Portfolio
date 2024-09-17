@@ -1,8 +1,8 @@
-import path from "path";
-import fs from "fs";
 import { MetadataRoute } from "next";
+import fs from "fs";
 import { generateStaticParams } from "./blog/post/[slug]/page";
 import matter from "gray-matter";
+import path from "path";
 import { postsDirectory } from "@/constants";
 
 const BASE_URL = "https://ismailboussekine.me";

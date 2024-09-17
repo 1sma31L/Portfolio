@@ -1,7 +1,9 @@
 "use client";
-import { formatDistanceToNow } from "date-fns";
+
 import React, { useEffect, useState } from "react";
+
 import formatDate from "@/lib/formatDate";
+import { formatDistanceToNow } from "date-fns";
 
 function FormatDistanceToNow({ frontMatter }: { frontMatter: any }) {
 	const [loading, setLoading] = useState<boolean>(true);

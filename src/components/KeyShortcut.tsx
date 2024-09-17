@@ -1,6 +1,8 @@
 "use client";
-import { useTheme } from "next-themes";
+
 import React, { useEffect } from "react";
+
+import { useTheme } from "next-themes";
 
 const KeyboardShortcutCtrlI: React.FC = () => {
 	const { resolvedTheme, setTheme } = useTheme();

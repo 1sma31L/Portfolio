@@ -1,13 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+
+import Command from "@/components/Command";
 import Link from "next/link";
 import ThemeToggler from "@/components/ThemeToggler";
-import Command from "@/components/Command";
-
 import { TiDelete } from "react-icons/ti";
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const navItems = [
 	{

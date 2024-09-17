@@ -1,16 +1,17 @@
-import { unified } from "unified";
-import { transformerCopyButton } from "@rehype-pretty/transformers";
-import rehypeAutoLinkHeadings from "rehype-autolink-headings";
-import rehypePrettyCode from "rehype-pretty-code";
-import { getSingletonHighlighter } from "shiki";
-import rehypeStringify from "rehype-stringify";
-import remarkRehype from "remark-rehype";
-import remarkParse from "remark-parse";
-import rehypeKatex from "rehype-katex";
-import remarkMath from "remark-math";
-import rehypeSlug from "rehype-slug";
-import remarkGfm from "remark-gfm";
 import "katex/dist/katex.min.css";
+
+import { getSingletonHighlighter } from "shiki";
+import rehypeAutoLinkHeadings from "rehype-autolink-headings";
+import rehypeKatex from "rehype-katex";
+import rehypePrettyCode from "rehype-pretty-code";
+import rehypeSlug from "rehype-slug";
+import rehypeStringify from "rehype-stringify";
+import remarkGfm from "remark-gfm";
+import remarkMath from "remark-math";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import { transformerCopyButton } from "@rehype-pretty/transformers";
+import { unified } from "unified";
 
 const processor = unified()
 	.use(remarkParse)

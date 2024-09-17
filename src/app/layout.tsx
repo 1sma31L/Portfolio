@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
-import { ThemeProvider } from "@/components/ui/theme-provider";
-import { Josefin_Sans } from "next/font/google";
-import Footer from "@/components/Footer";
 import "./globals.css";
-import NavBar from "@/components/Navbar";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import { Analytics } from "@vercel/analytics/react";
+import Footer from "@/components/Footer";
+import { Josefin_Sans } from "next/font/google";
+import type { Metadata } from "next";
+import NavBar from "@/components/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ThemeProvider } from "@/components/ui/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
 // import ScrollToTopButton from "@/components/ScrollToTopButton";
 const josefin = Josefin_Sans({ subsets: ["latin"] });
-import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
 	metadataBase: new URL("https://ismailboussekine.me"),

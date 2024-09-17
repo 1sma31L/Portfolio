@@ -1,9 +1,11 @@
 "use client";
+
+import React, { useEffect, useState } from "react";
+import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+
+import { db } from "@/config/firebase";
 import dotenv from "dotenv";
 dotenv.config();
-import React, { useEffect, useState } from "react";
-import { db } from "@/config/firebase";
-import { doc, getDoc, updateDoc, setDoc } from "firebase/firestore";
 
 interface ViewsProps {
 	slug: string;

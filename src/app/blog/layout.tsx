@@ -1,6 +1,7 @@
 "use client";
-import BlogNavBar from "@/components/BlogNavBar";
+
 import AnimatedDiv from "@/components/AnimatedDiv";
+import BlogNavBar from "@/components/BlogNavBar";
 import { usePathname } from "next/navigation";
 export default function PortfolioLayout({
 	children,

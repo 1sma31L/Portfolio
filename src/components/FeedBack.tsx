@@ -1,16 +1,18 @@
 "use client";
-import React, { use, useEffect, useState } from "react";
-import { BiSolidLike } from "react-icons/bi";
-import { BiSolidDislike } from "react-icons/bi";
-import { ImSpinner9 } from "react-icons/im";
+
 import {
+	DocumentData,
 	doc,
 	getDoc,
+	increment,
 	setDoc,
 	updateDoc,
-	increment,
-	DocumentData,
 } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
+
+import { BiSolidDislike } from "react-icons/bi";
+import { BiSolidLike } from "react-icons/bi";
+import { ImSpinner9 } from "react-icons/im";
 import { db } from "@/config/firebase";
 
 async function getStats(slug: string): Promise<

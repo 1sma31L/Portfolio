@@ -1,11 +1,11 @@
-import { Metadata } from "next";
-import React from "react";
-import upcomingProjects from "@/data/upcoming-projects";
-import projects from "@/data/projects";
-import ProjectCard from "@/components/ProjectCard";
 import AnimatedDiv from "@/components/AnimatedDiv";
-import { FaTerminal } from "react-icons/fa";
 import { CgSandClock } from "react-icons/cg";
+import { FaTerminal } from "react-icons/fa";
+import { Metadata } from "next";
+import ProjectCard from "@/components/ProjectCard";
+import React from "react";
+import projects from "@/data/projects";
+import upcomingProjects from "@/data/upcoming-projects";
 
 export const metadata: Metadata = {
 	title: "Projects",

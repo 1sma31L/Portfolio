@@ -1,8 +1,7 @@
 "use client";
+
 import * as React from "react";
-import Link from "next/link";
-import { useSearchParams } from "next/navigation";
-import { useMediaQuery } from "@/hooks/use-media-query";
+
 import {
 	Breadcrumb,
 	BreadcrumbEllipsis,
@@ -12,7 +11,6 @@ import {
 	BreadcrumbPage,
 	BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { Button } from "@/components/ui/button";
 import {
 	Drawer,
 	DrawerClose,
@@ -29,8 +27,13 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+import { Button } from "@/components/ui/button";
 import Capitalize from "@/lib/Capitalize";
+import Link from "next/link";
 import { Suspense } from "react";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import { useSearchParams } from "next/navigation";
 
 const ITEMS_TO_DISPLAY = 3;
 type TItem = {

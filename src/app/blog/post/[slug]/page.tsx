@@ -1,26 +1,21 @@
-import { notFound } from "next/navigation";
-import matter from "gray-matter";
-import { Metadata } from "next";
-import Link from "next/link";
-import React from "react";
-import path from "path";
-import fs from "fs";
-// Types And Components
-import FormatDistanceToNow from "@/components/FormatDistanceToNow";
 import AnimatedDiv from "@/components/AnimatedDiv";
-import { postsDirectory } from "@/constants/index";
-import ProgressBar from "@/components/ProgressBar";
-import markdownToHtml from "@/lib/markdownToHtml";
-import BackButton from "@/components/BackButton";
-import { TFrontMatter } from "@/types/types";
+import BlogCard from "@/components/BlogCard";
 import Breadcrumb from "@/components/Breadcrumb";
 import FeedBack from "@/components/FeedBack";
-import BlogCard from "@/components/BlogCard";
+import FormatDistanceToNow from "@/components/FormatDistanceToNow";
+import Link from "next/link";
+import { Metadata } from "next";
 import { PostProps } from "@/types/types";
+import ProgressBar from "@/components/ProgressBar";
+import React from "react";
+import { TFrontMatter } from "@/types/types";
 import Views from "@/components/Views";
-import { FaReadme } from "react-icons/fa6";
-import { FaEye } from "react-icons/fa";
-import { MdModeEditOutline } from "react-icons/md";
+import fs from "fs";
+import markdownToHtml from "@/lib/markdownToHtml";
+import matter from "gray-matter";
+import { notFound } from "next/navigation";
+import path from "path";
+import { postsDirectory } from "@/constants/index";
 
 export async function generateMetadata({
 	params,

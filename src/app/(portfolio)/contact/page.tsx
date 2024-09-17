@@ -1,6 +1,6 @@
+import AnimatedDiv from "@/components/AnimatedDiv";
 import { ContactForm } from "@/components/Form";
 import { MdEmail } from "react-icons/md";
-import AnimatedDiv from "@/components/AnimatedDiv";
 import { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Contact",

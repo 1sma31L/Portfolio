@@ -1,8 +1,8 @@
-import React from "react";
-import { LuPenLine } from "react-icons/lu";
 import AnimatedDiv from "@/components/AnimatedDiv";
-import { Metadata } from "next";
 import BlogCard from "@/components/BlogCard";
+import { LuPenLine } from "react-icons/lu";
+import { Metadata } from "next";
+import React from "react";
 import getPosts from "@/lib/getPosts";
 export const metadata: Metadata = {
 	title: "Blog",

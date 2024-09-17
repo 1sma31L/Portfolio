@@ -1,5 +1,7 @@
 "use client";
-import React, { useState, useEffect } from "react";
+
+import React, { useEffect, useState } from "react";
+
 import { IoTriangle } from "react-icons/io5";
 
 const ScrollToTopButton = () => {

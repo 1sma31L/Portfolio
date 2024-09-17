@@ -1,16 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { useTheme } from "next-themes";
-import { LuPenLine } from "react-icons/lu";
-import { MdEmail } from "react-icons/md";
-import { CgProfile } from "react-icons/cg";
-import { FaTerminal } from "react-icons/fa";
-import { SiGmail } from "react-icons/si";
-import { RxMoon } from "react-icons/rx";
-import { PiSunLight } from "react-icons/pi";
-import { IoDocumentText } from "react-icons/io5";
 
 import {
 	CommandDialog,
@@ -22,6 +11,19 @@ import {
 	CommandSeparator,
 	CommandShortcut,
 } from "@/components/ui/command";
+import { useEffect, useState } from "react";
+
+import { CgProfile } from "react-icons/cg";
+import { FaTerminal } from "react-icons/fa";
+import { IoDocumentText } from "react-icons/io5";
+import { LuPenLine } from "react-icons/lu";
+import { MdEmail } from "react-icons/md";
+import { PiSunLight } from "react-icons/pi";
+import { RxMoon } from "react-icons/rx";
+import { SiGmail } from "react-icons/si";
+import { useRouter } from "next/navigation";
+import { useTheme } from "next-themes";
+
 type Post = {
 	slug: string;
 	frontMatter: {

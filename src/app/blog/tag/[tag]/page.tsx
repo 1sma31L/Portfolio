@@ -1,15 +1,14 @@
-import React from "react";
-import fs from "fs";
-import matter from "gray-matter";
-import Link from "next/link";
-import { FaHashtag } from "react-icons/fa";
 import AnimatedDiv from "@/components/AnimatedDiv";
-import { postsDirectory } from "@/constants/index";
 import BackButton from "@/components/BackButton";
 import BlogCard from "@/components/BlogCard";
 import Capitalize from "@/lib/Capitalize";
-import path from "path";
+import { FaHashtag } from "react-icons/fa";
 import { Metadata } from "next";
+import React from "react";
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
+import { postsDirectory } from "@/constants/index";
 
 export async function generateMetadata({
 	params,

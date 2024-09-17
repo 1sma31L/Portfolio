@@ -1,6 +1,6 @@
-import React from "react";
-import Link from "next/link";
 import { GoArrowRight } from "react-icons/go";
+import Link from "next/link";
+import React from "react";
 import formatDate from "@/lib/formatDate";
 function BlogCard({
 	slug,

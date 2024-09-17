@@ -1,9 +1,11 @@
 "use client";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+
 import React, { useEffect, useState } from "react";
+
+import Link from "next/link";
+import { motion } from "framer-motion";
 import navItems from "@/data/navItems";
+import { usePathname } from "next/navigation";
 
 function isActive(pathname: string, itemPath: string) {
 	return pathname === itemPath;

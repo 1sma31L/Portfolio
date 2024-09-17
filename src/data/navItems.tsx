@@ -1,6 +1,7 @@
+import { MdNaturePeople, MdRateReview } from "react-icons/md";
+
 import { GiMaterialsScience } from "react-icons/gi";
 import { RiCodeSSlashFill } from "react-icons/ri";
-import { MdNaturePeople, MdRateReview } from "react-icons/md";
 
 export type TNavItem = {
 	path: string;

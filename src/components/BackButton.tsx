@@ -1,6 +1,8 @@
 "use client";
-import { useRouter } from "next/navigation";
+
 import { TbArrowBadgeLeft, TbArrowBadgeLeftFilled } from "react-icons/tb";
+
+import { useRouter } from "next/navigation";
 
 export default function Page() {
 	const router = useRouter();

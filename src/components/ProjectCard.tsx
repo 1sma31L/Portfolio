@@ -1,9 +1,9 @@
-import React from "react";
-import Link from "next/link";
-import Icons from "@/data/icons";
-import { FaGithub } from "react-icons/fa6";
 import { CiLocationArrow1 } from "react-icons/ci";
+import { FaGithub } from "react-icons/fa6";
+import Icons from "@/data/icons";
 import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 function ProjectCard({
 	title,
 	description,
