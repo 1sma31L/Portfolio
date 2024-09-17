@@ -60,7 +60,7 @@
 }
 @layer base {
 	::selection {
-		@apply bg-purple-500 text-white;
+		@apply bg-[#FFC799] text-black;
 	}
 	html {
 		scroll-behavior: smooth;
@@ -231,4 +231,13 @@ code {
 	}
 	-ms-overflow-style: none; /* Hides scrollbar in Internet Explorer */
 	overflow-x: auto !important;
+}
+
+/* For Firefox */
+html {
+	scrollbar-width: thin; /* Scrollbar width */
+	scrollbar-color: black #f1f1f1; /* Scrollbar color and track */
+}
+html.dark {
+	scrollbar-color: white #f1f1f1; /* Scrollbar color and track */
 }
