@@ -7,7 +7,7 @@ import NavBar from "@/components/Navbar";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
 import ScrollToTop from "@/components/ScrollToTop";
-import ScrollToTopButton from "@/components/ScrollToTopButton";
+// import ScrollToTopButton from "@/components/ScrollToTopButton";
 const josefin = Josefin_Sans({ subsets: ["latin"] });
 import { Toaster } from "@/components/ui/sonner";
 
@@ -74,7 +74,6 @@ export default function RootLayout({
 				<Toaster />
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<ScrollToTop />
-					<ScrollToTopButton />
 					<NavBar />
 					<hr className="" />
 					{children}

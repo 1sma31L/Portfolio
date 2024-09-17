@@ -4,6 +4,6 @@ import advancedFormat from "dayjs/plugin/advancedFormat";
 dayjs.extend(advancedFormat);
 
 const fromtDate = (postDate: string): string => {
-	return dayjs(postDate).format("Do MMMM, YYYY");
+	return dayjs(postDate).format("MMMM Do, YYYY");
 };
 export default fromtDate;
