@@ -236,11 +236,41 @@ code {
 	overflow-x: auto !important;
 }
 
-/* For Firefox */
+/* Default scrollbars */
 html {
-	scrollbar-width: thin; /* Scrollbar width */
-	scrollbar-color: black #f1f1f1; /* Scrollbar color and track */
+	scrollbar-width: thin; /* For Firefox */
+	scrollbar-color: black #ffffff; /* For Firefox */
 }
+
+/* Dark mode scrollbars */
 html.dark {
-	scrollbar-color: white #f1f1f1; /* Scrollbar color and track */
+	scrollbar-color: white #000000; /* For Firefox */
+}
+
+/* Default scrollbars */
+html {
+	scrollbar-width: thin; /* For Firefox */
+	scrollbar-color: black #ffffff; /* For Firefox */
+}
+
+/* Scrollbars for Webkit browsers */
+html::-webkit-scrollbar {
+	width: 12px; /* Adjust width as needed */
+}
+
+html::-webkit-scrollbar-track {
+	background: #ffffff; /* Track color */
+}
+
+html::-webkit-scrollbar-thumb {
+	background: black; /* Scrollbar color */
+}
+
+/* Dark mode scrollbars for Webkit browsers */
+html.dark::-webkit-scrollbar-thumb {
+	background: white; /* Scrollbar color */
+}
+
+html.dark::-webkit-scrollbar-track {
+	background: #000000; /* Track color */
 }
