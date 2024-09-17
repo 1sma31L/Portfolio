@@ -142,7 +142,7 @@ function Home() {
 						</button>
 						<button className="text-sm md:text-base py-2 px-3 border  shadow rounded  w-auto  transition-colors duration-500 hover:bg-zinc-200 dark:hover:bg-zinc-800">
 							<Link
-								href={"/contact"}
+								href={"/projects"}
 								className="flex gap-2 justify-center items-center ">
 								<FaExternalLinkAlt className="mb-1" />
 								<span className="font-bold">See My Projects</span>
