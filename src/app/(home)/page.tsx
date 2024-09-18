@@ -114,7 +114,7 @@ function Home() {
 							<p>
 								i simp for bergman and kubrick and my fav movies are
 								Interstellar (2014), Fallen Angels (1995), and Naked (1993). my
-								fav tv shows are Mr. Robot and DAЯK. i play chess from time to
+								fav tv shows are Mr. Robot and DAЯꓘ. i play chess from time to
 								time, 1600 Rapid rated. i read books in philosophy, psychology,
 								and cybersecurity. i like classical music. and last but not
 								least, dark rainy weather is the best.
