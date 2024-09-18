@@ -3,10 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Vars */
 @layer base {
 	:root {
-		--background: 0 0% 100%;
-		--foreground: 240 10% 3.9%;
+		--background: 0, 0%, 98%;
+		--foreground: 0, 0%, 0%;
 		--card: 0 0% 100%;
 		--card-foreground: 240 10% 3.9%;
 		--popover: 0 0% 100%;
@@ -31,9 +32,10 @@
 		--chart-5: 27 87% 67%;
 		--radius: 0.5rem;
 	}
+
 	.dark {
-		--background: 240 10% 3.9%;
-		--foreground: 0 0% 98%;
+		--background: 240, 10%, 4%;
+		--foreground: 0, 0%, 98%;
 		--card: 240 10% 3.9%;
 		--card-foreground: 0 0% 98%;
 		--popover: 240 10% 3.9%;
@@ -58,219 +60,160 @@
 		--chart-5: 340 75% 55%;
 	}
 }
+
 @layer base {
-	/* ::selection {
-		@apply bg-[#FFC799] text-black;
-	} */
-	html {
-		scroll-behavior: smooth;
-	}
 	* {
 		@apply border-border;
 	}
+
+	html {
+		@apply scroll-smooth;
+	}
+
 	body {
 		@apply bg-background text-foreground;
 	}
+
 	pre {
 		@apply border rounded-sm md:rounded-md overflow-x-auto !important;
 	}
+
 	html.dark pre {
 		@apply border-zinc-700 !important;
 	}
-	/* Conatiner Title */
-	/* pre {
-		@apply border-t-0 rounded-t-none !important;
-	} */
+
 	[data-rehype-pretty-code-title] {
 		@apply !mb-1;
 	}
-	/* html.dark [data-rehype-pretty-code-title] {
-		@apply bg-gray-800;
-	} */
+
 	.pause {
 		animation-play-state: paused;
 	}
-}
 
-/* [data-rehype-pretty-code-title] {
-	margin: 0 !important;
-} */
-
-.katex {
-	overflow: auto;
-	word-break: break-word;
-}
-
-/* Pretty Code */
-/* Theme Control */
-
-pre[data-theme*=" "],
-code[data-theme*=" "],
-code[data-theme*=" "] span {
-	color: var(--shiki-light);
-	background-color: var(--shiki-light-bg);
-	font-style: var(--shiki-dark-font-style) !important;
-	font-weight: var(--shiki-dark-font-weight) !important;
-	text-decoration: var(--shiki-dark-text-decoration) !important;
-}
-
-html.dark pre[data-theme*=" "],
-html.dark code[data-theme*=" "],
-html.dark code[data-theme*=" "] span {
-	color: var(--shiki-dark);
-	background-color: var(--shiki-dark-bg);
-}
-
-/* Padding of the code container */
-
-figure pre {
-	padding: 15px 0 !important;
-}
-
-html.dark pre {
-	border: 1px solid rgb(60, 60, 60);
-}
-pre [data-line] {
-	padding: 0 1rem;
-}
-
-/* Highlighted Lines */
-
-[data-highlighted-line] {
-	background-color: rgba(0, 0, 0, 0.05) !important;
-}
-
-[data-highlighted-line] > span {
-	background-color: transparent !important;
-}
-
-html.dark [data-highlighted-line] {
-	background-color: rgba(255, 255, 255, 0.05) !important;
-}
-html.dark [data-highlighted-line] > span {
-	background-color: transparent !important;
-}
-
-/* Highlight Chars */
-
-[data-highlighted-chars] {
-	margin: 5px;
-	border-radius: 0.25rem;
-	background-color: #7a7a7a35 !important;
-	box-shadow: 0 0 0 4px #7a7a7a35;
-}
-
-[data-highlighted-chars] span {
-	background-color: transparent !important;
-}
-
-/* Line Numbers */
-
-code[data-line-numbers] {
-	counter-reset: line;
-}
-
-code[data-line-numbers] > [data-line]::before {
-	counter-increment: line;
-	content: counter(line);
-	display: inline-block;
-	width: 0.75rem;
-	margin-right: 1.5rem;
-	text-align: right;
-	color: rgba(126, 126, 126, 0.5);
-}
-
-code[data-line-numbers-max-digits="2"] > [data-line]::before {
-	width: 1.25rem;
-}
-
-code[data-line-numbers-max-digits="3"] > [data-line]::before {
-	width: 1.75rem;
-}
-
-code[data-line-numbers-max-digits="4"] > [data-line]::before {
-	width: 2.25rem;
-}
-
-/* TOC */
-#slug a {
-	text-decoration: none !important;
-}
-
-#slug .container div a:hover {
-	text-decoration: underline !important;
-}
-
-#slug ul li {
-	list-style: none !important;
-}
-
-.heading-anchor {
-	position: relative;
-}
-
-.heading-anchor::before {
-	content: "#";
-	position: absolute;
-	left: -1rem;
-	color: transparent;
-	margin-right: 0.1rem;
-}
-
-.heading-anchor:hover::before {
-	color: #333;
-}
-
-html.dark .heading-anchor:hover::before {
-	color: #fff;
-}
-
-code {
-	scrollbar-width: none; /* Hides scrollbar in Firefox */
-	-webkit-overflow-scrolling: touch; /* Hides scrollbar in Safari */
-	/* Chrome */
-	&::-webkit-scrollbar {
-		display: none;
+	.katex {
+		@apply overflow-auto break-words;
 	}
-	-ms-overflow-style: none; /* Hides scrollbar in Internet Explorer */
-	overflow-x: auto !important;
-}
 
-/* Default scrollbars */
-html {
-	scrollbar-width: thin; /* For Firefox */
-	scrollbar-color: black #ffffff; /* For Firefox */
-}
+	/* Pretty Code */
 
-/* Dark mode scrollbars */
-html.dark {
-	scrollbar-color: white #000000; /* For Firefox */
-}
+	/* Theme Control */
 
-/* Default scrollbars */
-html {
-	scrollbar-width: thin; /* For Firefox */
-	scrollbar-color: black #ffffff; /* For Firefox */
-}
+	pre[data-theme*=" "],
+	code[data-theme*=" "],
+	code[data-theme*=" "] span {
+		color: var(--shiki-light);
+		background-color: var(--shiki-light-bg);
+		font-style: var(--shiki-dark-font-style) !important;
+		font-weight: var(--shiki-dark-font-weight) !important;
+		text-decoration: var(--shiki-dark-text-decoration) !important;
+	}
 
-/* Scrollbars for Webkit browsers */
-html::-webkit-scrollbar {
-	width: 12px; /* Adjust width as needed */
-}
+	html.dark pre[data-theme*=" "],
+	html.dark code[data-theme*=" "],
+	html.dark code[data-theme*=" "] span {
+		color: var(--shiki-dark);
+		background-color: var(--shiki-dark-bg);
+	}
 
-html::-webkit-scrollbar-track {
-	background: #ffffff; /* Track color */
-}
+	/* Padding of the code container */
 
-html::-webkit-scrollbar-thumb {
-	background: black; /* Scrollbar color */
-}
+	figure pre {
+		padding: 15px 0 !important;
+	}
 
-/* Dark mode scrollbars for Webkit browsers */
-html.dark::-webkit-scrollbar-thumb {
-	background: white; /* Scrollbar color */
-}
+	pre [data-line] {
+		padding: 0 1rem;
+	}
 
-html.dark::-webkit-scrollbar-track {
-	background: #000000; /* Track color */
+	/* Highlighted Lines */
+
+	[data-highlighted-line] {
+		background-color: rgba(0, 0, 0, 0.05) !important;
+	}
+
+	[data-highlighted-line] > span {
+		background-color: transparent !important;
+	}
+
+	html.dark [data-highlighted-line] {
+		background-color: rgba(255, 255, 255, 0.05) !important;
+	}
+	html.dark [data-highlighted-line] > span {
+		background-color: transparent !important;
+	}
+
+	/* Highlight Chars */
+
+	[data-highlighted-chars] {
+		margin: 5px;
+		border-radius: 0.25rem;
+		background-color: #7a7a7a35 !important;
+		box-shadow: 0 0 0 4px #7a7a7a35;
+	}
+
+	[data-highlighted-chars] span {
+		background-color: transparent !important;
+	}
+
+	/* Line Numbers */
+
+	code[data-line-numbers] {
+		counter-reset: line;
+	}
+
+	code[data-line-numbers] > [data-line]::before {
+		counter-increment: line;
+		content: counter(line);
+		display: inline-block;
+		width: 0.75rem;
+		margin-right: 1.5rem;
+		text-align: right;
+		color: rgba(126, 126, 126, 0.5);
+	}
+
+	code[data-line-numbers-max-digits="2"] > [data-line]::before {
+		width: 1.25rem;
+	}
+
+	code[data-line-numbers-max-digits="3"] > [data-line]::before {
+		width: 1.75rem;
+	}
+
+	code[data-line-numbers-max-digits="4"] > [data-line]::before {
+		width: 2.25rem;
+	}
+
+	/* TOC */
+
+	#slug a {
+		text-decoration: none !important;
+	}
+
+	#slug .container div a:hover {
+		text-decoration: underline !important;
+	}
+
+	#slug ul li {
+		list-style: none !important;
+	}
+
+	.heading-anchor {
+		position: relative;
+	}
+
+	.heading-anchor::before {
+		content: "#";
+		position: absolute;
+		left: -1rem;
+		color: transparent;
+		margin-right: 0.1rem;
+	}
+
+	.heading-anchor:hover::before {
+		color: #333;
+	}
+
+	html.dark .heading-anchor:hover::before {
+		color: #fff;
+	}
 }

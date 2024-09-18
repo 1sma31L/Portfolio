@@ -10,7 +10,7 @@ export default function MainLayout({
 }>) {
 	let pathName = usePathname();
 	return (
-		<div className="w-full bg-zinc-50 dark:bg-zinc-950">
+		<div className="w-full">
 			{pathName.split("/")[1] === "blog" &&
 				!["post", "tag"].includes(pathName.split("/")[2]) && <BlogNavBar />}
 			{children}

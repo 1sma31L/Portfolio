@@ -16,9 +16,11 @@ const config: Config = {
 					to: { transform: "translateX(-100%)" },
 				},
 			},
+
 			animation: {
 				scroll: "scroll 30s linear infinite",
 			},
+
 			typography: (theme: (arg0: string) => any) => ({
 				DEFAULT: {
 					css: {
@@ -31,6 +33,7 @@ const config: Config = {
 							fontWeight: "600",
 							fontSize: "0.875rem",
 						},
+
 						pre: {
 							backgroundColor: theme("colors.gray.900"),
 							color: theme("colors.gray.100"),
@@ -39,20 +42,24 @@ const config: Config = {
 							overflow: "auto",
 							fontSize: "0.875rem",
 						},
+
 						"code::before": {
 							content: '""',
 						},
+
 						"code::after": {
 							content: '""',
 						},
 					},
 				},
 			}),
+
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 			},
+
 			container: {
 				center: true,
 				padding: "0.4rem",
@@ -71,38 +78,50 @@ const config: Config = {
 			},
 			colors: {
 				background: "hsl(var(--background))",
+
 				foreground: "hsl(var(--foreground))",
+
 				card: {
 					DEFAULT: "hsl(var(--card))",
 					foreground: "hsl(var(--card-foreground))",
 				},
+
 				popover: {
 					DEFAULT: "hsl(var(--popover))",
 					foreground: "hsl(var(--popover-foreground))",
 				},
+
 				primary: {
 					DEFAULT: "hsl(var(--primary))",
 					foreground: "hsl(var(--primary-foreground))",
 				},
+
 				secondary: {
 					DEFAULT: "hsl(var(--secondary))",
 					foreground: "hsl(var(--secondary-foreground))",
 				},
+
 				muted: {
 					DEFAULT: "hsl(var(--muted))",
 					foreground: "hsl(var(--muted-foreground))",
 				},
+
 				accent: {
 					DEFAULT: "hsl(var(--accent))",
 					foreground: "hsl(var(--accent-foreground))",
 				},
+
 				destructive: {
 					DEFAULT: "hsl(var(--destructive))",
 					foreground: "hsl(var(--destructive-foreground))",
 				},
+
 				border: "hsl(var(--border))",
+
 				input: "hsl(var(--input))",
+
 				ring: "hsl(var(--ring))",
+
 				chart: {
 					"1": "hsl(var(--chart-1))",
 					"2": "hsl(var(--chart-2))",
