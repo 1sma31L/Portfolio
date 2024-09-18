@@ -9,7 +9,7 @@ function Footer() {
 		{ name: "Blog", href: "/blog" },
 	];
 	return (
-		<footer className="bg-white dark:bg-black">
+		<footer className="bg-transparent">
 			<div className="sm:flex-row gap-2 justify-between items-center container mx-auto text-[12px] md:text-[14px] flex py-6 px-4 md:px-0 flex-col">
 				<p className=" text-center">
 					Contact me at{" "}
