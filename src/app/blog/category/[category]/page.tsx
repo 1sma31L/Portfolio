@@ -8,7 +8,8 @@ import fs from "fs";
 import matter from "gray-matter";
 import navItems from "@/data/navItems";
 import path from "path";
-import { postsDirectory } from "@/constants/index";
+import { postsDirectory } from "@/constants";
+
 export async function generateMetadata({
 	params,
 }: {
@@ -96,7 +97,7 @@ export default async function Tag({
 	const posts = await getPostsByCategory(category);
 	return (
 		<AnimatedDiv id={2}>
-			<main className="container mx-auto min-h-[93vh] font-bold text-[24px] sm:text-[32px]  py-6 px-4 sm:px-0">
+			<main className="container mx-auto min-h-[93vh] font-bold text-[24px] sm:text-[32px] py-6 px-4 sm:px-0">
 				<div className="flex gap-3 justify-start items-center px-2">
 					{navItems
 						.filter(

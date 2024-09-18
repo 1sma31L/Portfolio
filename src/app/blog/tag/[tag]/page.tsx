@@ -8,7 +8,7 @@ import React from "react";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
-import { postsDirectory } from "@/constants/index";
+import { postsDirectory } from "@/constants";
 
 export async function generateMetadata({
 	params,

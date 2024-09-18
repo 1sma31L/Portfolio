@@ -1,5 +1,5 @@
 {
-	"dirname": "posts",
+	"dirname": "src/content/posts",
 	"insertLastMod": true,
 	"insertReadTime": true,
 	"newFileIsInsertLastMod": true,

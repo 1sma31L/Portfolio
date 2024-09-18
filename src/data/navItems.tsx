@@ -2,14 +2,7 @@ import { MdNaturePeople, MdRateReview } from "react-icons/md";
 
 import { GiMaterialsScience } from "react-icons/gi";
 import { RiCodeSSlashFill } from "react-icons/ri";
-
-export type TNavItem = {
-	path: string;
-	name: string;
-	description: string;
-	icon?: JSX.Element;
-	keywords?: string[];
-}[];
+import { TNavItem } from "@/types/types";
 
 const navItems: TNavItem = [
 	{ path: "/blog", name: "All", description: "All my articles." },

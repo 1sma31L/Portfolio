@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Command from "@/components/Command";
 import Link from "next/link";
 import ThemeToggler from "@/components/ThemeToggler";
+import UnderDevBar from "./UnderDevBar";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
@@ -40,45 +41,9 @@ export default function NavBar() {
 		setHoveredPath(pathname);
 	}, [pathname]);
 
-	const [clicked, setClicked] = useState(true);
-	useEffect(() => {
-		const saved = localStorage.getItem("clicked");
-		if (!saved) {
-			setClicked(false);
-		}
-	}, []);
-	const handleClick = () => {
-		setClicked(true);
-		localStorage.setItem("clicked", "true");
-	};
 	return (
 		<>
-			{/* {!clicked && (
-				<div className="bg-black">
-					<div className="w-full max-w-[1600px] mx-auto  flex justify-between md:justify-around items-center text-[9px] sm:text-[11px] md:text-sm text-white py-3 px-4 gap-4">
-						<div className="hidden md:block"></div>
-						<p className="text-left md:text-center">
-							Note: This website is currently under development, If you find any
-							bug please{" "}
-							<Link href="/contact" className="hover:underline font-bold">
-								contact me
-							</Link>{" "}
-							and report it or raise an issue on{" "}
-							<Link
-								target="_blank"
-								href="https://github.com/1sma31L/Portfolio/issues"
-								className="hover:underline font-bold">
-								GitHub
-							</Link>
-							. Thank you!
-						</p>
-						<button onClick={handleClick} className="text-sm md:text-lg">
-							<TiDelete className="opacity-75 hover:opacity-100 duration-150" />
-						</button>
-					</div>
-					<div className="border-b-2"></div>
-				</div>
-			)} */}
+			<UnderDevBar />
 			<header className="backdrop-blur-sm md:backdrop-blur-md sticky top-0 left-0 w-full z-[20] shadow-sm h-[7.5vh] bg-white/50 dark:bg-black/50">
 				<div className="flex justify-between items-center container mx-auto py-3 px-4 md:px-0 lg:px-0 gap-2 rounded-lg text-[14px] sm:text-[16px] md:text-[18px]">
 					<nav className="gap-3 justify-start w-full flex md:gap-4">

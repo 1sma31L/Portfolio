@@ -4,6 +4,7 @@ import { LuPenLine } from "react-icons/lu";
 import { Metadata } from "next";
 import React from "react";
 import getPosts from "@/lib/getPosts";
+
 export const metadata: Metadata = {
 	title: "Blog",
 	description:

@@ -14,8 +14,7 @@ function Home() {
 		<AnimatedDiv id={0}>
 			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-28 py-6 md:py-0">
 				<section className="flex flex-col gap-5 min-h-[70vh] md:min-h-[80vh] justify-center items-center w-full">
-					<h1
-						className={`text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100 text-left w-full`}>
+					<h1 className="text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100 text-left w-full">
 						Ismail M. Bossekine
 					</h1>
 					<div className="text-sm sm:text-base flex flex-col gap-5 leading-[1.6]  dark:text-zinc-100 ">
@@ -98,7 +97,6 @@ function Home() {
 					<h1 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
 						More About Me
 					</h1>
-
 					<div>
 						<div className="text-sm sm:text-base leading-[1.8] md:leading-[2] indent-5">
 							<div>
@@ -108,12 +106,11 @@ function Home() {
 								<div className=" flex justify-center items-center py-4">
 									<blockquote className="border-l-4 border-zinc-800 dark:border-zinc-100 pl-2 italic text-gray-700 dark:text-gray-300">
 										<p className="">
-											&quot;New day, New javascript framework.&quot;
+											&quot;New day, New JavaScript framework.&quot;
 										</p>
 									</blockquote>
 								</div>
 							</div>
-
 							<p>
 								i simp for bergman and kubrick and my fav movies are
 								Interstellar (2014), Fallen Angels (1995), and Naked (1993). my
@@ -125,14 +122,12 @@ function Home() {
 						</div>
 					</div>
 				</section>
-				<section
-					id="client"
-					className="flex flex-col w-full justify-center items-center gap-10 md:min-h-[40vh] my-24">
+				<section className="flex flex-col w-full justify-center items-center gap-10 md:min-h-[40vh] my-24">
 					<h1 className="text-4xl md:text-6xl font-extrabold text-center">
 						Are You Interested in Hiring Me?
 					</h1>
 					<div className="flex flex-col sm:flex-row gap-5">
-						<button className="text-sm md:text-base py-2 px-3 border bg-zinc-950 dark:bg-zinc-50 shadow rounded dark:text-zinc-950 text-zinc-50 w-auto hover:bg-zinc-700 transition-colors duration-500 dark:hover:bg-zinc-300">
+						<button className="text-sm md:text-base py-2 px-3 border bg-zinc-950 dark:bg-zinc-50 rounded dark:text-zinc-950 text-zinc-50 w-auto hover:bg-zinc-700 transition-colors duration-500 dark:hover:bg-zinc-300">
 							<Link
 								href={"/contact"}
 								className="flex gap-2 justify-center items-center ">
@@ -140,7 +135,7 @@ function Home() {
 								<span className="font-bold">Contact Me</span>
 							</Link>
 						</button>
-						<button className="text-sm md:text-base py-2 px-3 border  shadow rounded  w-auto  transition-colors duration-500 hover:bg-zinc-200 dark:hover:bg-zinc-800">
+						<button className="text-sm md:text-base py-2 px-3 border rounded  w-auto transition-colors duration-500 hover:bg-zinc-200 dark:hover:bg-zinc-800">
 							<Link
 								href={"/projects"}
 								className="flex gap-2 justify-center items-center ">

@@ -15,7 +15,7 @@ import markdownToHtml from "@/lib/markdownToHtml";
 import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import path from "path";
-import { postsDirectory } from "@/constants/index";
+import { postsDirectory } from "@/constants";
 
 export async function generateMetadata({
 	params,

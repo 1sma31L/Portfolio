@@ -38,9 +38,18 @@ export type TFrontMatter = {
 	lastmod: string;
 	duration: string;
 };
+
 export type Post = {
 	slug: string;
 	frontMatter: {
 		title: string;
 	};
 };
+
+export type TNavItem = {
+	path: string;
+	name: string;
+	description: string;
+	icon?: JSX.Element;
+	keywords?: string[];
+}[];
