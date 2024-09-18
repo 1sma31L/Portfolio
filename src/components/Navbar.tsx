@@ -44,7 +44,7 @@ export default function NavBar() {
 	return (
 		<>
 			<UnderDevBar />
-			<header className="backdrop-blur-sm md:backdrop-blur-md sticky top-0 left-0 w-full z-[20] h-[7.5vh] shadow-sm bg-white/50dark:bg-black/50">
+			<header className="backdrop-blur-sm md:backdrop-blur-md sticky top-0 left-0 w-full z-[20] h-[7.5vh] shadow-sm bg-white/75 dark:bg-black/75">
 				<div className="flex justify-between items-center container mx-auto py-3 px-4 md:px-0 lg:px-0 gap-2 rounded-lg text-[14px] sm:text-[16px] md:text-[18px]">
 					<nav className="gap-3 justify-start w-full flex md:gap-4">
 						{navItems.map((item) => {
