@@ -106,7 +106,7 @@ function Home() {
 								Linux btw), watch people building stuff on YouTube and seeing
 								trendy javascript frameworks,{" "}
 								<div className=" flex justify-center items-center py-4">
-									<blockquote className="border-l-4 border-zinc-800 dark:border-zinc-100 italic text-gray-700 dark:text-gray-300">
+									<blockquote className="border-l-4 border-zinc-800 dark:border-zinc-100 pl-2 italic text-gray-700 dark:text-gray-300">
 										<p className="">
 											&quot;New day, New javascript framework.&quot;
 										</p>
