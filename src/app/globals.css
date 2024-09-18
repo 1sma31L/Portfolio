@@ -85,14 +85,14 @@
 	[data-rehype-pretty-code-title] {
 		@apply !mb-1;
 	}
+	.pause {
+		animation-play-state: paused;
+	}
 }
 
 .katex {
 	overflow: auto;
 	word-break: break-word;
-}
-.pause {
-	animation-play-state: paused;
 }
 
 /* Pretty Code */
