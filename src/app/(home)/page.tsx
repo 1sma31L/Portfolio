@@ -25,7 +25,7 @@ function Home() {
 									key={index}
 									target="_blank"
 									className="flex flex-row justify-between items-center gap-2 px-2 py-1 dark:hover:bg-zinc-800 hover:bg-zinc-200 rounded-sm">
-									<p className="text-lg mb-1 ">{item.icon}</p>
+									<p className="text-lg p-[0.1rem]">{item.icon}</p>
 									{item.name && (
 										<p className="text-sm hidden sm:block">{item.name}</p>
 									)}
@@ -57,7 +57,7 @@ function Home() {
 				<div className="pb-10 w-full">
 					<InfiniteScroll icons={stack} />
 				</div>
-				{/* <section className="w-full flex flex-col">
+				<section className="w-full flex flex-col">
 					<h1 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
 						My Timeline
 					</h1>
@@ -91,7 +91,7 @@ function Home() {
 							))}
 						</div>
 					</div>
-				</section> */}
+				</section>
 				<LatestBlogs />
 				<section className="w-full flex flex-col">
 					<h1 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
