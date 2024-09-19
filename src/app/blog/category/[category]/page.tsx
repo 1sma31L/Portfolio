@@ -36,26 +36,9 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams(): Promise<{ category: string }[]> {
-	const files = fs.readdirSync(postsDirectory);
-	const categories = new Set<string>();
-
-	files.forEach((file) => {
-		if (!file.startsWith("_")) {
-			const readFile = fs.readFileSync(
-				path.join(postsDirectory, file),
-				"utf-8"
-			);
-			const { data: frontMatter } = matter(readFile);
-			frontMatter.categories?.forEach((category: string) => {
-				categories.add(category.toLowerCase().replace(/\s+/g, "-"));
-			});
-		}
-	});
-
-	const categoryArray = Array.from(categories).map((category) => ({
-		category,
+	const categoryArray = navItems.map((item) => ({
+		category: item.name.toLowerCase().replace(/\s+/g, "-"),
 	}));
-	categoryArray.push({ category: "life" }, { category: "reviews" });
 	return categoryArray;
 }
 
