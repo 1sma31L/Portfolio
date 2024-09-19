@@ -10,14 +10,14 @@ tags:
   - Integrals
   - Mathematics
 categories:
-  - Science
+  - Study
 keywords:
   - Calculus
   - Integrals
   - Definite Integral
   - Indefinite Integral
   - Antiderivative
-lastmod: 2024-09-14T22:30:08.827Z
+lastmod: 2024-09-19T22:56:39.233Z
 duration: 4 min
 ---
 ### Table of Contents 

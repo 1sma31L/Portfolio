@@ -1,24 +1,26 @@
 import { MdNaturePeople, MdRateReview } from "react-icons/md";
 
+import { FaBook } from "react-icons/fa";
 import { GiMaterialsScience } from "react-icons/gi";
 import { RiCodeSSlashFill } from "react-icons/ri";
 import { TNavItem } from "@/types/types";
 
 const navItems: TNavItem = [
 	{ path: "/blog", name: "All", description: "All my articles." },
-	{
-		path: "/blog/category/science",
-		name: "Science",
-		icon: <GiMaterialsScience />,
-		description: "Math, Physics, Science related articles.",
-		keywords: ["science", "math", "physics"],
-	},
+
 	{
 		path: "/blog/category/tech",
 		name: "Tech",
 		icon: <RiCodeSSlashFill />,
 		description: "Tech, Programming, Coding related articles.",
 		keywords: ["tech", "programming", "coding", "development", "software"],
+	},
+	{
+		path: "/blog/category/study",
+		name: "Study",
+		icon: <FaBook />,
+		description: "Math, Physics, Science related articles.",
+		keywords: ["science", "math", "physics"],
 	},
 	{
 		path: "/blog/category/reviews",
