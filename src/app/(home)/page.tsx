@@ -42,11 +42,11 @@ function Home() {
 							</footer>
 						</blockquote>
 						<p className="indent-5">
-							i&apos;m a 19 y/o cs undergrad student. i love building things and
-							solving problems. i enjoy system design, theoretical computer
-							science and i live on the terminal. if i&apos;m not coding,
-							i&apos;m probably watching movies or obsessing over mechanical
-							keyboards.
+							i&apos;m a 19 y/o cs undergrad student and a junior web developer.
+							i love building things and solving problems. i enjoy system
+							design, theoretical computer science and i live on the editor. if
+							i&apos;m not coding, i&apos;m probably watching movies, tv shows
+							or obsessing over mechanical keyboards.
 						</p>
 					</div>
 				</section>
@@ -114,7 +114,7 @@ function Home() {
 								i simp for bergman and kubrick and my fav movies are
 								Interstellar (2014), Fallen Angels (1995), and Naked (1993). my
 								fav tv shows are Mr. Robot and DAЯꓘ. i play chess from time to
-								time, 1600 Rapid rated. i read books in philosophy, psychology,
+								time, 1600 rapid rated. i read books in philosophy, psychology,
 								and cybersecurity. i like classical music. and last but not
 								least, dark rainy weather is the best.
 							</p>
