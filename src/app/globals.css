@@ -213,3 +213,12 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 html.dark .heading-anchor:hover::before {
 	color: #fff;
 }
+
+/* Hide Scroll Bar */
+code {
+	scrollbar-width: none !important; /* Firefox */
+}
+
+code::-webkit-scrollbar {
+	display: none !important; /* Chrome, Safari, and Edge */
+}
