@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import navItems from "@/data/navItems";
+import navItems from "@/data/nav-items";
 import { usePathname } from "next/navigation";
 
 function isActive(pathname: string, itemPath: string) {

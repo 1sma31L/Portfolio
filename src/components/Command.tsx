@@ -43,10 +43,6 @@ export default function Command() {
 						case "i":
 							setTheme(resolvedTheme === "light" ? "dark" : "light");
 							break;
-						case "m":
-							window.open("mailto:im.boussekine@gmail.com", "_blank");
-							setOpen(false);
-							break;
 						// Pages
 						case "a":
 							router.push("/");
@@ -112,11 +108,6 @@ export default function Command() {
 						)}
 						<span>Toggle Theme</span>
 						<CommandShortcut>⌘I</CommandShortcut>
-					</CommandItem>
-					<CommandItem>
-						<SiGmail className="mr-2 h-4 w-4" />
-						<span>Mail</span>
-						<CommandShortcut>⌘M</CommandShortcut>
 					</CommandItem>
 					<CommandSeparator />
 					<CommandGroup heading="Pages">

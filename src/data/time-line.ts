@@ -6,32 +6,24 @@ const timeLine: TTimeLine = [
 			{
 				monthName: "September",
 				achievements: [
-					"Developed a link shorter website with NodeJS and ExpressJS",
-					"Developed an anonymous message sender using Next.js, Firebase",
-					"Developed this website",
-					"Started learning System Design and digging deeper in DSA",
-					"Started learning about Web Security",
+					"Developed a link shorter with NodeJS and ExpressJS and an anonymous message sender using Next.js and Firebase, In addition to this website",
+					"Started learning Web Security, System Design and DSA",
 				],
 			},
 			{
 				monthName: "August",
 				achievements: [
 					"Continued learning Redux & RTK",
-					"Started learning Next.js, Git/GitHub",
-					"Started solving coding challenges on CodeWars",
-					"Developed my first portfolio following a tutorial on Youtube",
-					"Developed a website to discover trending movies and TV shows",
-					"Started learning Node.js, MongoDB and Express.js",
+					"Started learning Next.js, Git/GitHub, Node.js, MongoDB and Express.js and solving more coding challenges on CodeWars",
+					"Developed my first portfolio following a tutorial on Youtube and a movie dicovery website 'What's Trending ?'",
 					"Learned Firebase",
 				],
 			},
 			{
 				monthName: "July",
 				achievements: [
-					"Learned JavaScript",
-					"Started learning React and Redux",
-					"Learned some CSS frameworks like Bootstrap and Tailwind CSS, but I settled with Tailwind CSS",
-					"Started learning TypeScript",
+					"Learned JavaScript and some CSS frameworks like Bootstrap and Tailwind CSS, but I settled with Tailwind CSS",
+					"Started learning React and Redux with TypeScript",
 					"Developed a website to introduce my university to new students",
 				],
 			},
@@ -63,22 +55,19 @@ const timeLine: TTimeLine = [
 			},
 			{
 				monthName: "September",
-				achievements: [
-					"Started my first year at college",
-					"installed Arch Linux on my laptop, and started using it as my daily driver",
-				],
+				achievements: ["Started my first year at college"],
 			},
 			{
 				monthName: "August",
 				achievements: [
-					"Accepted at The National Higher School of Advanced Technologies (ENSTA)",
-					"Started tinkering with Linux",
+					"Got accepted at The National Higher School of Advanced Technologies (ENSTA)",
+					"Started using Linux",
 				],
 			},
 			{
 				monthName: "July",
 				achievements: [
-					"Got my Baccalaureate Certificate with an average of 16.89/20",
+					"Got my Baccalaureate certificate with an average of 16.89/20",
 				],
 			},
 		],

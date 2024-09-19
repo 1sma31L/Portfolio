@@ -6,7 +6,7 @@ import { Metadata } from "next";
 import React from "react";
 import fs from "fs";
 import matter from "gray-matter";
-import navItems from "@/data/navItems";
+import navItems from "@/data/nav-items";
 import path from "path";
 import { postsDirectory } from "@/constants";
 
