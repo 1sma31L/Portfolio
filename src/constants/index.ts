@@ -5,3 +5,4 @@ export const postsDirectory = path.join(
 	"content",
 	"posts"
 );
+export const themesDirectory = path.join(process.cwd(), "src", "themes");

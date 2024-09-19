@@ -1,6 +1,8 @@
 import "katex/dist/katex.min.css";
 
+import fs from "fs";
 import { getSingletonHighlighter } from "shiki";
+import path from "path";
 import rehypeAutoLinkHeadings from "rehype-autolink-headings";
 import rehypeKatex from "rehype-katex";
 import rehypePrettyCode from "rehype-pretty-code";
@@ -10,8 +12,29 @@ import remarkGfm from "remark-gfm";
 import remarkMath from "remark-math";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
+import stripJsonComments from "strip-json-comments";
+import { themesDirectory } from "@/constants";
 import { transformerCopyButton } from "@rehype-pretty/transformers";
 import { unified } from "unified";
+
+const lightTheme = JSON.parse(
+	stripJsonComments(
+		fs.readFileSync(
+			path.join(themesDirectory, "../themes/serendipity-morning.json"),
+			"utf-8"
+		)
+	)
+);
+
+const darkTheme = JSON.parse(
+	stripJsonComments(
+		fs.readFileSync(
+			path.join(themesDirectory, "../themes/serendipity-sunset.json"),
+			//to get path inetllisense
+			"utf-8"
+		)
+	)
+);
 
 const processor = unified()
 	.use(remarkParse)
@@ -29,12 +52,12 @@ const processor = unified()
 	.use(rehypePrettyCode, {
 		getHighlighter: () =>
 			getSingletonHighlighter({
-				themes: ["vesper", "vitesse-light"],
+				themes: [darkTheme, lightTheme],
 				langs: ["javascript"],
 			}),
 		theme: {
-			dark: "vesper",
-			light: "vitesse-light",
+			dark: darkTheme,
+			light: lightTheme,
 		},
 		defaultLang: "javascript",
 		transformers: [
