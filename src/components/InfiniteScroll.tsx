@@ -16,7 +16,7 @@ function InfiniteScroll({ icons }: { icons: TItem[] }) {
 	return (
 		<div
 			className="flex w-full overflow-hidden whitespace-nowrap
-      relative bg-zinc-50 dark:bg-zinc-950 
+      relative  
   before:absolute before:left-0 before:top-0 before:z-[2] before:h-full md:before:w-[80px] before:w-[30px] 
   before:bg-[linear-gradient(to_right,theme(colors.background)_0%,rgba(255,255,255,0)_100%)] 
   dark:before:bg-[linear-gradient(to_right,theme(colors.background)_0%,rgba(0,0,0,0)_100%)] 

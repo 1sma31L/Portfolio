@@ -115,7 +115,7 @@ export default function FeedBack({ slug }: { slug: string }) {
 					<ImSpinner9 className="text-lg animate-spin" />
 				</p>
 			)}
-			{submitted && <p>Thanks for your review!.</p>}
+			{submitted && <p>Thanks for your review!</p>}
 		</div>
 	);
 }
