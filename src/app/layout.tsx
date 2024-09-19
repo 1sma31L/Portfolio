@@ -77,8 +77,7 @@ export default function RootLayout({
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 					<ScrollToTop />
 					<NavBar />
-					<hr className="w-full sticky top-[7.5vh] left-0" />
-
+					{/* <hr className="w-full sticky top-[7.5vh] left-0" /> */}
 					{children}
 					<hr className="w-full" />
 					<Footer />
