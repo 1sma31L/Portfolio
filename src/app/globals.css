@@ -92,8 +92,12 @@
 .katex {
 	overflow: auto;
 	word-break: break-word;
+	scrollbar-width: none !important; /* Firefox */
 }
 
+.katex::-webkit-scrollbar {
+	display: none !important; /* Chrome, Safari, and Edge */
+}
 /* Pretty Code */
 
 /* Theme Control */
