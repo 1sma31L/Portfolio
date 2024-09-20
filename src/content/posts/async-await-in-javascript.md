@@ -18,8 +18,7 @@ keywords:
   - Promises
   - Asynchronous
   - Event Loop
-
-lastmod: 2024-09-14T21:35:20.964Z
+lastmod: 2024-09-20T00:18:37.246Z
 duration: 4 min
 ---
 
