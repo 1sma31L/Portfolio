@@ -2,7 +2,7 @@
 title: Understanding Integrals in Calculus
 metaDescription: >-
   Learn about integrals in calculus with detailed explanations and examples
-  using LaTeX for mathematical notation.
+  using LaTeX mathematical notation.
 author: Ismail Boussekine
 date: 2024-09-05T03:00:00.000Z
 tags:
@@ -17,7 +17,7 @@ keywords:
   - Definite Integral
   - Indefinite Integral
   - Antiderivative
-lastmod: 2024-09-19T22:56:39.233Z
+lastmod: 2024-09-20T00:27:21.840Z
 duration: 4 min
 ---
 ### Table of Contents 
