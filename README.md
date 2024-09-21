@@ -196,7 +196,7 @@ To run this project locally, follow these steps:
 You can contribute to this project by :
 
 1. Suggesting improvements to the website or reporting bugs by creating an issue or a pull request.
-2. Adding blog posts and mentioning yourself as the author, However, You must stick to the "FrontMatter" template provided in frontmatter.json, and put any images in "/public/images/" and referencing them just by "/images/..." when using them in the blog post, Don't forget to install [auto-front-matter](https://marketplace.visualstudio.com/items?itemName=condorhero.auto-front-matter) extension to get lastMod, date of creation and reading time (it's already configured in frontmatter.json just use it directly). 
+2. Adding blog posts (/src/content/posts) and mentioning yourself as the author, However, You must stick to the "FrontMatter" template provided in frontmatter.json, and put any images in "/public/images/" and referencing them just by "/images/..." when using them in the blog post, Don't forget to install [auto-front-matter](https://marketplace.visualstudio.com/items?itemName=condorhero.auto-front-matter) extension to get lastMod, date of creation and reading time (it's already configured in frontmatter.json just use it directly). 
 3. Helping me translate the website to any of this languages (Arabic, French).
 
 
