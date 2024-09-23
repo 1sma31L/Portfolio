@@ -1,7 +1,7 @@
 import AnimatedDiv from "@/components/AnimatedDiv";
 import BlogCard from "@/components/BlogCard";
 import Breadcrumb from "@/components/Breadcrumb";
-import FeedBack from "@/components/FeedBack";
+import FeedBack from "@/components/Feedback";
 import FormatDistanceToNow from "@/components/FormatDistanceToNow";
 import Link from "next/link";
 import { Metadata } from "next";
