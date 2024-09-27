@@ -111,12 +111,26 @@ function Home() {
 								</div>
 							</div>
 							<p>
-								i simp for bergman and kubrick and my fav movies are
-								Interstellar (2014), Fallen Angels (1995), and Naked (1993). my
-								fav tv shows are Mr. Robot and DAЯꓘ. i play chess from time to
-								time, 1600 rapid rated. i read books in philosophy, psychology,
-								and cybersecurity. i like classical music. and last but not
-								least, dark rainy weather is the best.
+								i simp for bergman and kubrick and my fav{" "}
+								<Link
+									href="/more/movies-tvshows"
+									className="font-bold hover:underline">
+									movies
+								</Link>{" "}
+								are Interstellar (2014), Fallen Angels (1995), and Naked (1993).
+								my fav{" "}
+								<Link
+									href="/more/movies-tvshows"
+									className="font-bold hover:underline">
+									tv shows
+								</Link>{" "}
+								are Mr. Robot and DAЯꓘ. i play chess from time to time, 1600
+								rapid rated. i read books in philosophy, psychology, and
+								cybersecurity. i like classical{" "}
+								<Link href="/more/music" className="font-bold hover:underline">
+									music
+								</Link>
+								. and last but not least, dark rainy weather is the best.
 							</p>
 						</div>
 					</div>

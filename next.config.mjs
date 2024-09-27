@@ -4,6 +4,15 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const nextConfig = {
+	async redirects() {
+		return [
+			{
+				source: "/more",
+				destination: "/more/music",
+				permanent: true,
+			},
+		];
+	},
 	env: {
 		API_KEY: process.env.API_KEY,
 		AUTH_DOMAIN: process.env.AUTH_DOMAIN,

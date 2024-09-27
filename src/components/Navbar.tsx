@@ -18,6 +18,10 @@ const navItems = [
 		path: "/blog",
 		name: "Blog",
 	},
+	{
+		path: "/more",
+		name: "More",
+	},
 ];
 
 function isActive(pathname: string, itemPath: string) {
@@ -31,6 +35,8 @@ function isActive(pathname: string, itemPath: string) {
 
 	if (itemPath === "/blog") {
 		return pathname.startsWith("/blog");
+	} else if (itemPath === "/more") {
+		return pathname.startsWith("/more");
 	}
 }
 

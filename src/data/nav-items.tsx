@@ -5,7 +5,7 @@ import { GiMaterialsScience } from "react-icons/gi";
 import { RiCodeSSlashFill } from "react-icons/ri";
 import { TNavItem } from "@/types/types";
 
-const navItems: TNavItem = [
+const BlogNavItems: TNavItem = [
 	{ path: "/blog", name: "All", description: "All my articles." },
 
 	{
@@ -38,4 +38,28 @@ const navItems: TNavItem = [
 		keywords: ["life", "personal", "self-help", "motivation", "inspiration"],
 	},
 ];
-export default navItems;
+
+const MoreNavItems = [
+	{
+		path: "/more/music",
+		name: "Music",
+		icon: <MdNaturePeople />,
+		description: "Life, Personal, Self-help, Motivation related articles.",
+		keywords: ["life", "personal", "self-help", "motivation", "inspiration"],
+	},
+	{
+		path: "/more/movies-tvshows",
+		name: "Movies And Tv Shows",
+		icon: <MdNaturePeople />,
+		description: "Life, Personal, Self-help, Motivation related articles.",
+		keywords: ["life", "personal", "self-help", "motivation", "inspiration"],
+	},
+	{
+		path: "/more/supported-projects",
+		name: "Supported Projects",
+		icon: <MdNaturePeople />,
+		description: "Life, Personal, Self-help, Motivation related articles.",
+		keywords: ["life", "personal", "self-help", "motivation", "inspiration"],
+	},
+];
+export { BlogNavItems, MoreNavItems };

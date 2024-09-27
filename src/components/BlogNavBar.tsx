@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from "react";
 
+import { BlogNavItems } from "@/data/nav-items";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import navItems from "@/data/nav-items";
 import { usePathname } from "next/navigation";
 
 function isActive(pathname: string, itemPath: string) {
@@ -22,13 +22,13 @@ export default function BlogNavBar() {
 		<nav
 			className="gap-2 justify-start md:gap-3 relative w-full z-[10] flex items-center pt-6 text-[13px] md:text-[18px] container px-4 md:px-0"
 			id="pheader">
-			{navItems.map((item) => {
+			{BlogNavItems.map((item) => {
 				const isActiveClass = isActive(pathname, item.path);
 
 				return (
 					<Link
 						key={item.path}
-						className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-300 transition-all rounded-sm font-bold -z-100 ${
+						className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-300 transition-all rounded-sm -z-100 ${
 							isActiveClass
 								? "dark:text-black text-white"
 								: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black  "

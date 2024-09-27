@@ -1,7 +1,6 @@
 import fs from "node:fs";
 import matter from "gray-matter";
 import { postsDirectory } from "@/constants";
-
 export default async function getPosts() {
 	const files = fs.readdirSync(postsDirectory);
 	const posts = files

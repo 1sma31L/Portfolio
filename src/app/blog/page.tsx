@@ -25,7 +25,7 @@ export default async function Blog() {
 			<main className="container mx-auto min-h-[93vh] font-bold text-[24px] sm:text-[32px]  py-6 px-4 sm:px-0">
 				<div className="flex gap-3 justify-start items-center px-2">
 					<LuPenLine className="text-xl md:text-2xl" />
-					<h1 className={`text-[30px] md:text-[40px] font-bold`}>Blog</h1>
+					<h1 className={`text-[26px] md:text-[40px] font-bold`}>Blog</h1>
 				</div>
 				<div className="flex flex-col justify-start items-start w-full h-full gap-4 py-4">
 					{posts.map(({ slug, frontMatter }) => (

@@ -1,13 +1,12 @@
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { BiCategory } from "react-icons/bi";
 import BlogCard from "@/components/BlogCard";
+import { BlogNavItems } from "@/data/nav-items";
 import Capitalize from "@/lib/Capitalize";
 import { Metadata } from "next";
 import React from "react";
 import fs from "fs";
 import matter from "gray-matter";
-import navItems from "@/data/nav-items";
-import path from "path";
 import { postsDirectory } from "@/constants";
 
 export async function generateMetadata({
@@ -24,19 +23,20 @@ export async function generateMetadata({
 				: "'s Category"
 		} | Blog`,
 		description: `${
-			navItems.filter((item) => item.name === category)[0].description
+			BlogNavItems.filter((item) => item.name === category)[0].description
 		}`,
 		keywords: [
 			category,
 			"blog",
 			"articles",
-			...(navItems.filter((item) => item.name === category)[0].keywords || []),
+			...(BlogNavItems.filter((item) => item.name === category)[0].keywords ||
+				[]),
 		],
 	};
 }
 
 export async function generateStaticParams(): Promise<{ category: string }[]> {
-	const categoryArray = navItems.map((item) => ({
+	const categoryArray = BlogNavItems.map((item) => ({
 		category: item.name.toLowerCase().replace(/\s+/g, "-"),
 	}));
 	return categoryArray;
@@ -82,18 +82,16 @@ export default async function Tag({
 		<AnimatedDiv id={2}>
 			<main className="container mx-auto min-h-[93vh] font-bold text-[24px] sm:text-[32px] py-6 px-4 sm:px-0">
 				<div className="flex gap-3 justify-start items-center px-2">
-					{navItems
-						.filter(
-							(item) => item.name.toLowerCase() === category.toLowerCase()
-						)
-						.map((item) => {
-							return (
-								<div key={item.name} className="mb-1">
-									{item.icon}
-								</div>
-							);
-						}) || <BiCategory />}
-					<h1 className={`text-[30px] md:text-[40px] font-bold`}>{category}</h1>
+					{BlogNavItems.filter(
+						(item) => item.name.toLowerCase() === category.toLowerCase()
+					).map((item) => {
+						return (
+							<div key={item.name} className="mb-1">
+								{item.icon}
+							</div>
+						);
+					}) || <BiCategory />}
+					<h1 className={`text-[26px] md:text-[40px] font-bold`}>{category}</h1>
 				</div>
 				{posts.length > 0 ? (
 					<div className="flex flex-col justify-start items-start w-full h-full gap-4 py-4">

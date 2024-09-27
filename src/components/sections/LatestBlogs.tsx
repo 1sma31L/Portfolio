@@ -32,7 +32,7 @@ function LatestBlogs() {
 			<div className="self-end m-4">
 				<Link
 					href={"/blog"}
-					className="text-muted-foreground hover:text-foreground transition-all duration-300">
+					className="text-muted-foreground hover:text-foreground hover:underline">
 					See More &gt;&gt;&gt;
 				</Link>
 			</div>

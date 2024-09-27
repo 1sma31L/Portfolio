@@ -86,7 +86,7 @@ export default async function Tag({ params }: { params: { tag: string } }) {
 				</div>
 				<div className="flex gap-3 justify-start items-center px-2">
 					<FaHashtag className="text-xl md:text-2xl" />
-					<h1 className={`text-[30px] md:text-[40px] font-bold`}>{tag}</h1>
+					<h1 className={`text-[26px] md:text-[40px] font-bold`}>{tag}</h1>
 				</div>
 				<div className="flex flex-col justify-start items-start w-full h-full gap-4 py-4">
 					{posts.length > 0 ? (
