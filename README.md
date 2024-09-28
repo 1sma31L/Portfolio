@@ -1,5 +1,4 @@
 # Personal Website, Portfolio, and Blog
-
 &nbsp;&nbsp;&nbsp;&nbsp;This repository contains the source code for my personal website, portfolio, and blog. That showcases my skills and the projects I've done. And my thoughts and experiences as blog posts.
 
 ## Description
