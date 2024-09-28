@@ -5,9 +5,9 @@ import LatestBlogs from "@/components/sections/LatestBlogs";
 import Link from "next/link";
 import React from "react";
 import SocialMedia from "@/data/social-media";
+import { getToken } from "@/lib/spotify";
 import stack from "@/data/tech";
 import timeLine from "@/data/time-line";
-
 function Home() {
 	return (
 		<AnimatedDiv id={0}>

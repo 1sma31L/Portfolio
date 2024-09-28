@@ -21,7 +21,6 @@ import { MdEmail } from "react-icons/md";
 import { PiSunLight } from "react-icons/pi";
 import { Post } from "@/types/types";
 import { RxMoon } from "react-icons/rx";
-import { SiGmail } from "react-icons/si";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 
@@ -58,6 +57,10 @@ export default function Command() {
 							break;
 						case "b":
 							router.push("/blog");
+							setOpen(false);
+							break;
+						case "m":
+							router.push("/more/music");
 							setOpen(false);
 							break;
 						default:

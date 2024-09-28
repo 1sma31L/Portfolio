@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 function isActive(pathname: string, itemPath: string) {
-	return pathname === itemPath;
+	return pathname === itemPath || pathname.startsWith(itemPath);
 }
 
 export default function BlogNavBar() {
@@ -17,14 +17,12 @@ export default function BlogNavBar() {
 	useEffect(() => {
 		setHoveredPath(pathname);
 	}, [pathname]);
-
 	return (
 		<nav
 			className="gap-1 justify-start relative w-full z-[10] flex items-center pt-6 text-[13px] md:text-[18px] container px-4 md:px-0"
 			id="pheader">
 			{MoreNavItems.map((item) => {
 				const isActiveClass = isActive(pathname, item.path);
-
 				return (
 					<Link
 						key={item.path}
