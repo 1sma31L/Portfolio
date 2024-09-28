@@ -18,7 +18,7 @@ keywords:
   - Promises
   - Asynchronous
   - Event Loop
-lastmod: 2024-09-20T13:38:10.218Z
+lastmod: 2024-09-28T10:45:18.565Z
 duration: 4 min
 ---
 
@@ -71,7 +71,7 @@ function getAsyncData(){
 	return new Promise(function(resolve){
 		setTimeout(function(){
 			resolve({
-				name: "Ismail"
+				name: "Akram"
 			});
 		},2000);
 	});
