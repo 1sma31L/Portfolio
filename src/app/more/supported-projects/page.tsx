@@ -7,7 +7,6 @@ import AnimatedDiv from "@/components/AnimatedDiv";
 import { FaHandHoldingHeart } from "react-icons/fa6";
 import React from "react";
 import SupportedProjectsCard from "@/components/ui/SupportedProjectsCard";
-
 function SupportedProjects() {
 	return (
 		<AnimatedDiv id={44}>

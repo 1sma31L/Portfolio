@@ -29,7 +29,7 @@ const lightTheme = JSON.parse(
 const darkTheme = JSON.parse(
 	stripJsonComments(
 		fs.readFileSync(
-			path.join(themesDirectory, "../themes/serendipity-sunset.json"),
+			path.join(themesDirectory, "../themes/gruvbox-dark-hard.json"),
 			//to get path inetllisense
 			"utf-8"
 		)
