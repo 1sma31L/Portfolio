@@ -67,7 +67,7 @@ const timeLine: TTimeLine = [
 			{
 				monthName: "July",
 				achievements: [
-					"Got my Baccalaureate certificate with an average of 16.89/20",
+					"Got my Baccalaureate certificate",
 				],
 			},
 		],

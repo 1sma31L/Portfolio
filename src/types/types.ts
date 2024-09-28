@@ -55,53 +55,130 @@ export type TNavItem = {
 }[];
 
 //
-export type Playlist = {
-	href: string;
-	limit: number;
-	next: string;
-	offset: number;
-	previous: string;
-	total: number;
-	items: Item[];
-};
-
-export type Item = {
+export type TPlaylist = {
 	collaborative: boolean;
 	description: string;
-	external_urls: ExternalUrls;
+	external_urls: {
+		spotify: string;
+	};
 	href: string;
 	id: string;
-	images: Image[];
+	images: Array<{
+		url: string;
+		height: number;
+		width: number;
+	}>;
 	name: string;
-	owner: Owner;
+	owner: {
+		external_urls: {
+			spotify: string;
+		};
+		followers: {
+			href: string;
+			total: number;
+		};
+		href: string;
+		id: string;
+		type: string;
+		uri: string;
+		display_name: string;
+	};
 	public: boolean;
 	snapshot_id: string;
-	tracks: Tracks;
+	tracks: {
+		href: string;
+		total: number;
+	};
 	type: string;
 	uri: string;
 };
 
-export type ExternalUrls = {
-	spotify: string;
-};
-
-export type Image = {
-	url: string;
-	height: number;
-	width: number;
-};
-
-export type Owner = {
-	external_urls: ExternalUrls;
-	followers: Tracks;
-	href: string;
-	id: string;
-	type: string;
-	uri: string;
-	display_name: string;
-};
-
-export type Tracks = {
-	href: string;
-	total: number;
+// Playlist Items
+export type TSong = {
+	added_at: string;
+	added_by: {
+		external_urls: {
+			spotify: string;
+		};
+		followers: {
+			href: string;
+			total: number;
+		};
+		href: string;
+		id: string;
+		type: string;
+		uri: string;
+	};
+	is_local: boolean;
+	track: {
+		album: {
+			album_type: string;
+			total_tracks: number;
+			available_markets: Array<string>;
+			external_urls: {
+				spotify: string;
+			};
+			href: string;
+			id: string;
+			images: Array<{
+				url: string;
+				height: number;
+				width: number;
+			}>;
+			name: string;
+			release_date: string;
+			release_date_precision: string;
+			restrictions: {
+				reason: string;
+			};
+			type: string;
+			uri: string;
+			artists: Array<{
+				external_urls: {
+					spotify: string;
+				};
+				href: string;
+				id: string;
+				name: string;
+				type: string;
+				uri: string;
+			}>;
+		};
+		artists: Array<{
+			external_urls: {
+				spotify: string;
+			};
+			href: string;
+			id: string;
+			name: string;
+			type: string;
+			uri: string;
+		}>;
+		available_markets: Array<string>;
+		disc_number: number;
+		duration_ms: number;
+		explicit: boolean;
+		external_ids: {
+			isrc: string;
+			ean: string;
+			upc: string;
+		};
+		external_urls: {
+			spotify: string;
+		};
+		href: string;
+		id: string;
+		is_playable: boolean;
+		linked_from: {};
+		restrictions: {
+			reason: string;
+		};
+		name: string;
+		popularity: number;
+		preview_url: string;
+		track_number: number;
+		type: string;
+		uri: string;
+		is_local: boolean;
+	};
 };

@@ -6,6 +6,8 @@ import BackButton from "@/components/BackButton";
 import { FaSpotify } from "react-icons/fa";
 import Link from "next/link";
 import React from "react";
+import SongLink from "@/components/MusicCard";
+import { TSong } from "@/types/types";
 
 // Async function for server-side fetching
 export default async function Page({ params }: { params: { id: string } }) {
@@ -33,26 +35,8 @@ export default async function Page({ params }: { params: { id: string } }) {
 				</div>
 
 				<div className="flex flex-col gap-2">
-					{songs.map((song: any, index: number) => (
-						<Link
-							href={`https://www.youtube.com/results?search_query=${song.track.name
-								.split(" ")
-								.join("+")}`}
-							key={index}
-							target="_blank"
-							className="flex gap-3 cursor-pointer">
-							<img
-								src={song.track.album.images[0].url}
-								alt={song.track.name}
-								className="w-12"
-							/>
-							<div className="flex flex-col justify-evenly items-start">
-								<h2 className="text-sm font-normal">{song.track.name}</h2>
-								<p className="text-xs font-normal">
-									{song.track.artists[0].name}
-								</p>
-							</div>
-						</Link>
+					{songs.map((song: TSong, index: number) => (
+						<SongLink key={index} song={song} />
 					))}
 				</div>
 			</main>

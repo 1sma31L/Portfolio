@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { IoIosMusicalNotes } from "react-icons/io";
-import { Item } from "@/types/types";
 import Link from "next/link";
 import React from "react";
+import { TPlaylist } from "@/types/types";
 import { getMyPlaylists } from "@/lib/spotify";
 async function Music() {
 	const playlists = await getMyPlaylists();
@@ -16,7 +16,7 @@ async function Music() {
 				</div>
 				<div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 mt-10">
 					{playlists.length > 0 &&
-						playlists.map((playlist: Item, index: number) => (
+						playlists.map((playlist: TPlaylist, index: number) => (
 							<Link
 								href={`/more/music/${playlist.id}`}
 								key={index}
