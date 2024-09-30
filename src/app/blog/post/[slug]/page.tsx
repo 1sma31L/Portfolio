@@ -5,7 +5,6 @@ import FeedBack from "@/components/Feedback";
 import FormatDistanceToNow from "@/components/FormatDistanceToNow";
 import Link from "next/link";
 import { Metadata } from "next";
-import { PostProps } from "@/types/types";
 import ProgressBar from "@/components/ProgressBar";
 import React from "react";
 import { TFrontMatter } from "@/types/types";
@@ -16,6 +15,12 @@ import matter from "gray-matter";
 import { notFound } from "next/navigation";
 import path from "path";
 import { postsDirectory } from "@/constants";
+
+type PostProps = {
+	params: {
+		slug: string;
+	};
+};
 
 export async function generateMetadata({
 	params,

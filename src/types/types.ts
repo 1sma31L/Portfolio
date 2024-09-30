@@ -21,12 +21,6 @@ export type TTimeLine = {
 	}[];
 }[];
 
-export type PostProps = {
-	params: {
-		slug: string;
-	};
-};
-
 export type TFrontMatter = {
 	title: string;
 	metaDescription: string;
@@ -64,25 +58,22 @@ export type TPlaylist = {
 	href: string;
 	id: string;
 	images: Array<{
+		height: any;
 		url: string;
-		height: number;
-		width: number;
+		width: any;
 	}>;
 	name: string;
 	owner: {
+		display_name: string;
 		external_urls: {
 			spotify: string;
-		};
-		followers: {
-			href: string;
-			total: number;
 		};
 		href: string;
 		id: string;
 		type: string;
 		uri: string;
-		display_name: string;
 	};
+	primary_color: any;
 	public: boolean;
 	snapshot_id: string;
 	tracks: {
@@ -100,38 +91,34 @@ export type TSong = {
 		external_urls: {
 			spotify: string;
 		};
-		followers: {
-			href: string;
-			total: number;
-		};
 		href: string;
 		id: string;
 		type: string;
 		uri: string;
 	};
 	is_local: boolean;
+	primary_color: any;
 	track: {
+		preview_url: string;
+		available_markets: Array<string>;
+		explicit: boolean;
+		type: string;
+		episode: boolean;
+		track: boolean;
 		album: {
-			album_type: string;
-			total_tracks: number;
 			available_markets: Array<string>;
-			external_urls: {
-				spotify: string;
-			};
+			type: string;
+			album_type: string;
 			href: string;
 			id: string;
 			images: Array<{
-				url: string;
 				height: number;
+				url: string;
 				width: number;
 			}>;
 			name: string;
 			release_date: string;
 			release_date_precision: string;
-			restrictions: {
-				reason: string;
-			};
-			type: string;
 			uri: string;
 			artists: Array<{
 				external_urls: {
@@ -143,6 +130,10 @@ export type TSong = {
 				type: string;
 				uri: string;
 			}>;
+			external_urls: {
+				spotify: string;
+			};
+			total_tracks: number;
 		};
 		artists: Array<{
 			external_urls: {
@@ -154,84 +145,43 @@ export type TSong = {
 			type: string;
 			uri: string;
 		}>;
-		available_markets: Array<string>;
 		disc_number: number;
+		track_number: number;
 		duration_ms: number;
-		explicit: boolean;
 		external_ids: {
 			isrc: string;
-			ean: string;
-			upc: string;
 		};
 		external_urls: {
 			spotify: string;
 		};
 		href: string;
 		id: string;
-		is_playable: boolean;
-		linked_from: {};
-		restrictions: {
-			reason: string;
-		};
 		name: string;
 		popularity: number;
-		preview_url: string;
-		track_number: number;
-		type: string;
 		uri: string;
 		is_local: boolean;
 	};
+	video_thumbnail: {
+		url: any;
+	};
 };
 
-export type TChannelInfo = {
-	kind: string;
-	etag: string;
-	pageInfo: {
-		totalResults: number;
-		resultsPerPage: number;
+export type TProfile = {
+	display_name: string;
+	external_urls: {
+		spotify: string;
 	};
-	items: Array<{
-		kind: string;
-		etag: string;
-		id: string;
-		snippet: {
-			title: string;
-			description: string;
-			customUrl: string;
-			publishedAt: string;
-			thumbnails: {
-				default: {
-					url: string;
-					width: number;
-					height: number;
-				};
-				medium: {
-					url: string;
-					width: number;
-					height: number;
-				};
-				high: {
-					url: string;
-					width: number;
-					height: number;
-				};
-			};
-			localized: {
-				title: string;
-				description: string;
-			};
-		};
-		contentDetails: {
-			relatedPlaylists: {
-				likes: string;
-				uploads: string;
-			};
-		};
-		statistics: {
-			viewCount: string;
-			subscriberCount: string;
-			hiddenSubscriberCount: boolean;
-			videoCount: string;
-		};
+	followers: {
+		href: string;
+		total: number;
+	};
+	href: string;
+	id: string;
+	images: Array<{
+		url: string;
+		height: number;
+		width: number;
 	}>;
+	type: string;
+	uri: string;
 };

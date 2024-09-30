@@ -1,4 +1,5 @@
-import { TItem } from "@/types/types";
+import { TPlaylist, TProfile, TSong } from "@/types/types";
+
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -27,10 +28,24 @@ const getToken = async (): Promise<string> => {
 	});
 
 	const data = await response.json();
-	return data.access_token; // Return the access token
+	return data.access_token;
 };
-//
-const getMyPlaylists = async (): Promise<TItem[]> => {
+
+const getProfileData = async (): Promise<TProfile> => {
+	const token = await getToken();
+	const url = "https://api.spotify.com/v1/users/3157qxpgggxxkcgfhn4zj2cppanm";
+	const response = await fetch(url, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
+		cache: "no-cache",
+	});
+	const result: TProfile = await response.json();
+	return result;
+};
+
+const getMyPlaylists = async (): Promise<TPlaylist[]> => {
 	const token = await getToken(); // Await the token retrieval
 	const url =
 		"https://api.spotify.com/v1/users/3157qxpgggxxkcgfhn4zj2cppanm/playlists";
@@ -51,7 +66,7 @@ const getMyPlaylists = async (): Promise<TItem[]> => {
 	return data.items; // Return the list of playlists
 };
 //
-const getPlaylistItems = async (playlistId: string) => {
+const getPlaylistItems = async (playlistId: string): Promise<TSong[]> => {
 	const token = await getToken();
 	const url = `https://api.spotify.com/v1/playlists/${playlistId}/tracks`;
 	const result = await fetch(url, {
@@ -84,4 +99,39 @@ const getPlaylistInfo = async (playlistId: string) => {
 	const data = await result.json();
 	return data;
 };
-export { getToken, getMyPlaylists, getPlaylistItems, getPlaylistInfo };
+
+const getPlaylistCoverImage = async (
+	playlistId: string
+): Promise<
+	| {
+			url: string;
+			height: string | null;
+			width: string | null;
+	  }[]
+	| null
+> => {
+	const token = await getToken();
+	const url = `https://api.spotify.com/v1/playlists/${playlistId}/images`;
+	const result = await fetch(url, {
+		method: "GET",
+		headers: {
+			Authorization: `Bearer ${token}`,
+		},
+		cache: "no-cache",
+	});
+	if (!result.ok) {
+		return null;
+	}
+	const data = await result.json();
+	console.log("=============================================", data);
+	return data;
+};
+
+export {
+	getToken,
+	getMyPlaylists,
+	getPlaylistItems,
+	getPlaylistInfo,
+	getProfileData,
+	getPlaylistCoverImage,
+};

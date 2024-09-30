@@ -7,6 +7,7 @@ function Footer() {
 		{ name: "Projects", href: "/projects" },
 		{ name: "Contact", href: "/contact" },
 		{ name: "Blog", href: "/blog" },
+		{ name: "More", href: "/more" },
 	];
 	return (
 		<footer className="bg-transparent h-14">

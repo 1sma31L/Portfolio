@@ -1,12 +1,18 @@
+import {
+	getMyPlaylists,
+	getPlaylistCoverImage,
+	getProfileData,
+} from "@/lib/spotify";
+
 /* eslint-disable @next/next/no-img-element */
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { IoIosMusicalNotes } from "react-icons/io";
 import Link from "next/link";
 import React from "react";
-import { TPlaylist } from "@/types/types";
-import { getMyPlaylists } from "@/lib/spotify";
+
 async function Music() {
 	const playlists = await getMyPlaylists();
+	const profile = await getProfileData();
 	return (
 		<AnimatedDiv id={22}>
 			<main className="container mx-auto min-h-[93vh] font-bold text-[24px] sm:text-[32px] py-6 px-4 sm:px-0">
@@ -14,24 +20,49 @@ async function Music() {
 					<IoIosMusicalNotes className="text-xl md:text-2xl" />
 					<h1 className={`text-[26px] md:text-[40px] font-bold`}>Music</h1>
 				</div>
-				<div className="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4 mt-10">
+				<Link
+					href="https://open.spotify.com/user/3157qxpgggxxkcgfhn4zj2cppanm"
+					target="_blank"
+					className="flex gap-4 my-3 w-full mx-auto">
+					{profile?.images?.length > 0 && (
+						<img
+							src={profile?.images[1].url}
+							alt="Profile"
+							className="rounded-full w-16 h-16"
+						/>
+					)}
+					<div className="flex flex-col justify-center">
+						<h2 className="text-lg md:text-xl font-bold">
+							{profile?.display_name || profile.id}
+						</h2>
+						<p className="text-sm md:text-md text-muted-foreground">
+							{profile?.followers?.total} followers
+						</p>
+					</div>
+				</Link>
+				<hr />
+				<div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 mt-5">
 					{playlists.length > 0 &&
-						playlists.map((playlist: TPlaylist, index: number) => (
-							<Link
-								href={`/more/music/${playlist.id}`}
-								key={index}
-								className="flex flex-col gap-2 cursor-pointer group">
-								<img
-									src={playlist.images[0].url}
-									alt={playlist.name}
-									className="rounded-xl"
-								/>
-								<h2 className="text-sm md:text-lg font-normal text-center group-hover:underline">
-									{playlist.name}
-								</h2>
-								<p className="text-sm">{playlist.description}</p>
-							</Link>
-						))}
+						playlists.map(async (playlist, index: number) => {
+							const coverImage = await getPlaylistCoverImage(playlist.id);
+							return (
+								<Link
+									href={`/more/music/${playlist?.id}`}
+									key={index}
+									className="flex flex-col gap-2 cursor-pointer group">
+									{playlist?.images?.length > 0 && (
+										<img
+											src={coverImage?.[0]?.url}
+											alt={playlist.name}
+											className="rounded-md"
+										/>
+									)}
+									<h2 className="text-sm md:text-lg font-normal text-center group-hover:underline">
+										{playlist?.name}
+									</h2>
+								</Link>
+							);
+						})}
 				</div>
 			</main>
 		</AnimatedDiv>
