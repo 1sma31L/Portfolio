@@ -15,11 +15,4 @@ export const SupportedProjectsItems = [
 	},
 ];
 
-export const SupportedYoutubeChannels = [
-	{
-		title: "AnaHr",
-		description: "",
-		link: "https://www.youtube.com/@anaHr/videos",
-		src: "/images/anahr.jpg",
-	},
-];
+export const SupportedYoutubeChannels = ["AnaHr"];

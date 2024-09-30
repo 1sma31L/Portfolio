@@ -1,5 +1,4 @@
-import { Item, Playlist } from "@/types/types";
-
+import { TItem } from "@/types/types";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -31,7 +30,7 @@ const getToken = async (): Promise<string> => {
 	return data.access_token; // Return the access token
 };
 //
-const getMyPlaylists = async (): Promise<Item[]> => {
+const getMyPlaylists = async (): Promise<TItem[]> => {
 	const token = await getToken(); // Await the token retrieval
 	const url =
 		"https://api.spotify.com/v1/users/3157qxpgggxxkcgfhn4zj2cppanm/playlists";
