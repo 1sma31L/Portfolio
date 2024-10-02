@@ -9,7 +9,10 @@ interface SongLinkProps {
 }
 
 const SongLink: React.FC<SongLinkProps> = ({ song }) => {
-	const youtubeSearchQuery = song.track.name.split(" ").join("+");
+	const youtubeSearchQuery =
+		song.track.artists[0].name.split(" ").join("+") +
+		" - " +
+		song.track.name.split(" ").join("+");
 
 	return (
 		<Link
