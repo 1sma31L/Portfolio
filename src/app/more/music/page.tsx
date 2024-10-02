@@ -8,7 +8,14 @@ import {
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { IoIosMusicalNotes } from "react-icons/io";
 import Link from "next/link";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+	title: "Music",
+	description:
+		"Listen to my favorite music playlists on Spotify. Follow me on Spotify to get updates on my latest playlists.",
+};
 
 async function Music() {
 	const playlists = await getMyPlaylists();

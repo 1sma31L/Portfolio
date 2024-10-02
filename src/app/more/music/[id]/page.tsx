@@ -5,9 +5,22 @@ import AnimatedDiv from "@/components/AnimatedDiv";
 import BackButton from "@/components/BackButton";
 import { FaSpotify } from "react-icons/fa";
 import Link from "next/link";
+import { Metadata } from "next";
 import React from "react";
 import SongLink from "@/components/MusicCard";
 import { TSong } from "@/types/types";
+
+export async function generateMetadata({
+	params,
+}: {
+	params: { id: string };
+}): Promise<Metadata> {
+	const playlistInfo = await spotify.getPlaylistInfo(params.id);
+	return {
+		title: playlistInfo.name + " | Music",
+		description: playlistInfo.description,
+	};
+}
 
 export default async function Page({ params }: { params: { id: string } }) {
 	const songs = await spotify.getPlaylistItems(params.id);
