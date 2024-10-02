@@ -1,12 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import * as spotify from "@/lib/spotify";
 
+import React, { Suspense } from "react";
+
 import AnimatedDiv from "@/components/AnimatedDiv";
 import BackButton from "@/components/BackButton";
 import { FaSpotify } from "react-icons/fa";
 import Link from "next/link";
+import Loading from "@/components/Loading";
 import { Metadata } from "next";
-import React from "react";
 import SongLink from "@/components/MusicCard";
 import { TSong } from "@/types/types";
 
@@ -22,13 +24,19 @@ export async function generateMetadata({
 	};
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: { id: string } }) {
+	return (
+		<Suspense fallback={<Loading />}>
+			<PlaylistContent params={params} />
+		</Suspense>
+	);
+}
+
+async function PlaylistContent({ params }: { params: { id: string } }) {
 	const songs = await spotify.getPlaylistItems(params.id);
 	const playlistInfo = await spotify.getPlaylistInfo(params.id);
-
 	const playlistName = playlistInfo.name;
 	const playlistImages = await spotify.getPlaylistCoverImage(params.id);
-
 	const playlistID = playlistInfo.id;
 
 	return (
@@ -41,7 +49,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 							{playlistImages && (
 								<img
 									src={playlistImages[0].url}
-									alt=""
+									alt={playlistName}
 									className="rounded-md shadow-xl max-w-52 lg:max-w-full"
 								/>
 							)}
