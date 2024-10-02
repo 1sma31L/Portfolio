@@ -48,29 +48,31 @@ async function Music() {
 					</div>
 				</Link>
 				<hr />
-				<div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 mt-5">
-					{playlists.length > 0 &&
-						playlists.map(async (playlist, index: number) => {
-							const coverImage = await getPlaylistCoverImage(playlist.id);
-							return (
-								<Link
-									href={`/more/music/${playlist?.id}`}
-									key={index}
-									className="flex flex-col gap-2 cursor-pointer group">
-									{playlist?.images?.length > 0 && (
-										<img
-											src={coverImage?.[0]?.url}
-											alt={playlist.name}
-											className="rounded-md"
-										/>
-									)}
-									<h2 className="text-sm md:text-lg font-normal text-center group-hover:underline">
-										{playlist?.name}
-									</h2>
-								</Link>
-							);
-						})}
-				</div>
+				<AnimatedDiv id={123}>
+					<div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 mt-5">
+						{playlists.length > 0 &&
+							playlists.map(async (playlist, index: number) => {
+								const coverImage = await getPlaylistCoverImage(playlist.id);
+								return (
+									<Link
+										href={`/more/music/${playlist?.id}`}
+										key={index}
+										className="flex flex-col gap-2 cursor-pointer group">
+										{playlist?.images?.length > 0 && (
+											<img
+												src={coverImage?.[0]?.url}
+												alt={playlist.name}
+												className="rounded-md"
+											/>
+										)}
+										<h2 className="text-sm md:text-lg font-normal text-center group-hover:underline">
+											{playlist?.name}
+										</h2>
+									</Link>
+								);
+							})}
+					</div>
+				</AnimatedDiv>
 			</main>
 		</AnimatedDiv>
 	);

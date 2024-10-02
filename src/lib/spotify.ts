@@ -123,7 +123,6 @@ const getPlaylistCoverImage = async (
 		return null;
 	}
 	const data = await result.json();
-	console.log("=============================================", data);
 	return data;
 };
 

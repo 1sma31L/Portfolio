@@ -9,7 +9,6 @@ export const sendEmail = async (templateParams: any) => {
 			process.env.TEMPLATE_ID!,
 			templateParams
 		);
-		console.log("Email sent successfully:", response);
 	} catch (error: any) {
 		console.error("Error sending email:", error.response || error.message);
 	}
