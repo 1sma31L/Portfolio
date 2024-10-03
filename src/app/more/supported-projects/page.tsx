@@ -6,9 +6,15 @@ import {
 
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { FaHandHoldingHeart } from "react-icons/fa6";
+import { Metadata } from "next";
 import React from "react";
 import SupportedProjectsCard from "@/components/ui/SupportedProjectsCard";
 
+export const metadata: Metadata = {
+	title: "Suppoted Projects",
+	description:
+		"Check out the projects that I support. These projects are doing great work and need your support.",
+};
 function SupportedProjects() {
 	return (
 		<AnimatedDiv id={44}>
