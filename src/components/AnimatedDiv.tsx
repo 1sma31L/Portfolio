@@ -23,7 +23,6 @@ function AnimatedDiv({
 		initial: { opacity: 0, y: 100 },
 		animate: {
 			opacity: [0, 0.5, 1],
-			filter: ["blur(5px)", "blur(3px)", "blur(0px)"],
 			y: [20, -5, 0],
 			transition: {
 				duration: 1,
@@ -31,7 +30,7 @@ function AnimatedDiv({
 				ease: [0.175, 0.885, 0.32, 1.275],
 			},
 		},
-		exit: { opacity: 0, y: -100, filter: "blur(5px)" },
+		exit: { opacity: 0, y: -100 },
 	};
 
 	return (
