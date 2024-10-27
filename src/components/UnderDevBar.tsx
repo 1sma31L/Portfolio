@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { TiDelete } from "react-icons/ti";
 
+const underDev = false;
 function UnderDevBar() {
 	const [clicked, setClicked] = useState(true);
 	useEffect(() => {
@@ -19,7 +20,7 @@ function UnderDevBar() {
 	};
 	return (
 		<>
-			{!clicked && (
+			{!clicked && underDev && (
 				<div className="bg-black">
 					<div className="w-full max-w-[1600px] mx-auto  flex justify-between md:justify-around items-center text-[9px] sm:text-[11px] md:text-sm text-white py-3 px-4 gap-4">
 						<div className="hidden md:block"></div>
