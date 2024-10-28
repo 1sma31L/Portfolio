@@ -35,10 +35,8 @@ function Projects() {
 				</div>
 				<hr className="my-10" />
 				<div className="flex gap-3 items-center px-2">
-					<CgSandClock className="text-xl md:text-3xl" />
-					<h1 className="text-[30px] md:text-[40px] font-bold">
-						Upcoming Projects
-					</h1>
+					<CgSandClock className="text-xl md:text-3xl mb-1" />
+					<h1 className="text-[30px] md:text-[40px] font-bold">Working On</h1>
 				</div>
 				<div className="flex flex-col gap-2 py-4">
 					{upcomingProjects.map((project) => (

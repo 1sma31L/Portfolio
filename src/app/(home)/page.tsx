@@ -1,3 +1,4 @@
+import Age from "@/lib/calc-age";
 import AnimatedDiv from "@/components/AnimatedDiv";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import InfiniteScroll from "@/components/InfiniteScroll";
@@ -5,7 +6,6 @@ import LatestBlogs from "@/components/sections/LatestBlogs";
 import Link from "next/link";
 import React from "react";
 import SocialMedia from "@/data/social-media";
-import { getToken } from "@/lib/spotify";
 import stack from "@/data/tech";
 import timeLine from "@/data/time-line";
 function Home() {
@@ -42,11 +42,11 @@ function Home() {
 							</footer>
 						</blockquote>
 						<p className="indent-5">
-							i&apos;m a 19 y/o cs undergrad student and a junior web developer.
-							i love building things and solving problems. i enjoy system
-							design, theoretical computer science and i live on the editor. if
-							i&apos;m not coding, i&apos;m probably watching movies, tv shows
-							or obsessing over mechanical keyboards.
+							i&apos;m a <Age birthDate="2005-04-27" /> y/o cs undergrad student
+							and a junior web developer. i love building things and solving
+							problems. i enjoy system design, theoretical computer science and
+							i live on the editor. if i&apos;m not coding, i&apos;m probably
+							watching movies, tv shows or obsessing over mechanical keyboards.
 						</p>
 					</div>
 				</section>
@@ -57,9 +57,13 @@ function Home() {
 					<InfiniteScroll icons={stack} />
 				</div>
 				<section className="w-full flex flex-col">
-					<h1 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
-						My Timeline
-					</h1>
+					<Link href={"#timeline"}>
+						<h1
+							className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left"
+							id="timeline">
+							My Timeline
+						</h1>
+					</Link>
 					<div className="w-full py-2 px-0">
 						<div className="border-l-2 border-zinc-500 pl-3 md:pl-4">
 							{timeLine.map((item, index) => (

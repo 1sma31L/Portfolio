@@ -58,10 +58,10 @@ export default function NavBar() {
 							return (
 								<Link
 									key={item.path}
-									className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-300 rounded-sm transition-all font-bold -z-100 ${
+									className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-300 rounded-sm transition-all -z-100 ${
 										isActiveClass
 											? "dark:text-black text-white"
-											: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black  "
+											: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black"
 									}`}
 									data-active={isActiveClass}
 									href={item.path}

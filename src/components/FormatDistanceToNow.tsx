@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 
+import Capitalize from "@/lib/Capitalize";
 import formatDate from "@/lib/formatDate";
 import { formatDistanceToNow } from "date-fns";
 
@@ -28,7 +29,17 @@ function FormatDistanceToNow({ frontMatter }: { frontMatter: any }) {
 							.split(":")
 							.slice(0, 2)
 							.join(":")}`}{" "}
-						⋆ {formatDistanceToNow(new Date(frontMatter.lastmod))}
+						⋆{" "}
+						{formatDistanceToNow(new Date(frontMatter.lastmod))
+							.split(" ")
+							.map((word, index) => {
+								if (index === 0) {
+									return Capitalize(word);
+								} else {
+									return word;
+								}
+							})
+							.join(" ")}
 					</p>
 				</div>
 			)}

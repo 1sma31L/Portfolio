@@ -4,10 +4,16 @@ const timeLine: TTimeLine = [
 		year: 2024,
 		month: [
 			{
+				monthName: "October",
+				achievements: [
+					"Became Web Development HoD at Google Developers Student Clubs GDSC-ENSTA",
+				],
+			},
+
+			{
 				monthName: "September",
 				achievements: [
 					"Developed a link shorter with NodeJS and ExpressJS and an anonymous message sender using Next.js and Firebase, In addition to this website",
-					"Started learning Web Security, System Design and DSA",
 				],
 			},
 			{
@@ -66,9 +72,7 @@ const timeLine: TTimeLine = [
 			},
 			{
 				monthName: "July",
-				achievements: [
-					"Got my Baccalaureate certificate",
-				],
+				achievements: ["Got my Baccalaureate certificate"],
 			},
 		],
 	},

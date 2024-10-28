@@ -31,7 +31,7 @@ export default function BlogNavBar() {
 						className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-300 transition-all rounded-sm -z-100 ${
 							isActiveClass
 								? "dark:text-black text-white"
-								: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black  "
+								: "text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black font-normal"
 						}`}
 						data-active={isActiveClass}
 						href={item.path}
@@ -49,9 +49,7 @@ export default function BlogNavBar() {
 									duration: 0.3,
 								}}
 								style={{ originY: "top" }}
-								className={
-									"absolute inset-0 -z-10 bg-black dark:bg-white rounded-sm"
-								}
+								className="absolute inset-0 -z-10 bg-black dark:bg-white rounded-sm"
 							/>
 						)}
 					</Link>
