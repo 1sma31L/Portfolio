@@ -50,23 +50,23 @@ function Home() {
 						</p>
 					</div>
 				</section>
-				<section id="techstack">
-					<Link href={"#techstack"}>
-						<h2 className="text-center text-3xl md:text-4xl font-bold">
-							My Tech Stack
-						</h2>
-					</Link>
-					<div className="pb-10 w-full">
-						<InfiniteScroll icons={stack} />
-					</div>
-				</section>
+				<Link href={"#techstack"}>
+					<h2
+						className="text-center text-3xl md:text-4xl  font-bold"
+						id="techstack">
+						My Tech Stack
+					</h2>
+				</Link>
+				<div className="pb-10 w-full">
+					<InfiniteScroll icons={stack} />
+				</div>
 				<section className="w-full flex flex-col">
 					<Link href={"#timeline"}>
-						<h1
+						<h2
 							className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left"
 							id="timeline">
 							My Timeline
-						</h1>
+						</h2>
 					</Link>
 					<div className="w-full py-2 px-0">
 						<div className="border-l-2 border-zinc-500 pl-3 md:pl-4">
@@ -100,11 +100,13 @@ function Home() {
 					</div>
 				</section>
 				<LatestBlogs />
-				<section className="w-full flex flex-col" id="moreaboutme">
-					<Link href={"#moreaboutme"}>
-						<h1 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
+				<section className="w-full flex flex-col">
+					<Link href={"#aboutme"}>
+						<h2
+							className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left"
+							id="aboutme">
 							More About Me
-						</h1>
+						</h2>
 					</Link>
 					<div>
 						<div className="text-sm sm:text-base leading-[1.8] md:leading-[2] indent-5">
@@ -146,9 +148,9 @@ function Home() {
 					</div>
 				</section>
 				<section className="flex flex-col w-full justify-center items-center gap-10 md:min-h-[40vh] my-24">
-					<h1 className="text-4xl md:text-6xl font-extrabold text-center">
+					<h2 className="text-4xl md:text-6xl font-extrabold text-center">
 						Are You Interested in Hiring Me?
-					</h1>
+					</h2>
 					<div className="flex flex-col sm:flex-row gap-5">
 						<button className="text-sm md:text-base py-2 px-3 border bg-zinc-950 dark:bg-zinc-50 rounded dark:text-zinc-950 text-zinc-50 w-auto hover:bg-zinc-700 transition-colors duration-500 dark:hover:bg-zinc-300">
 							<Link

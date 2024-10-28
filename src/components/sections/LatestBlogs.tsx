@@ -20,9 +20,11 @@ function LatestBlogs() {
 		fetchPosts();
 	}, []);
 	return (
-		<section className="w-full flex flex-col" id="latestblog">
+		<section className="w-full flex flex-col">
 			<Link href={"#latestblog"}>
-				<h1 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-10">
+				<h1
+					className="text-3xl md:text-4xl font-bold text-center md:text-left mb-10 "
+					id="latestblog">
 					Latest Blog Posts
 				</h1>
 			</Link>
