@@ -19,7 +19,7 @@ function Contact() {
 						<h1 className="text-[30px] md:text-[40px] font-bold">Contact Me</h1>
 					</div>
 					<p className="py-2 mb-5">
-						Feel free to reach out to me for questions, Inquiries, Or
+						Feel free to reach out to me for questions, Inquiries, or
 						collaborations. Open to new opportunities and challenges.
 					</p>
 					<ContactForm />
