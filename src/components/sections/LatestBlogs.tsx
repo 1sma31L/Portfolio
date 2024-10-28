@@ -20,10 +20,12 @@ function LatestBlogs() {
 		fetchPosts();
 	}, []);
 	return (
-		<section className="w-full flex flex-col">
-			<h1 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-10">
-				Latest Blog Posts
-			</h1>
+		<section className="w-full flex flex-col" id="latestblog">
+			<Link href={"#latestblog"}>
+				<h1 className="text-3xl md:text-4xl font-bold text-center md:text-left mb-10">
+					Latest Blog Posts
+				</h1>
+			</Link>
 			<div className="flex flex-col gap-3">
 				{posts.map((post, i) => (
 					<BlogCard key={i} slug={post.slug} frontMatter={post.frontMatter} />

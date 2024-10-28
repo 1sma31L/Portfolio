@@ -50,12 +50,16 @@ function Home() {
 						</p>
 					</div>
 				</section>
-				<h2 className="text-center text-3xl md:text-4xl  font-bold">
-					My Tech Stack
-				</h2>
-				<div className="pb-10 w-full">
-					<InfiniteScroll icons={stack} />
-				</div>
+				<section id="techstack">
+					<Link href={"#techstack"}>
+						<h2 className="text-center text-3xl md:text-4xl font-bold">
+							My Tech Stack
+						</h2>
+					</Link>
+					<div className="pb-10 w-full">
+						<InfiniteScroll icons={stack} />
+					</div>
+				</section>
 				<section className="w-full flex flex-col">
 					<Link href={"#timeline"}>
 						<h1
@@ -96,10 +100,12 @@ function Home() {
 					</div>
 				</section>
 				<LatestBlogs />
-				<section className="w-full flex flex-col">
-					<h1 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
-						More About Me
-					</h1>
+				<section className="w-full flex flex-col" id="moreaboutme">
+					<Link href={"#moreaboutme"}>
+						<h1 className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left">
+							More About Me
+						</h1>
+					</Link>
 					<div>
 						<div className="text-sm sm:text-base leading-[1.8] md:leading-[2] indent-5">
 							<div>
