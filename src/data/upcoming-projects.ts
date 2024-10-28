@@ -22,7 +22,7 @@ const upcomingProjects: {
 			"Shadcn-ui",
 			"Aceternity",
 		],
-		previewLink: "www.gdscensta.tech",
+		previewLink: "https://www.gdscensta.tech",
 		githubLink: "https://github.com/1sma31L/gdsc-ensta",
 	},
 ];
