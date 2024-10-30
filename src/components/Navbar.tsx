@@ -88,7 +88,7 @@ export default function NavBar() {
 							);
 						})}
 					</nav>
-					<div className="ml-1">
+					<div className="ml-1 hidden lg:block">
 						<Command />
 					</div>
 					<div className="ml-1">
