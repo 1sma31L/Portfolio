@@ -1,7 +1,6 @@
 import { MdNaturePeople, MdRateReview } from "react-icons/md";
 
 import { FaBook } from "react-icons/fa";
-import { GiMaterialsScience } from "react-icons/gi";
 import { RiCodeSSlashFill } from "react-icons/ri";
 import { TNavItem } from "@/types/types";
 
