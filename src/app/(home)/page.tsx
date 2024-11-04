@@ -60,7 +60,7 @@ function Home() {
 				<div className="pb-10 w-full">
 					<InfiniteScroll icons={stack} />
 				</div>
-				<section className="w-full flex flex-col">
+				{/* <section className="w-full flex flex-col">
 					<Link href={"#timeline"}>
 						<h2
 							className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left"
@@ -98,7 +98,7 @@ function Home() {
 							))}
 						</div>
 					</div>
-				</section>
+				</section> */}
 				<LatestBlogs />
 				<section className="w-full flex flex-col">
 					<Link href={"#aboutme"}>
