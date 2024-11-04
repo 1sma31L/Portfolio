@@ -54,12 +54,12 @@ const MoreNavItems = [
 		description: "Life, Personal, Self-help, Motivation related articles.",
 		keywords: ["life", "personal", "self-help", "motivation", "inspiration"],
 	},
-	{
-		path: "/more/supported-projects",
-		name: "Supported Projects",
-		icon: <MdNaturePeople />,
-		description: "Life, Personal, Self-help, Motivation related articles.",
-		keywords: ["life", "personal", "self-help", "motivation", "inspiration"],
-	},
+	// {
+	// 	path: "/more/supported-projects",
+	// 	name: "Supported Projects",
+	// 	icon: <MdNaturePeople />,
+	// 	description: "Life, Personal, Self-help, Motivation related articles.",
+	// 	keywords: ["life", "personal", "self-help", "motivation", "inspiration"],
+	// },
 ];
 export { BlogNavItems, MoreNavItems };
