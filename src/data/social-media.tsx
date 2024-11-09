@@ -7,11 +7,6 @@ const SocialMedia: {
 }[] = [
 	{
 		name: "",
-		url: "https://linkedin.com/in/ismail-boussekine",
-		icon: <FaLinkedin />,
-	},
-	{
-		name: "",
 		url: "https://github.com/1sma31L",
 		icon: <FaGithub />,
 	},
