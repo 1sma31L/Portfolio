@@ -14,7 +14,7 @@ function Home() {
 			<main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-28 py-6 md:py-0">
 				<section className="flex flex-col gap-5 min-h-[70vh] md:min-h-[80vh] justify-center items-center w-full">
 					<h1 className="text-[44px] sm:text-[68px] font-extrabold inline-block text-zinc-800 dark:text-zinc-100 text-left w-full">
-						Ismail M. Bossekine
+						Ismail M. Boussekine
 					</h1>
 					<div className="text-sm sm:text-base flex flex-col gap-5 leading-[1.6]  dark:text-zinc-100 ">
 						<div className="flex flex-row gap-1 flex-wrap justify-start items-center">
