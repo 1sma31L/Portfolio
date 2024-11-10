@@ -10,7 +10,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 
-// import ScrollToTopButton from "@/components/ScrollToTopButton";
 const josefin = Josefin_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -75,7 +74,7 @@ export default function RootLayout({
 				<Analytics />
 				<Toaster />
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<ScrollToTop />
+					{/* <ScrollToTop /> */}
 					<NavBar />
 					<hr className="w-full sticky top-14 left-0 bg-muted-foreground" />
 					{children}

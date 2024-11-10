@@ -53,7 +53,7 @@ const processor = unified()
 		getHighlighter: () =>
 			getSingletonHighlighter({
 				themes: [darkTheme, lightTheme],
-				langs: ["javascript"],
+				langs: ["javascript", "html", "css", "typescript", "sql", "c"],
 			}),
 		theme: {
 			dark: darkTheme,

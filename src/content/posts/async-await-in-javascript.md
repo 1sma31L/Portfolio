@@ -4,7 +4,7 @@ metaDescription: >-
   Understand how to use async/await in JavaScript to handle asynchronous calls
   more effectively and improve code readability.
 author: Ismail Boussekine
-date: 2024-09-05T00:00:00.000Z
+date: 2024-09-06T00:00:00.000Z
 tags:
   - Javascript
   - Async Await
@@ -19,7 +19,7 @@ keywords:
   - Promises
   - Asynchronous
   - Event Loop
-lastmod: 2024-11-10T17:33:08.220Z
+lastmod: 2024-11-10T20:06:31.656Z
 duration: 4 min
 ---
 

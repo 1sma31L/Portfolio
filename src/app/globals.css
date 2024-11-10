@@ -205,7 +205,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 .heading-anchor::before {
 	content: "#";
 	position: absolute;
-	left: -1rem;
+	left: -1.5rem;
 	color: transparent;
 	margin-right: 0.1rem;
 }

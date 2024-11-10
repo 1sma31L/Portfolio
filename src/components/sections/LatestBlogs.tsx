@@ -29,9 +29,16 @@ function LatestBlogs() {
 				</h1>
 			</Link>
 			<div className="flex flex-col gap-3">
-				{posts.map((post, i) => (
-					<BlogCard key={i} slug={post.slug} frontMatter={post.frontMatter} />
-				))}
+				{posts.map(
+					(post, i) =>
+						i < 3 && (
+							<BlogCard
+								key={i}
+								slug={post.slug}
+								frontMatter={post.frontMatter}
+							/>
+						)
+				)}
 			</div>
 			<div className="self-end m-4">
 				<Link
