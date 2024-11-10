@@ -3,7 +3,7 @@ title: Learn HTML (GDSC ENSTA Workshop)
 metaDescription: >-
   GDSC ENSTA Workshop on HTML for beginners. Learn the basics of HTML and how to
   create a simple webpage.
-author: Ismail Boussekine
+author: BOUSSEKINE M. Ismail and MALEK Fatma Zohra
 date: 2024-11-10T16:56:44.376Z
 tags:
   - Frontend
@@ -31,7 +31,7 @@ keywords:
   - HTML Structure
   - HTML Document
   - HTML Content
-lastmod: 2024-11-10T20:08:37.641Z
+lastmod: 2024-11-10T20:20:38.767Z
 duration: 4 min
 ---
 1. [What is HTML?](#what-is-html)

@@ -107,6 +107,9 @@ export default async function BlogPost({ params }: PostProps) {
 				<div className="container mx-auto prose dark:prose-invert !max-w-none">
 					<h1 className="sm:!text-[80px] !text-[45px]">{frontMatter.title}</h1>
 					<div className="text-xs md:text-sm">
+						<p>
+							By<span className="font-bold"> {frontMatter.author} </span>
+						</p>
 						<FormatDistanceToNow frontMatter={frontMatter} />
 						<p>
 							<span className="font-bold">Reading time: </span>
