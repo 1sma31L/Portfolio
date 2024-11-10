@@ -219,6 +219,12 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 	margin-right: 0.1rem;
 }
 
+@media screen and (max-width: 768px) {
+	.heading-anchor::before {
+		content: "";
+	}
+}
+
 .heading-anchor:hover::before {
 	color: #333;
 }
