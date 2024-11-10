@@ -10,6 +10,7 @@ tags:
   - Async Await
   - Promises
   - Event Loop
+type: Tutorial
 categories:
   - Tech
 keywords:
@@ -18,7 +19,7 @@ keywords:
   - Promises
   - Asynchronous
   - Event Loop
-lastmod: 2024-09-28T10:45:18.565Z
+lastmod: 2024-11-10T17:33:08.220Z
 duration: 4 min
 ---
 

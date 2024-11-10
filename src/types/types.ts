@@ -27,6 +27,7 @@ export type TFrontMatter = {
 	author: string;
 	date: string;
 	tags: string[];
+	type?: string;
 	categories: string[];
 	keywords: string[];
 	lastmod: string;

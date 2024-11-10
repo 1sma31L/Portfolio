@@ -13,6 +13,7 @@ import React, { useEffect, useState } from "react";
 import { BiSolidDislike } from "react-icons/bi";
 import { BiSolidLike } from "react-icons/bi";
 import { ImSpinner9 } from "react-icons/im";
+import { TypeOutline } from "lucide-react";
 import { db } from "@/config/firebase";
 
 async function getStats(slug: string): Promise<
@@ -59,7 +60,13 @@ async function sentStats(
 	}
 }
 
-export default function FeedBack({ slug }: { slug: string }) {
+export default function FeedBack({
+	slug,
+	type,
+}: {
+	slug: string;
+	type: string;
+}) {
 	const [loading, setLoading] = useState(false);
 	const [submitted, setSubmitted] = useState(false);
 	const [likes, setLikes] = useState(0);
@@ -82,7 +89,7 @@ export default function FeedBack({ slug }: { slug: string }) {
 			{!(loading || submitted) && (
 				<>
 					<h2 className="font-bold text-sm sm:text-lg">
-						Did You Find This Article Usefull?
+						Did You Find This {type} Usefull?
 					</h2>
 					<div className="flex gap-4 justify-between items-center">
 						<button

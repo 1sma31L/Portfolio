@@ -135,7 +135,7 @@ export default async function BlogPost({ params }: PostProps) {
 					<hr className="my-8" />
 				</div>
 				<div className="mx-1">
-					<FeedBack slug={slug} />
+					<FeedBack slug={slug} type={frontMatter.type ?? "Article"} />
 				</div>
 				{suggestedPosts.length > 0 && (
 					<div className="flex flex-col gap-8 mt-8 px-1">

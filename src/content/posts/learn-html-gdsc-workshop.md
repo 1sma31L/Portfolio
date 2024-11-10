@@ -10,8 +10,9 @@ tags:
   - Html
 categories:
   - Courses
+type: Course
 keywords: null
-lastmod: 2024-11-10T17:14:07.412Z
+lastmod: 2024-11-10T17:26:47.951Z
 duration: 0 min
 ---
 
