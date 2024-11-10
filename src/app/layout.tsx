@@ -74,7 +74,7 @@ export default function RootLayout({
 				<Analytics />
 				<Toaster />
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					{/* <ScrollToTop /> */}
+					<ScrollToTop />
 					<NavBar />
 					<hr className="w-full sticky top-14 left-0 bg-muted-foreground" />
 					{children}
