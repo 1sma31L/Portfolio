@@ -32,7 +32,7 @@ export default function Command() {
 	useEffect(() => {
 		const down = (e: KeyboardEvent) => {
 			if (e.metaKey || e.ctrlKey) {
-				if (e.key.toLowerCase() !== "r") {
+				if (["k", "i", "a", "p", "c", "b", "m"].includes(e.key.toLowerCase())) {
 					e.preventDefault();
 					switch (e.key) {
 						// Open
