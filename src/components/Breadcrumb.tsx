@@ -91,7 +91,7 @@ function BreadcrumbContent({ label }: { label: string }) {
 									</DropdownMenuTrigger>
 									<DropdownMenuContent align="start">
 										{items.slice(1, -2).map((item, index) => (
-											<DropdownMenuItem key={index}>
+											<DropdownMenuItem key={index} asChild>
 												<Link href={item.href ? item.href : "#"}>
 													{item.label}
 												</Link>

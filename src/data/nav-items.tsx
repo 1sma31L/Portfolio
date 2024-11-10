@@ -1,6 +1,7 @@
 import { MdNaturePeople, MdRateReview } from "react-icons/md";
 
 import { FaBook } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
 import { RiCodeSSlashFill } from "react-icons/ri";
 import { TNavItem } from "@/types/types";
 
@@ -13,6 +14,13 @@ const BlogNavItems: TNavItem = [
 		icon: <RiCodeSSlashFill />,
 		description: "Tech, Programming, Coding related articles.",
 		keywords: ["tech", "programming", "coding", "development", "software"],
+	},
+	{
+		path: "/blog/category/courses",
+		name: "Courses",
+		icon: <FaReact />,
+		description: "",
+		keywords: ["learn", "web-dev", "fullstack", "javascript", "react"],
 	},
 	{
 		path: "/blog/category/study",
