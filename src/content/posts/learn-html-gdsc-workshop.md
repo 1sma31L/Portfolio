@@ -42,7 +42,6 @@ duration: 4 min
       2. [Paragraph](#paragraph)
       3. [Span](#span)
       4. [List](#list)
-   4. [**Let's see how it looks in the browser.**](#lets-see-how-it-looks-in-the-browser)
 ---
 
 # What is HTML?
@@ -205,4 +204,5 @@ and `<h6>` is the least important (the smaller by default).
 </html>
 ```
 **Let's see how it looks in the browser.**
+
 ---
