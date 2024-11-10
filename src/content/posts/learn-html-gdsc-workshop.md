@@ -31,7 +31,7 @@ keywords:
   - HTML Structure
   - HTML Document
   - HTML Content
-lastmod: 2024-11-10T20:04:28.945Z
+lastmod: 2024-11-10T20:08:37.641Z
 duration: 4 min
 ---
 1. [What is HTML?](#what-is-html)
