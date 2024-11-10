@@ -77,6 +77,15 @@
 		@apply border rounded-sm md:rounded-md overflow-x-auto !important;
 	}
 
+	table {
+		@apply overflow-x-auto block;
+		scrollbar-width: none !important; /* Firefox */
+	}
+
+	table::-webkit-scrollbar {
+		display: none !important; /* Chrome, Safari, and Edge */
+	}
+
 	html.dark pre {
 		@apply border-zinc-700 !important;
 	}

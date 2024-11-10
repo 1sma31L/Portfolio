@@ -31,7 +31,7 @@ keywords:
   - HTML Structure
   - HTML Document
   - HTML Content
-lastmod: 2024-11-10T20:21:27.524Z
+lastmod: 2024-11-10T20:50:55.845Z
 duration: 4 min
 ---
 1. [What is HTML?](#what-is-html)
@@ -97,26 +97,24 @@ An HTML tag is a keyword surrounded by angle brackets, like `<html>` . HTML tags
 ## HTML Elements Cheatsheet
 This are the most common HTML elements you will use to create a webpage which we will cover in our workshop.
 
-| Tag        | Description     | Example                                                                                                            |
-| ---------- | --------------- | ------------------------------------------------------------------------------------------------------------------ |
-| `<h1>`     | Heading 1       | `<h1>My Heading</h1>`                                                                                              |
-| `<p>`      | Paragraph       | `<p>My Paragraph.</p>`                                                                                             |
-| `<span>`   | Span            | `<span>Text</span>`                                                                                                |
-| `<b>`      | Bold            | `<b>Bold Text</b>`                                                                                                 |
-| `<strong>` | Strong          | `<strong>Bold Text</strong>`                                                                                       |
-| `<i>`      | Italic          | `<i>Italic Text</i>`                                                                                               |
-| `<em>`     | Emphasis        | `<em>Italic Text</em>`                                                                                             |
-| `<br>`     | Line Break      | `<br>`                                                                                                             |
-| `<hr>`     | Horizontal Rule | `<hr>`                                                                                                             |
-| `<input>`  | Input           | `<input type="text" name="name">`                                                                                  |
-| `<ol>`     | Ordered List    | `<ol><li>Item 1</li><li>Item 2</li></ol>`                                                                          |
-| `<ul>`     | Unordered List  | `<ul><li>Item 1</li><li>Item 2</li></ul>`                                                                          |
-| `<a>`      | Anchor (link)   | `<a href="https://example.com">Link</a>`                                                                           |
-| `<img>`    | Image           | `<img src="image.jpg" alt="Image">`                                                                                |
-| `<button>` | Button          | `<button type="submit">Submit</button>`                                                                            |
-| `<div>`    | Division        | `<div>Content</div>`                                                                                               |
-| `<table>`  | Table           | `<table><tr><td>Row 1, Cell 1</td><td>Row 1, Cell 2</td></tr></table>`                                             |
-| `<form>`   | Form            | `<form action="/submit" method="post"><input type="text" name="name"><button type="submit">Submit</button></form>` |
+| Tag        | Description     | Example                                   |
+| ---------- | --------------- | ----------------------------------------- |
+| `<h1>`     | Heading 1       | `<h1>My Heading</h1>`                     |
+| `<p>`      | Paragraph       | `<p>My Paragraph.</p>`                    |
+| `<span>`   | Span            | `<span>Text</span>`                       |
+| `<b>`      | Bold            | `<b>Bold Text</b>`                        |
+| `<strong>` | Strong          | `<strong>Bold Text</strong>`              |
+| `<i>`      | Italic          | `<i>Italic Text</i>`                      |
+| `<em>`     | Emphasis        | `<em>Italic Text</em>`                    |
+| `<br>`     | Line Break      | `<br>`                                    |
+| `<hr>`     | Horizontal Rule | `<hr>`                                    |
+| `<input>`  | Input           | `<input type="text" name="name">`         |
+| `<ol>`     | Ordered List    | `<ol><li>Item 1</li><li>Item 2</li></ol>` |
+| `<ul>`     | Unordered List  | `<ul><li>Item 1</li><li>Item 2</li></ul>` |
+| `<a>`      | Anchor (link)   | `<a href="https://example.com">Link</a>`  |
+| `<img>`    | Image           | `<img src="image.jpg" alt="Image">`       |
+| `<button>` | Button          | `<button type="submit">Submit</button>`   |
+| `<div>`    | Division        | `<div>Content</div>`                      |
 
 Seems scary? Don't worry, we will cover all of these tags and more in our workshop.
 
