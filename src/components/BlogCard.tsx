@@ -1,6 +1,7 @@
 import { GoArrowRight } from "react-icons/go";
 import Link from "next/link";
 import React from "react";
+import Views from "./Views";
 import formatDate from "@/lib/formatDate";
 function BlogCard({
 	slug,
@@ -28,9 +29,6 @@ function BlogCard({
 						<p className="text-[10px] md:text-[14px] text-zinc-500 font-normal dark:text-zinc-400">
 							{formatDate(new Date(frontMatter.date).toISOString())}
 						</p>
-						{/* <div className="text-xs text-zinc-700 dark:text-zinc-400">
-							<Views slug={slug} autoIncrement={false} />
-						</div> */}
 					</div>
 				</div>
 			</Link>
