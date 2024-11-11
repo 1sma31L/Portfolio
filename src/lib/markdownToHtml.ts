@@ -52,12 +52,12 @@ const processor = unified()
 	.use(rehypePrettyCode, {
 		getHighlighter: () =>
 			getSingletonHighlighter({
-				themes: [darkTheme, lightTheme],
+				themes: ["catppuccin-mocha", "catppuccin-latte"],
 				langs: ["javascript", "html", "css", "typescript", "sql", "c"],
 			}),
 		theme: {
-			dark: darkTheme,
-			light: lightTheme,
+			dark: "catppuccin-mocha",
+			light: "catppuccin-latte",
 		},
 		defaultLang: "javascript",
 		transformers: [
