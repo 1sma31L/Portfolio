@@ -31,7 +31,7 @@ keywords:
   - HTML Structure
   - HTML Document
   - HTML Content
-lastmod: 2024-11-11T13:43:05.050Z
+lastmod: 2024-11-11T14:00:06.093Z
 duration: 10 min
 ---
 1. [1. Introduction to HTML](#1-introduction-to-html)
@@ -509,8 +509,9 @@ Exmple of a semantic HTML webpage:
 ```html showLineNumbers
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
     <title>Title</title>
+</head>
 <body>
     <header>
         <h1>My Website</h1>
