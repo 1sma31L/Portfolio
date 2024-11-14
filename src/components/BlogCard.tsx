@@ -18,7 +18,7 @@ function BlogCard({
 				href={`/blog/post/${slug}${from ? `?${from}` : ""}`}
 				className=" flex justify-start gap-3 p-2 ">
 				<div className="flex flex-col gap-2 w-full">
-					<div className="flex justify-between items-center ">
+					<div className="flex justify-between items-center">
 						<h2 className="text-[22px] md:text-[32px]">{frontMatter.title}</h2>
 						<GoArrowRight className="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
 					</div>
