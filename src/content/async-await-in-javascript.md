@@ -19,7 +19,7 @@ keywords:
   - Promises
   - Asynchronous
   - Event Loop
-lastmod: 2024-11-10T20:06:31.656Z
+lastmod: 2024-11-15T23:10:02.543Z
 duration: 4 min
 ---
 
@@ -115,6 +115,7 @@ function getAsyncData(){
    Also using await will pause the function execution 
 	 until the Promise getAsyncData is resolved 
 */
+
 async function getData(){
 	var data = await getAsyncData();
 	return data;
