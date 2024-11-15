@@ -55,6 +55,7 @@
 		"zod": "^3.23.8"
 	},
 	"devDependencies": {
+		"@shikijs/transformers": "^1.23.0",
 		"@tailwindcss/typography": "^0.5.15",
 		"@types/katex": "~0.16.7",
 		"@types/node": "^20",
