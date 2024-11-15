@@ -43,16 +43,17 @@ function Home() {
 						</blockquote>
 						<p className="indent-5">
 							i&apos;m a <Age birthDate="2005-04-27" /> y/o cs undergrad student
-							and a junior web developer. i love building things and solving
-							problems. i enjoy system design, theoretical computer science and
-							i live on the editor. if i&apos;m not coding, i&apos;m probably
-							watching movies, tv shows or obsessing over mechanical keyboards.
+							at ENSTA and a junior web developer. i love building things and
+							solving problems. i enjoy system design, theoretical computer
+							science and i live on the editor. if i&apos;m not coding, i&apos;m
+							probably watching movies, tv shows or obsessing over mechanical
+							keyboards.
 						</p>
 					</div>
 				</section>
-				<Link href={"#techstack"}>
+				<Link href={"#techstack"} className="-m-14">
 					<h2
-						className="text-center text-3xl md:text-4xl  font-bold"
+						className="text-center text-3xl md:text-4xl font-bold"
 						id="techstack">
 						My Tech Stack
 					</h2>

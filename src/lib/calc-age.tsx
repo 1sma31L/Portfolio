@@ -11,7 +11,6 @@ const CalculateAge = ({ birthDate }: { birthDate: string }) => {
 		let age = today.getFullYear() - birthDateObj.getFullYear();
 		const monthDifference = today.getMonth() - birthDateObj.getMonth();
 
-		// Adjust age if the birthday hasn't occurred yet this year
 		if (
 			monthDifference < 0 ||
 			(monthDifference === 0 && today.getDate() < birthDateObj.getDate())
