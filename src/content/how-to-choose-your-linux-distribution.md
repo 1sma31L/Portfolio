@@ -1,5 +1,5 @@
 ---
-title: How To Chose Your Linux Distributution
+title: How To Choose Your Linux Distributution
 metaDescription: >-
   This article will guide you on how to choose your linux distribution based on
   your needs and use case, It will also provide a list of the best linux
@@ -20,7 +20,7 @@ keywords:
   - Gentoo
   - Fedora
   - Linux Mint
-lastmod: 2024-09-23T23:06:33.721Z
+lastmod: 2024-11-20T20:10:07.558Z
 duration: 15 min
 ---
 ### Table of Contents
