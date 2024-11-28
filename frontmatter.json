@@ -11,7 +11,7 @@
 			"metaDescription": "Your meta description goes here",
 			"author": "Ismail Boussekine",
 			"date": "{{now}}",
-			"type": "Arcticle",
+			"type": "Article",
 			"tags": ["", ""],
 			"categories": [""],
 			"keywords": ["", ""]
