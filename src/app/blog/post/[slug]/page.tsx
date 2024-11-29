@@ -99,17 +99,18 @@ export default async function BlogPost({ params }: PostProps) {
 				</div>
 				<div className="container mx-auto prose dark:prose-invert !max-w-none">
 					<h1 className="sm:!text-[80px] !text-[45px]">{frontMatter.title}</h1>
-					<div className="text-xs md:text-sm">
-						{frontMatter.author !== "Ismail Boussekine" && (
-							<p>
-								By<span className="font-bold"> {frontMatter.author} </span>
+					<div className="text-xs md:text-sm flex flex-col gap-3">
+						<p className="!m-0">
+							<span className="font-bold">By: </span>
+							{frontMatter.author}
+						</p>
+						<FormatDistanceToNow frontMatter={frontMatter} />
+						{frontMatter.type !== "Course" && (
+							<p className="!m-0">
+								<span className="font-bold">Reading time: </span>
+								{frontMatter.duration}
 							</p>
 						)}
-						<FormatDistanceToNow frontMatter={frontMatter} />
-						<p>
-							<span className="font-bold">Reading time: </span>
-							{frontMatter.duration}
-						</p>
 						<div>
 							<Views slug={slug} autoIncrement={true} />
 						</div>

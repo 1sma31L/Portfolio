@@ -43,11 +43,11 @@ function Home() {
 						</blockquote>
 						<p className="indent-5">
 							i&apos;m a <Age birthDate="2005-04-27" /> y/o cs undergrad student
-							at ENSTA and a junior web developer. i love building things and
-							solving problems. i enjoy system design, theoretical computer
-							science and i live on the editor. if i&apos;m not coding, i&apos;m
-							probably watching movies, tv shows or obsessing over mechanical
-							keyboards.
+							at ENSTA and a junior <strong>Web Developer</strong>. i love
+							building things and solving problems. i enjoy system design,
+							theoretical computer science and i live on the editor. if i&apos;m
+							not coding, i&apos;m probably watching movies, tv shows or
+							obsessing over <strong>mechanical keyboards</strong>.
 						</p>
 					</div>
 				</section>
