@@ -17,7 +17,7 @@ keywords:
   - CSS
   - Learn CSS
   - GDSC ENSTA Workshop
-lastmod: 2024-11-29T20:58:00.032Z
+lastmod: 2024-11-29T21:03:00.778Z
 duration: 12 min
 ---
 
@@ -628,12 +628,8 @@ Flexbox properties include `flex-direction`, `flex-wrap`, `justify-content`, `al
 
 # Getting Our Hands Dirty
 1. let's play a game!!!!!!!! [Flexboxfroggy](https://flexboxfroggy.com/) 
-2. let's build a simple website using the concepts we learned today.
-- Download the project [resources](https://github.com/1sma31L/CSS-Workshop/archive/refs/heads/main.zip) (HTML file and pictures).
-- Style the content using CSS.
-- Test your website in a browser.
-- Share your website with others to get feedback and improve your design.
-- Have fun and keep learning!
+2. let's build a simple website using the concepts we learned today starting from an unstyled HTML webapge => [(**Resources**)](https://github.com/1sma31L/CSS-Workshop/archive/refs/heads/main.zip) (HTML file and images).
+
 
 ---
 
