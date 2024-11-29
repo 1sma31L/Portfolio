@@ -44,20 +44,15 @@ export async function generateStaticParams(): Promise<{ category: string }[]> {
 
 async function getPostsByCategory(category: string) {
 	const files = fs.readdirSync(postsDirectory);
-	const posts = files
-		.filter((file) => !file.startsWith("_"))
-		.map((fileName) => {
-			const slug = fileName.replace(".md", "");
-			const readFile = fs.readFileSync(
-				`${postsDirectory}/${fileName}`,
-				"utf-8"
-			);
-			const { data: frontMatter } = matter(readFile);
-			return {
-				slug,
-				frontMatter,
-			};
-		});
+	const posts = files.map((fileName) => {
+		const slug = fileName.replace(".md", "");
+		const readFile = fs.readFileSync(`${postsDirectory}/${fileName}`, "utf-8");
+		const { data: frontMatter } = matter(readFile);
+		return {
+			slug,
+			frontMatter,
+		};
+	});
 	const filteredPosts = posts
 		.filter((post) =>
 			post.frontMatter.categories?.includes(Capitalize(category))

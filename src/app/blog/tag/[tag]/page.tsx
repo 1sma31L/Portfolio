@@ -29,18 +29,12 @@ export async function generateMetadata({
 export async function generateStaticParams() {
 	const files = fs.readdirSync(postsDirectory);
 	const tags = new Set<string>();
-
 	files.forEach((file) => {
-		if (!file.startsWith("_")) {
-			const readFile = fs.readFileSync(
-				path.join(postsDirectory, file),
-				"utf-8"
-			);
-			const { data: frontMatter } = matter(readFile);
-			frontMatter.tags?.forEach((tag: string) => {
-				tags.add(tag.toLowerCase().replace(/\s+/g, "-"));
-			});
-		}
+		const readFile = fs.readFileSync(path.join(postsDirectory, file), "utf-8");
+		const { data: frontMatter } = matter(readFile);
+		frontMatter.tags?.forEach((tag: string) => {
+			tags.add(tag.toLowerCase().replace(/\s+/g, "-"));
+		});
 	});
 
 	return Array.from(tags).map((tag) => ({
@@ -50,20 +44,15 @@ export async function generateStaticParams() {
 
 async function getPostsByTag(tag: string) {
 	const files = fs.readdirSync(postsDirectory);
-	const posts = files
-		.filter((file) => !file.startsWith("_"))
-		.map((fileName) => {
-			const slug = fileName.replace(".md", "");
-			const readFile = fs.readFileSync(
-				`${postsDirectory}/${fileName}`,
-				"utf-8"
-			);
-			const { data: frontMatter } = matter(readFile);
-			return {
-				slug,
-				frontMatter,
-			};
-		});
+	const posts = files.map((fileName) => {
+		const slug = fileName.replace(".md", "");
+		const readFile = fs.readFileSync(`${postsDirectory}/${fileName}`, "utf-8");
+		const { data: frontMatter } = matter(readFile);
+		return {
+			slug,
+			frontMatter,
+		};
+	});
 	const filteredPosts = posts
 		.filter((post) => post.frontMatter.tags.includes(tag))
 		.sort((a, b) => {

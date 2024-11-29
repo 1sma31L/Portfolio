@@ -44,11 +44,9 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
 	const files = fs.readdirSync(postsDirectory);
-	const paths = files
-		.filter((file) => !file.startsWith("_"))
-		.map((fileName) => ({
-			slug: fileName.replace(".md", ""),
-		}));
+	const paths = files.map((fileName) => ({
+		slug: fileName.replace(".md", ""),
+	}));
 	return paths.map(({ slug }) => slug);
 }
 
@@ -72,20 +70,15 @@ async function getPostData(slug: string): Promise<{
 
 function getSuggestedPosts(slug: string) {
 	const files = fs.readdirSync(postsDirectory);
-	const posts = files
-		.filter((file) => !file.startsWith("_"))
-		.map((fileName) => {
-			const slug = fileName.replace(".md", "");
-			const readFile = fs.readFileSync(
-				`${postsDirectory}/${fileName}`,
-				"utf-8"
-			);
-			const { data: frontMatter } = matter(readFile);
-			return {
-				slug,
-				frontMatter,
-			};
-		});
+	const posts = files.map((fileName) => {
+		const slug = fileName.replace(".md", "");
+		const readFile = fs.readFileSync(`${postsDirectory}/${fileName}`, "utf-8");
+		const { data: frontMatter } = matter(readFile);
+		return {
+			slug,
+			frontMatter,
+		};
+	});
 	const suggestedPosts = posts
 		.filter((post) => post.slug !== slug)
 		.sort(() => Math.random() - 0.5)
