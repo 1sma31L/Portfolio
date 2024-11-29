@@ -32,7 +32,7 @@ export default function Command() {
 	useEffect(() => {
 		const down = (e: KeyboardEvent) => {
 			if (e.metaKey || e.ctrlKey) {
-				if (["k", "i", "a", "p", "c", "b", "m"].includes(e.key.toLowerCase())) {
+				if (["k", "i", "a", "p", "t", "b", "m"].includes(e.key.toLowerCase())) {
 					e.preventDefault();
 					switch (e.key) {
 						// Open
@@ -51,7 +51,7 @@ export default function Command() {
 							router.push("/projects");
 							setOpen(false);
 							break;
-						case "c":
+						case "t":
 							router.push("/contact");
 							setOpen(false);
 							break;
@@ -127,7 +127,7 @@ export default function Command() {
 						<CommandItem>
 							<MdEmail className="mr-2 h-4 w-4" />
 							<span>Contact</span>
-							<CommandShortcut>⌘C</CommandShortcut>
+							<CommandShortcut>⌘N</CommandShortcut>
 						</CommandItem>
 						<CommandItem>
 							<LuPenLine className="mr-2 h-4 w-4" />
