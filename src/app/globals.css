@@ -93,6 +93,7 @@
 	[data-rehype-pretty-code-title] {
 		@apply !mb-1;
 	}
+
 	.pause {
 		animation-play-state: paused;
 	}
@@ -195,7 +196,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 
 /* TOC */
 
-#slug a {
+/* #slug a {
 	text-decoration: none !important;
 }
 
@@ -205,7 +206,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 
 #slug ul li {
 	list-style: none !important;
-}
+} */
 
 .heading-anchor {
 	position: relative;
