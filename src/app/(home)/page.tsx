@@ -64,7 +64,7 @@ function Home() {
 				<section className="w-full flex flex-col">
 					<Link href={"#aboutme"}>
 						<h2
-							className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left"
+							className="text-3xl md:text-4xl font-bold mb-10 text-center"
 							id="aboutme">
 							More About Me
 						</h2>
