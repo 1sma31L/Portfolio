@@ -61,45 +61,6 @@ function Home() {
 				<div className="pb-10 w-full">
 					<InfiniteScroll icons={stack} />
 				</div>
-				{/* <section className="w-full flex flex-col">
-					<Link href={"#timeline"}>
-						<h2
-							className="text-3xl md:text-4xl font-bold mb-10 text-center md:text-left"
-							id="timeline">
-							My Timeline
-						</h2>
-					</Link>
-					<div className="w-full py-2 px-0">
-						<div className="border-l-2 border-zinc-500 pl-3 md:pl-4">
-							{timeLine.map((item, index) => (
-								<div className="mb-10" key={index}>
-									<div
-										className="text-2xl font-bold text-zinc-950 dark:text-zinc-50"
-										id={`${item.year}`}>
-										<a href={`#${item.year}`}>{item.year}</a>
-									</div>
-									{item.month.map((month, index) => (
-										<div className="mt-4 ml-4" key={index}>
-											<div className="flex items-center">
-												<div className="w-2 h-2 bg-zinc-500 rounded-full mr-2"></div>
-												<div className="font-semibold text-sm md:text-xl">
-													{month.monthName}
-												</div>
-											</div>
-											<ul className="ml-6 mt-2 text-zinc-600 dark:text-zinc-400">
-												{month.achievements.map((achievement, index) => (
-													<li className="text-xs md:text-base py-1" key={index}>
-														• {achievement}.
-													</li>
-												))}
-											</ul>
-										</div>
-									))}
-								</div>
-							))}
-						</div>
-					</div>
-				</section> */}
 				<LatestBlogs />
 				<section className="w-full flex flex-col">
 					<Link href={"#aboutme"}>
