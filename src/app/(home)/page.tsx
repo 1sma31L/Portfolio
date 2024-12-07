@@ -7,7 +7,6 @@ import Link from "next/link";
 import React from "react";
 import SocialMedia from "@/data/social-media";
 import stack from "@/data/tech";
-// import timeLine from "@/data/time-line";
 function Home() {
 	return (
 		<AnimatedDiv id={0}>
