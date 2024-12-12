@@ -196,7 +196,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 
 /* TOC */
 
-/* #slug a {
+#slug a {
 	text-decoration: none !important;
 }
 
@@ -204,6 +204,7 @@ code[data-line-numbers-max-digits="4"] > [data-line]::before {
 	text-decoration: underline !important;
 }
 
+/* 
 #slug ul li {
 	list-style: none !important;
 } */

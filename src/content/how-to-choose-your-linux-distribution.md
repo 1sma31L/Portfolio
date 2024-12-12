@@ -4,7 +4,7 @@ metaDescription: >-
   This article will guide you on how to choose your linux distribution based on
   your needs and use case, It will also provide a list of the best linux
   distributions out there.
-author: Ismail Boussekine
+author: Ismail M. BOUSSEKINE
 date: 2024-09-13T21:50:34.975Z
 tags:
   - Linux
@@ -20,7 +20,7 @@ keywords:
   - Gentoo
   - Fedora
   - Linux Mint
-lastmod: 2024-11-20T20:49:39.702Z
+lastmod: 2024-12-12T22:58:40.704Z
 duration: 15 min
 ---
 ### Table of Contents
