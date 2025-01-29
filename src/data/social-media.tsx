@@ -14,7 +14,7 @@ const SocialMedia: {
 	},
 	{
 		name: "",
-		url: "https://www.instagram.com/93under93/",
+		url: "https://www.instagram.com/ismailboussekine/",
 		icon: <FaInstagram />,
 	},
 ];
