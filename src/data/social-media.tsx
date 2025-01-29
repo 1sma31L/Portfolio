@@ -1,6 +1,5 @@
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 
 const SocialMedia: {
 	name: string;
