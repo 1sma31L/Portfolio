@@ -15,11 +15,9 @@ import { useEffect, useState } from "react";
 
 import { CgProfile } from "react-icons/cg";
 import { FaTerminal } from "react-icons/fa";
-import { IoDocumentText } from "react-icons/io5";
 import { LuPenLine } from "react-icons/lu";
 import { MdEmail } from "react-icons/md";
 import { PiSunLight } from "react-icons/pi";
-import { Post } from "@/types/types";
 import { RxMoon } from "react-icons/rx";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
@@ -28,7 +26,6 @@ export default function Command() {
 	const router = useRouter();
 	const [open, setOpen] = useState(false);
 	const { resolvedTheme, setTheme } = useTheme();
-	const [posts, setPosts] = useState<Post[]>([]);
 	useEffect(() => {
 		const down = (e: KeyboardEvent) => {
 			if (e.metaKey || e.ctrlKey) {
@@ -73,19 +70,7 @@ export default function Command() {
 		document.addEventListener("keydown", down);
 		return () => document.removeEventListener("keydown", down);
 	}, [resolvedTheme]);
-	useEffect(() => {
-		const fetchPosts = async () => {
-			const response = await fetch("/api/posts", {
-				next: {
-					revalidate: 60 * 60 * 5, // 5 hours
-				},
-			} as RequestInit);
-			const data = await response.json();
-			setPosts(data);
-		};
 
-		fetchPosts();
-	}, []);
 	return (
 		<>
 			<p
@@ -134,24 +119,6 @@ export default function Command() {
 							<span>Blog</span>
 							<CommandShortcut>⌘B</CommandShortcut>
 						</CommandItem>
-					</CommandGroup>
-
-					<CommandGroup heading="All Articles">
-						{posts.map(({ slug, frontMatter }) => (
-							<CommandItem
-								key={slug}
-								className="cursor-pointer"
-								onSelect={() => {
-									router.push(`/blog/post/${slug}`);
-									setOpen(false);
-								}}>
-								<div className="flex items-center gap-2">
-									<IoDocumentText className="mr-w h-4 w-4" />
-									<span> {frontMatter.title}</span>
-								</div>
-								<CommandShortcut>Click</CommandShortcut>
-							</CommandItem>
-						))}
 					</CommandGroup>
 				</CommandList>
 			</CommandDialog>

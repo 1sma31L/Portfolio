@@ -1,24 +1,9 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-
 import BlogCard from "../BlogCard";
 import Link from "next/link";
-import { Post } from "@/types/types";
+import getPosts from "@/lib/getPosts";
 
-function LatestBlogs() {
-	const [posts, setPosts] = useState<Post[]>([]);
-	useEffect(() => {
-		const fetchPosts = async () => {
-			const response = await fetch("/api/posts", {
-				next: { revalidate: 60 * 60 * 12 },
-			} as RequestInit);
-			const data = await response.json();
-			setPosts(data);
-		};
-
-		fetchPosts();
-	}, []);
+async function LatestBlogs() {
+	const posts = await getPosts();
 	return (
 		<section className="w-full flex flex-col">
 			<Link href={"#latestblog"}>
