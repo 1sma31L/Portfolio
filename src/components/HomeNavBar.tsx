@@ -26,7 +26,7 @@ function isActive(pathname: string, itemPath: string) {
 }
 
 function HomeNavBar() {
-	let pathname = usePathname() || "/";
+	const pathname = usePathname() || "/";
 	const [hoveredPath, setHoveredPath] = useState(pathname);
 	useEffect(() => {
 		setHoveredPath(pathname);

@@ -7,7 +7,7 @@ export default function MainLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
-	let pathName = usePathname();
+	const pathName = usePathname();
 	return (
 		<div className="w-full">
 			<MoreNavBar />

@@ -5,6 +5,7 @@ import { doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
 
 import { db } from "@/config/firebase";
 import dotenv from "dotenv";
+
 dotenv.config();
 
 interface ViewsProps {
@@ -60,7 +61,7 @@ const Views: React.FC<ViewsProps> = ({ slug, autoIncrement }) => {
 		};
 
 		fetchAndIncrementViews();
-	}, [slug]);
+	}, [slug, autoIncrement]);
 
 	return (
 		<div className="relative w-fit">

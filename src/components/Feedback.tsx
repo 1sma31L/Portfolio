@@ -83,7 +83,7 @@ export default function FeedBack({
 			setLikes(data.likes);
 			setDislikes(data.dislikes);
 		});
-	}, []);
+	}, [slug]);
 	return (
 		<div className="flex flex-col justify-center items-center gap-3 w-full sm:w-[500px] mx-auto my-20 border rounded-lg min-h-[200px] bg-white dark:bg-black">
 			{!(loading || submitted) && (

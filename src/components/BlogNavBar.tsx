@@ -12,7 +12,7 @@ function isActive(pathname: string, itemPath: string) {
 }
 
 export default function BlogNavBar() {
-	let pathname = usePathname() || "/";
+	const pathname = usePathname() || "/";
 	const [hoveredPath, setHoveredPath] = useState(pathname);
 	useEffect(() => {
 		setHoveredPath(pathname);

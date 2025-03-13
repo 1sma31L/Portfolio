@@ -47,7 +47,7 @@ export function ContactForm() {
 	const { handleSubmit, formState, control, watch, setError, clearErrors } =
 		form;
 	const { isSubmitting } = formState;
-	const [messageStatus, setMessageStatus] = useState<String>("idle");
+	const [messageStatus, setMessageStatus] = useState<string>("idle");
 	useEffect(() => {
 		const subscription = watch((value: any, { name }: any) => {
 			if (name === "message" && /http|www|href/.test(value.message ?? "")) {
