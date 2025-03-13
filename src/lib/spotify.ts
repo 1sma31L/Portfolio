@@ -5,7 +5,8 @@ import dotenv from "dotenv";
 dotenv.config();
 const clientId = process.env.CLIENT_ID;
 const clientSecret = process.env.CLIENT_SECRET;
-// Functions
+
+// Token endpoint should not be cached since we need fresh tokens
 const getToken = async (): Promise<string> => {
 	const url = "https://accounts.spotify.com/api/token";
 
@@ -24,7 +25,7 @@ const getToken = async (): Promise<string> => {
 			"Content-Type": "application/x-www-form-urlencoded",
 		},
 		body: body.toString(),
-		cache: "no-cache",
+		cache: "no-store", // Don't cache tokens
 	});
 
 	const data = await response.json();
@@ -39,14 +40,14 @@ const getProfileData = async (): Promise<TProfile> => {
 		headers: {
 			Authorization: `Bearer ${token}`,
 		},
-		cache: "no-cache",
+		next: { revalidate: 3600 }, // Cache for 1 hour
 	});
 	const result: TProfile = await response.json();
 	return result;
 };
 
 const getMyPlaylists = async (): Promise<TPlaylist[]> => {
-	const token = await getToken(); // Await the token retrieval
+	const token = await getToken();
 	const url =
 		"https://api.spotify.com/v1/users/3157qxpgggxxkcgfhn4zj2cppanm/playlists";
 
@@ -55,7 +56,7 @@ const getMyPlaylists = async (): Promise<TPlaylist[]> => {
 		headers: {
 			Authorization: `Bearer ${token}`,
 		},
-		cache: "no-cache",
+		next: { revalidate: 1800 }, // Cache for 30 minutes
 	});
 
 	if (!result.ok) {
@@ -63,9 +64,9 @@ const getMyPlaylists = async (): Promise<TPlaylist[]> => {
 	}
 
 	const data = await result.json();
-	return data.items; // Return the list of playlists
+	return data.items;
 };
-//
+
 const getPlaylistItems = async (playlistId: string): Promise<TSong[]> => {
 	const token = await getToken();
 	const url = `https://api.spotify.com/v1/playlists/${playlistId}/tracks`;
@@ -74,7 +75,7 @@ const getPlaylistItems = async (playlistId: string): Promise<TSong[]> => {
 		headers: {
 			Authorization: `Bearer ${token}`,
 		},
-		cache: "no-cache",
+		next: { revalidate: 3600 }, // Cache for 1 hour
 	});
 	if (!result.ok) {
 		throw new Error("Failed to fetch playlists: " + result.statusText);
@@ -82,7 +83,7 @@ const getPlaylistItems = async (playlistId: string): Promise<TSong[]> => {
 	const data = await result.json();
 	return data.items;
 };
-//
+
 const getPlaylistInfo = async (playlistId: string) => {
 	const token = await getToken();
 	const url = `https://api.spotify.com/v1/playlists/${playlistId}`;
@@ -91,7 +92,7 @@ const getPlaylistInfo = async (playlistId: string) => {
 		headers: {
 			Authorization: `Bearer ${token}`,
 		},
-		cache: "no-cache",
+		next: { revalidate: 3600 }, // Cache for 1 hour
 	});
 	if (!result.ok) {
 		throw new Error("Failed to fetch playlists: " + result.statusText);
@@ -103,12 +104,7 @@ const getPlaylistInfo = async (playlistId: string) => {
 const getPlaylistCoverImage = async (
 	playlistId: string
 ): Promise<
-	| {
-			url: string;
-			height: string | null;
-			width: string | null;
-	  }[]
-	| null
+	{ url: string; height: string | null; width: string | null }[] | null
 > => {
 	const token = await getToken();
 	const url = `https://api.spotify.com/v1/playlists/${playlistId}/images`;
@@ -117,7 +113,7 @@ const getPlaylistCoverImage = async (
 		headers: {
 			Authorization: `Bearer ${token}`,
 		},
-		cache: "no-cache",
+		next: { revalidate: 86400 }, // Cache for 24 hours as images rarely change
 	});
 	if (!result.ok) {
 		return null;
