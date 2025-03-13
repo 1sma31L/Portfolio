@@ -58,11 +58,13 @@ async function Music() {
 									key={index}
 									className="flex flex-col gap-2 cursor-pointer group">
 									{playlist?.images?.length > 0 && (
-										<img
-											src={coverImage?.[0]?.url}
-											alt={playlist.name}
-											className="rounded-md"
-										/>
+										<div className="aspect-square w-full overflow-hidden rounded-xl">
+											<img
+												src={coverImage?.[0]?.url}
+												alt={playlist.name}
+												className="w-full h-full object-cover"
+											/>
+										</div>
 									)}
 									<h2 className="text-sm md:text-lg font-normal text-center group-hover:underline">
 										{playlist?.name}

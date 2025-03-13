@@ -47,11 +47,13 @@ async function PlaylistContent({ params }: { params: { id: string } }) {
 						<div className="lg:sticky top-20 flex flex-col gap-2">
 							<BackButton />
 							{playlistImages && (
-								<img
-									src={playlistImages[0].url}
-									alt={playlistName}
-									className="rounded-md shadow-xl max-w-52 lg:max-w-full"
-								/>
+								<div className="aspect-square max-w-52 lg:max-w-full rounded-md shadow-xl overflow-hidden">
+									<img
+										src={playlistImages[0].url}
+										alt={playlistName}
+										className="w-full h-full object-cover"
+									/>
+								</div>
 							)}
 							<h1>{playlistName}</h1>
 							<div className="text-lg md:text-xl flex justify-start items-center mb-5 font-normal gap-2 group">
