@@ -1,6 +1,6 @@
 import "./globals.css";
 
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/next";
 import Footer from "@/components/Footer";
 import { Josefin_Sans } from "next/font/google";
 import type { Metadata } from "next";
@@ -68,13 +68,13 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body className={josefin.className}>
 				<SpeedInsights />
 				<Analytics />
 				<Toaster />
+				<ScrollToTop />
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<ScrollToTop />
 					<NavBar />
 					<hr className="w-full sticky top-14 left-0 bg-muted-foreground" />
 					{children}
