@@ -44,10 +44,9 @@ export async function generateMetadata({
 
 export async function generateStaticParams() {
 	const files = fs.readdirSync(postsDirectory);
-	const paths = files.map((fileName) => ({
+	return files.map((fileName) => ({
 		slug: fileName.replace(".md", ""),
 	}));
-	return paths.map(({ slug }) => slug);
 }
 
 async function getPostData(slug: string): Promise<{
