@@ -12,19 +12,21 @@ import { Metadata } from "next";
 import SongLink from "@/components/MusicCard";
 import { TSong } from "@/types/types";
 
+type SongProps = Promise<{ id: string }>;
+
 export async function generateMetadata({
 	params,
 }: {
-	params: { id: string };
+	params: SongProps;
 }): Promise<Metadata> {
-	const playlistInfo = await spotify.getPlaylistInfo(params.id);
+	const playlistInfo = await spotify.getPlaylistInfo((await params).id);
 	return {
 		title: playlistInfo.name + " | Music",
 		description: playlistInfo.description,
 	};
 }
 
-export default function Page({ params }: { params: { id: string } }) {
+export default function Page({ params }: { params: SongProps }) {
 	return (
 		<Suspense fallback={<Loading />}>
 			<PlaylistContent params={params} />
@@ -32,11 +34,11 @@ export default function Page({ params }: { params: { id: string } }) {
 	);
 }
 
-async function PlaylistContent({ params }: { params: { id: string } }) {
-	const songs = await spotify.getPlaylistItems(params.id);
-	const playlistInfo = await spotify.getPlaylistInfo(params.id);
+async function PlaylistContent({ params }: { params: SongProps }) {
+	const songs = await spotify.getPlaylistItems((await params).id);
+	const playlistInfo = await spotify.getPlaylistInfo((await params).id);
 	const playlistName = playlistInfo.name;
-	const playlistImages = await spotify.getPlaylistCoverImage(params.id);
+	const playlistImages = await spotify.getPlaylistCoverImage((await params).id);
 	const playlistID = playlistInfo.id;
 
 	return (

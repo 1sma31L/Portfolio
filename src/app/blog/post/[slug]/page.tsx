@@ -16,16 +16,14 @@ import { notFound } from "next/navigation";
 import path from "path";
 import { postsDirectory } from "@/constants";
 
-type PostProps = {
-	params: {
-		slug: string;
-	};
-};
+type PostProps = Promise<{ slug: string }>;
 
 export async function generateMetadata({
 	params,
-}: PostProps): Promise<Metadata> {
-	const { slug } = params;
+}: {
+	params: PostProps;
+}): Promise<Metadata> {
+	const { slug } = await params;
 	const { frontMatter } = await getPostData(slug);
 	return {
 		title: `${frontMatter.title} | Blog`,
@@ -85,8 +83,8 @@ function getSuggestedPosts(slug: string) {
 	return suggestedPosts;
 }
 
-export default async function BlogPost({ params }: PostProps) {
-	const { slug } = params;
+export default async function BlogPost({ params }: { params: PostProps }) {
+	const { slug } = await params;
 	const { frontMatter, content } = await getPostData(slug);
 	const suggestedPosts = getSuggestedPosts(slug);
 	return (

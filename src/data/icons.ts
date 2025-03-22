@@ -19,5 +19,6 @@ const Icons: {
 	React: "/icons/React.svg",
 	CSS: "/icons/CSS.webp",
 	JWT: "/icons/JWT.svg",
+	Supabase: "/icons/Supabase.png",
 };
 export default Icons;

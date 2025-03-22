@@ -33,23 +33,29 @@ function Projects() {
 						/>
 					))}
 				</div>
-				<hr className="my-10" />
-				<div className="flex gap-3 items-center px-2">
-					<CgSandClock className="text-xl md:text-3xl mb-1" />
-					<h1 className="text-[30px] md:text-[40px] font-bold">Working On</h1>
-				</div>
-				<div className="flex flex-col gap-2 py-4">
-					{upcomingProjects.map((project) => (
-						<ProjectCard
-							key={project.id}
-							title={project.title}
-							description={project.description}
-							techStack={project.techStack}
-							previewLink={project.previewLink}
-							githubLink={project.githubLink}
-						/>
-					))}
-				</div>
+				{upcomingProjects.length > 0 && (
+					<>
+						<hr className="my-10" />
+						<div className="flex gap-3 items-center px-2">
+							<CgSandClock className="text-xl md:text-3xl mb-1" />
+							<h1 className="text-[30px] md:text-[40px] font-bold">
+								Working On
+							</h1>
+						</div>
+						<div className="flex flex-col gap-2 py-4">
+							{upcomingProjects.map((project) => (
+								<ProjectCard
+									key={project.id}
+									title={project.title}
+									description={project.description}
+									techStack={project.techStack}
+									previewLink={project.previewLink}
+									githubLink={project.githubLink}
+								/>
+							))}
+						</div>
+					</>
+				)}
 			</main>
 		</AnimatedDiv>
 	);

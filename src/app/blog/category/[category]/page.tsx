@@ -9,12 +9,14 @@ import fs from "fs";
 import matter from "gray-matter";
 import { postsDirectory } from "@/constants";
 
+type tParams = Promise<{ category: string }>;
+
 export async function generateMetadata({
 	params,
 }: {
-	params: { category: string };
+	params: tParams;
 }): Promise<Metadata> {
-	const category = Capitalize(params.category.split("-").join(" "));
+	const category = Capitalize((await params).category.split("-").join(" "));
 
 	return {
 		title: `${category}${
@@ -65,13 +67,9 @@ async function getPostsByCategory(category: string) {
 	return filteredPosts;
 }
 
-export default async function Tag({
-	params,
-}: {
-	params: { category: string };
-}) {
-	const oldCategory = params.category;
-	const category = Capitalize(params.category.split("-").join(" "));
+export default async function Tag({ params }: { params: tParams }) {
+	const oldCategory = (await params).category;
+	const category = Capitalize((await params).category.split("-").join(" "));
 	const posts = await getPostsByCategory(category);
 	return (
 		<AnimatedDiv id={2}>

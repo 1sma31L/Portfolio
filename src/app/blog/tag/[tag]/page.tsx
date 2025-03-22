@@ -10,12 +10,14 @@ import matter from "gray-matter";
 import path from "path";
 import { postsDirectory } from "@/constants";
 
+type TagProps = Promise<{ tag: string }>;
+
 export async function generateMetadata({
 	params,
 }: {
-	params: { tag: string };
+	params: TagProps;
 }): Promise<Metadata> {
-	const tag = Capitalize(params.tag.split("-").join(" "));
+	const tag = Capitalize((await params).tag.split("-").join(" "));
 
 	return {
 		title: `${tag}${
@@ -63,9 +65,9 @@ async function getPostsByTag(tag: string) {
 	return filteredPosts;
 }
 
-export default async function Tag({ params }: { params: { tag: string } }) {
-	const oldTag = params.tag;
-	const tag = Capitalize(params.tag.split("-").join(" "));
+export default async function Tag({ params }: { params: TagProps }) {
+	const oldTag = (await params).tag;
+	const tag = Capitalize((await params).tag.split("-").join(" "));
 	const posts = await getPostsByTag(tag);
 	return (
 		<AnimatedDiv id={2}>

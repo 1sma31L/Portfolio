@@ -4,10 +4,10 @@ const projects: {
 	description: string;
 	techStack: string[];
 	previewLink: string;
-	githubLink: string;
+	githubLink?: string;
 }[] = [
 	{
-		id: 0,
+		id: 1,
 		title: "Portfolio",
 		description:
 			"My previous portfolio website that I made using React, TailwindCSS and Next.js.",
@@ -25,8 +25,8 @@ const projects: {
 		githubLink: "https://github.com/1sma31L/old-portfolio",
 	},
 	{
-		id: 1,
-		title: "What is trending ? ",
+		id: 2,
+		title: "What is trending ?",
 		description:
 			"Simple website to check what are the trending Movies, TV Shows and Anime.",
 		techStack: [
@@ -43,7 +43,7 @@ const projects: {
 		githubLink: "https://github.com/1sma31L/whats-trending",
 	},
 	{
-		id: 2,
+		id: 3,
 		title: "Anonymous Message Sender",
 		description:
 			"Simple webpage made using React and Firebase to send anonymous messages.",
@@ -59,7 +59,7 @@ const projects: {
 		githubLink: "https://github.com/1sma31L/ngl",
 	},
 	{
-		id: 3,
+		id: 4,
 		title: "Courses API",
 		description:
 			"Simple API to get information about courses, and the ability to login/signin/logout using JWT",
@@ -75,7 +75,7 @@ const projects: {
 		githubLink: "https://github.com/1sma31L/backend-app",
 	},
 	{
-		id: 4,
+		id: 5,
 		title: "ENSTA Website",
 		description:
 			"A website I made using React and TailwindCSS to share information and FAQs for newly graduated Bachelor’s.",
@@ -84,7 +84,7 @@ const projects: {
 		githubLink: "https://github.com/1sma31L/ensta",
 	},
 	{
-		id: 5,
+		id: 6,
 		title: "Tic-Tac-Toe Game",
 		description: "Simple Tic-Tac-Toe game implemented in React.",
 		techStack: ["HTML", "JavaScript", "TailwindCSS", "React"],
@@ -92,7 +92,7 @@ const projects: {
 		githubLink: "https://github.com/1sma31l/tictactoe-game",
 	},
 	{
-		id: 6,
+		id: 7,
 		title: "To-Do App",
 		description: "Simple To-Do App made using vanilla JavaScript and CSS.",
 		techStack: ["HTML", "CSS", "JavaScript"],
@@ -100,7 +100,7 @@ const projects: {
 		githubLink: "https://github.com/1sma31l/TODO-app",
 	},
 	{
-		id: 6,
+		id: 8,
 		title: "Muisc Player",
 		description:
 			"Simple Music Player made using vanilla JavaScript and CSS that playes only one song 'Where Is My Mind?'.",
@@ -109,7 +109,7 @@ const projects: {
 		githubLink: "https://github.com/1sma31l/Music-player",
 	},
 	{
-		id: 7,
+		id: 9,
 		title: "What Is My IP Address",
 		description:
 			"Simple API to return your IP address as JSON,It was my first API :).",
