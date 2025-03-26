@@ -1,10 +1,11 @@
 import { FaGithub } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
+import React from "react";
 
 const SocialMedia: {
 	name: string;
 	url: string;
-	icon: JSX.Element;
+	icon: React.ReactElement;
 }[] = [
 	{
 		name: "",

@@ -1,6 +1,8 @@
+import React from "react";
+
 export type TItem = {
 	name: string;
-	icon: JSX.Element;
+	icon: React.ReactElement;
 	color:
 		| "Red"
 		| "Green"
@@ -45,7 +47,7 @@ export type TNavItem = {
 	path: string;
 	name: string;
 	description: string;
-	icon?: JSX.Element;
+	icon?: React.ReactElement;
 	keywords?: string[];
 }[];
 
