@@ -1,16 +1,16 @@
-'use client'
+'use client';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-import Capitalize from '@/lib/Capitalize'
-import formatDate from '@/lib/formatDate'
-import { formatDistanceToNow } from 'date-fns'
+import Capitalize from '@/lib/Capitalize';
+import formatDate from '@/lib/formatDate';
+import { formatDistanceToNow } from 'date-fns';
 
 function FormatDistanceToNow({ frontMatter }: { frontMatter: any }) {
-  const [loading, setLoading] = useState<boolean>(true)
+  const [loading, setLoading] = useState<boolean>(true);
   useEffect(() => {
-    setLoading(false)
-  }, [])
+    setLoading(false);
+  }, []);
   return (
     <div className="relative w-fit">
       {loading ? (
@@ -34,9 +34,9 @@ function FormatDistanceToNow({ frontMatter }: { frontMatter: any }) {
               .split(' ')
               .map((word, index) => {
                 if (index === 0) {
-                  return Capitalize(word)
+                  return Capitalize(word);
                 } else {
-                  return word
+                  return word;
                 }
               })
               .join(' ')}
@@ -44,7 +44,7 @@ function FormatDistanceToNow({ frontMatter }: { frontMatter: any }) {
         </div>
       )}
     </div>
-  )
+  );
 }
 
-export default FormatDistanceToNow
+export default FormatDistanceToNow;

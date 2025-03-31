@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import {
   DocumentData,
@@ -7,29 +7,29 @@ import {
   increment,
   setDoc,
   updateDoc,
-} from 'firebase/firestore'
-import React, { useEffect, useState } from 'react'
+} from 'firebase/firestore';
+import React, { useEffect, useState } from 'react';
 
-import { BiSolidDislike } from 'react-icons/bi'
-import { BiSolidLike } from 'react-icons/bi'
-import { ImSpinner9 } from 'react-icons/im'
-import { TypeOutline } from 'lucide-react'
-import { db } from '@/config/firebase'
+import { BiSolidDislike } from 'react-icons/bi';
+import { BiSolidLike } from 'react-icons/bi';
+import { ImSpinner9 } from 'react-icons/im';
+import { TypeOutline } from 'lucide-react';
+import { db } from '@/config/firebase';
 
 async function getStats(slug: string): Promise<
   | {
-      likes: number
-      dislikes: number
+      likes: number;
+      dislikes: number;
     }
   | DocumentData
 > {
-  const docRef = doc(db, 'stats', slug)
-  const docSnap = await getDoc(docRef)
+  const docRef = doc(db, 'stats', slug);
+  const docSnap = await getDoc(docRef);
   if (docSnap.exists()) {
-    return docSnap.data()
+    return docSnap.data();
   } else {
-    await setDoc(docRef, { likes: 0, dislikes: 0 })
-    return { likes: 0, dislikes: 0 }
+    await setDoc(docRef, { likes: 0, dislikes: 0 });
+    return { likes: 0, dislikes: 0 };
   }
 }
 
@@ -37,25 +37,25 @@ async function sentStats(
   slug: string,
   type: 'like' | 'dislike'
 ): Promise<void> {
-  const docRef = doc(db, 'stats', slug)
+  const docRef = doc(db, 'stats', slug);
 
-  const docSnap = await getDoc(docRef)
+  const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
     if (type === 'like') {
       await updateDoc(docRef, {
         likes: increment(1),
-      })
+      });
     } else if (type === 'dislike') {
       await updateDoc(docRef, {
         dislikes: increment(1),
-      })
+      });
     }
   } else {
     if (type === 'like') {
-      await setDoc(docRef, { likes: 1, dislikes: 0 })
+      await setDoc(docRef, { likes: 1, dislikes: 0 });
     } else if (type === 'dislike') {
-      await setDoc(docRef, { likes: 0, dislikes: 1 })
+      await setDoc(docRef, { likes: 0, dislikes: 1 });
     }
   }
 }
@@ -64,26 +64,26 @@ export default function FeedBack({
   slug,
   type,
 }: {
-  slug: string
-  type: string
+  slug: string;
+  type: string;
 }) {
-  const [loading, setLoading] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
-  const [likes, setLikes] = useState(0)
-  const [dislikes, setDislikes] = useState(0)
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [likes, setLikes] = useState(0);
+  const [dislikes, setDislikes] = useState(0);
   const handleClick = (type: 'like' | 'dislike') => {
-    setLoading(true)
+    setLoading(true);
     sentStats(slug, type).then(() => {
-      setLoading(false)
-      setSubmitted(true)
-    })
-  }
+      setLoading(false);
+      setSubmitted(true);
+    });
+  };
   useEffect(() => {
     getStats(slug).then((data) => {
-      setLikes(data.likes)
-      setDislikes(data.dislikes)
-    })
-  }, [slug])
+      setLikes(data.likes);
+      setDislikes(data.dislikes);
+    });
+  }, [slug]);
   return (
     <div className="flex flex-col justify-center items-center gap-3 w-full sm:w-[500px] mx-auto my-20 border rounded-lg min-h-[200px] bg-white dark:bg-black">
       {!(loading || submitted) && (
@@ -95,10 +95,9 @@ export default function FeedBack({
             <button
               disabled={loading || submitted}
               onClick={() => {
-                handleClick('like')
+                handleClick('like');
               }}
-              className="flex justify-between items-center gap-2 py-1 px-2 rounded-sm cursor-pointer border hover:bg-zinc-200 transition-all duration-150 dark:hover:bg-zinc-800"
-            >
+              className="flex justify-between items-center gap-2 py-1 px-2 rounded-sm cursor-pointer border hover:bg-zinc-200 transition-all duration-150 dark:hover:bg-zinc-800">
               <BiSolidLike className="text-lg md:text-xl" />
               <p>
                 <span className="text-sm">{likes}</span>
@@ -107,10 +106,9 @@ export default function FeedBack({
             <button
               disabled={loading || submitted}
               onClick={() => {
-                handleClick('dislike')
+                handleClick('dislike');
               }}
-              className="flex justify-between items-center gap-2  py-1 px-2 rounded-sm cursor-pointer border hover:bg-zinc-200 transition-all duration-150 dark:hover:bg-zinc-800 "
-            >
+              className="flex justify-between items-center gap-2  py-1 px-2 rounded-sm cursor-pointer border hover:bg-zinc-200 transition-all duration-150 dark:hover:bg-zinc-800 ">
               <BiSolidDislike className="text-lg md:text-xl" />
               <p>
                 <span className="text-sm">{dislikes}</span>
@@ -126,5 +124,5 @@ export default function FeedBack({
       )}
       {submitted && <p>Thanks for your review!</p>}
     </div>
-  )
+  );
 }

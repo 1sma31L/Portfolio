@@ -1,5 +1,5 @@
 const Icons: {
-  [key: string]: string
+  [key: string]: string;
 } = {
   'Node.js': '/icons/Node-JS.svg',
   'Shadcn-ui': '/icons/Shadcn-UI.webp',
@@ -20,5 +20,5 @@ const Icons: {
   CSS: '/icons/CSS.webp',
   JWT: '/icons/JWT.svg',
   Supabase: '/icons/Supabase.png',
-}
-export default Icons
+};
+export default Icons;

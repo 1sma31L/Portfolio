@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import React from 'react'
+import Link from 'next/link';
+import React from 'react';
 
 function Footer() {
   const links = [
@@ -8,7 +8,7 @@ function Footer() {
     { name: 'Contact', href: '/contact' },
     { name: 'Blog', href: '/blog' },
     { name: 'More', href: '/more' },
-  ]
+  ];
   return (
     <footer className="bg-transparent h-14">
       <div className="sm:flex-row gap-2 justify-between items-center container mx-auto text-[12px] md:text-[14px] flex py-6 px-4 md:px-0 flex-col">
@@ -16,8 +16,7 @@ function Footer() {
           Contact me at{' '}
           <Link
             href={'mailto:im.boussekine@gmail.com'}
-            className="font-bold hover:underline"
-          >
+            className="font-bold hover:underline">
             im.boussekine@gmail.com
           </Link>
         </p>
@@ -27,16 +26,15 @@ function Footer() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="hover:underline"
-              >
+                className="hover:underline">
                 {link.name}
               </Link>
-            )
+            );
           })}
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

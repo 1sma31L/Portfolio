@@ -1,17 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 function SupportedProjectsCard({
   title,
   description,
   link,
   src,
 }: {
-  title: string
-  description: string
-  link: string
-  src: string
+  title: string;
+  description: string;
+  link: string;
+  src: string;
 }) {
   return (
     <Link href={link} className="w-full" target="_blank">
@@ -33,7 +33,7 @@ function SupportedProjectsCard({
         </div>
       </div>
     </Link>
-  )
+  );
 }
 
-export default SupportedProjectsCard
+export default SupportedProjectsCard;

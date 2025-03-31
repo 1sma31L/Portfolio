@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import AnimatedDiv from '@/components/AnimatedDiv'
-import React from 'react'
+import AnimatedDiv from '@/components/AnimatedDiv';
+import React from 'react';
 
 function notFound() {
   return (
@@ -20,7 +20,7 @@ function notFound() {
         </section>
       </main>
     </AnimatedDiv>
-  )
+  );
 }
 
-export default notFound
+export default notFound;

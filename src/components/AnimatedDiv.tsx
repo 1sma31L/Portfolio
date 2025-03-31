@@ -1,23 +1,23 @@
-'use client'
+'use client';
 
-import { motion, useAnimation } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion';
 
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 
 function AnimatedDiv({
   children,
   className,
   id,
 }: {
-  children: React.ReactNode
-  className?: string
-  id?: number | string
+  children: React.ReactNode;
+  className?: string;
+  id?: number | string;
 }) {
-  const controls = useAnimation()
+  const controls = useAnimation();
 
   useEffect(() => {
-    controls.start('animate')
-  }, [controls])
+    controls.start('animate');
+  }, [controls]);
 
   const animation = {
     initial: { opacity: 0, y: 100 },
@@ -31,7 +31,7 @@ function AnimatedDiv({
       },
     },
     exit: { opacity: 0, y: -100 },
-  }
+  };
 
   return (
     <motion.div
@@ -40,10 +40,9 @@ function AnimatedDiv({
       animate={controls}
       exit="exit"
       transition={{ duration: 0.3 }}
-      variants={animation}
-    >
+      variants={animation}>
       <div className={className}>{children}</div>
     </motion.div>
-  )
+  );
 }
-export default AnimatedDiv
+export default AnimatedDiv;

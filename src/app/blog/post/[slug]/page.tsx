@@ -1,30 +1,30 @@
-import AnimatedDiv from '@/components/AnimatedDiv'
-import BlogCard from '@/components/BlogCard'
-import Breadcrumb from '@/components/Breadcrumb'
-import FeedBack from '@/components/Feedback'
-import FormatDistanceToNow from '@/components/FormatDistanceToNow'
-import Link from 'next/link'
-import { Metadata } from 'next'
-import ProgressBar from '@/components/ProgressBar'
-import React from 'react'
-import { TFrontMatter } from '@/types/types'
-import Views from '@/components/Views'
-import fs from 'fs'
-import markdownToHtml from '@/lib/markdownToHtml'
-import matter from 'gray-matter'
-import { notFound } from 'next/navigation'
-import path from 'path'
-import { postsDirectory } from '@/constants'
+import AnimatedDiv from '@/components/AnimatedDiv';
+import BlogCard from '@/components/BlogCard';
+import Breadcrumb from '@/components/Breadcrumb';
+import FeedBack from '@/components/Feedback';
+import FormatDistanceToNow from '@/components/FormatDistanceToNow';
+import Link from 'next/link';
+import { Metadata } from 'next';
+import ProgressBar from '@/components/ProgressBar';
+import React from 'react';
+import { TFrontMatter } from '@/types/types';
+import Views from '@/components/Views';
+import fs from 'fs';
+import markdownToHtml from '@/lib/markdownToHtml';
+import matter from 'gray-matter';
+import { notFound } from 'next/navigation';
+import path from 'path';
+import { postsDirectory } from '@/constants';
 
-type PostProps = Promise<{ slug: string }>
+type PostProps = Promise<{ slug: string }>;
 
 export async function generateMetadata({
   params,
 }: {
-  params: PostProps
+  params: PostProps;
 }): Promise<Metadata> {
-  const { slug } = await params
-  const { frontMatter } = await getPostData(slug)
+  const { slug } = await params;
+  const { frontMatter } = await getPostData(slug);
   return {
     title: `${frontMatter.title} | Blog`,
     description: frontMatter.metaDescription,
@@ -37,56 +37,56 @@ export async function generateMetadata({
       title: frontMatter.title,
       description: frontMatter.metaDescription,
     },
-  }
+  };
 }
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(postsDirectory)
+  const files = fs.readdirSync(postsDirectory);
   return files.map((fileName) => ({
     slug: fileName.replace('.md', ''),
-  }))
+  }));
 }
 
 async function getPostData(slug: string): Promise<{
-  frontMatter: TFrontMatter
-  content: string
+  frontMatter: TFrontMatter;
+  content: string;
 }> {
-  const filePath = path.join(postsDirectory, `${slug}.md`)
+  const filePath = path.join(postsDirectory, `${slug}.md`);
   if (!fs.existsSync(filePath)) {
-    notFound()
+    notFound();
   }
-  const fileContent = fs.readFileSync(filePath, 'utf-8')
-  const { data, content } = matter(fileContent)
-  const frontMatter: TFrontMatter = data as TFrontMatter
-  const { htmlContent } = await markdownToHtml(content)
+  const fileContent = fs.readFileSync(filePath, 'utf-8');
+  const { data, content } = matter(fileContent);
+  const frontMatter: TFrontMatter = data as TFrontMatter;
+  const { htmlContent } = await markdownToHtml(content);
   return {
     frontMatter,
     content: htmlContent,
-  }
+  };
 }
 
 function getSuggestedPosts(slug: string) {
-  const files = fs.readdirSync(postsDirectory)
+  const files = fs.readdirSync(postsDirectory);
   const posts = files.map((fileName) => {
-    const slug = fileName.replace('.md', '')
-    const readFile = fs.readFileSync(`${postsDirectory}/${fileName}`, 'utf-8')
-    const { data: frontMatter } = matter(readFile)
+    const slug = fileName.replace('.md', '');
+    const readFile = fs.readFileSync(`${postsDirectory}/${fileName}`, 'utf-8');
+    const { data: frontMatter } = matter(readFile);
     return {
       slug,
       frontMatter,
-    }
-  })
+    };
+  });
   const suggestedPosts = posts
     .filter((post) => post.slug !== slug)
     .sort(() => Math.random() - 0.5)
-    .slice(0, 3)
-  return suggestedPosts
+    .slice(0, 3);
+  return suggestedPosts;
 }
 
 export default async function BlogPost({ params }: { params: PostProps }) {
-  const { slug } = await params
-  const { frontMatter, content } = await getPostData(slug)
-  const suggestedPosts = getSuggestedPosts(slug)
+  const { slug } = await params;
+  const { frontMatter, content } = await getPostData(slug);
+  const suggestedPosts = getSuggestedPosts(slug);
   return (
     <AnimatedDiv id={`${frontMatter.title}`}>
       <main className="py-12 container mx-auto px-2 md:px-0 " id="slug">
@@ -122,11 +122,10 @@ export default async function BlogPost({ params }: { params: PostProps }) {
                   key={tag}
                   href={`/blog/tag/${encodeURIComponent(
                     tag.replaceAll(' ', '-').toLowerCase()
-                  )}`}
-                >
+                  )}`}>
                   #{tag}
                 </Link>
-              )
+              );
             })}
           </div>
           <hr className="my-8" />
@@ -148,5 +147,5 @@ export default async function BlogPost({ params }: { params: PostProps }) {
         )}
       </main>
     </AnimatedDiv>
-  )
+  );
 }

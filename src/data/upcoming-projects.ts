@@ -1,10 +1,10 @@
 const upcomingProjects: {
-  id: number
-  title: string
-  description: string
-  techStack: string[]
-  previewLink: string
-  githubLink: string
+  id: number;
+  title: string;
+  description: string;
+  techStack: string[];
+  previewLink: string;
+  githubLink: string;
 }[] = [
   // {
   // 	id: 0,
@@ -25,5 +25,5 @@ const upcomingProjects: {
   // 	previewLink: "https://www.gdscensta.tech",
   // 	githubLink: "https://github.com/1sma31L/gdsc-ensta",
   // },
-]
-export default upcomingProjects
+];
+export default upcomingProjects;

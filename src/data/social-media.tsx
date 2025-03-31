@@ -1,11 +1,11 @@
-import { FaGithub } from 'react-icons/fa'
-import { FaInstagram } from 'react-icons/fa'
-import React from 'react'
+import { FaGithub } from 'react-icons/fa';
+import { FaInstagram } from 'react-icons/fa';
+import React from 'react';
 
 const SocialMedia: {
-  name: string
-  url: string
-  icon: React.ReactElement
+  name: string;
+  url: string;
+  icon: React.ReactElement;
 }[] = [
   {
     name: '',
@@ -17,5 +17,5 @@ const SocialMedia: {
     url: 'https://www.instagram.com/ismailboussekine/',
     icon: <FaInstagram />,
   },
-]
-export default SocialMedia
+];
+export default SocialMedia;

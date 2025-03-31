@@ -1,12 +1,12 @@
-import AnimatedDiv from '@/components/AnimatedDiv'
-import { MdLocalMovies } from 'react-icons/md'
-import { Metadata } from 'next'
-import React from 'react'
+import AnimatedDiv from '@/components/AnimatedDiv';
+import { MdLocalMovies } from 'react-icons/md';
+import { Metadata } from 'next';
+import React from 'react';
 export const metadata: Metadata = {
   title: 'Movies & TV Shows',
   description:
     'Check out my favorite movies and TV shows. I have a list of movies and TV shows that I love to watch.',
-}
+};
 function MoviesAndTvShows() {
   return (
     <AnimatedDiv id={33}>
@@ -22,7 +22,7 @@ function MoviesAndTvShows() {
         </div>
       </main>
     </AnimatedDiv>
-  )
+  );
 }
 
-export default MoviesAndTvShows
+export default MoviesAndTvShows;

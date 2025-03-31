@@ -1,29 +1,28 @@
-'use client'
+'use client';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-import Link from 'next/link'
-import { MoreNavItems } from '@/data/nav-items'
-import { motion } from 'framer-motion'
-import { usePathname } from 'next/navigation'
+import Link from 'next/link';
+import { MoreNavItems } from '@/data/nav-items';
+import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 function isActive(pathname: string, itemPath: string) {
-  return pathname === itemPath || pathname.startsWith(itemPath)
+  return pathname === itemPath || pathname.startsWith(itemPath);
 }
 
 export default function BlogNavBar() {
-  const pathname = usePathname() || '/'
-  const [hoveredPath, setHoveredPath] = useState(pathname)
+  const pathname = usePathname() || '/';
+  const [hoveredPath, setHoveredPath] = useState(pathname);
   useEffect(() => {
-    setHoveredPath(pathname)
-  }, [pathname])
+    setHoveredPath(pathname);
+  }, [pathname]);
   return (
     <nav
       className="gap-1 justify-start relative w-full z-[10] flex items-center pt-6 text-[13px] md:text-[18px] container px-4 md:px-0"
-      id="pheader"
-    >
+      id="pheader">
       {MoreNavItems.map((item) => {
-        const isActiveClass = isActive(pathname, item.path)
+        const isActiveClass = isActive(pathname, item.path);
         return (
           <Link
             key={item.path}
@@ -35,8 +34,7 @@ export default function BlogNavBar() {
             data-active={isActiveClass}
             href={item.path}
             onMouseOver={() => setHoveredPath(item.path)}
-            onMouseLeave={() => setHoveredPath(pathname)}
-          >
+            onMouseLeave={() => setHoveredPath(pathname)}>
             <span>{item.name}</span>
             {isActive(pathname, item.path) && (
               <motion.div
@@ -55,8 +53,8 @@ export default function BlogNavBar() {
               />
             )}
           </Link>
-        )
+        );
       })}
     </nav>
-  )
+  );
 }

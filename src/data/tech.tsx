@@ -1,6 +1,6 @@
-import { FaC, FaReact } from 'react-icons/fa6'
-import { FaCss3, FaGithub, FaHtml5, FaLinux, FaNode } from 'react-icons/fa'
-import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri'
+import { FaC, FaReact } from 'react-icons/fa6';
+import { FaCss3, FaGithub, FaHtml5, FaLinux, FaNode } from 'react-icons/fa';
+import { RiNextjsFill, RiTailwindCssFill } from 'react-icons/ri';
 import {
   SiArchlinux,
   SiExpress,
@@ -11,11 +11,11 @@ import {
   SiMongodb,
   SiRedux,
   SiTypescript,
-} from 'react-icons/si'
+} from 'react-icons/si';
 
-import { IoLogoFirebase } from 'react-icons/io5'
-import { TItem } from '@/types/types'
-import { VscVscode } from 'react-icons/vsc'
+import { IoLogoFirebase } from 'react-icons/io5';
+import { TItem } from '@/types/types';
+import { VscVscode } from 'react-icons/vsc';
 
 const stack: TItem[] = [
   {
@@ -119,6 +119,6 @@ const stack: TItem[] = [
     icon: <SiLatex />,
     color: 'Gray',
   },
-]
+];
 
-export default stack
+export default stack;

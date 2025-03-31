@@ -1,23 +1,23 @@
-'use client'
+'use client';
 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
-import Link from 'next/link'
-import { TiDelete } from 'react-icons/ti'
+import Link from 'next/link';
+import { TiDelete } from 'react-icons/ti';
 
-const underDev = false
+const underDev = false;
 function UnderDevBar() {
-  const [clicked, setClicked] = useState(true)
+  const [clicked, setClicked] = useState(true);
   useEffect(() => {
-    const saved = localStorage.getItem('clicked')
+    const saved = localStorage.getItem('clicked');
     if (!saved) {
-      setClicked(false)
+      setClicked(false);
     }
-  }, [])
+  }, []);
   const handleClick = () => {
-    setClicked(true)
-    localStorage.setItem('clicked', 'true')
-  }
+    setClicked(true);
+    localStorage.setItem('clicked', 'true');
+  };
   return (
     <>
       {!clicked && underDev && (
@@ -34,8 +34,7 @@ function UnderDevBar() {
               <Link
                 target="_blank"
                 href="https://github.com/1sma31L/Portfolio/issues"
-                className="hover:underline font-bold"
-              >
+                className="hover:underline font-bold">
                 GitHub
               </Link>
               . Thank you!
@@ -48,7 +47,7 @@ function UnderDevBar() {
         </div>
       )}
     </>
-  )
+  );
 }
 
-export default UnderDevBar
+export default UnderDevBar;

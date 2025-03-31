@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-import dotenv from 'dotenv'
-dotenv.config()
+import dotenv from 'dotenv';
+dotenv.config();
 
 const nextConfig = {
   async redirects() {
@@ -11,7 +11,7 @@ const nextConfig = {
         destination: '/more/music',
         permanent: true,
       },
-    ]
+    ];
   },
   env: {
     API_KEY: process.env.API_KEY,
@@ -25,5 +25,5 @@ const nextConfig = {
     TEMPLATE_ID: process.env.TEMPLATE_ID,
     PUBLIC_KEY: process.env.PUBLIC_KEY,
   },
-}
-export default nextConfig
+};
+export default nextConfig;

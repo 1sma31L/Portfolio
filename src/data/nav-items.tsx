@@ -1,9 +1,9 @@
-import { MdNaturePeople, MdRateReview } from 'react-icons/md'
+import { MdNaturePeople, MdRateReview } from 'react-icons/md';
 
-import { FaBook } from 'react-icons/fa'
-import { FaReact } from 'react-icons/fa'
-import { RiCodeSSlashFill } from 'react-icons/ri'
-import { TNavItem } from '@/types/types'
+import { FaBook } from 'react-icons/fa';
+import { FaReact } from 'react-icons/fa';
+import { RiCodeSSlashFill } from 'react-icons/ri';
+import { TNavItem } from '@/types/types';
 
 const BlogNavItems: TNavItem = [
   { path: '/blog', name: 'All', description: 'All my articles.' },
@@ -44,7 +44,7 @@ const BlogNavItems: TNavItem = [
     description: 'Life, Personal, Self-help, Motivation related articles.',
     keywords: ['life', 'personal', 'self-help', 'motivation', 'inspiration'],
   },
-]
+];
 
 const MoreNavItems = [
   {
@@ -68,5 +68,5 @@ const MoreNavItems = [
   // 	description: "Life, Personal, Self-help, Motivation related articles.",
   // 	keywords: ["life", "personal", "self-help", "motivation", "inspiration"],
   // },
-]
-export { BlogNavItems, MoreNavItems }
+];
+export { BlogNavItems, MoreNavItems };

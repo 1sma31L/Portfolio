@@ -2,24 +2,24 @@ import {
   getMyPlaylists,
   getPlaylistCoverImage,
   getProfileData,
-} from '@/lib/spotify'
+} from '@/lib/spotify';
 
 /* eslint-disable @next/next/no-img-element */
-import AnimatedDiv from '@/components/AnimatedDiv'
-import { IoIosMusicalNotes } from 'react-icons/io'
-import Link from 'next/link'
-import { Metadata } from 'next'
-import React from 'react'
+import AnimatedDiv from '@/components/AnimatedDiv';
+import { IoIosMusicalNotes } from 'react-icons/io';
+import Link from 'next/link';
+import { Metadata } from 'next';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: 'Music',
   description:
     'Listen to my favorite music playlists on Spotify. Follow me on Spotify to get updates on my latest playlists.',
-}
+};
 
 async function Music() {
-  const playlists = await getMyPlaylists()
-  const profile = await getProfileData()
+  const playlists = await getMyPlaylists();
+  const profile = await getProfileData();
   return (
     <AnimatedDiv id={22}>
       <main className="container mx-auto min-h-[93vh] font-bold text-[24px] sm:text-[32px] py-6 px-4 sm:px-0">
@@ -30,8 +30,7 @@ async function Music() {
         <Link
           href="https://open.spotify.com/user/3157qxpgggxxkcgfhn4zj2cppanm"
           target="_blank"
-          className="flex gap-4 my-3 w-full mx-auto"
-        >
+          className="flex gap-4 my-3 w-full mx-auto">
           {profile?.images?.length > 0 && (
             <img
               src={profile?.images[1].url}
@@ -52,13 +51,12 @@ async function Music() {
         <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4 mt-5">
           {playlists.length > 0 &&
             playlists.map(async (playlist, index: number) => {
-              const coverImage = await getPlaylistCoverImage(playlist.id)
+              const coverImage = await getPlaylistCoverImage(playlist.id);
               return (
                 <Link
                   href={`/more/music/${playlist?.id}`}
                   key={index}
-                  className="flex flex-col gap-2 cursor-pointer group"
-                >
+                  className="flex flex-col gap-2 cursor-pointer group">
                   {playlist?.images?.length > 0 && (
                     <div className="aspect-square w-full overflow-hidden rounded-xl">
                       <img
@@ -72,12 +70,12 @@ async function Music() {
                     {playlist?.name}
                   </h2>
                 </Link>
-              )
+              );
             })}
         </div>
       </main>
     </AnimatedDiv>
-  )
+  );
 }
 
-export default Music
+export default Music;

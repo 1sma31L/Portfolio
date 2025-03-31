@@ -1,17 +1,17 @@
-import AnimatedDiv from '@/components/AnimatedDiv'
-import { CgSandClock } from 'react-icons/cg'
-import { FaTerminal } from 'react-icons/fa'
-import { Metadata } from 'next'
-import ProjectCard from '@/components/ProjectCard'
-import React from 'react'
-import projects from '@/data/projects'
-import upcomingProjects from '@/data/upcoming-projects'
+import AnimatedDiv from '@/components/AnimatedDiv';
+import { CgSandClock } from 'react-icons/cg';
+import { FaTerminal } from 'react-icons/fa';
+import { Metadata } from 'next';
+import ProjectCard from '@/components/ProjectCard';
+import React from 'react';
+import projects from '@/data/projects';
+import upcomingProjects from '@/data/upcoming-projects';
 
 export const metadata: Metadata = {
   title: 'Projects',
   description:
     'Explore my completed web development projects and stay updated on upcoming ones. Featuring React, Next.js, And full-stack applications.',
-}
+};
 
 function Projects() {
   return (
@@ -58,7 +58,7 @@ function Projects() {
         )}
       </main>
     </AnimatedDiv>
-  )
+  );
 }
 
-export default Projects
+export default Projects;

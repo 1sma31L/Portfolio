@@ -13,6 +13,6 @@ export const SupportedProjectsItems = [
     link: 'https://www.instagram.com/eljazayer_elkhadhra/',
     src: '/images/green-algeria.jpg',
   },
-]
+];
 
-export const SupportedYoutubeChannels = ['AnaHr']
+export const SupportedYoutubeChannels = ['AnaHr'];

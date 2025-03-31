@@ -1,36 +1,35 @@
 /* eslint-disable @next/next/no-img-element */
-'use client'
+'use client';
 
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-import Link from 'next/link'
-import SkeletonLoader from '@/components/ImageSkeltonLoading'
-import { TSong } from '@/types/types'
+import Link from 'next/link';
+import SkeletonLoader from '@/components/ImageSkeltonLoading';
+import { TSong } from '@/types/types';
 
 // SongLink Component
 interface SongLinkProps {
-  song: TSong
+  song: TSong;
 }
 
 const SongLink: React.FC<SongLinkProps> = ({ song }) => {
-  const [imageLoaded, setImageLoaded] = useState(false)
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const youtubeSearchQuery =
     song.track.artists[0].name.split(' ').join('+') +
     ' - ' +
-    song.track.name.split(' ').join('+')
+    song.track.name.split(' ').join('+');
 
   // Handler to mark the image as loaded
   const handleImageLoad = () => {
-    setImageLoaded(true)
-  }
+    setImageLoaded(true);
+  };
 
   return (
     <Link
       href={`https://www.youtube.com/results?search_query=${youtubeSearchQuery}`}
       target="_blank"
-      className="flex gap-3 cursor-pointer items-center"
-    >
+      className="flex gap-3 cursor-pointer items-center">
       {/* Image Skeleton Loader */}
       <div className="w-12 h-12">
         {!imageLoaded && <SkeletonLoader />}
@@ -50,7 +49,7 @@ const SongLink: React.FC<SongLinkProps> = ({ song }) => {
         <p className="text-xs font-normal">{song.track.artists[0].name}</p>
       </div>
     </Link>
-  )
-}
+  );
+};
 
-export default SongLink
+export default SongLink;

@@ -1,5 +1,5 @@
-import React from 'react'
-import { TItem } from '@/types/types'
+import React from 'react';
+import { TItem } from '@/types/types';
 
 function TechStack({ item }: { item: TItem }) {
   const colorVariants = {
@@ -12,17 +12,16 @@ function TechStack({ item }: { item: TItem }) {
     Zinc: 'hover:text-zinc-500 hover:bg-zinc-500/[0.05]',
     Orange: 'hover:text-orange-500 hover:bg-orange-500/[0.05]',
     Cyan: 'hover:text-cyan-600 hover:bg-cyan-600/[0.05]',
-  }
+  };
   return (
     <div
       className={`flex flex-col p-4  border hover:border-zinc-300 aspect-square dark:hover:border-zinc-600 transition-colors duration-200 justify-center items-center gap-4 cursor-default bg-white dark:bg-black ${
         colorVariants[item.color]
-      }`}
-    >
+      }`}>
       <p className="text-3xl md:text-4xl">{item.icon}</p>
       <p className="text-sm md:text-md">{item.name}</p>
     </div>
-  )
+  );
 }
 
-export default TechStack
+export default TechStack;

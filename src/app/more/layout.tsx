@@ -1,17 +1,17 @@
-'use client'
+'use client';
 
-import MoreNavBar from '@/components/MoreNavBar'
-import { usePathname } from 'next/navigation'
+import MoreNavBar from '@/components/MoreNavBar';
+import { usePathname } from 'next/navigation';
 export default function MainLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
-  const pathName = usePathname()
+  const pathName = usePathname();
   return (
     <div className="w-full">
       <MoreNavBar />
       {children}
     </div>
-  )
+  );
 }

@@ -1,17 +1,17 @@
-'use client'
-import { db } from '@/config/firebase'
-import { addDoc, collection } from 'firebase/firestore'
-import { sendEmail } from '@/lib/sendEmail'
-import { useEffect, useState } from 'react'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Button } from '@/components/ui/button'
+'use client';
+import { db } from '@/config/firebase';
+import { addDoc, collection } from 'firebase/firestore';
+import { sendEmail } from '@/lib/sendEmail';
+import { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
-} from '@/components/ui/card'
+} from '@/components/ui/card';
 import {
   Form,
   FormControl,
@@ -19,19 +19,19 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/components/ui/form'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { Loader2 } from 'lucide-react'
-import { getFormSchema, type FormValues } from '../lib/validation'
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Loader2 } from 'lucide-react';
+import { getFormSchema, type FormValues } from '../lib/validation';
 // import { toast } from "sonner";
-import { useToast } from '@/hooks/use-toast'
+import { useToast } from '@/hooks/use-toast';
 
-const messagesCollectionRef = collection(db, 'inbox')
+const messagesCollectionRef = collection(db, 'inbox');
 
 export function ContactForm() {
-  const formSchema = getFormSchema()
-  const { toast } = useToast()
+  const formSchema = getFormSchema();
+  const { toast } = useToast();
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     mode: 'onChange',
@@ -42,39 +42,39 @@ export function ContactForm() {
       message: '',
       honeypot: '',
     },
-  })
+  });
 
   const { handleSubmit, formState, control, watch, setError, clearErrors } =
-    form
-  const { isSubmitting } = formState
-  const [messageStatus, setMessageStatus] = useState<string>('idle')
+    form;
+  const { isSubmitting } = formState;
+  const [messageStatus, setMessageStatus] = useState<string>('idle');
   useEffect(() => {
     const subscription = watch((value: any, { name }: any) => {
       if (name === 'message' && /http|www|href/.test(value.message ?? '')) {
         setError('message', {
           type: 'manual',
           message: 'Message must not contain URLs',
-        })
+        });
       } else {
-        clearErrors('message')
+        clearErrors('message');
       }
-    })
+    });
     return () => {
-      subscription.unsubscribe()
-    }
-  }, [watch, setError, clearErrors])
+      subscription.unsubscribe();
+    };
+  }, [watch, setError, clearErrors]);
 
   async function onSubmit(data: FormValues) {
     if (data.honeypot) {
-      return
+      return;
     }
 
-    const formData = new FormData()
+    const formData = new FormData();
     Object.entries(data).forEach(([key, value]) => {
       if (value) {
-        formData.append(key, value.toString())
+        formData.append(key, value.toString());
       }
-    })
+    });
 
     try {
       await addDoc(messagesCollectionRef, {
@@ -82,22 +82,22 @@ export function ContactForm() {
         lastName: data.lastName,
         email: data.email,
         message: data.message,
-      })
+      });
       await sendEmail({
         firstName: data.firstName,
         lastName: data.lastName,
         email: data.email,
         message: data.message,
-      })
-      setMessageStatus('sent')
+      });
+      setMessageStatus('sent');
       toast({
         variant: 'default',
         title: 'Your Message Has Been Sent Successfully.',
         description: new Date().toLocaleString(),
-      })
-      form.reset()
+      });
+      form.reset();
     } catch (error: any) {
-      setMessageStatus('error')
+      setMessageStatus('error');
       toast({
         variant: 'destructive',
         title: 'An Error Occured.',
@@ -108,17 +108,17 @@ export function ContactForm() {
             Please try again, or report this issue on GitHub.
           </>
         ),
-      })
+      });
     }
   }
 
   useEffect(() => {
     if (messageStatus === 'error' || messageStatus === 'sent') {
       setTimeout(() => {
-        setMessageStatus('idle')
-      }, 4000)
+        setMessageStatus('idle');
+      }, 4000);
     }
-  }, [messageStatus])
+  }, [messageStatus]);
   return (
     <div className="flex justify-center items-center">
       <Card className="w-full max-w-4xl dark:bg-black">
@@ -238,8 +238,7 @@ export function ContactForm() {
                 className={`w-full mt-6 ${
                   (messageStatus === 'sent' && '!bg-green-500') ||
                   (messageStatus === 'error' && '!bg-red-500')
-                }`}
-              >
+                }`}>
                 {messageStatus !== 'idle' ? (
                   messageStatus + '!'
                 ) : !isSubmitting ? (
@@ -253,5 +252,5 @@ export function ContactForm() {
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }

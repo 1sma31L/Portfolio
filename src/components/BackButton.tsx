@@ -1,11 +1,11 @@
-'use client'
+'use client';
 
-import { TbArrowBadgeLeft, TbArrowBadgeLeftFilled } from 'react-icons/tb'
+import { TbArrowBadgeLeft, TbArrowBadgeLeftFilled } from 'react-icons/tb';
 
-import { useRouter } from 'next/navigation'
+import { useRouter } from 'next/navigation';
 
 export default function Page() {
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <button type="button" onClick={() => router.back()}>
@@ -15,5 +15,5 @@ export default function Page() {
         <span className="inline-block">Back</span>
       </span>
     </button>
-  )
+  );
 }

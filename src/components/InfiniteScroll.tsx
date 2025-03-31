@@ -1,5 +1,5 @@
-import React from 'react'
-import { TItem } from '@/types/types'
+import React from 'react';
+import { TItem } from '@/types/types';
 
 function InfiniteScroll({ icons }: { icons: TItem[] }) {
   const colorVariants = {
@@ -12,7 +12,7 @@ function InfiniteScroll({ icons }: { icons: TItem[] }) {
     Zinc: 'hover:text-zinc-500 ',
     Orange: 'hover:text-orange-500 ',
     Cyan: 'hover:text-cyan-600 ',
-  }
+  };
   return (
     <div
       className="flex w-full overflow-hidden whitespace-nowrap
@@ -27,8 +27,7 @@ function InfiniteScroll({ icons }: { icons: TItem[] }) {
   after:bg-[linear-gradient(to_right,theme(colors.background)_0%,rgba(255,255,255,0)_100%)] 
   dark:after:bg-[linear-gradient(to_right,theme(colors.background)_0%,rgba(0,0,0,0)_100%)] 
   after:content-['']
-    group    pt-1"
-    >
+    group    pt-1">
       {['', ''].map((_, i) => (
         <div className="animate-scroll group-hover:pause inline-block" key={i}>
           {icons.map((icon, index) => (
@@ -37,15 +36,14 @@ function InfiniteScroll({ icons }: { icons: TItem[] }) {
                 ${colorVariants[icon.color]}
                 transition-all duration-75
                 `}
-              key={index}
-            >
+              key={index}>
               {icon.icon}
             </div>
           ))}
         </div>
       ))}
     </div>
-  )
+  );
 }
 
-export default InfiniteScroll
+export default InfiniteScroll;

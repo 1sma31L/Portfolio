@@ -1,12 +1,12 @@
-import Age from '@/lib/calc-age'
-import AnimatedDiv from '@/components/AnimatedDiv'
-import { FaExternalLinkAlt } from 'react-icons/fa'
-import InfiniteScroll from '@/components/InfiniteScroll'
-import LatestBlogs from '@/components/sections/LatestBlogs'
-import Link from 'next/link'
-import React from 'react'
-import SocialMedia from '@/data/social-media'
-import stack from '@/data/tech'
+import Age from '@/lib/calc-age';
+import AnimatedDiv from '@/components/AnimatedDiv';
+import { FaExternalLinkAlt } from 'react-icons/fa';
+import InfiniteScroll from '@/components/InfiniteScroll';
+import LatestBlogs from '@/components/sections/LatestBlogs';
+import Link from 'next/link';
+import React from 'react';
+import SocialMedia from '@/data/social-media';
+import stack from '@/data/tech';
 function Home() {
   return (
     <AnimatedDiv id={0}>
@@ -22,8 +22,7 @@ function Home() {
                   href={item.url}
                   key={index}
                   target="_blank"
-                  className="flex flex-row justify-between items-center gap-2 px-2 py-1 dark:hover:bg-zinc-800 hover:bg-zinc-200 rounded-sm"
-                >
+                  className="flex flex-row justify-between items-center gap-2 px-2 py-1 dark:hover:bg-zinc-800 hover:bg-zinc-200 rounded-sm">
                   <p className="text-lg p-[0.1rem]">{item.icon}</p>
                   {item.name && (
                     <p className="text-sm hidden sm:block">{item.name}</p>
@@ -54,8 +53,7 @@ function Home() {
         <Link href={'#techstack'} className="-m-14">
           <h2
             className="text-center text-3xl md:text-4xl font-bold"
-            id="techstack"
-          >
+            id="techstack">
             My Tech Stack
           </h2>
         </Link>
@@ -67,8 +65,7 @@ function Home() {
           <Link href={'#aboutme'}>
             <h2
               className="text-3xl md:text-4xl font-bold mb-10 text-center"
-              id="aboutme"
-            >
+              id="aboutme">
               More About Me
             </h2>
           </Link>
@@ -90,16 +87,14 @@ function Home() {
                 i simp for bergman and kubrick and my fav{' '}
                 <Link
                   href="/more/movies-tvshows"
-                  className="font-bold hover:underline"
-                >
+                  className="font-bold hover:underline">
                   movies
                 </Link>{' '}
                 are Interstellar (2014), Fallen Angels (1995), and Naked (1993).
                 my fav{' '}
                 <Link
                   href="/more/movies-tvshows"
-                  className="font-bold hover:underline"
-                >
+                  className="font-bold hover:underline">
                   tv shows
                 </Link>{' '}
                 are Mr. Robot and DAЯꓘ. i play chess from time to time, 1600
@@ -121,8 +116,7 @@ function Home() {
             <button className="text-sm md:text-base py-2 px-3 border bg-zinc-950 dark:bg-zinc-50 rounded dark:text-zinc-950 text-zinc-50 w-auto hover:bg-zinc-700 transition-colors duration-500 dark:hover:bg-zinc-300">
               <Link
                 href={'/contact'}
-                className="flex gap-2 justify-center items-center "
-              >
+                className="flex gap-2 justify-center items-center ">
                 <FaExternalLinkAlt className="mb-1" />
                 <span className="font-bold">Contact Me</span>
               </Link>
@@ -130,8 +124,7 @@ function Home() {
             <button className="text-sm md:text-base py-2 px-3 border rounded  w-auto transition-colors duration-500 hover:bg-zinc-200 dark:hover:bg-zinc-800">
               <Link
                 href={'/projects'}
-                className="flex gap-2 justify-center items-center "
-              >
+                className="flex gap-2 justify-center items-center ">
                 <FaExternalLinkAlt className="mb-1" />
                 <span className="font-bold">See My Projects</span>
               </Link>
@@ -140,7 +133,7 @@ function Home() {
         </section>
       </main>
     </AnimatedDiv>
-  )
+  );
 }
 
-export default Home
+export default Home;

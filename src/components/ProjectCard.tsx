@@ -1,9 +1,9 @@
-import { CiLocationArrow1 } from 'react-icons/ci'
-import { FaGithub } from 'react-icons/fa6'
-import Icons from '@/data/icons'
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
+import { CiLocationArrow1 } from 'react-icons/ci';
+import { FaGithub } from 'react-icons/fa6';
+import Icons from '@/data/icons';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 function ProjectCard({
   title,
   description,
@@ -11,11 +11,11 @@ function ProjectCard({
   previewLink,
   githubLink,
 }: {
-  title: string
-  description: string
-  techStack: string[]
-  previewLink: string
-  githubLink?: string
+  title: string;
+  description: string;
+  techStack: string[];
+  previewLink: string;
+  githubLink?: string;
 }) {
   return (
     <div className="flex flex-col gap-4 p-4 border border-l-zinc-950 dark:border-l-zinc-100 border-l-2 rounded-r-lg bg-white dark:bg-black">
@@ -29,8 +29,7 @@ function ProjectCard({
         {techStack.map((tech) => (
           <div
             key={tech}
-            className="border rounded-sm px-2 py-1 text-[10px] sm:text-[12px] md:text-[14px] bg-zinc-50 dark:bg-zinc-900 flex justify-start items-center gap-2"
-          >
+            className="border rounded-sm px-2 py-1 text-[10px] sm:text-[12px] md:text-[14px] bg-zinc-50 dark:bg-zinc-900 flex justify-start items-center gap-2">
             {tech in Icons ? (
               <Image
                 width={50}
@@ -64,7 +63,7 @@ function ProjectCard({
         )}
       </div>
     </div>
-  )
+  );
 }
 
-export default ProjectCard
+export default ProjectCard;

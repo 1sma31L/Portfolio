@@ -1,13 +1,13 @@
-'use client'
+'use client';
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
-import Command from '@/components/Command'
-import Link from 'next/link'
-import ThemeToggler from '@/components/ThemeToggler'
-import UnderDevBar from './UnderDevBar'
-import { motion } from 'framer-motion'
-import { usePathname } from 'next/navigation'
+import Command from '@/components/Command';
+import Link from 'next/link';
+import ThemeToggler from '@/components/ThemeToggler';
+import UnderDevBar from './UnderDevBar';
+import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 
 const navItems = [
   {
@@ -22,7 +22,7 @@ const navItems = [
     path: '/more',
     name: 'More',
   },
-]
+];
 
 function isActive(pathname: string, itemPath: string) {
   if (itemPath === '/') {
@@ -30,22 +30,22 @@ function isActive(pathname: string, itemPath: string) {
       pathname === '/' ||
       pathname.startsWith('/contact') ||
       pathname.startsWith('/projects')
-    )
+    );
   }
 
   if (itemPath === '/blog') {
-    return pathname.startsWith('/blog')
+    return pathname.startsWith('/blog');
   } else if (itemPath === '/more') {
-    return pathname.startsWith('/more')
+    return pathname.startsWith('/more');
   }
 }
 
 export default function NavBar() {
-  const pathname = usePathname() || '/'
-  const [hoveredPath, setHoveredPath] = useState(pathname)
+  const pathname = usePathname() || '/';
+  const [hoveredPath, setHoveredPath] = useState(pathname);
   useEffect(() => {
-    setHoveredPath(pathname)
-  }, [pathname])
+    setHoveredPath(pathname);
+  }, [pathname]);
 
   return (
     <>
@@ -54,7 +54,7 @@ export default function NavBar() {
         <div className="flex justify-between items-center container mx-auto py-3 px-4 md:px-0 lg:px-0 gap-2 rounded-lg text-[14px] sm:text-[16px] md:text-[18px]">
           <nav className="gap-1 justify-start w-full flex md:gap-2">
             {navItems.map((item) => {
-              const isActiveClass = isActive(pathname, item.path)
+              const isActiveClass = isActive(pathname, item.path);
               return (
                 <Link
                   key={item.path}
@@ -66,8 +66,7 @@ export default function NavBar() {
                   data-active={isActiveClass}
                   href={item.path}
                   onMouseOver={() => setHoveredPath(item.path)}
-                  onMouseLeave={() => setHoveredPath(pathname)}
-                >
+                  onMouseLeave={() => setHoveredPath(pathname)}>
                   <span>{item.name}</span>
                   {isActive(pathname, item.path) && (
                     <motion.div
@@ -86,7 +85,7 @@ export default function NavBar() {
                     />
                   )}
                 </Link>
-              )
+              );
             })}
           </nav>
           <div className="ml-1 hidden lg:block">
@@ -98,5 +97,5 @@ export default function NavBar() {
         </div>
       </header>
     </>
-  )
+  );
 }

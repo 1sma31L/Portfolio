@@ -1,16 +1,16 @@
-import './globals.css'
+import './globals.css';
 
-import { Analytics } from '@vercel/analytics/next'
-import Footer from '@/components/Footer'
-import { Josefin_Sans } from 'next/font/google'
-import type { Metadata } from 'next'
-import NavBar from '@/components/Navbar'
-import ScrollToTop from '@/components/ScrollToTop'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import { ThemeProvider } from '@/components/ui/theme-provider'
-import { Toaster } from '@/components/ui/toaster'
+import { Analytics } from '@vercel/analytics/next';
+import Footer from '@/components/Footer';
+import { Josefin_Sans } from 'next/font/google';
+import type { Metadata } from 'next';
+import NavBar from '@/components/Navbar';
+import ScrollToTop from '@/components/ScrollToTop';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { ThemeProvider } from '@/components/ui/theme-provider';
+import { Toaster } from '@/components/ui/toaster';
 
-const josefin = Josefin_Sans({ subsets: ['latin'] })
+const josefin = Josefin_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ismailboussekine.me'),
@@ -60,12 +60,12 @@ export const metadata: Metadata = {
   icons: {
     icon: '/favicon.ico',
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -83,5 +83,5 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

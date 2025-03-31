@@ -1,4 +1,4 @@
-import { TTimeLine } from '@/types/types'
+import { TTimeLine } from '@/types/types';
 const timeLine: TTimeLine = [
   {
     year: 2024,
@@ -76,5 +76,5 @@ const timeLine: TTimeLine = [
       },
     ],
   },
-]
-export default timeLine
+];
+export default timeLine;

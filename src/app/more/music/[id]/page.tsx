@@ -1,29 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
-import * as spotify from '@/lib/spotify'
+import * as spotify from '@/lib/spotify';
 
-import React, { Suspense } from 'react'
+import React, { Suspense } from 'react';
 
-import AnimatedDiv from '@/components/AnimatedDiv'
-import BackButton from '@/components/BackButton'
-import { FaSpotify } from 'react-icons/fa'
-import Link from 'next/link'
-import Loading from '@/components/Loading'
-import { Metadata } from 'next'
-import SongLink from '@/components/MusicCard'
-import { TSong } from '@/types/types'
+import AnimatedDiv from '@/components/AnimatedDiv';
+import BackButton from '@/components/BackButton';
+import { FaSpotify } from 'react-icons/fa';
+import Link from 'next/link';
+import Loading from '@/components/Loading';
+import { Metadata } from 'next';
+import SongLink from '@/components/MusicCard';
+import { TSong } from '@/types/types';
 
-type SongProps = Promise<{ id: string }>
+type SongProps = Promise<{ id: string }>;
 
 export async function generateMetadata({
   params,
 }: {
-  params: SongProps
+  params: SongProps;
 }): Promise<Metadata> {
-  const playlistInfo = await spotify.getPlaylistInfo((await params).id)
+  const playlistInfo = await spotify.getPlaylistInfo((await params).id);
   return {
     title: playlistInfo.name + ' | Music',
     description: playlistInfo.description,
-  }
+  };
 }
 
 export default function Page({ params }: { params: SongProps }) {
@@ -31,15 +31,15 @@ export default function Page({ params }: { params: SongProps }) {
     <Suspense fallback={<Loading />}>
       <PlaylistContent params={params} />
     </Suspense>
-  )
+  );
 }
 
 async function PlaylistContent({ params }: { params: SongProps }) {
-  const songs = await spotify.getPlaylistItems((await params).id)
-  const playlistInfo = await spotify.getPlaylistInfo((await params).id)
-  const playlistName = playlistInfo.name
-  const playlistImages = await spotify.getPlaylistCoverImage((await params).id)
-  const playlistID = playlistInfo.id
+  const songs = await spotify.getPlaylistItems((await params).id);
+  const playlistInfo = await spotify.getPlaylistInfo((await params).id);
+  const playlistName = playlistInfo.name;
+  const playlistImages = await spotify.getPlaylistCoverImage((await params).id);
+  const playlistID = playlistInfo.id;
 
   return (
     <AnimatedDiv id={22}>
@@ -62,8 +62,7 @@ async function PlaylistContent({ params }: { params: SongProps }) {
                 <Link
                   href={`https://open.spotify.com/playlist/${playlistID}`}
                   target="_blank"
-                  className="font-normal text-sm md:text-lg underline text-muted-foreground group-hover:text-green-500 transition-all duration-300"
-                >
+                  className="font-normal text-sm md:text-lg underline text-muted-foreground group-hover:text-green-500 transition-all duration-300">
                   Listen in Spotify
                 </Link>
                 <FaSpotify className="group-hover:text-green-500 transition-all duration-300" />
@@ -86,5 +85,5 @@ async function PlaylistContent({ params }: { params: SongProps }) {
         </div>
       </main>
     </AnimatedDiv>
-  )
+  );
 }

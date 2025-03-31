@@ -1,6 +1,6 @@
-'use client'
+'use client';
 
-import * as React from 'react'
+import * as React from 'react';
 
 import {
   Breadcrumb,
@@ -10,7 +10,7 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb'
+} from '@/components/ui/breadcrumb';
 import {
   Drawer,
   DrawerClose,
@@ -20,54 +20,54 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from '@/components/ui/drawer'
+} from '@/components/ui/drawer';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@/components/ui/dropdown-menu';
 
-import { Button } from '@/components/ui/button'
-import Capitalize from '@/lib/Capitalize'
-import Link from 'next/link'
-import { Suspense } from 'react'
-import { useMediaQuery } from '@/hooks/use-media-query'
-import { useSearchParams } from 'next/navigation'
+import { Button } from '@/components/ui/button';
+import Capitalize from '@/lib/Capitalize';
+import Link from 'next/link';
+import { Suspense } from 'react';
+import { useMediaQuery } from '@/hooks/use-media-query';
+import { useSearchParams } from 'next/navigation';
 
-const ITEMS_TO_DISPLAY = 3
+const ITEMS_TO_DISPLAY = 3;
 type TItem = {
-  href?: string
-  label: string
-}
+  href?: string;
+  label: string;
+};
 
 function BreadcrumbContent({ label }: { label: string }) {
-  const searchParams = useSearchParams()
-  const isDesktop = useMediaQuery('(min-width: 768px)')
-  const [isClient, setIsClient] = React.useState(false)
+  const searchParams = useSearchParams();
+  const isDesktop = useMediaQuery('(min-width: 768px)');
+  const [isClient, setIsClient] = React.useState(false);
 
   React.useEffect(() => {
-    setIsClient(true)
-  }, [])
+    setIsClient(true);
+  }, []);
   const items: TItem[] = [
     { href: '/', label: 'Home' },
     { href: '/blog', label: 'Blog' },
-  ]
+  ];
   if (searchParams.get('category')) {
-    const category = searchParams.get('category')
+    const category = searchParams.get('category');
     items.push({
       href: `/blog/category/${category}`,
       label: Capitalize(category || 'Category'),
-    })
+    });
   } else if (searchParams.get('tag')) {
-    const tag = searchParams.get('tag')
+    const tag = searchParams.get('tag');
     items.push({
       href: `/blog/tag/${tag}`,
       label: Capitalize(tag || 'Tag'),
-    })
+    });
   }
 
-  items.push({ label })
+  items.push({ label });
 
   return (
     isClient && (
@@ -86,8 +86,7 @@ function BreadcrumbContent({ label }: { label: string }) {
                 <DropdownMenu>
                   <DropdownMenuTrigger
                     className="flex items-center gap-1 !outline-none"
-                    aria-label="Toggle menu"
-                  >
+                    aria-label="Toggle menu">
                     <BreadcrumbEllipsis className="h-4 w-4 !outline-none" />
                   </DropdownMenuTrigger>
                   <DropdownMenuContent align="start">
@@ -110,8 +109,7 @@ function BreadcrumbContent({ label }: { label: string }) {
                 <>
                   <BreadcrumbLink
                     asChild
-                    className="max-w-20 truncate md:max-w-none"
-                  >
+                    className="max-w-20 truncate md:max-w-none">
                     <Link href={item.href}>{item.label}</Link>
                   </BreadcrumbLink>
                   <BreadcrumbSeparator />
@@ -126,7 +124,7 @@ function BreadcrumbContent({ label }: { label: string }) {
         </BreadcrumbList>
       </Breadcrumb>
     )
-  )
+  );
 }
 
 export default function BreadcrumbResponsive({ label }: { label: string }) {
@@ -134,5 +132,5 @@ export default function BreadcrumbResponsive({ label }: { label: string }) {
     <Suspense fallback={<div>Loading...</div>}>
       <BreadcrumbContent label={label} />
     </Suspense>
-  )
+  );
 }

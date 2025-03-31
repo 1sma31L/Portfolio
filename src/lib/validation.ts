@@ -1,6 +1,6 @@
-import { z } from 'zod'
+import { z } from 'zod';
 
-const nameRegex = /^[A-Za-zÀ-ÿ' -]{2,}$/
+const nameRegex = /^[A-Za-zÀ-ÿ' -]{2,}$/;
 
 export const getFormSchema = () =>
   z.object({
@@ -27,6 +27,6 @@ export const getFormSchema = () =>
         message: 'Message must not contain URLs.',
       }),
     honeypot: z.string().optional(),
-  })
+  });
 
-export type FormValues = z.infer<ReturnType<typeof getFormSchema>>
+export type FormValues = z.infer<ReturnType<typeof getFormSchema>>;

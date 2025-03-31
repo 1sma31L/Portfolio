@@ -1,10 +1,10 @@
 const projects: {
-  id: number
-  title: string
-  description: string
-  techStack: string[]
-  previewLink: string
-  githubLink?: string
+  id: number;
+  title: string;
+  description: string;
+  techStack: string[];
+  previewLink: string;
+  githubLink?: string;
 }[] = [
   {
     id: 1,
@@ -117,5 +117,5 @@ const projects: {
     previewLink: 'https://get-ip-adresse.vercel.app/',
     githubLink: 'https://github.com/1sma31L/getIPAdresse',
   },
-]
-export default projects
+];
+export default projects;

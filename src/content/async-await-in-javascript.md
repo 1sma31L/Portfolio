@@ -73,22 +73,22 @@ function getAsyncData() {
     setTimeout(function () {
       resolve({
         name: 'Akram',
-      })
-    }, 2000)
-  })
+      });
+    }, 2000);
+  });
 }
 
 function getData() {
   return new Promise(function (resolve) {
     getAsyncData().then(function (data) {
-      resolve(data)
-    })
-  })
+      resolve(data);
+    });
+  });
 }
 
 getData().then(function (data) {
-  console.log(data)
-})
+  console.log(data);
+});
 ```
 
 ---
@@ -103,9 +103,9 @@ function getAsyncData() {
     setTimeout(function () {
       resolve({
         name: 'Ismail',
-      })
-    }, 2000)
-  })
+      });
+    }, 2000);
+  });
 }
 /*
    Handle asynchronous call using async/await 
@@ -116,8 +116,8 @@ function getAsyncData() {
 */
 
 async function getData() {
-  var data = await getAsyncData()
-  return data
+  var data = await getAsyncData();
+  return data;
 }
 
 /*
@@ -127,8 +127,8 @@ async function getData() {
    was returned from the function is the resolved value
 */
 getData().then(function (data) {
-  console.log(data)
-})
+  console.log(data);
+});
 ```
 
 ---
@@ -147,22 +147,22 @@ In this example we will call our `getAsyncData()` that simulates the async call 
 function getAsyncData() {
   return new Promise(function (resolve) {
     setTimeout(function () {
-      resolve(1)
-    }, 2000)
-  })
+      resolve(1);
+    }, 2000);
+  });
 }
 
 async function getData() {
-  var num1 = await getAsyncData()
-  var num2 = await getAsyncData()
-  var num3 = await getAsyncData()
+  var num1 = await getAsyncData();
+  var num2 = await getAsyncData();
+  var num3 = await getAsyncData();
 
-  return num1 + num2 + num3
+  return num1 + num2 + num3;
 }
 
 getData().then(function (data) {
-  console.log(data)
-})
+  console.log(data);
+});
 ```
 
 As we can see from the result the value 3 is returned after 6 seconds because getAsyncData is called 3 times sequentially, num2 will wait 2 seconds until num1 is returned and num3 will wait 4 seconds until num1 and num2 are both returned.
@@ -181,22 +181,22 @@ In this example we will call our `getAsyncData()` that simulates the async call 
 function getAsyncData() {
   return new Promise(function (resolve) {
     setTimeout(function () {
-      resolve(1)
-    }, 2000)
-  })
+      resolve(1);
+    }, 2000);
+  });
 }
 
 async function getData() {
-  var num1 = getAsyncData()
-  var num2 = getAsyncData()
-  var num3 = getAsyncData()
+  var num1 = getAsyncData();
+  var num2 = getAsyncData();
+  var num3 = getAsyncData();
 
-  return (await num1) + (await num2) + (await num3)
+  return (await num1) + (await num2) + (await num3);
 }
 
 getData().then(function (data) {
-  console.log(data)
-})
+  console.log(data);
+});
 ```
 
 This is a more optimized code for example 11.2 as the result 3 will be printed after 2 seconds
