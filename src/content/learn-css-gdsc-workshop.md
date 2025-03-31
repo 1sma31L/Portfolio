@@ -24,9 +24,9 @@ duration: 12 min
 1. [Introduction to CSS](#introduction-to-css)
 2. [CSS Basics](#css-basics)
    1. [Units of Measurement, Colors, and Selectors](#units-of-measurement-colors-and-selectors)
-         1. [Units of Measurement](#units-of-measurement)
-         2. [Colors](#colors)
-         3. [Selectors](#selectors)
+      1. [Units of Measurement](#units-of-measurement)
+      2. [Colors](#colors)
+      3. [Selectors](#selectors)
    2. [Box Model](#box-model)
       1. [Padding](#padding)
       2. [Margin](#margin)
@@ -43,11 +43,11 @@ duration: 12 min
       1. [Shadow](#shadow)
       2. [Transition](#transition)
    5. [Positioning and layout](#positioning-and-layout)
-         1. [Fixed](#fixed)
-         2. [Sticky](#sticky)
-         3. [Absolute and relative](#absolute-and-relative)
-      1. [Z-index](#z-index)
-      2. [Flex Box](#flex-box)
+      1. [Fixed](#fixed)
+      2. [Sticky](#sticky)
+      3. [Absolute and relative](#absolute-and-relative)
+      4. [Z-index](#z-index)
+      5. [Flex Box](#flex-box)
 3. [Getting Our Hands Dirty](#getting-our-hands-dirty)
 4. [Conclusion](#conclusion)
 
@@ -58,74 +58,80 @@ duration: 12 min
 **Cascading Style Sheets** (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
 
 CSS can be used to define colors, fonts, layout, and many other things on your website. It allows you to separate the content of your website from its design, making it easier to maintain and update.
-It can be 
-1. **Inline** 
+It can be
+
+1. **Inline**
+
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-</head>
-<body>
-  <h1 style="color: red">Hello World</h1>  
-</body>
+  <head> </head>
+  <body>
+    <h1 style="color: red">Hello World</h1>
+  </body>
 </html>
 ```
 
 ---
 
 2. **Internal:**
+
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <style>
-    h1 {
-      color: red;
-    }
-  </style>
-</head>
-<body>
-  <h1>Hello World</h1>
-</body>
+  <head>
+    <style>
+      h1 {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello World</h1>
+  </body>
 </html>
 ```
 
 ---
 
 3. **External:**
+
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <h1>Hello World</h1>
-</body>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Hello World</h1>
+  </body>
 </html>
 ```
+
 ```css
 /* styles.css */
 h1 {
   color: red;
 }
 ```
+
 CSS is a powerful tool that allows you to create beautiful and responsive websites. In this workshop, we will cover the basics of CSS and show you how to style your web pages, It will be the continuation of the HTML workshop.
 
 ---
 
 # CSS Basics
 
-
 ## Units of Measurement, Colors, and Selectors
 
 #### Units of Measurement
+
 CSS supports various units of measurement for specifying lengths, including:
 
 - **Absolute units**: `px` (pixels), `cm` (centimeters), `mm` (millimeters), `in` (inches), `pt` (points), `pc` (picas)
-- **Relative units**: `em` (relative to the font-size of the element usually `1em`=`16px`), `rem` (relative to the font-size of the root element), `%` (percentage), `vw` (viewport width) and  `vh` (viewport height).
+- **Relative units**: `em` (relative to the font-size of the element usually `1em`=`16px`), `rem` (relative to the font-size of the root element), `%` (percentage), `vw` (viewport width) and `vh` (viewport height).
 
 Example:
+
 ```css
 selector {
   width: 50%; /* 50% of the parent element's width */
@@ -134,16 +140,18 @@ selector {
 ```
 
 #### Colors
+
 CSS allows you to specify colors using different formats:
 
 - **Named colors**: `red`, `blue`, `green`, etc.
 - **Hexadecimal**: `#RRGGBB` or `#RGB` or `#ffffff` (white) [Try it](https://www.w3schools.com/colors/colors_picker.asp)
 - **RGB**: `rgb(255, 0, 0)` [Try it](https://www.w3schools.com/colors/colors_rgb.asp)
-- **RGBA**: `rgba(255, 0, 0, 0.5)` (includes alpha for transparency) 
+- **RGBA**: `rgba(255, 0, 0, 0.5)` (includes alpha for transparency)
 - **HSL**: `hsl(0, 100%, 50%)` (the first value is the hue in degrees, the second is the saturation as a percentage, and the third is the lightness as a percentage) [Try it](https://www.w3schools.com/colors/colors_hsl.asp)
 - **HSLA**: `hsla(0, 100%, 50%, 0.5)` (includes alpha for transparency)
 
 Example:
+
 ```css
 selector {
   color: #ff0000; /* Red color */
@@ -152,6 +160,7 @@ selector {
 ```
 
 #### Selectors
+
 CSS selectors are used to select the HTML elements you want to style. Common selectors include:
 
 - **Element selector**: `element`
@@ -163,7 +172,6 @@ CSS selectors are used to select the HTML elements you want to style. Common sel
 - **Descendant selector**: `element element`
 - **Child selector**: `element > element`
 
-
 Selectors have different levels of specificity, which determines which styles are applied when multiple rules match the same element. Specificity is calculated based on the number of each type of selector in the rule:
 
 - Inline styles: (1, 0, 0, 0) (inline can't be combined with other selectors)
@@ -171,9 +179,10 @@ Selectors have different levels of specificity, which determines which styles ar
 - Class, attribute, and pseudo-class selectors: (0, 0, 1, 0)
 - Element and pseudo-element selectors: (0, 0, 0, 1)
 - `>` and `~` combinators: doesnt affect specificity
-- `*:not()` * `*:nth-child()*`, `*:nth-of-type()*`: doesnt affect specificity
+- `*:not()` _ `_:nth-child()_`, `_:nth-of-type()\*`: doesnt affect specificity
 
 Example:
+
 ```css
 /* Element selector */
 p {
@@ -191,7 +200,7 @@ p {
 }
 
 /* Attribute selector */
-input[type="text"] {
+input[type='text'] {
   border: 1px solid black;
 }
 
@@ -221,6 +230,7 @@ div > p {
 ## Box Model
 
 ### Padding
+
 padding is the space between the content and the border of an element. You can set the padding of an element using the `padding` property in CSS. The padding property can have one, two, three, or four values.
 
 ```css
@@ -252,11 +262,13 @@ selector {
   padding-left: 40px;
 }
 ```
+
 value can be in px, em, rem, %, or auto.
 
 ---
 
 ### Margin
+
 Margin is the space outside the border of an element. You can set the margin of an element using the `margin` property in CSS. The margin property can have one, two, three, or four values.
 
 ```css
@@ -288,6 +300,7 @@ selector {
 ---
 
 ### Border
+
 Border is the line that surrounds the content and padding of an element. You can set the border of an element using the `border` property in CSS. The border property can have three values: width, style, and color.
 
 ```css
@@ -313,26 +326,27 @@ selector {
 ```
 
 Possible values for border-style are:
-  none    |
-  hidden  |
-  dotted  |
-  dashed  |
-  solid   |
-  double  |
-  groove  |
-  ridge   |
-  inset   |
-  outset  
+none |
+hidden |
+dotted |
+dashed |
+solid |
+double |
+groove |
+ridge |
+inset |
+outset
 
 Possible values for border-width are:
-  thin    |
-  medium  |
-  thick   |
-  value(px, em, rem, %)
-  
+thin |
+medium |
+thick |
+value(px, em, rem, %)
+
 ---
 
 ### Outline
+
 Outline is similar to border but it is outside the border. You can set the outline of an element using the `outline` property in CSS. The outline property can have three values: width, style, and color.
 
 ```css
@@ -353,7 +367,9 @@ selector {
   outline: 1px solid red; /* This will create a 1px solid red outline */
 }
 ```
+
 Please bare in mind:
+
 - The outline "lives" outside the element.
 - The border does not.
 - The border changes the size of the element.
@@ -361,7 +377,9 @@ Please bare in mind:
 ---
 
 ### Inline And Block
+
 #### Inline
+
 An inline element does not start on a new line and only takes up as much width as necessary. You can set an element to be inline using the `display` property in CSS.
 
 ```css
@@ -369,12 +387,14 @@ selector {
   display: inline;
 }
 ```
-Tags that are `inline` by default : 
+
+Tags that are `inline` by default :
 `<span>`, `<a>`, `<strong>`,`<em>`, `<img>`, `<input>`, `<label>`, `<code>`...
 
 ---
 
 #### Block
+
 A block element starts on a new line and takes up the full width available. You can set an element to be block using the `display` property in CSS.
 
 ```css
@@ -390,6 +410,7 @@ Tags that are `block` by default: `<div>`, `<p>`, `<h1>` to `<h6>`, `<ul>`, `<ol
 ---
 
 ### Inline-Block
+
 An inline-block element is placed as an inline element on the same line as adjacent content but it can have a width and height. You can set an element to be inline-block using the `display` property in CSS.
 
 ```css
@@ -397,6 +418,7 @@ selector {
   display: inline-block;
 }
 ```
+
 the diffrence between inline and inline-block is that inline-block elements are placed as inline elements on the same line as adjacent content but they can have a width and height.
 
 ---
@@ -404,6 +426,7 @@ the diffrence between inline and inline-block is that inline-block elements are 
 ## Styling: Background, Text and colors
 
 ### Background
+
 background is the area behind the content and padding of an element. You can set the background of an element using the `background` property in CSS.
 
 ```css
@@ -411,6 +434,7 @@ selector {
   background-color: red; /* This will set the background color to red */
 }
 ```
+
 You can also set the background image, repeat, position, and size using the `background-image`, `background-repeat`, `background-position`, and `background-size` properties.
 
 ```css
@@ -423,9 +447,10 @@ selector {
   background-clip: border-box; /* or padding-box, content-box */
 }
 ```
+
 You can use shorthand to set all the background properties at once.
 
-```css  
+```css
 selector {
   background: red url('image.jpg') no-repeat center/cover fixed border-box;
 }
@@ -434,6 +459,7 @@ selector {
 ---
 
 ### Text and font
+
 Text is the content of an element. You can set the text of an element using the `color`, `font-family`, `font-size`, `font-weight`, `text-align`, and `text-decoration` properties in CSS.
 
 ```css
@@ -446,11 +472,14 @@ selector {
   text-decoration: underline; /* This will underline the text */
 }
 ```
-You can use shorthand to set all the text (only font-*) properties at once.
+
+You can use shorthand to set all the text (only font-\*) properties at once.
 
 ```css
 selector {
-  font: bold 16px Arial, sans-serif;
+  font:
+    bold 16px Arial,
+    sans-serif;
 }
 ```
 
@@ -459,13 +488,15 @@ selector {
 ## Shadow and transiotion
 
 ### Shadow
+
 CSS allows you to add shadow effects to elements using the `box-shadow` and `text-shadow` properties.
 
 - **Box Shadow**: Adds shadow to the box of an element.
 
 ```css
 selector {
-  box-shadow: [h-offset] [v-offset] [blur-radius] [spread-radius] [color] [inset]
+  box-shadow: [h-offset] [v-offset] [blur-radius] [spread-radius] [color]
+    [inset];
 }
 ```
 
@@ -482,6 +513,7 @@ selector {
 ```
 
 - **Text Shadow**: Adds shadow to the text of an element.
+
 ```css
 selector {
   text-shadow: 2px 2px 4px #000000; /* horizontal offset, vertical offset, blur radius, shadow color */
@@ -491,8 +523,8 @@ selector {
 ---
 
 ### Transition
-CSS transitions allow you to change property values smoothly (over a given duration).
 
+CSS transitions allow you to change property values smoothly (over a given duration).
 
 ```css
 selector {
@@ -505,8 +537,8 @@ selector {
 - **timing-function**: Specifies the speed curve of the transition. like `ease`, `linear`, `ease-in`, `ease-out`, `ease-in-out`, `cubic-bezier(n,n,n,n)`.
 - **delay**: Specifies a delay (in seconds or milliseconds) for the transition to start.
 
-
 Example:
+
 ```css
 selector {
   transition: all 0.3s ease-in-out;
@@ -518,9 +550,12 @@ selector:hover {
 ```
 
 You can specify multiple transitions using commas:
+
 ```css
 selector {
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
 }
 ```
 
@@ -533,6 +568,7 @@ Positioning and layout are crucial aspects of CSS that allow you to control the 
 ---
 
 #### Fixed
+
 A fixed position element is positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled. You can set an element to be fixed using the `position` property in CSS.
 
 ```css
@@ -546,6 +582,7 @@ selector {
 ---
 
 #### Sticky
+
 A sticky position element toggles between relative and fixed, depending on the user's scroll position. It is positioned relative until a given offset position is met in the viewport, then it "sticks" in place (like position:fixed).
 
 ```css
@@ -558,6 +595,7 @@ selector {
 ---
 
 #### Absolute and relative
+
 An absolute position element is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed). If an absolute positioned element has no positioned ancestors, it uses the document body, and moves along with page scrolling.
 
 ```css
@@ -577,7 +615,9 @@ selector {
   left: 10px; /* Move 10px right from its normal position */
 }
 ```
+
 Relative and absolute positioning can be used together to create complex layouts.
+
 ```css
 .container {
   position: relative;
@@ -588,9 +628,11 @@ Relative and absolute positioning can be used together to create complex layouts
   left: 0;
 }
 ```
+
 This will position the `.item` element at the top-left corner of the `.container` element.
 
 ### Z-index
+
 The z-index property specifies the stack order of an element. An element with a higher z-index value will be displayed on top of an element with a lower z-index value.
 
 ```css
@@ -598,11 +640,13 @@ selector {
   z-index: 1; /* Higher z-index value */
 }
 ```
+
 So if you have two elements that overlap, you can use the z-index property to control which one is displayed on top.
 
 ---
 
 ### Flex Box
+
 Flexbox is a layout model that allows you to design complex layouts with ease. It provides a more efficient way to lay out, align, and distribute space among items in a container, even when their size is unknown or dynamic.
 
 ```css
@@ -611,7 +655,7 @@ Flexbox is a layout model that allows you to design complex layouts with ease. I
   justify-content: center; /* Aligns items horizontally */
   align-items: center; /* Aligns items vertically */
   align-content: center; /* Aligns items when there is extra space */
-  gap : 10px; /* Space between items */
+  gap: 10px; /* Space between items */
   flex-wrap: wrap; /* Wraps items to the next line */
 }
 ```
@@ -627,11 +671,12 @@ Flexbox properties include `flex-direction`, `flex-wrap`, `justify-content`, `al
 ---
 
 # Getting Our Hands Dirty
-1. let's play a game!!!!!!!! [Flexboxfroggy](https://flexboxfroggy.com/) 
-2. let's build a simple website using the concepts we learned today starting from an unstyled HTML webapge => [(**Resources**)](https://github.com/1sma31L/CSS-Workshop/archive/refs/heads/main.zip) (HTML file and images).
 
+1. let's play a game!!!!!!!! [Flexboxfroggy](https://flexboxfroggy.com/)
+2. let's build a simple website using the concepts we learned today starting from an unstyled HTML webapge => [(**Resources**)](https://github.com/1sma31L/CSS-Workshop/archive/refs/heads/main.zip) (HTML file and images).
 
 ---
 
 # Conclusion
+
 Congratulations! You have completed the CSS workshop. You now have a solid understanding of CSS and how to style your web pages. Keep practicing and experimenting with different designs to improve your skills. Thank you for joining us, and we hope to see you in future workshops. Happy coding!.

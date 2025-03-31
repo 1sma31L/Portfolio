@@ -63,50 +63,49 @@ Anything that can be done by async/await can be done using only Promises, to sho
 
 ---
 
-
-#### 3.1. Example 1: 
+#### 3.1. Example 1:
 
 here is what `getAsyncData(){:js}` does
-```js  showLineNumbers
-function getAsyncData(){ 
-	return new Promise(function(resolve){
-		setTimeout(function(){
-			resolve({
-				name: "Akram"
-			});
-		},2000);
-	});
+
+```js showLineNumbers
+function getAsyncData() {
+  return new Promise(function (resolve) {
+    setTimeout(function () {
+      resolve({
+        name: 'Akram',
+      })
+    }, 2000)
+  })
 }
 
-function getData(){
-	return new Promise(function(resolve){
-		getAsyncData().then(function(data){
-			resolve(data);
-		});
-	})
+function getData() {
+  return new Promise(function (resolve) {
+    getAsyncData().then(function (data) {
+      resolve(data)
+    })
+  })
 }
 
-getData()
-.then(function(data){
-	console.log(data); 
-});
+getData().then(function (data) {
+  console.log(data)
+})
 ```
 
 ---
 
-#### 3.2. Example 2: 
+#### 3.2. Example 2:
 
 async/await solution
 
 ```javascript showLineNumbers
-function getAsyncData(){
-	return new Promise(function(resolve){
-		setTimeout(function(){
-			resolve({
-				name: "Ismail"
-			});
-		},2000);
-	});
+function getAsyncData() {
+  return new Promise(function (resolve) {
+    setTimeout(function () {
+      resolve({
+        name: 'Ismail',
+      })
+    }, 2000)
+  })
 }
 /*
    Handle asynchronous call using async/await 
@@ -116,9 +115,9 @@ function getAsyncData(){
 	 until the Promise getAsyncData is resolved 
 */
 
-async function getData(){
-	var data = await getAsyncData();
-	return data;
+async function getData() {
+  var data = await getAsyncData()
+  return data
 }
 
 /*
@@ -127,10 +126,9 @@ async function getData(){
    the function is converted to a promise and whatever 
    was returned from the function is the resolved value
 */
-getData()
-.then(function(data){
-	console.log(data); 
-});
+getData().then(function (data) {
+  console.log(data)
+})
 ```
 
 ---
@@ -146,27 +144,25 @@ Its very important to know the consequences of using `await` as it completely pa
 In this example we will call our `getAsyncData()` that simulates the async call 3 times
 
 ```javascript showLineNumbers
-function getAsyncData(){
-	return new Promise(function(resolve){
-		setTimeout(function(){
-			resolve(1);
-		},2000);
-	});
+function getAsyncData() {
+  return new Promise(function (resolve) {
+    setTimeout(function () {
+      resolve(1)
+    }, 2000)
+  })
 }
 
-async function getData(){
-	var num1 = await getAsyncData();
-	var num2 = await getAsyncData();
-	var num3 = await getAsyncData();
+async function getData() {
+  var num1 = await getAsyncData()
+  var num2 = await getAsyncData()
+  var num3 = await getAsyncData()
 
-	return num1 + num2 + num3;
+  return num1 + num2 + num3
 }
 
-
-getData()
-.then(function(data){
-	console.log(data); 
-});
+getData().then(function (data) {
+  console.log(data)
+})
 ```
 
 As we can see from the result the value 3 is returned after 6 seconds because getAsyncData is called 3 times sequentially, num2 will wait 2 seconds until num1 is returned and num3 will wait 4 seconds until num1 and num2 are both returned.
@@ -182,27 +178,25 @@ To fix that we can use await only in return statement to indicate that the funct
 In this example we will call our `getAsyncData()` that simulates the async call 3 times
 
 ```javascript showLineNumbers
-function getAsyncData(){
-	return new Promise(function(resolve){
-		setTimeout(function(){
-			resolve(1);
-		},2000);
-	});
+function getAsyncData() {
+  return new Promise(function (resolve) {
+    setTimeout(function () {
+      resolve(1)
+    }, 2000)
+  })
 }
 
-async function getData(){
-	var num1 = getAsyncData();
-	var num2 = getAsyncData();
-	var num3 = getAsyncData();
+async function getData() {
+  var num1 = getAsyncData()
+  var num2 = getAsyncData()
+  var num3 = getAsyncData()
 
-	return await num1 + await num2 + await num3;
+  return (await num1) + (await num2) + (await num3)
 }
 
-
-getData()
-.then(function(data){
-	console.log(data);
-});
+getData().then(function (data) {
+  console.log(data)
+})
 ```
 
 This is a more optimized code for example 11.2 as the result 3 will be printed after 2 seconds
@@ -220,7 +214,6 @@ Whenever `await` is used it's important to use `try/catch` to be able to catch e
 ### 6. Hint:
 
 The above unrelated async calls can be acheived easily with Promises using `Promise.all([getAsyncData , getAsyncData , getAsyncData])`
-
 
 ### 7. Summary:
 

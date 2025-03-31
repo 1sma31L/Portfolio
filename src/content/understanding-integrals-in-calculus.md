@@ -20,12 +20,15 @@ keywords:
 lastmod: 2024-12-12T22:58:53.994Z
 duration: 4 min
 ---
-### Table of Contents 
+
+### Table of Contents
+
 - [1. Basic Integral Notation](#1-basic-integral-notation)
 - [2. Properties of Integrals](#2-properties-of-integrals)
 - [3. Definite vs. Indefinite Integrals](#3-definite-vs-indefinite-integrals)
 - [4. Applications of Integrals](#4-applications-of-integrals)
 - [5. Conclusion](#5-conclusion)
+
 ---
 
 Integrals are a fundamental concept in calculus, representing the area under a curve or the accumulation of quantities. This guide will walk you through the basics of integrals, including their notation, properties, and applications.

@@ -1,19 +1,19 @@
-"use client";
+'use client'
 
-import AnimatedDiv from "@/components/AnimatedDiv";
-import BlogNavBar from "@/components/BlogNavBar";
-import { usePathname } from "next/navigation";
+import AnimatedDiv from '@/components/AnimatedDiv'
+import BlogNavBar from '@/components/BlogNavBar'
+import { usePathname } from 'next/navigation'
 export default function MainLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-	const pathName = usePathname();
-	return (
-		<div className="w-full">
-			{pathName.split("/")[1] === "blog" &&
-				!["post", "tag"].includes(pathName.split("/")[2]) && <BlogNavBar />}
-			{children}
-		</div>
-	);
+  const pathName = usePathname()
+  return (
+    <div className="w-full">
+      {pathName.split('/')[1] === 'blog' &&
+        !['post', 'tag'].includes(pathName.split('/')[2]) && <BlogNavBar />}
+      {children}
+    </div>
+  )
 }

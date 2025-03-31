@@ -1,14 +1,14 @@
-import AnimatedDiv from "@/components/AnimatedDiv";
-import PortfolioNavBar from "@/components/HomeNavBar";
+import AnimatedDiv from '@/components/AnimatedDiv'
+import PortfolioNavBar from '@/components/HomeNavBar'
 export default function PortfolioLayout({
-	children,
+  children,
 }: Readonly<{
-	children: React.ReactNode;
+  children: React.ReactNode
 }>) {
-	return (
-		<div className="w-full">
-			<PortfolioNavBar />
-			{children}
-		</div>
-	);
+  return (
+    <div className="w-full">
+      <PortfolioNavBar />
+      {children}
+    </div>
+  )
 }

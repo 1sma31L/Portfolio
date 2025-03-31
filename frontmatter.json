@@ -1,20 +1,20 @@
 {
-	"dirname": "src/content/posts",
-	"insertLastMod": true,
-	"insertReadTime": true,
-	"newFileIsInsertLastMod": true,
-	"newFileIsInsertReadTime": true,
-	"wordsPerMinute": 238,
-	"template": {
-		"data": {
-			"title": "Your Title Goes Here",
-			"metaDescription": "Your meta description goes here",
-			"author": "Ismail M. BOUSSEKINE",
-			"date": "{{now}}",
-			"type": "Article",
-			"tags": ["", ""],
-			"categories": [""],
-			"keywords": ["", ""]
-		}
-	}
+  "dirname": "src/content/posts",
+  "insertLastMod": true,
+  "insertReadTime": true,
+  "newFileIsInsertLastMod": true,
+  "newFileIsInsertReadTime": true,
+  "wordsPerMinute": 238,
+  "template": {
+    "data": {
+      "title": "Your Title Goes Here",
+      "metaDescription": "Your meta description goes here",
+      "author": "Ismail M. BOUSSEKINE",
+      "date": "{{now}}",
+      "type": "Article",
+      "tags": ["", ""],
+      "categories": [""],
+      "keywords": ["", ""]
+    }
+  }
 }
