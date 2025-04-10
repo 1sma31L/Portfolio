@@ -7,18 +7,31 @@ import { postsDirectory } from '@/constants';
 const BASE_URL = 'https://ismailboussekine.me';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const files = fs.readdirSync(postsDirectory);
-  const postsEntries: MetadataRoute.Sitemap = files.map((fileName) => {
-    const filePath = path.join(postsDirectory, fileName);
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const { data: frontMatter } = matter(fileContent);
-    const slug = fileName.replace('.md', '');
-    return {
-      url: `${BASE_URL}/blog/post/${slug}`,
-      priority: 0.9,
-      lastModified: frontMatter.lastmod,
-    };
-  });
+  let postsEntries: MetadataRoute.Sitemap = [];
+
+  // Check if directory exists and has files before trying to read them
+  if (fs.existsSync(postsDirectory)) {
+    try {
+      const files = fs.readdirSync(postsDirectory);
+
+      if (files.length > 0) {
+        postsEntries = files.map((fileName) => {
+          const filePath = path.join(postsDirectory, fileName);
+          const fileContent = fs.readFileSync(filePath, 'utf-8');
+          const { data: frontMatter } = matter(fileContent);
+          const slug = fileName.replace('.md', '');
+          return {
+            url: `${BASE_URL}/blog/post/${slug}`,
+            priority: 0.9,
+            lastModified: frontMatter.lastmod,
+          };
+        });
+      }
+    } catch (error) {
+      console.error('Error reading posts directory:', error);
+    }
+  }
+
   return [
     {
       url: `${BASE_URL}/`,
