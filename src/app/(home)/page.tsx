@@ -74,7 +74,7 @@ function Home() {
               <div>
                 beside web development, i love to tinker with Linux (i use Arch
                 Linux btw), watch people building stuff on YouTube and seeing
-                trendy javascript frameworks,{' '}
+                strendy javascript frameworks,{' '}
                 <div className=" flex justify-center items-center py-4">
                   <blockquote className="border-l-4 border-zinc-800 dark:border-zinc-100 pl-2 italic text-gray-700 dark:text-gray-300">
                     <p className="">
@@ -113,21 +113,23 @@ function Home() {
             Are You Interested in Hiring Me?
           </h2>
           <div className="flex flex-col sm:flex-row gap-5">
-            <button className="text-sm md:text-base py-2 px-3 border bg-zinc-950 dark:bg-zinc-50 rounded dark:text-zinc-950 text-zinc-50 w-auto hover:bg-zinc-700 transition-colors duration-500 dark:hover:bg-zinc-300">
+            <button className="group relative text-sm md:text-base py-3 px-6 border-2 bg-zinc-950 dark:bg-zinc-50 rounded-lg dark:text-zinc-950 text-zinc-50 w-auto overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg dark:hover:shadow-zinc-200/20 hover:shadow-zinc-800/20">
               <Link
                 href={'/contact'}
-                className="flex gap-2 justify-center items-center ">
-                <FaExternalLinkAlt className="mb-1" />
+                className="flex gap-2 justify-center items-center relative z-10">
+                <FaExternalLinkAlt className="mb-1 group-hover:rotate-45 transition-transform duration-300" />
                 <span className="font-bold">Contact Me</span>
               </Link>
+              <div className="absolute inset-0 bg-zinc-800 dark:bg-zinc-200 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out -z-0"></div>
             </button>
-            <button className="text-sm md:text-base py-2 px-3 border rounded  w-auto transition-colors duration-500 hover:bg-zinc-200 dark:hover:bg-zinc-800">
+            <button className="group relative text-sm md:text-base py-3 px-6 border-2 border-zinc-950 dark:border-zinc-50 rounded-lg w-auto overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg dark:hover:shadow-zinc-200/20 hover:shadow-zinc-800/20">
               <Link
                 href={'/projects'}
-                className="flex gap-2 justify-center items-center ">
-                <FaExternalLinkAlt className="mb-1" />
+                className="flex gap-2 justify-center items-center relative z-10">
+                <FaExternalLinkAlt className="mb-1 group-hover:rotate-45 transition-transform duration-300" />
                 <span className="font-bold">See My Projects</span>
               </Link>
+              <div className="absolute inset-0 bg-zinc-200 dark:bg-zinc-800 transform origin-right scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out -z-0"></div>
             </button>
           </div>
         </section>
