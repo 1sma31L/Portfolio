@@ -57,15 +57,15 @@ async function PlaylistContent({ params }: { params: SongProps }) {
                   />
                 </div>
               )}
-              <h1>{playlistName}</h1>
+              <h1>{playlistName}</h1>{' '}
               <div className="text-lg md:text-xl flex justify-start items-center mb-5 font-normal gap-2 group">
                 <Link
                   href={`https://open.spotify.com/playlist/${playlistID}`}
                   target="_blank"
-                  className="font-normal text-sm md:text-lg underline text-muted-foreground group-hover:text-green-500 transition-all duration-300">
+                  className="font-normal text-sm md:text-lg underline text-muted-foreground hover:text-primary transition-all duration-300">
                   Listen in Spotify
                 </Link>
-                <FaSpotify className="group-hover:text-green-500 transition-all duration-300" />
+                <FaSpotify className="text-muted-foreground group-hover:text-primary transition-all duration-300" />
               </div>
               <div className="hidden lg:block">
                 {playlistInfo.description && (

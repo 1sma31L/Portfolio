@@ -67,8 +67,8 @@ const Views: React.FC<ViewsProps> = ({ slug, autoIncrement }) => {
     <div className="relative w-fit">
       {loading ? (
         <div className="flex items-center gap-2">
-          <div className="w-8 md:w-9 h-4 md:h-5 bg-zinc-300 dark:bg-zinc-800 animate-pulse  rounded"></div>
-          <div className="w-3 md:w-4 h-4 md:h-5 bg-zinc-300 dark:bg-zinc-800 animate-pulse rounded"></div>
+          <div className="w-8 md:w-9 h-4 md:h-5 bg-muted animate-pulse rounded"></div>
+          <div className="w-3 md:w-4 h-4 md:h-5 bg-muted animate-pulse rounded"></div>
         </div>
       ) : (
         <p className="!m-0 p-0!">

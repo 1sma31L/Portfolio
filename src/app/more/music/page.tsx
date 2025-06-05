@@ -66,7 +66,7 @@ async function Music() {
                       />
                     </div>
                   )}
-                  <h2 className="text-sm md:text-lg font-normal text-center group-hover:underline">
+                  <h2 className="text-sm md:text-lg font-normal text-foreground/90 text-center group-hover:underline">
                     {playlist?.name}
                   </h2>
                 </Link>

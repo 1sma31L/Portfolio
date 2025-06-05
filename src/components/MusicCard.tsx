@@ -45,8 +45,12 @@ const SongLink: React.FC<SongLinkProps> = ({ song }) => {
 
       {/* Song Information */}
       <div className="flex flex-col justify-evenly items-start">
-        <h2 className="text-sm font-normal">{song.track.name}</h2>
-        <p className="text-xs font-normal">{song.track.artists[0].name}</p>
+        <h2 className="text-sm font-normal text-foreground">
+          {song.track.name}
+        </h2>
+        <p className="text-xs font-normal text-muted-foreground">
+          {song.track.artists[0].name}
+        </p>
       </div>
     </Link>
   );

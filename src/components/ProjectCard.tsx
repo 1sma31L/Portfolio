@@ -55,7 +55,7 @@ function ProjectCard({
         )}
         {githubLink && (
           <Link href={githubLink} target="_blank">
-            <button className="group px-2 py-1 border border-secondary bg-secondary text-secondary-foreground rounded-sm text-[14px] md:text-[18px] flex gap-2 items-center duration-300 transition-all hover:opacity-90">
+            <button className="group px-2 py-1 border bg-background text-foreground rounded-sm text-[14px] md:text-[18px] flex gap-2 items-center duration-300 transition-all hover:opacity-90">
               <FaGithub className="text-md md:text-xl" />
               <p>Github</p>
             </button>
