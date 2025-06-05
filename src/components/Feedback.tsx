@@ -85,7 +85,7 @@ export default function FeedBack({
     });
   }, [slug]);
   return (
-    <div className="flex flex-col justify-center items-center gap-3 w-full sm:w-[500px] mx-auto my-20 border rounded-lg min-h-[200px] bg-white dark:bg-black">
+    <div className="flex flex-col justify-center items-center gap-3 w-full sm:w-[500px] mx-auto my-20 border rounded-lg min-h-[200px] bg-card">
       {!(loading || submitted) && (
         <>
           <h2 className="font-bold text-sm sm:text-lg">

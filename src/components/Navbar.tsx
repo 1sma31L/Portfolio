@@ -50,18 +50,18 @@ export default function NavBar() {
   return (
     <>
       <UnderDevBar />
-      <header className="backdrop-blur-sm md:backdrop-blur-md sticky top-0 left-0 w-full z-[20] h-14 shadow-sm bg-white/50 dark:bg-black/50">
-        <div className="flex justify-between items-center container mx-auto py-3 px-4 md:px-0 lg:px-0 gap-2 rounded-lg text-[14px] sm:text-[16px] md:text-[18px]">
-          <nav className="gap-1 justify-start w-full flex md:gap-2">
+      <header className="backdrop-blur-sm md:backdrop-blur-md sticky top-0 left-0 w-full z-[20] h-16 shadow-sm bg-background/50 border-b border-border/40">
+        <div className="flex justify-between items-center container h-full mx-auto px-4 md:px-0 lg:px-0 gap-2 rounded-lg text-[14px] sm:text-[16px] md:text-[18px]">
+          <nav className="gap-1 justify-start w-full flex md:gap-2 h-full items-center">
             {navItems.map((item) => {
               const isActiveClass = isActive(pathname, item.path);
               return (
                 <Link
                   key={item.path}
-                  className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-300 rounded-sm transition-all -z-100 ${
+                  className={`h-9 md:px-4 px-3 relative duration-300 rounded-sm transition-all -z-100 flex items-center ${
                     isActiveClass
-                      ? 'dark:text-black text-white'
-                      : 'text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black'
+                      ? 'text-primary-foreground'
+                      : 'text-muted-foreground hover:text-foreground'
                   }`}
                   data-active={isActiveClass}
                   href={item.path}
@@ -79,20 +79,20 @@ export default function NavBar() {
                         duration: 0.3,
                       }}
                       style={{ originY: 'top' }}
-                      className={
-                        'absolute inset-0 -z-10 bg-black dark:bg-white rounded-sm '
-                      }
+                      className={'absolute inset-0 -z-10 bg-primary rounded-sm'}
                     />
                   )}
                 </Link>
               );
             })}
           </nav>
-          <div className="ml-1 hidden lg:block">
-            <Command />
-          </div>
-          <div className="ml-1">
-            <ThemeToggler />
+          <div className="flex items-center gap-2 h-full">
+            {/* <div className="hidden lg:flex items-center h-full">
+              <Command />
+            </div> */}
+            <div className="flex items-center h-full">
+              <ThemeToggler />
+            </div>
           </div>
         </div>
       </header>

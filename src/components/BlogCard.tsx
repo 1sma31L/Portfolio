@@ -13,20 +13,22 @@ function BlogCard({
   from?: string;
 }) {
   return (
-    <article className="flex flex-col gap-4 p-4 border rounded-lg w-full transition-all duration-150 hover:-translate-y-[1px] hover:translate-x-[2px] hover:shadow-md hover:border-zinc-400 dark:hover:border-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900 group bg-white dark:bg-black">
+    <article className="flex flex-col gap-4 p-4 border rounded-lg w-full transition-all duration-300 hover:-translate-y-[1px] hover:translate-x-[2px] hover:shadow-md hover:border-primary/50 hover:bg-secondary/10 group bg-card">
       <Link
         href={`/blog/post/${slug}${from ? `?${from}` : ''}`}
-        className=" flex justify-start gap-3 p-2 ">
+        className="flex justify-start gap-3 p-2">
         <div className="flex flex-col gap-2 w-full">
           <div className="flex justify-between items-center">
-            <h2 className="text-[22px] md:text-[32px]">{frontMatter.title}</h2>
-            <GoArrowRight className="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300" />
+            <h2 className="text-[22px] md:text-[32px] text-foreground">
+              {frontMatter.title}
+            </h2>
+            <GoArrowRight className="opacity-0 group-hover:opacity-100 group-hover:translate-x-2 transition-all duration-300 text-foreground" />
           </div>
-          <p className="text-[12px] md:text-[16px] text-zinc-600 dark:text-zinc-400 font-normal">
+          <p className="text-[12px] md:text-[16px] text-muted-foreground font-normal">
             {frontMatter.metaDescription}
           </p>
           <div>
-            <p className="text-[10px] md:text-[14px] text-zinc-500 font-normal dark:text-zinc-400">
+            <p className="text-[10px] md:text-[14px] text-muted-foreground/70 font-normal">
               {formatDate(new Date(frontMatter.date).toISOString())}
             </p>
           </div>

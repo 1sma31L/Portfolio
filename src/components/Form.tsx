@@ -120,15 +120,15 @@ export function ContactForm() {
     }
   }, [messageStatus]);
   return (
-    <div className="flex justify-center items-center">
-      <Card className="w-full max-w-4xl dark:bg-black">
-        <CardHeader>
-          <CardDescription className="text-pretty">
-            Please, fill out the form below and I&apos;ll get back to you as
-            soon as possible.
+    <div className="flex justify-center items-center w-full">
+      <Card className="w-full max-w-4xl bg-card">
+        <CardHeader className="space-y-2">
+          <CardDescription className="text-pretty text-muted-foreground text-base">
+            Please fill out the form below and I&apos;ll get back to you as soon
+            as possible.
           </CardDescription>
         </CardHeader>
-        <CardContent>
+        <CardContent className="space-y-6">
           <Form {...form}>
             <form noValidate onSubmit={handleSubmit(onSubmit)}>
               <div className="space-y-4">
@@ -235,12 +235,15 @@ export function ContactForm() {
                   messageStatus === 'sent' ||
                   messageStatus === 'error'
                 }
-                className={`w-full mt-6 ${
-                  (messageStatus === 'sent' && '!bg-green-500') ||
-                  (messageStatus === 'error' && '!bg-red-500')
+                className={`w-full mt-8 ${
+                  messageStatus === 'sent'
+                    ? '!bg-primary hover:!bg-primary/90'
+                    : messageStatus === 'error'
+                    ? '!bg-destructive hover:!bg-destructive/90'
+                    : ''
                 }`}>
                 {messageStatus !== 'idle' ? (
-                  messageStatus + '!'
+                  <span className="capitalize">{messageStatus}!</span>
                 ) : !isSubmitting ? (
                   'Send Message'
                 ) : (

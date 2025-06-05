@@ -20,7 +20,7 @@ export default function BlogNavBar() {
 
   return (
     <nav
-      className="gap-1 justify-start relative w-full z-[10] flex items-center pt-6 text-[13px] md:text-[18px] container px-4 md:px-0"
+      className="gap-2 justify-start relative w-full z-[10] flex items-center pt-6 text-[13px] md:text-[18px] container px-4 md:px-0"
       id="pheader">
       {BlogNavItems.map((item) => {
         const isActiveClass = isActive(pathname, item.path);
@@ -28,10 +28,10 @@ export default function BlogNavBar() {
         return (
           <Link
             key={item.path}
-            className={`md:px-3 md:py-[0.3rem] py-1 px-2 relative duration-300 transition-all rounded-sm -z-100 ${
+            className={`h-9 md:px-4 px-3 relative duration-300 transition-all rounded-sm -z-100 flex items-center ${
               isActiveClass
-                ? 'dark:text-black text-white'
-                : 'text-zinc-600 dark:text-zinc-400 dark:hover:text-white md:hover:text-black font-normal'
+                ? 'text-primary-foreground'
+                : 'text-muted-foreground hover:text-foreground'
             }`}
             data-active={isActiveClass}
             href={item.path}
@@ -49,7 +49,7 @@ export default function BlogNavBar() {
                   duration: 0.3,
                 }}
                 style={{ originY: 'top' }}
-                className="absolute inset-0 -z-10 bg-black dark:bg-white rounded-sm"
+                className="absolute inset-0 -z-10 bg-primary rounded-sm"
               />
             )}
           </Link>
