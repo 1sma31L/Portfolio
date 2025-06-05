@@ -11,9 +11,10 @@ function Home() {
   return (
     <AnimatedDiv id={0}>
       <main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-28 py-6 md:py-0">
-        <section className="flex flex-col gap-5 min-h-[70vh] md:min-h-[80vh] justify-center items-center w-full">
-          <h1 className="text-[44px] sm:text-[68px] font-extrabold inline-block text-foreground text-left w-full bg-clip-text">
-            Ismail Mohamed <span className="text-primary">BOUSSEKINE</span>
+        <section className="flex flex-col gap-5 min-h-[72vh] md:min-h-[85vh] justify-center items-center w-full">
+          <h1 className="text-[44px] sm:text-[68px] font-extrabold inline-block text-foreground text-left w-full bg-clip-text leading-10 bg-gradient-to-r from-primary to-secondary">
+            <span className="tracking-wider font-normal">Ismail Mohamed</span>{' '}
+            <span className="text-primary tracking-tighter">BOUSSEKINE</span>
           </h1>
           <div className="text-sm sm:text-base flex flex-col gap-5 leading-[1.6] text-foreground/90">
             <div className="flex flex-row gap-1 flex-wrap justify-start items-center">
@@ -22,12 +23,12 @@ function Home() {
                   href={item.url}
                   key={index}
                   target="_blank"
-                  className="flex flex-row justify-between items-center gap-2 px-3 py-1.5 hover:bg-accent/10 rounded-sm border border-border/40 transition-all duration-300">
-                  <p className="text-lg text-foreground/80 transition-colors group-hover:text-foreground">
+                  className="flex flex-row justify-between items-center gap-2 px-3 py-1.5 hover:bg-accent/10 rounded-sm  transition-all duration-300 ">
+                  <p className="text-lg text-foreground/80 transition-colors hover:text-foreground">
                     {item.icon}
                   </p>
                   {item.name && (
-                    <p className="text-sm hidden sm:block text-muted-foreground group-hover:text-foreground/90 transition-colors">
+                    <p className="text-sm hidden sm:block text-muted-foreground hover:text-foreground/90 transition-colors">
                       {item.name}
                     </p>
                   )}
