@@ -51,7 +51,7 @@ export default function NavBar() {
     <>
       <UnderDevBar />
       <header className="backdrop-blur-sm md:backdrop-blur-md sticky top-0 left-0 w-full z-[20] h-16 shadow-sm bg-background/50 border-b border-border/40">
-        <div className="flex justify-between items-center container h-full mx-auto px-4 md:px-0 lg:px-0 gap-2 rounded-lg text-md">
+        <div className="flex justify-between items-center container h-full mx-auto px-4 md:px-0 lg:px-0 gap-2 rounded-lg text-[14px] sm:text-[16px] md:text-[18px]">
           <nav className="gap-1 justify-start w-full flex md:gap-2 h-full items-center">
             {navItems.map((item) => {
               const isActiveClass = isActive(pathname, item.path);

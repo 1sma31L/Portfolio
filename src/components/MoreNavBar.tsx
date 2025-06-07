@@ -19,7 +19,7 @@ export default function BlogNavBar() {
   }, [pathname]);
   return (
     <nav
-      className="gap-1 justify-start relative w-full z-[10] flex items-center pt-6 text-md container px-4 md:px-0"
+      className="gap-1 justify-start relative w-full z-[10] flex items-center pt-6 text-[14px] sm:text-[16px] md:text-[18px] container px-4 md:px-0"
       id="pheader">
       {MoreNavItems.map((item) => {
         const isActiveClass = isActive(pathname, item.path);
