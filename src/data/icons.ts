@@ -20,5 +20,8 @@ const Icons: {
   CSS: '/icons/CSS.webp',
   JWT: '/icons/JWT.svg',
   Supabase: '/icons/Supabase.png',
+  'Auth.js': '/icons/Auth-js.svg',
+  Drizzle: '/icons/Drizzle.png',
+  tRPC: '/icons/tRPC.png',
 };
 export default Icons;

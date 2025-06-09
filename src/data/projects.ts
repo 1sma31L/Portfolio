@@ -29,7 +29,6 @@ const projects: {
     description:
       'Simple website to check what are the trending Movies, TV Shows and Anime.',
     techStack: [
-      'HTML',
       'TypeScript',
       'TailwindCSS',
       'React',
