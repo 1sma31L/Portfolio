@@ -2,7 +2,7 @@ import './globals.css';
 
 import { Analytics } from '@vercel/analytics/next';
 import Footer from '@/components/Footer';
-import { Josefin_Sans } from 'next/font/google';
+import { Architects_Daughter } from 'next/font/google';
 import type { Metadata } from 'next';
 import NavBar from '@/components/Navbar';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -10,7 +10,10 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from '@/components/ui/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 
-const josefin = Josefin_Sans({ subsets: ['latin'] });
+const architectsDaughter = Architects_Daughter({
+  weight: '400',
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ismailboussekine.me'),
@@ -69,7 +72,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={josefin.className}>
+      <body className={architectsDaughter.className}>
         <SpeedInsights />
         <Analytics />
         <Toaster />
