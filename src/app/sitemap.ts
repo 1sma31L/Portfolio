@@ -15,16 +15,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       const files = fs.readdirSync(postsDirectory);
 
       if (files.length > 0) {
-        postsEntries = files.map((fileName) => {
-          const filePath = path.join(postsDirectory, fileName);
-          const fileContent = fs.readFileSync(filePath, 'utf-8');
-          const { data: frontMatter } = matter(fileContent);
-          const slug = fileName.replace('.md', '');
-          return {
-            url: `${BASE_URL}/blog/post/${slug}`,
-            priority: 0.9,
-            lastModified: frontMatter.lastmod,
-          };
+        postsEntries = files
+          .filter((fileName) => {
+            const filePath = path.join(postsDirectory, fileName);
+            return !fs.statSync(filePath).isDirectory() && fileName.endsWith('.md');
+          })
+          .map((fileName) => {
+            const filePath = path.join(postsDirectory, fileName);
+            const fileContent = fs.readFileSync(filePath, 'utf-8');
+            const { data: frontMatter } = matter(fileContent);
+            const slug = fileName.replace('.md', '');
+            return {
+              url: `${BASE_URL}/blog/post/${slug}`,
+              priority: 0.9,
+              lastModified: frontMatter.lastmod,
+            };
         });
       }
     } catch (error) {
