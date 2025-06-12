@@ -8,7 +8,7 @@ async function LatestBlogs() {
     <section className="w-full flex flex-col">
       <Link href={'#latestblog'}>
         <h1
-          className="text-3xl md:text-4xl font-bold text-center md:text-left mb-10 "
+          className="text-4xl md:text-5xl font-bold text-center md:text-left mb-10 "
           id="latestblog">
           Latest Blog Posts
         </h1>

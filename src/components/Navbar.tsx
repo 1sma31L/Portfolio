@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 
-import Command from '@/components/Command';
 import Link from 'next/link';
 import ThemeToggler from '@/components/ThemeToggler';
 import UnderDevBar from './UnderDevBar';
@@ -87,9 +86,6 @@ export default function NavBar() {
             })}
           </nav>
           <div className="flex items-center gap-2 h-full">
-            {/* <div className="hidden lg:flex items-center h-full">
-              <Command />
-            </div> */}
             <div className="flex items-center h-full">
               <ThemeToggler />
             </div>

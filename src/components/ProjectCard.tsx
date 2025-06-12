@@ -18,7 +18,7 @@ function ProjectCard({
   githubLink?: string;
 }) {
   return (
-    <div className="flex flex-col gap-4 p-4 border border-l-primary border-l-2 rounded-r-lg bg-background">
+    <div className="flex flex-col gap-4 p-4 border border-l-accent border-l-2 rounded-r-lg bg-background">
       <div className="flex gap-2 text-[22px] md:text-[28px]">
         <h2 className="font-bold capitalize text-foreground">{title}</h2>
       </div>
@@ -55,7 +55,7 @@ function ProjectCard({
         )}
         {githubLink && (
           <Link href={githubLink} target="_blank">
-            <button className="group px-2 py-1 border bg-background text-foreground rounded-sm text-[14px] md:text-[18px] flex gap-2 items-center duration-300 transition-all hover:opacity-90">
+            <button className="group px-2 py-1 border bg-card text-foreground rounded-sm text-[14px] md:text-[18px] flex gap-2 items-center duration-300 transition-all hover:opacity-90">
               <FaGithub className="text-md md:text-xl" />
               <p>Github</p>
             </button>

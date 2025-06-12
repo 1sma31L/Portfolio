@@ -17,9 +17,9 @@ export default function ProgressBar() {
   }, []);
 
   return (
-    <div className="fixed top-16 left-0 w-full h-[2px] bg-transparent z-[101]">
+    <div className="fixed top-16 left-0 w-full h-1 bg-transparent z-[101]">
       <div
-        className="h-full bg-primary transition-all duration-300 ease-out"
+        className="h-full bg-accent backdrop-blur-sm transition-all duration-300 ease-out"
         style={{ width: `${scrollProgress}%` }}></div>
     </div>
   );

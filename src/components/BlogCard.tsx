@@ -28,7 +28,7 @@ function BlogCard({
             {frontMatter.metaDescription}
           </p>
           <div>
-            <p className="text-[10px] md:text-[14px] text-muted-foreground/70 font-normal">
+            <p className="text-[10px] md:text-[14px] text-muted-foreground/80 font-normal">
               {formatDate(new Date(frontMatter.date).toISOString())}
             </p>
           </div>

@@ -12,11 +12,11 @@ function Home() {
     <AnimatedDiv id={0}>
       <main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-28 py-6 md:py-0">
         <section className="flex flex-col gap-5 min-h-[72vh] md:min-h-[85vh] justify-center items-center w-full">
-          <h1 className="text-[44px] sm:text-[68px] font-extrabold inline-block text-foreground text-left w-full bg-clip-text leading-10 bg-gradient-to-r from-primary to-secondary">
-            <span className="tracking-wider font-normal">Ismail Mohamed</span>{' '}
-            <span className="text-primary tracking-tighter">BOUSSEKINE</span>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold inline-block text-foreground text-left w-full bg-clip-text leading-none bg-gradient-to-r from-primary to-secondary">
+            <span>Ismail Mohamed</span>{' '}
+            <span className="text-accent uppercase">Boussekine</span>
           </h1>
-          <div className="text-sm sm:text-base flex flex-col gap-5 leading-[1.6] text-foreground/90">
+          <div className="text-sm sm:text-base flex flex-col gap-5 text-foreground/90">
             <div className="flex flex-row gap-1 flex-wrap justify-start items-center">
               {SocialMedia.map((item, index) => (
                 <Link
@@ -35,7 +35,7 @@ function Home() {
                 </Link>
               ))}
             </div>
-            <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground">
+            <blockquote className="border-l-4 border-accent pl-4 italic text-muted-foreground text-sm sm:text-md md:text-xl">
               <p className="font-bold text-foreground/90">
                 &quot;Most good programmers do programming not because they
                 expect to get paid or get adulation by the public, but because
@@ -45,8 +45,8 @@ function Home() {
                 — Linus Torvalds
               </footer>
             </blockquote>
-            <p className="indent-5 text-foreground/80">
-              i&apos;m a <Age birthDate="2005-04-27" /> y/o cs undergrad student
+            <p className="indent-5 text-foreground/80 text-sm sm:text-md md:text-xl">
+              I&apos;m a <Age birthDate="2005-04-27" /> y/o cs undergrad student
               at ENSTA and a junior{' '}
               <span className="text-foreground font-medium">Web Developer</span>
               . i love building things and solving problems. i enjoy system
@@ -62,7 +62,7 @@ function Home() {
         </section>
         <Link href={'#techstack'} className="-m-14">
           <h2
-            className="text-center text-3xl md:text-4xl font-bold"
+            className="text-center text-4xl md:text-5xl font-bold"
             id="techstack">
             My Tech Stack
           </h2>
@@ -74,19 +74,19 @@ function Home() {
         <section className="w-full flex flex-col">
           <Link href={'#aboutme'}>
             <h2
-              className="text-3xl md:text-4xl font-bold mb-10 text-center"
+              className="text-4xl md:text-5xl font-bold mb-10 text-center"
               id="aboutme">
               More About Me
             </h2>
           </Link>
           <div>
-            <div className="text-sm sm:text-base leading-[1.8] md:leading-[2] indent-5">
+            <div className="text-sm sm:text-md md:text-xl leading-[1.8] md:leading-[2] indent-5">
               <div>
-                beside web development, i love to tinker with Linux (i use Arch
+                Beside web development, i love to tinker with Linux (i use Arch
                 Linux btw), watch people building stuff on YouTube and seeing
                 strendy javascript frameworks,{' '}
                 <div className="flex justify-center items-center py-4">
-                  <blockquote className="border-l-4 border-primary pl-2 italic text-muted-foreground">
+                  <blockquote className="border-l-4 border-accent pl-2 italic text-muted-foreground">
                     <p className="">
                       &quot;New day, New JavaScript framework.&quot;
                     </p>
@@ -94,7 +94,7 @@ function Home() {
                 </div>
               </div>
               <p>
-                i simp for bergman and kubrick and my fav{' '}
+                I simp for bergman and kubrick and my fav{' '}
                 <Link
                   href="/more/movies-tvshows"
                   className="font-bold text-primary hover:underline transition-colors">

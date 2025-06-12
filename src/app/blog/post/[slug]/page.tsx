@@ -94,7 +94,7 @@ export default async function BlogPost({ params }: { params: PostProps }) {
         <div className="container mx-auto mb-8 md:mb-10">
           <Breadcrumb label={frontMatter.title} />
         </div>
-        <div className="container mx-auto prose-lg dark:prose-invert !max-w-none">
+        <div className="container mx-auto prose-lg md:prose-xl dark:prose-invert">
           <h1 className="text-5xl md:text-7xl">{frontMatter.title}</h1>
           <div className="text-xs md:text-sm flex flex-col gap-3">
             <p className="!m-0">
