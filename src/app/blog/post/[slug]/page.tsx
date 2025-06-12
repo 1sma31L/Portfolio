@@ -67,14 +67,19 @@ async function getPostData(slug: string): Promise<{
 
 function getSuggestedPosts(slug: string) {
   const files = fs.readdirSync(postsDirectory);
-  const posts = files.map((fileName) => {
-    const slug = fileName.replace('.md', '');
-    const readFile = fs.readFileSync(`${postsDirectory}/${fileName}`, 'utf-8');
-    const { data: frontMatter } = matter(readFile);
-    return {
-      slug,
-      frontMatter,
-    };
+  const posts = files
+    .filter((fileName) => {
+      const filePath = path.join(postsDirectory, fileName);
+      return !fs.statSync(filePath).isDirectory() && fileName.endsWith('.md');
+    })
+    .map((fileName) => {
+      const slug = fileName.replace('.md', '');
+      const readFile = fs.readFileSync(`${postsDirectory}/${fileName}`, 'utf-8');
+      const { data: frontMatter } = matter(readFile);
+      return {
+        slug,
+        frontMatter,
+      };
   });
   const suggestedPosts = posts
     .filter((post) => post.slug !== slug)

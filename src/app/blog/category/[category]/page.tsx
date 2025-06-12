@@ -8,6 +8,7 @@ import React from 'react';
 import fs from 'fs';
 import matter from 'gray-matter';
 import { postsDirectory } from '@/constants';
+import path from 'path';
 
 type tParams = Promise<{ category: string }>;
 
@@ -46,15 +47,23 @@ export async function generateStaticParams(): Promise<{ category: string }[]> {
 
 async function getPostsByCategory(category: string) {
   const files = fs.readdirSync(postsDirectory);
-  const posts = files.map((fileName) => {
-    const slug = fileName.replace('.md', '');
-    const readFile = fs.readFileSync(`${postsDirectory}/${fileName}`, 'utf-8');
-    const { data: frontMatter } = matter(readFile);
-    return {
-      slug,
-      frontMatter,
-    };
-  });
+  const posts = files
+    .filter((fileName) => {
+      const filePath = path.join(postsDirectory, fileName);
+      return !fs.statSync(filePath).isDirectory() && fileName.endsWith('.md');
+    })
+    .map((fileName) => {
+      const slug = fileName.replace('.md', '');
+      const readFile = fs.readFileSync(
+        `${postsDirectory}/${fileName}`,
+        'utf-8'
+      );
+      const { data: frontMatter } = matter(readFile);
+      return {
+        slug,
+        frontMatter,
+      };
+    });
   const filteredPosts = posts
     .filter((post) =>
       post.frontMatter.categories?.includes(Capitalize(category))
