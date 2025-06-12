@@ -46,17 +46,18 @@ function Home() {
               </footer>
             </blockquote>
             <p className="indent-5 text-foreground/80 text-sm sm:text-md md:text-xl">
-              I&apos;m a <Age birthDate="2005-04-27" /> y/o cs undergrad student
-              at ENSTA and a junior{' '}
-              <span className="text-foreground font-medium">Web Developer</span>
-              . i love building things and solving problems. i enjoy system
-              design, theoretical computer science and i live on the editor. if
-              i&apos;m not coding, i&apos;m probably watching movies, tv shows
+              I&apos;m a <Age birthDate="2005-04-27" /> years old computer
+              science undergrad student at ENSTA and a junior{' '}
+              <span className="text-foreground font-medium">
+                web developer.
+              </span>
+              I love building things and solving problems. I enjoy system
+              design, Theoretical computer science and I live on the editor. If
+              I&apos;m not coding, i&apos;m probably watching movies, TV Shows
               or obsessing over{' '}
               <span className="text-foreground font-medium">
-                mechanical keyboards
+                mechanical keyboards.
               </span>
-              .
             </p>
           </div>
         </section>
@@ -82,9 +83,9 @@ function Home() {
           <div>
             <div className="text-sm sm:text-md md:text-xl leading-[1.8] md:leading-[2] indent-5">
               <div>
-                Beside web development, i love to tinker with Linux (i use Arch
+                Beside web development, I love to tinker with Linux (i use Arch
                 Linux btw), watch people building stuff on YouTube and seeing
-                strendy javascript frameworks,{' '}
+                trendy JavaScript frameworks,{' '}
                 <div className="flex justify-center items-center py-4">
                   <blockquote className="border-l-4 border-accent pl-2 italic text-muted-foreground">
                     <p className="">
@@ -94,28 +95,28 @@ function Home() {
                 </div>
               </div>
               <p>
-                I simp for bergman and kubrick and my fav{' '}
+                I simp for Bergman and Kubrick and my fav{' '}
                 <Link
                   href="/more/movies-tvshows"
                   className="font-bold text-primary hover:underline transition-colors">
                   movies
                 </Link>{' '}
-                are Interstellar (2014), Fallen Angels (1995), and Naked (1993).
-                my fav{' '}
+                are Interstellar (2014), Naked (1993), Eyes Wide Shut (1999) And
+                Fallen Angels (1995). My fav{' '}
                 <Link
                   href="/more/movies-tvshows"
                   className="font-bold text-primary hover:underline transition-colors">
                   tv shows
                 </Link>{' '}
-                are Mr. Robot and DAЯꓘ. i play chess from time to time, 1600
-                rapid rated. i read books in philosophy, psychology, and
-                cybersecurity. i like classical{' '}
+                are Mr. Robot and DAЯꓘ. iIplay chess from time to time, I read
+                books in philosophy, psychology, and cybersecurity. I like
+                classical{' '}
                 <Link
                   href="/more/music"
                   className="font-bold text-primary hover:underline transition-colors">
-                  music
+                  music.
                 </Link>
-                . and last but not least, dark rainy weather is the best.
+                And last but not least, Dark rainy weather is the best.
               </p>
             </div>
           </div>

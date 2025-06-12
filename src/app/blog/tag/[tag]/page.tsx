@@ -32,7 +32,12 @@ export async function generateStaticParams() {
   const files = fs.readdirSync(postsDirectory);
   const tags = new Set<string>();
   files.forEach((file) => {
-    const readFile = fs.readFileSync(path.join(postsDirectory, file), 'utf-8');
+    const filePath = path.join(postsDirectory, file);
+    // Skip if it's a directory or not a markdown file
+    if (fs.statSync(filePath).isDirectory() || !file.endsWith('.md')) {
+      return;
+    }
+    const readFile = fs.readFileSync(filePath, 'utf-8');
     const { data: frontMatter } = matter(readFile);
     frontMatter.tags?.forEach((tag: string) => {
       tags.add(tag.toLowerCase().replace(/\s+/g, '-'));
@@ -46,14 +51,19 @@ export async function generateStaticParams() {
 
 async function getPostsByTag(tag: string) {
   const files = fs.readdirSync(postsDirectory);
-  const posts = files.map((fileName) => {
-    const slug = fileName.replace('.md', '');
-    const readFile = fs.readFileSync(`${postsDirectory}/${fileName}`, 'utf-8');
-    const { data: frontMatter } = matter(readFile);
-    return {
-      slug,
-      frontMatter,
-    };
+  const posts = files
+    .filter((file) => {
+      const filePath = path.join(postsDirectory, file);
+      return !fs.statSync(filePath).isDirectory() && file.endsWith('.md');
+    })
+    .map((fileName) => {
+      const slug = fileName.replace('.md', '');
+      const readFile = fs.readFileSync(`${postsDirectory}/${fileName}`, 'utf-8');
+      const { data: frontMatter } = matter(readFile);
+      return {
+        slug,
+        frontMatter,
+      };
   });
   const filteredPosts = posts
     .filter((post) => post.frontMatter.tags.includes(tag))
