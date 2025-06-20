@@ -12,7 +12,7 @@ function Home() {
     <AnimatedDiv id={0}>
       <main className="container px-4 md:px-0 flex flex-col justify-center items-center gap-28 py-6 md:py-0">
         <section className="flex flex-col gap-5 min-h-[72vh] md:min-h-[85vh] justify-center items-center w-full">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold inline-block text-foreground text-left w-full bg-clip-text leading-none bg-gradient-to-r from-primary to-secondary">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold inline-block text-foreground text-left w-full bg-clip-text leading-none bg-gradient-to-r from-primary to-secondary">
             <span>Ismail Mohamed</span>{' '}
             <span className="text-accent uppercase">Boussekine</span>
           </h1>
@@ -114,16 +114,16 @@ function Home() {
                 <Link
                   href="/more/music"
                   className="font-bold text-primary hover:underline transition-colors">
-                  music.
+                  music
                 </Link>
-                And last but not least, Dark rainy weather is the best.
+                , And last but not least, Dark rainy weather is the best.
               </p>
             </div>
           </div>
         </section>
         <section className="flex flex-col w-full justify-center items-center gap-10 md:min-h-[40vh] my-24">
           <h2 className="text-4xl md:text-6xl font-extrabold text-center text-foreground">
-            Are You Interested in Hiring Me?
+            Are You Interested In Hiring Me?
           </h2>
           <div className="flex flex-col sm:flex-row gap-5">
             <button className="group relative text-sm md:text-base py-3 px-6 border-2 border-primary bg-primary text-primary-foreground rounded-lg w-auto overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-primary/20">

@@ -2,7 +2,7 @@ import './globals.css';
 
 import { Analytics } from '@vercel/analytics/next';
 import Footer from '@/components/Footer';
-import { Architects_Daughter } from 'next/font/google';
+import { Newsreader } from 'next/font/google';
 import type { Metadata } from 'next';
 import NavBar from '@/components/Navbar';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -10,9 +10,9 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { ThemeProvider } from '@/components/ui/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 
-const architectsDaughter = Architects_Daughter({
-  weight: '400',
+const newsreader = Newsreader({
   subsets: ['latin'],
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -72,7 +72,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={architectsDaughter.className}>
+      <body className={newsreader.className}>
         <SpeedInsights />
         <Analytics />
         <Toaster />
