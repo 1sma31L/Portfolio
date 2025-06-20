@@ -37,17 +37,17 @@ function Home() {
             </div>
             <blockquote className="border-l-4 border-accent pl-4 italic text-muted-foreground text-sm sm:text-md md:text-xl">
               <p className="font-bold text-foreground/90">
-                &quot;Most good programmers do programming not because they
-                expect to get paid or get adulation by the public, but because
-                it is fun to program.&quot;
+                &quot;Any sufficiently advanced technology is indistinguishable
+                from magic. &quot;
               </p>
               <footer className="mt-2 text-muted-foreground">
-                — Linus Torvalds
+                — Arthur C. Clarke
               </footer>
             </blockquote>
             <p className="indent-5 text-foreground/80 text-sm sm:text-md md:text-xl">
-              I&apos;m a <Age birthDate="2005-04-27" /> years old computer
-              science undergrad student at ENSTA and a junior{' '}
+              {/* Remove dynamic age calcuation fro SEO purposes */}
+              I&apos;m a 20 years old computer science undergrad student at
+              ENSTA and a junior{' '}
               <span className="text-foreground font-medium">
                 web developer.
               </span>
@@ -85,31 +85,32 @@ function Home() {
               <div>
                 Beside web development, I love to tinker with Linux (i use Arch
                 Linux btw), watch people building stuff on YouTube and seeing
-                trendy JavaScript frameworks,{' '}
+                trendy JavaScript frameworks, Reading about AGI theories and
+                predictions, Intrested in how AI will change the human values
+                and purpose. And I love minimalism :)
                 <div className="flex justify-center items-center py-4">
                   <blockquote className="border-l-4 border-accent pl-2 italic text-muted-foreground">
-                    <p className="">
-                      &quot;New day, New JavaScript framework.&quot;
-                    </p>
+                    <p className="">&quot;Do one thing and do it well.&quot;</p>
                   </blockquote>
                 </div>
               </div>
               <p>
-                I simp for Bergman and Kubrick and my fav{' '}
+                Film-wise, I’m drawn to visionaries like Bergman and Kubrick,
+                And my favourite{' '}
                 <Link
                   href="/more/movies-tvshows"
                   className="font-bold text-primary hover:underline transition-colors">
                   movies
                 </Link>{' '}
-                are Interstellar (2014), Naked (1993), Eyes Wide Shut (1999) And
-                Fallen Angels (1995). My fav{' '}
+                are Interstellar (2014), Persona (1966), Eyes Wide Shut (1999)
+                And Fallen Angels (1995). As for{' '}
                 <Link
                   href="/more/movies-tvshows"
                   className="font-bold text-primary hover:underline transition-colors">
                   tv shows
                 </Link>{' '}
-                are Mr. Robot and DAЯꓘ. iIplay chess from time to time, I read
-                books in philosophy, psychology, and cybersecurity. I like
+                I like Mr. Robot and DAЯꓘ. I play chess from time to time, I
+                read books in philosophy, psychology, and cybersecurity. I like
                 classical{' '}
                 <Link
                   href="/more/music"
